@@ -1,6 +1,5 @@
-@ECHO OFF
 @echo off
-
+@rem
 set SQL_Connecction= 127.0.0.1\SALES_DEV -U sa -P 12345
 set SQL_DATABASE=RESTAURANT_DB
 set SCRIPT =" "
