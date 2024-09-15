@@ -6,7 +6,7 @@ set File_Loc="%SCRIPT_PATH%%SCRIPT_NAME%"
 curl -o "REST_TTT.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
 curl -o "REST_VVV_PPP.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
 
-set SQL_Connecction= 127.0.0.1\SALES_DEV -U sa -P 12345
+set SQL_Connecction= .\SALES_DEV -U sa -P 12345
 set SQL_DATABASE=RESTAURANT_DB
 set SCRIPT =" "
 :stert
