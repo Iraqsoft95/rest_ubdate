@@ -1,5 +1,4 @@
 @echo off
-
 @REM --------------------> Run Batch As Admin <--------------------
 setlocal
 REM check if file Run Us Admin
@@ -39,11 +38,9 @@ goto start
 @REM copy "%Batch_Path%\Telegram.Bot.dll" "%TargetDir%"
 @REM echo File copied successfully
 @REM --------------------> Delet  File <--------------------
-::del %Batch_Path%\REST_VVV_PPP.sql
-::del %Batch_Path%\REST_TTT.sql
-::del %Batch_Path%\Telegram.Bot.dll
-::del %File_Loc%
+del %Batch_Path%\REST_VVV_PPP.sql
+del %Batch_Path%\REST_TTT.sql
+:el %Batch_Path%/P_CHECK_EXIST_COLUMNS.sql
+del %File_Loc%
 
 pause
-@REM Rest 3.0.5.7  
-@REM TTT & VVV v.90
