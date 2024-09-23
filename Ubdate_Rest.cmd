@@ -1,6 +1,5 @@
 @echo off
-@REM Rest 3.0.5.7  
-@REM TTT & VVV v.90
+
 @REM --------------------> Run Batch As Admin <--------------------
 setlocal
 REM check if file Run Us Admin
@@ -46,3 +45,5 @@ goto start
 ::del %File_Loc%
 
 pause
+@REM Rest 3.0.5.7  
+@REM TTT & VVV v.90
