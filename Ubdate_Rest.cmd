@@ -1,6 +1,6 @@
 @echo off
-Rest 3.0.5.7  
-TTT & VVV v.90
+@REM Rest 3.0.5.7  
+@REM TTT & VVV v.90
 @REM --------------------> Run Batch As Admin <--------------------
 setlocal
 REM check if file Run Us Admin
