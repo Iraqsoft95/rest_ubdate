@@ -66,7 +66,7 @@ REM ------------------stop windefend
 net stop windefend
 Reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
 @REM -------------------------> Backup Data
-set BACKUP_DIR=C:\MyBackup\Befor_Update\Backup
+set BACKUP_DIR=C:\MyBackup\Befor_Update
 echo Backup All Data is Start .....
 sqlcmd -S %SQL_Connecction% -Q "DECLARE @name NVARCHAR(256); DECLARE @backupFile NVARCHAR(256); DECLARE @sql NVARCHAR(MAX); DECLARE @backupDir NVARCHAR(256); SET @backupDir = '%BACKUP_DIR%'; DECLARE db_cursor CURSOR FOR SELECT name FROM master.dbo.sysdatabases WHERE name NOT IN ('master', 'model', 'msdb', 'tempdb'); OPEN db_cursor; FETCH NEXT FROM db_cursor INTO @name; WHILE @@FETCH_STATUS = 0 BEGIN; SET @backupFile = @backupDir + '\' + @name + '_backup_' + CONVERT(VARCHAR, GETDATE(), 112) + '_' + REPLACE(CONVERT(VARCHAR, GETDATE(), 108), ':', '-') + '.bak'; SET @sql = 'BACKUP DATABASE [' + @name + '] TO DISK = ''' + @backupFile + ''' WITH NOFORMAT, NOINIT, NAME = ''' + @name + '-Full Database Backup'', SKIP, NOREWIND, NOUNLOAD, STATS = 10'; EXEC sp_executesql @sql; FETCH NEXT FROM db_cursor INTO @name; END; CLOSE db_cursor; DEALLOCATE db_cursor;"
 cls
@@ -76,21 +76,23 @@ if not exist "%BACKUP_DIR%" (
     echo Folder created: %BACKUP_DIR%
     goto Backup
 )
-
 @REM -------------------------> Copy Mysetting Speedoo to file 
     set "Shortcut_File=SPEEDOO REST.lnk"
     set "MySettingName=MySettingRESTAURANT"
     set "TargetPath="
     set "UserDesktopPath=C:\Users\%USERNAME%\Desktop\%Shortcut_File%"
     set "PublicDesktopPath=C:\Users\Public\Desktop\%Shortcut_File%"
+
 @REM -------------------------> check if shortcut in user desktop
 if exist "%UserDesktopPath%" (
     for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%UserDesktopPath%').TargetPath"') do set "TargetPath=%%A"
 )
+
 @REM ------------------------->check if shortcut in public desktop
 if not defined TargetPath if exist "%PublicDesktopPath%" (
     for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%PublicDesktopPath%').TargetPath"') do set "TargetPath=%%A"
 )
+
 @REM -------------------------> check if not defined
 if not defined TargetPath (
     cls
@@ -99,7 +101,8 @@ if not defined TargetPath (
 )
 set "TargetDir=%TargetPath%\.."
 mkdir "%Befor_Update_Path%\%MySettingName%"
-robocopy "%TargetDir%\%MySettingName%" "%Befor_Update_Path%\%MySettingName%" /E /COPYALL /R:0 /W:0 /V /ZB
+robocopy "%TargetDir%\%MySettingName%" "%BACKUP_DIR%\%MySettingName%" /E /COPYALL /R:0 /W:0 /V /ZB
+pause
 goto Ubdate_Rest
 :Update_data 
 @REM --------------------> Download Files <--------------------
@@ -118,3 +121,5 @@ start "" "C:\Users\%USERNAME%\Documents\SERIAL SPEEDOO REST.txt"
 goto Ubdate_Rest
 
 :END
+
+
