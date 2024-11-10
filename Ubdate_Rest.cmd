@@ -108,9 +108,9 @@ goto Ubdate_Rest
 @REM --------------------> Download Files <--------------------
 set Update_Data_file_Path="C:\Users\%USERNAME%\Desktop\Update_data"
 mkdir %Update_Data_file_Path%
-curl -o "%Update_Data_file_Path%\REST_TTT.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
-curl -o "%Update_Data_file_Path%\REST_VVV_PPP.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
-curl -o "%Update_Data_file_Path%\P_CHECK_EXIST_COLUMNS.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/P_CHECK_EXIST_COLUMNS.sql"
+curl -o "C:\Users\%USERNAME%\Desktop\Update_data\REST_TTT.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
+curl -o "C:\Users\%USERNAME%\Desktop\Update_data\REST_VVV_PPP.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
+curl -o "C:\Users\%USERNAME%\Desktop\Update_data\P_CHECK_EXIST_COLUMNS.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/P_CHECK_EXIST_COLUMNS.sql"
 @REM --------------------> Open SQL Scripts in One Session <--------------------
 set SQL_FILES="C:\Users\%USERNAME%\Desktop\Update_data\REST_TTT.sql" "C:\Users\%USERNAME%\Desktop\Update_data\REST_VVV_PPP.sql" "C:\Users\%USERNAME%\Desktop\Update_data\P_CHECK_EXIST_COLUMNS.sql"
 start "" "%SSMS_PATH%" %SQL_FILES%
