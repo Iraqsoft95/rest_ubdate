@@ -76,34 +76,56 @@ if not exist "%BACKUP_DIR%" (
     echo Folder created: %BACKUP_DIR%
     goto Backup
 )
+
 @REM -------------------------> Copy Mysetting Speedoo to file 
-    set "Shortcut_File=SPEEDOO REST.lnk"
-    set "MySettingName=MySettingRESTAURANT"
-    set "TargetPath="
-    set "UserDesktopPath=C:\Users\%USERNAME%\Desktop\%Shortcut_File%"
-    set "PublicDesktopPath=C:\Users\Public\Desktop\%Shortcut_File%"
+set "Shortcut_Part=SPEEDOO REST"
+set "UserDesktop=%USERPROFILE%\Desktop"
+set "PublicDesktop=C:\Users\Public\Desktop"
+set "TargetPath="
 
-@REM -------------------------> check if shortcut in user desktop
-if exist "%UserDesktopPath%" (
-    for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%UserDesktopPath%').TargetPath"') do set "TargetPath=%%A"
+@REM -------------------------> Search for the shortcut on the user's Desktop
+for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
+    for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
+        set "TargetPath=%%A"
+        goto :found
+    )
 )
 
-@REM ------------------------->check if shortcut in public desktop
-if not defined TargetPath if exist "%PublicDesktopPath%" (
-    for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%PublicDesktopPath%').TargetPath"') do set "TargetPath=%%A"
-)
-
-@REM -------------------------> check if not defined
+@REM -------------------------> Search on Public Desktop if not found on the User's Desktop
 if not defined TargetPath (
-    cls
-    echo Could not find the shortcut for %Shortcut_File% on either User or Public Desktop.
-    set /p TargetPath="Please type the path of Speedoo file location: "
+    for %%F in ("%PublicDesktop%\%Shortcut_Part%*.lnk") do (
+        for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
+            set "TargetPath=%%A"
+            goto :found
+        )
+    )
 )
+
+@REM -------------------------> Prompt for path if shortcut is not found
+if not defined TargetPath (
+    echo Could not find a shortcut containing "%Shortcut_Part%" on any desktop.
+    set /p TargetPath="Please enter the path of the Speedoo file: "
+)
+
+:found
 set "TargetDir=%TargetPath%\.."
+if not exist "%TargetDir%" (
+    echo The specified path is invalid.
+    pause
+    exit /b
+)
+
+@REM -------------------------> Create backup directory and copy files
+set "MySettingName=MySettingRESTAURANT"
 mkdir "%Befor_Update_Path%\%MySettingName%"
 robocopy "%TargetDir%\%MySettingName%" "%BACKUP_DIR%\%MySettingName%" /E /COPYALL /R:0 /W:0 /V /ZB
+cls
+echo.
+echo.
+echo Backup Done! in  : %BACKUP_DIR% 
 pause
 goto Ubdate_Rest
+@REM --------------------> Update_data  <--------------------
 :Update_data 
 @REM --------------------> Download Files <--------------------
 set Update_Data_file_Path="C:\Users\%USERNAME%\Desktop\Update_data"
