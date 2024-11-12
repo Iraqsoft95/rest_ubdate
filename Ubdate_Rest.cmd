@@ -37,7 +37,7 @@ echo                     1.Download                     2.Backup
 echo.       
 echo                     3.Update data                  4.SERIAL SPEEDOO REST
 echo.
-echo                     5.Exit
+echo                     5. Open Setup file             0.Exit
 echo.
 echo                  -------------------------------------------------------------
 echo.
@@ -46,7 +46,8 @@ if "%choice%"=="1" goto Download
 if "%choice%"=="2" goto Backup
 if "%choice%"=="3" goto Update_data 
 if "%choice%"=="4" goto SERIAL_SPEEDOO_REST
-if "%choice%"=="5" goto END
+if "%choice%"=="5" goto Open_File
+if "%choice%"=="0" goto END
 echo Invalid choice! Please choose again.
 pause
 goto Ubdate_Rest
@@ -140,6 +141,10 @@ goto Ubdate_Rest
 @REM --------------------> SERIAL_SPEEDOO_REST <--------------------
 :SERIAL_SPEEDOO_REST
 start "" "C:\Users\%USERNAME%\Documents\SERIAL SPEEDOO REST.txt"
+goto Ubdate_Rest
+@REM --------------------> Open_File <--------------------
+:Open_File
+start "" "C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.5.7 UPDATE.exe"
 goto Ubdate_Rest
 
 :END
