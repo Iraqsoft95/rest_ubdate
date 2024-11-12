@@ -15,7 +15,8 @@ set File_Loc="%Batch_PATH%%Batch_NAME%"
 set BACKUP_DIR=C:\MyBackup
 set SQL_Connecction=.\SALES_DEV -U sa -P 12345
 set SQL_DATABASE=RESTAURANT_DB
-
+set url= "https://www.dropbox.com/scl/fi/39s6a36r0hzj7g8bgnbyd/Speedoo-REST-3.0.5.7-UPDATE.exe?rlkey=hv665vott91ebgngbxeu8mvt6&e=1&st=x78dtckx&dl=0"
+set output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.5.7-UPDATE.exe"
 @REM --------------------> Find SQL Server Management Studio (SSMS) Path <--------------------
 for /f "tokens=*" %%A in ('powershell -Command "Get-Command ssms.exe | Select-Object -ExpandProperty Source"') do set SSMS_PATH=%%A
 @REM --------------------> Check if SSMS Path is found <--------------------
@@ -33,20 +34,23 @@ echo                  ----------------------------------------------------------
 echo.                                          Ubdate_Rest
 echo                  -------------------------------------------------------------
 echo.
-echo                     1.Download                     2.Backup 
+echo                     1.Download Mega                   2.Download dropbox 
 echo.       
-echo                     3.Update data                  4.SERIAL SPEEDOO REST
+echo                     3.Backup                          4.Update data   
 echo.
-echo                     5. Open Setup file             0.Exit
+echo                     5.SERIAL SPEEDOO REST             6. Open Setup file                  
+echo.
+echo                                            0.Exit
 echo.
 echo                  -------------------------------------------------------------
 echo.
 set /p choice="Please choose an option : "
 if "%choice%"=="1" goto Download 
-if "%choice%"=="2" goto Backup
-if "%choice%"=="3" goto Update_data 
-if "%choice%"=="4" goto SERIAL_SPEEDOO_REST
-if "%choice%"=="5" goto Open_File
+if "%choice%"=="2" goto Download_in_CMD 
+if "%choice%"=="3" goto Backup
+if "%choice%"=="4" goto Update_data 
+if "%choice%"=="5" goto SERIAL_SPEEDOO_REST
+if "%choice%"=="6" goto Open_File
 if "%choice%"=="0" goto END
 echo Invalid choice! Please choose again.
 pause
@@ -54,6 +58,18 @@ goto Ubdate_Rest
 @REM -------------------------> Download <----------------------------- 
 :Download 
 start https://mega.nz/file/96ESTALA#34YnLsY28ufOXa3TZDkscZ9z2aQxioABVMy4Wbobdt0
+goto Ubdate_Rest
+@REM --------------------> Download_in_CMD <--------------------
+:Download_in_CMD 
+curl -L --progress-bar --retry 5 --retry-delay 10 -C - -o %output% %url%
+if %errorlevel% neq 0 (
+    echo Download interrupted. Retrying...
+    timeout /t 10
+    goto download
+)
+echo Download Complete. Waiting To Opening The File...
+start "" %output%
+pause
 goto Ubdate_Rest
 @REM -------------------------> Backup <----------------------------- 
 :Backup 
@@ -101,13 +117,11 @@ if not defined TargetPath (
         )
     )
 )
-
 @REM -------------------------> Prompt for path if shortcut is not found
 if not defined TargetPath (
     echo Could not find a shortcut containing "%Shortcut_Part%" on any desktop.
     set /p TargetPath="Please enter the path of the Speedoo file: "
 )
-
 :found
 set "TargetDir=%TargetPath%\.."
 if not exist "%TargetDir%" (
@@ -115,7 +129,6 @@ if not exist "%TargetDir%" (
     pause
     exit /b
 )
-
 @REM -------------------------> Create backup directory and copy files
 set "MySettingName=MySettingRESTAURANT"
 mkdir "%Befor_Update_Path%\%MySettingName%"
@@ -146,7 +159,4 @@ goto Ubdate_Rest
 :Open_File
 start "" "C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.5.7 UPDATE.exe"
 goto Ubdate_Rest
-
 :END
-
-
