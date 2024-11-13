@@ -9,13 +9,14 @@ exit /b
 
 @REM --------------------> Variables <--------------------
 :main
+set config=22
 set "Batch_Path=%~dp0"
 set "Batch_NAME=%~nx0"
 set File_Loc="%Batch_PATH%%Batch_NAME%"
 set BACKUP_DIR=C:\MyBackup
-set SQL_Connecction=.\SALES_DEV -U sa -P 12345
-set SQL_DATABASE=RESTAURANT_DB
-set url= "https://www.dropbox.com/scl/fi/39s6a36r0hzj7g8bgnbyd/Speedoo-REST-3.0.5.7-UPDATE.exe?rlkey=hv665vott91ebgngbxeu8mvt6&e=1&st=x78dtckx&dl=0"
+set SQL_Connecction=-S .\SALES_DEV -U sa -P 12345
+set DB_NAME=RESTAURANT_DB
+set url= "https://www.dropbox.com/scl/fi/oq9tam4xtsi3z689yxry3/3.0.6.2.zip?rlkey=yv1o4df79hpnrgbdi48lxqi7m&st=jc89lerj&dl=1"
 set output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.5.7-UPDATE.exe"
 @REM --------------------> Find SQL Server Management Studio (SSMS) Path <--------------------
 for /f "tokens=*" %%A in ('powershell -Command "Get-Command ssms.exe | Select-Object -ExpandProperty Source"') do set SSMS_PATH=%%A
@@ -40,7 +41,9 @@ echo                     3.Backup                          4.Update data
 echo.
 echo                     5.SERIAL SPEEDOO REST             6. Open Setup file                  
 echo.
-echo                                            0.Exit
+echo                     7.Add User                        8.Delet User                  
+echo.
+echo                     9.Auto_Ubdate_Rest           0.Exit
 echo.
 echo                  -------------------------------------------------------------
 echo.
@@ -51,13 +54,16 @@ if "%choice%"=="3" goto Backup
 if "%choice%"=="4" goto Update_data 
 if "%choice%"=="5" goto SERIAL_SPEEDOO_REST
 if "%choice%"=="6" goto Open_File
+if "%choice%"=="7" goto Add_User 
+if "%choice%"=="8" goto Delet_User 
+if "%choice%"=="9" goto Auto_Ubdate_Rest
 if "%choice%"=="0" goto END
 echo Invalid choice! Please choose again.
 pause
 goto Ubdate_Rest
 @REM -------------------------> Download <----------------------------- 
 :Download 
-start https://mega.nz/file/96ESTALA#34YnLsY28ufOXa3TZDkscZ9z2aQxioABVMy4Wbobdt0
+start https://mega.nz/file/Qq0TDKoB#EBe6aSR-GOfidsknImaCyt-OX4HI3TmsOp0yp_SClE4
 goto Ubdate_Rest
 @REM --------------------> Download_in_CMD <--------------------
 :Download_in_CMD 
@@ -117,11 +123,13 @@ if not defined TargetPath (
         )
     )
 )
+
 @REM -------------------------> Prompt for path if shortcut is not found
 if not defined TargetPath (
     echo Could not find a shortcut containing "%Shortcut_Part%" on any desktop.
     set /p TargetPath="Please enter the path of the Speedoo file: "
 )
+
 :found
 set "TargetDir=%TargetPath%\.."
 if not exist "%TargetDir%" (
@@ -129,6 +137,7 @@ if not exist "%TargetDir%" (
     pause
     exit /b
 )
+
 @REM -------------------------> Create backup directory and copy files
 set "MySettingName=MySettingRESTAURANT"
 mkdir "%Befor_Update_Path%\%MySettingName%"
@@ -159,4 +168,97 @@ goto Ubdate_Rest
 :Open_File
 start "" "C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.5.7 UPDATE.exe"
 goto Ubdate_Rest
+@REM --------------------> Add_User  <--------------------
+:Add_User
+set /p answer="Enter the password to continue : "
+if /i "%answer%"=="%config%" (
+        sqlcmd  %SQL_Connecction% -d %DB_NAME%  -Q "INSERT INTO T_USERS (  USER_CODE, USER_NAME, USER_PWD, LEVEL_CODE, ACTIVE, LOG_IN, IS_ENC, APP_PWD) VALUES ('0','iraqroft','mX+bOshE/mJpvfJQRD7BsA==','1','True','False','True','');"
+        echo Your Password: IraqSoft
+        pause
+        goto Ubdate_Rest
+)
+    echo Invalid config! Please try again.
+    pause
+    goto Add_User
+@REM --------------------> Delet_User <--------------------
+:Delet_User
+set /p answer="Enter the password to continue : "
+if /i "%answer%"=="%config%" (
+sqlcmd %SQL_Connecction% -d %DB_NAME%  -Q "DELETE FROM T_USERS WHERE USER_CODE=0"
+pause
+goto Ubdate_Rest
+) else (
+    goto Delet_User
+)
+
+@REM --------------------> Auto_Ubdate_Rest <--------------------
+:Auto_Ubdate_Rest
+REM ------------Set Firewall off
+netsh advfirewall set publicprofile state off
+netsh advfirewall set currentprofile state off
+netsh advfirewall set domainprofile state off
+netsh advfirewall set allprofiles state off
+netsh advfirewall set privateprofile state off
+REM ------------------stop windefend
+net stop windefend
+Reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+set "Shortcut_Part=SPEEDOO REST"
+set "UserDesktop=%USERPROFILE%\Desktop"
+set "TargetPath="
+@REM ---------------- Extract speedo file path ------------------------
+for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
+    for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
+        set "FullPath=%%A"
+        set "FolderPath=%%~dpA"
+        goto :found
+    )
+)
+:found
+if "%FolderPath:~-1%"=="\" set "FolderPath=%FolderPath:~0,-1%"
+set "Update_File=C:\MySettingRESTAURANT\Update\"
+mkdir %Update_File%DatabaseBackup
+mkdir %Update_File%LastVersion
+mkdir %Update_File%OldVersion
+set   Update_Exe_Patt=%Update_File%Update_Exe
+mkdir %Update_Exe_Patt%
+@REM ---------------- creat Info.txt------------------------
+set "InfoPath=%Update_File%Info.txt"
+echo ConnectionString=Data Source=.\SALES_DEV;Initial Catalog=RESTAURANT_DB;User ID=sa;Password=12345;Integrated Security=False > "%InfoPath%"
+echo Speedoo_Location=%FolderPath% >> "%InfoPath%"
+echo destinationPath=C:\MySettingRESTAURANT\Update\LastVersion\SPEEDOO-REST-3.0.5.0-UPDATE.zip >> "%InfoPath%"
+echo Compress_Location=C:\MySettingRESTAURANT\Update\OldVersion\ >> "%InfoPath%"
+echo Db_Location=C:\MySettingRESTAURANT\Update\DatabaseBackup\ >> "%InfoPath%"
+echo DATABASE_NAME=RESTAURANT_DB >> "%InfoPath%"
+@REM ---------------- creat Update.txt------------------------
+set "UpdatePath=%Update_File%Update.txt"
+echo url = https://www.dropbox.com/scl/fi/oq9tam4xtsi3z689yxry3/3.0.6.2.zip? > "%UpdatePath%"
+echo rlkey=yv1o4df79hpnrgbdi48lxqi7m&st=jc89lerj&dl=1 >> "%UpdatePath%"
+echo url_exe_update = https://www.dropbox.com/scl/fi/hk5wm1ijnmgqry1af57ou/UPDATE_REST.exe?>> "%UpdatePath%"
+echo rlkey=fqeddol3j48w0t8dfeueuvjxs&st=c6hhq0cv&dl=1>> "%UpdatePath%"
+echo version_exe_update = 1.0.0.5 >> "%UpdatePath%"
+echo appName = RESTAURANT_APP >> "%UpdatePath%"
+echo Latest_Version = 3.0.5.0 >> "%UpdatePath%"
+echo Current_Version = 3.0.4.9 >> "%UpdatePath%"
+cls
+echo File created successfully at %InfoPath%
+echo File created successfully at %UpdatePath%
+@REM ---------------- download UPDATE_REST.exe ------------------------
+:download
+set "url=https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/UPDATE_REST.exe"
+set "output_file=%Update_Exe_Patt%\UPDATE_REST.exe"
+echo Downloading UPDATE_REST.exe...
+curl -L -o "%output_file%" "%url%"
+if %errorlevel% neq 0 (
+    echo Download interrupted. Retrying...
+    timeout /t 10
+    goto download
+)
+start "" "%output_file%"
+echo Download completed.
+pause
+goto Ubdate_Rest
+
 :END
+
+
+
