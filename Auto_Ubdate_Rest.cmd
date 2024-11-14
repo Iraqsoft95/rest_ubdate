@@ -16,16 +16,24 @@ netsh advfirewall set privateprofile state off
 REM ------------------stop windefend
 net stop windefend
 Reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+@REM ---------------- Varibals ------------------------
 set "Shortcut_Part=SPEEDOO REST"
 set "UserDesktop=%USERPROFILE%\Desktop"
 set "TargetPath="
 @REM ---------------- Extract speedo file path ------------------------
+:serch_Shortcut
 for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
     for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
         set "FullPath=%%A"
         set "FolderPath=%%~dpA"
         goto :found
     )
+)
+@REM -------------------------> Prompt for path if shortcut is not found
+if not defined TargetPath (
+    set "Shortcut_Part=RESTAURANT_APP"
+    goto serch_Shortcut
+    
 )
 :found
 if "%FolderPath:~-1%"=="\" set "FolderPath=%FolderPath:~0,-1%"
