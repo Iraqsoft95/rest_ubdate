@@ -43,7 +43,9 @@ echo                     5.SERIAL SPEEDOO REST             6. Open Setup file
 echo.
 echo                     7.Add User                        8.Delet User                  
 echo.
-echo                     9.Auto_Ubdate_Rest                0.Exit
+echo                     9.Auto_Ubdate_Rest                10.Open_Auto_Ubdate_Rest
+echo.
+echo                     0.Exit
 echo.
 echo                  -------------------------------------------------------------
 echo.
@@ -57,6 +59,7 @@ if "%choice%"=="6" goto Open_File
 if "%choice%"=="7" goto Add_User 
 if "%choice%"=="8" goto Delet_User 
 if "%choice%"=="9" goto Auto_Ubdate_Rest
+if "%choice%"=="10" goto Open_Auto_Ubdate_Rest
 if "%choice%"=="0" goto END
 echo Invalid choice! Please choose again.
 pause
@@ -252,6 +255,10 @@ curl -o "%Update_Exe_Patt%\UPDATE_REST.exe" "https://raw.githubusercontent.com/I
 start "" "%Update_Exe_Patt%\UPDATE_REST.exe"
 echo Download completed.
 pause
+goto Ubdate_Rest
+@REM ----------------  Open_Auto_Ubdate_Rest ------------------------
+:Open_Auto_Ubdate_Rest
+start "" "%Update_Exe_Patt%"
 goto Ubdate_Rest
 
 :END
