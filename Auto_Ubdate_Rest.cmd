@@ -58,7 +58,6 @@ mkdir %Update_Data_file_Path%
 curl -o "%Update_File%Update.txt" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/Update.txt"
 curl -o "%Update_Exe_Patt%\UPDATE_REST.exe" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/UPDATE_REST.exe"
 start "" "%Update_Exe_Patt%\UPDATE_REST.exe"
-start "" "%Update_Exe_Patt%"
 echo Download completed.
 pause
 goto Ubdate_Rest
