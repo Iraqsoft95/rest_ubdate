@@ -1,7 +1,5 @@
 USE [RESTAURANT_DB]
 GO
-
-/******REST VVV PPP 90 script.sql ******/
 IF  EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPaneCount' , N'SCHEMA',N'dbo', N'VIEW',N'V_SALES_ITEM_RECIPE_TEMP', NULL,NULL))
 EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPaneCount' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_SALES_ITEM_RECIPE_TEMP'
 
@@ -16,6 +14,14 @@ EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPaneCount' , @level0type=N'SC
 GO
 IF  EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPane1' , N'SCHEMA',N'dbo', N'VIEW',N'V_SALES_ITEM_RECIPE', NULL,NULL))
 EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPane1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_SALES_ITEM_RECIPE'
+
+GO
+IF  EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPaneCount' , N'SCHEMA',N'dbo', N'VIEW',N'V_ITEMS_ON_POS', NULL,NULL))
+EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPaneCount' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_ITEMS_ON_POS'
+
+GO
+IF  EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPane1' , N'SCHEMA',N'dbo', N'VIEW',N'V_ITEMS_ON_POS', NULL,NULL))
+EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPane1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_ITEMS_ON_POS'
 
 GO
 IF  EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPaneCount' , N'SCHEMA',N'dbo', N'VIEW',N'V_ITEM_RECIPE_STORE', NULL,NULL))
@@ -34,755 +40,843 @@ IF  EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPane1' , N'SCHEM
 EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPane1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_CATEGORY_ON'
 
 GO
-/****** Object:  View [dbo].[V_USERS_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_USERS_ON]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_USERS_ON]'))
 DROP VIEW [dbo].[V_USERS_ON]
 GO
-/****** Object:  View [dbo].[V_SIP_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SIP_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SIP_PHONE]'))
 DROP VIEW [dbo].[V_SIP_PHONE]
 GO
-/****** Object:  View [dbo].[V_SALES_USER_DATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_USER_DATE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_USER_DATE]'))
 DROP VIEW [dbo].[V_SALES_USER_DATE]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TATMA_CATEGORY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TATMA_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TATMA_CATEGORY]'))
 DROP VIEW [dbo].[V_SALES_TEMP_TATMA_CATEGORY]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PA]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PA]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PA]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PA]
 GO
-/****** Object:  View [dbo].[V_SALES_RETURN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_RETURN]'))
 DROP VIEW [dbo].[V_SALES_RETURN]
 GO
-/****** Object:  View [dbo].[V_SALES_ORDER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ORDER]'))
 DROP VIEW [dbo].[V_SALES_ORDER]
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE]'))
 DROP VIEW [dbo].[V_SALES_ITEM_RECIPE]
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_GEFT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_GEFT]'))
 DROP VIEW [dbo].[V_SALES_ITEM_GEFT]
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_DATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_DATE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_DATE]'))
 DROP VIEW [dbo].[V_SALES_ITEM_DATE]
 GO
-/****** Object:  View [dbo].[V_SALES_INVOICE_GEFT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_INVOICE_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_INVOICE_GEFT]'))
 DROP VIEW [dbo].[V_SALES_INVOICE_GEFT]
 GO
-/****** Object:  View [dbo].[V_SALES_INVOICE_DISCOUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_INVOICE_DISCOUNT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_INVOICE_DISCOUNT]'))
 DROP VIEW [dbo].[V_SALES_INVOICE_DISCOUNT]
 GO
-/****** Object:  View [dbo].[V_SALES_HISTORY_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_HISTORY_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_HISTORY_PHONE]'))
 DROP VIEW [dbo].[V_SALES_HISTORY_PHONE]
 GO
-/****** Object:  View [dbo].[V_SALES_HISTORY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_HISTORY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_HISTORY]'))
 DROP VIEW [dbo].[V_SALES_HISTORY]
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_TYPE_6]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_TYPE_6]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS_TYPE_6]'))
 DROP VIEW [dbo].[V_SALES_DETAILS_TYPE_6]
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_GEFT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS_GEFT]'))
 DROP VIEW [dbo].[V_SALES_DETAILS_GEFT]
 GO
-/****** Object:  View [dbo].[V_REGION_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_REGION_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_REGION_LIST]'))
 DROP VIEW [dbo].[V_REGION_LIST]
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON_POS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON_POS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON_POS]'))
 DROP VIEW [dbo].[V_ITEMS_ON_POS]
 GO
-/****** Object:  View [dbo].[V_ITEM_STORE_JOB_DATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_STORE_JOB_DATE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_STORE_JOB_DATE]'))
 DROP VIEW [dbo].[V_ITEM_STORE_JOB_DATE]
 GO
-/****** Object:  View [dbo].[V_ITEM_RECIPE_STORE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_RECIPE_STORE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_RECIPE_STORE]'))
 DROP VIEW [dbo].[V_ITEM_RECIPE_STORE]
 GO
-/****** Object:  View [dbo].[V_FREE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_FREE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_FREE]'))
 DROP VIEW [dbo].[V_FREE]
 GO
-/****** Object:  View [dbo].[V_EXPENSES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_EXPENSES]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_EXPENSES]'))
 DROP VIEW [dbo].[V_EXPENSES]
 GO
-/****** Object:  View [dbo].[V_ERADAT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ERADAT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ERADAT]'))
 DROP VIEW [dbo].[V_ERADAT]
 GO
-/****** Object:  View [dbo].[V_EMP_ENTRY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_EMP_ENTRY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_EMP_ENTRY]'))
 DROP VIEW [dbo].[V_EMP_ENTRY]
 GO
-/****** Object:  View [dbo].[V_CLIENT_NOTIFICATION]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_CLIENT_NOTIFICATION]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_NOTIFICATION]'))
 DROP VIEW [dbo].[V_CLIENT_NOTIFICATION]
 GO
-/****** Object:  View [dbo].[V_CATEGORY_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_CATEGORY_ON]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CATEGORY_ON]'))
 DROP VIEW [dbo].[V_CATEGORY_ON]
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]'))
+DROP VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]
+GO
+/****** Object:  View [dbo].[V_SALES_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_APP]'))
+DROP VIEW [dbo].[V_SALES_TEMP_APP]
+GO
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]'))
 DROP VIEW [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]
 GO
-/****** Object:  View [dbo].[V_ITEM_SCALE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_SCALE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_SCALE]'))
 DROP VIEW [dbo].[V_ITEM_SCALE]
 GO
-/****** Object:  View [dbo].[V_ITEM_BARCODE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_BARCODE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_BARCODE]'))
 DROP VIEW [dbo].[V_ITEM_BARCODE]
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON]'))
 DROP VIEW [dbo].[V_ITEMS_ON]
 GO
-/****** Object:  View [dbo].[V_SALES_DAY_NAME]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DAY_NAME]'))
 DROP VIEW [dbo].[V_SALES_DAY_NAME]
 GO
-/****** Object:  View [dbo].[V_CLIENT_DEBIT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_CLIENT_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_DEBIT]'))
 DROP VIEW [dbo].[V_CLIENT_DEBIT]
 GO
-/****** Object:  View [dbo].[V_CLIENT_INVOICE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_CLIENT_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_INVOICE]'))
 DROP VIEW [dbo].[V_CLIENT_INVOICE]
 GO
-/****** Object:  View [dbo].[V_CLIENT_CASH]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_CLIENT_CASH]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_CASH]'))
 DROP VIEW [dbo].[V_CLIENT_CASH]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_DELETE]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_DELETE]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE_DELETE]'))
 DROP VIEW [dbo].[V_SALES_TEMP_TABLE_DELETE]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE]'))
 DROP VIEW [dbo].[V_SALES_TEMP_TABLE]
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_LIST]'))
 DROP VIEW [dbo].[V_SALES_PHONE_LIST]
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT_ON]'))
 DROP VIEW [dbo].[V_DRIVER_DELEVERY_COUNT_ON]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TATMA]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TATMA]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TATMA]'))
 DROP VIEW [dbo].[V_SALES_TEMP_TATMA]
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_LIST_APPLICATION]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_LIST_APPLICATION]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_LIST_APPLICATION]'))
 DROP VIEW [dbo].[V_SALES_PHONE_LIST_APPLICATION]
 GO
-/****** Object:  View [dbo].[V_SALES_WAITING]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_WAITING]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_WAITING]'))
 DROP VIEW [dbo].[V_SALES_WAITING]
 GO
-/****** Object:  View [dbo].[V_SALES_ON_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ON_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ON_ITEMS]'))
 DROP VIEW [dbo].[V_SALES_ON_ITEMS]
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS]'))
 DROP VIEW [dbo].[V_SALES_DETAILS]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER]
 GO
-/****** Object:  View [dbo].[V_ITEM_STORE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_STORE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_STORE]'))
 DROP VIEW [dbo].[V_ITEM_STORE]
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON_JOB]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON_JOB]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON_JOB]'))
 DROP VIEW [dbo].[V_ITEMS_ON_JOB]
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_TABEE3]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_TABEE3]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY_TABEE3]'))
 DROP VIEW [dbo].[V_SALES_DELEVERY_TABEE3]
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT]'))
 DROP VIEW [dbo].[V_DRIVER_DELEVERY_COUNT]
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_HUB]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_HUB]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY_HUB]'))
 DROP VIEW [dbo].[V_SALES_DELEVERY_HUB]
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_BEST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_BEST]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_BEST]'))
 DROP VIEW [dbo].[V_SALES_PHONE_BEST]
 GO
-/****** Object:  View [dbo].[V_SALES_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ON]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ON]'))
 DROP VIEW [dbo].[V_SALES_ON]
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_RETURN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS_RETURN]'))
 DROP VIEW [dbo].[V_SALES_DETAILS_RETURN]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]'))
 DROP VIEW [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_REGION]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_REGION]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY_REGION]'))
 DROP VIEW [dbo].[V_SALES_DELEVERY_REGION]
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY]'))
 DROP VIEW [dbo].[V_SALES_DELEVERY]
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE_TEMP]'))
 DROP VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP]'))
 DROP VIEW [dbo].[V_SALES_TEMP]
 GO
-/****** Object:  View [dbo].[V_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES]'))
 DROP VIEW [dbo].[V_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_USER_DETAILS_DELETE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_USER_DETAILS_DELETE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_USER_DETAILS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_USER_DETAILS]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_USER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_USER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_USER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_USER]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_SERVICES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_SERVICES]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_SERVICES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_SERVICES]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_RECIPIENT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_RECIPIENT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_RECIPIENT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_RECIPIENT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_PRINTER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_PRINTER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_PRINTER]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NO_CLIENT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NO_CLIENT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_NO_CLIENT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_NO_CLIENT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NET_DATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NET_DATE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_NET_DATE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_NET_DATE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RETURN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_RETURN]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS_RETURN]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_RECIPIENT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_GEFT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_GEFT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS_GEFT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE_A4_TYPE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE_A4]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_INVOICE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL_USER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL_USER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_FINAL_USER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_FINAL_USER]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_FINAL]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_FINAL]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DRIVER_NAME_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DRIVER_NAME]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DRIVER_NAME]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DISCOUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DISCOUNT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DISCOUNT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DISCOUNT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DAY_NAME]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DAY_NAME]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DAY_NAME]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DATE_NET]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DATE_NET]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DATE_NET]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DATE_NET]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CATEGORY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_CATEGORY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_CATEGORY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CASH_DEBIT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CASH_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_CASH_DEBIT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_CASH_DEBIT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CAPTAIN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CAPTAIN]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_CAPTAIN]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_CAPTAIN]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_BILL]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_BILL]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_BILL]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_BILL]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH_FINAL]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH_FINAL]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ARBAH_FINAL]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ARBAH_FINAL]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ARBAH]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ARBAH]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_APPLICATION]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_APPLICATION]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_APPLICATION]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_APPLICATION]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_REGION_BEST_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_REGION_BEST_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_REGION_BEST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_REGION_BEST]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_PHONE_BEST_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_PHONE_BEST_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_PHONE_BEST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_PHONE_BEST]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EXPENSES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EXPENSES]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_EXPENSES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_EXPENSES]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_ERADAT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_ERADAT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_ERADAT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_ERADAT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE_ENTERY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE_ENTERY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_EMPLOYEE_ENTERY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_EMPLOYEE_ENTERY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_EMPLOYEE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_EMPLOYEE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_UPDATE_USER_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_UPDATE_USER_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_UPDATE_USER_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_UPDATE_USER_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_UPDATE_TABLE_INFO]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_UPDATE_TABLE_INFO]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_UPDATE_TABLE_INFO]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_UPDATE_TABLE_INFO]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_INSERT_TABLE_APP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_INSERT_TABLE_APP]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_INSERT_TABLE_APP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_INSERT_TABLE_APP]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE_ADD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE_ADD]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_USER_SALES_TABLE_ADD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_USER_SALES_TABLE_ADD]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_USER_SALES_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_USER_SALES_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_TABLE_BY_USER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_TABLE_BY_USER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_TABLE_BY_USER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_TABLE_BY_USER]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_BILL_BY_TABLE_CODE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_BILL_BY_TABLE_CODE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_SAFARY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_SAFARY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_BILL_BY_SAFARY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_BILL_BY_SAFARY]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_CHANGE_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_CHANGE_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_CHANGE_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_CHANGE_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_BILL_NEW_SALES_BY_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_BILL_NEW_SALES_BY_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_BILL_NEW_SALES_BY_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_BILL_NEW_SALES_BY_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_DETAILS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_DETAILS]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_SALES_INVOICE_LIST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_SALES_INVOICE_LIST]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_CALL_CENTER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_CALL_CENTER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_CALL_CENTER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_CALL_CENTER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES_PRINT]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_T_SALES_PRINT]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_UPDATE_T_SALES_PRINT]
+GO
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_T_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_T_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_PHONE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_PHONE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]
+GO
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ID_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ID_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ID_PHONE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ID_PHONE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_TRANSFARE_PHONE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_TRANSFARE_PHONE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_ITEM_STORE_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_TRANSFARE_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_TRANSFARE_ITEM_STORE_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_PRINTER_SELECT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_PRINTER_SELECT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_PRINTER_SELECT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_PRINTER_SELECT]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_PHONE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_PHONE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_ALL]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_ALL]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_SALES_NOT_USE_ALL]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE_ALL]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_SALES_NOT_USE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_DATA_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_DATA_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_BUT_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_BUT_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_DATA_BUT_ITEMS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_DATA_BUT_ITEMS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_DATA]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_DATA]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_NAME_SPACE_UPDATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_NAME_SPACE_UPDATE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_NAME_SPACE_UPDATE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_NAME_SPACE_UPDATE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_OLD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_final]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_final]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_final]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_final]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_INSERT_COLUMNS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_INSERT_COLUMNS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_INSERT_COLUMNS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_INSERT_COLUMNS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_EXIST_COLUMNS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_EXIST_COLUMNS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_EXIST_COLUMNS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_EXIST_COLUMNS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_YEAR]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TYPES]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_TYPES]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_UPDATE_TYPES]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_ORDERS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_UPDATE_ORDERS]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_INSERT_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_INSERT_ORDERS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_INSERT_ORDERS]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_TYPES]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_GET_TYPES]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_GET_TYPES]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_GET_ORDERS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_GET_ORDERS]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_DELETE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_DELETE_ORDERS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_DELETE_ORDERS]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_YEAR]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_YEAR]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_YEAR]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_WEEK]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_WEEK]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_WEEK]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_WEEK]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_USERS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_USERS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_USERS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_USERS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_MONTH]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_MONTH]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_MONTH]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_MONTH]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_ITEMS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_HOUR]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_HOUR]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_HOUR]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_HOUR]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_DAYLY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_ITEM]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_ITEM]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_ITEM]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_ITEM]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_DASHBORD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_DASHBORD]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_DASHBORD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_DASHBORD]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_USER_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_USER_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_UPDATE_USER_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_UPDATE_USER_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_TABLE_INFO]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_TABLE_INFO]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_UPDATE_TABLE_INFO]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_UPDATE_TABLE_INFO]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_SUBMIT_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_SUBMIT_ORDER]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_SUBMIT_ORDER]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_INSERT_TEMP_APP]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_INSERT_TEMP_APP]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_INSERT_APP_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_INSERT_APP_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_CODE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_TABLE_ALL]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_USER_TABLE_ALL]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_GET_USER_TABLE_ALL]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_SALES_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_USER_SALES_TABLE]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_GET_USER_SALES_TABLE]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_CODE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_USER_CODE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_USER_CODE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_BY_USER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_BY_USER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_TABLE_BY_USER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_TABLE_BY_USER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_QISM_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_QISM_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_QISM_LIST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_QISM_LIST]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_BY_NAME]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_GET_ITEM_BY_NAME]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_CATEGORE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_CATEGORE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_CATEGORE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_CATEGORE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_DELETE_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_DELETE_TEMP_APP]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_DELETE_TEMP_APP]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHANGE_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_CHANGE_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_AAA_COLOR_DEFOULT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_CAPTAIN]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHANGE_CAPTAIN]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_CHANGE_CAPTAIN]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_BOOK_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_BOOK_TABLE]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_BOOK_TABLE]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_DELETE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_DELETE_ORDERS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_DELETE_ORDERS]
+GO
+/****** Object:  StoredProcedure [dbo].[P_AAA_COLOR_DEFOULT]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_AAA_COLOR_DEFOULT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_AAA_COLOR_DEFOULT]
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_TATMA_ORDER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_TATMA_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_A_GET_TATMA_ORDER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_A_GET_TATMA_ORDER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_COUNT_TABOR]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_COUNT_TABOR]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_A_GET_COUNT_TABOR]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_A_GET_COUNT_TABOR]
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_BILL_ORDER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_BILL_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_A_GET_BILL_ORDER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_A_GET_BILL_ORDER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_BILL_ORDER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_BILL_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -828,8 +922,7 @@ Select @BILL_ORDER=ISNULL(P_VALUE,1) FROM T_PARAMETERS WHERE P_CODE=3
 UPDATE T_PARAMETERS SET P_VALUE=P_VALUE+1 WHERE P_CODE=3
 UPDATE T_SALES SET BILL_ORDER=@BILL_ORDER WHERE BILL_NUMBER=@BILL_NUMBER
 UPDATE T_SALES_TEMP SET BILL_ORDER=@BILL_ORDER WHERE BILL_NUMBER=@BILL_NUMBER
-
-
+UPDATE T_USER_DETAILS SET BILL_BRANCH=@BILL_ORDER WHERE BILL_NUMBER=@BILL_NUMBER
 
 END
 
@@ -866,7 +959,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_COUNT_TABOR]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_COUNT_TABOR]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -929,7 +1022,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_TATMA_ORDER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_TATMA_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1013,7 +1106,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_AAA_COLOR_DEFOULT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_AAA_COLOR_DEFOULT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1087,7 +1180,203 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_DELETE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_DELETE_ORDERS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_API_DELETE_ORDERS]
+    @ORDER_NO INT 
+AS
+BEGIN
+	DELETE T_ORDERS WHERE ORDER_NO = @ORDER_NO  
+	IF @@ROWCOUNT = 0
+	BEGIN
+		RAISERROR(''يرجى التأكد من رقم الفاتورة'', 16, 1);
+		RETURN;
+	END
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_BOOK_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_BOOK_TABLE]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_BOOK_TABLE]
+@BILL_NUMBER INT ,
+@TABLE_CODE INT ,
+@TABLE_NAME NVARCHAR(MAX),
+@NO_CLIENT INT,
+ @USER_CODE INT 
+
+AS
+ 
+BEGIN
+ 
+
+UPDATE   [dbo].[T_TABLE] SET TABLE_NAME =@TABLE_NAME,NO_CLIENT=@NO_CLIENT,IS_OPEN = 10 ,USER_CODE=@USER_CODE  WHERE  [TABLE_CODE] =  @TABLE_CODE  
+ 
+UPDATE [dbo].[T_SALES]
+   SET 
+
+      [CALL_NO] = @TABLE_CODE
+		,NO_CLIENT=@NO_CLIENT
+	    ,[BILL_TIME] = GETDATE()
+      ,[INVOICE_CODE] = 2
+      ,[CLIENT_NAME] = @TABLE_NAME
+      ,[CLIENT_REGION] =N''''
+      ,[CLIENT_PHONE] = N''''
+      ,[CLIENT_ADDRESS] =N''''
+      ,[WORK_CODE] = 55
+      ,[USER_CODE] = @USER_CODE
+      ,[TOT_QTY] = 0
+      ,[TOT_COST] = 0
+      ,[TOT_SELL] = 0
+      ,[DISCOUNT_SELL] = 0
+      ,[SERVICE_SELL] = 0
+      ,[NET_SALES] = 0
+      ,[APP_CODE] = 0
+      ,[APP_PERCENT] = 0
+      ,[NET_NET_SALES] = 0
+      ,[NET_ARBAH] = 0
+      ,[NOTE] = N''''
+	  ,[CLIENT_CODE] = 0
+      ,[IVC_CODE] =0
+      ,[IS_CASH] = 1
+ WHERE BILL_NUMBER=@BILL_NUMBER
+
+SELECT 1 AS ID,N''تم حجز الطاولة بنجاح'' AS RESPONSE
+
+  
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_CAPTAIN]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHANGE_CAPTAIN]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_CHANGE_CAPTAIN]
+
+@TABLE_CODE INT ,
+@USER_CODE INT 
+
+AS
+ 
+BEGIN
+ 
+ UPDATE   [dbo].[T_TABLE] SET USER_CODE=@USER_CODE    WHERE  [TABLE_CODE] =@TABLE_CODE 
+ 
+
+SELECT 1 AS ID,N''تم تغيير كابتن الطاولة بنجاح'' AS RESPONSE
+
+  
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1172,12 +1461,208 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]') AND type in (N'P', N'PC'))
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]
+@ITEM_CODE INT,
+@QTY_SELL FLOAT 
+
+
+AS
+BEGIN TRAN
+BEGIN
+
+    DECLARE
+	 
+		@DATE_JOB DATE,
+		@WARNNING INT  ,
+		@BALANCE FLOAT  ,
+		@MSG_RESPONSE NVARCHAR(250) , 
+        @CC_COUNT INT,
+        @TYPE_CODE INT,
+        @MAIN_ITEM_CODE INT,
+        @ITEM_CHILD_CODE INT,
+		@ITEM_CHILD_NAME NVARCHAR(MAX),
+        @OUT_QTY FLOAT,
+		@OUT_QTY_DETAILS	float,
+@OUT_QTY_TEMP	float,
+		 @BALANCE_CHECK FLOAT,
+		@QTY_RECIPE FLOAT,
+        @WARN_QTY FLOAT,
+        @IN_QTY FLOAT;
+
+    -- Initialize output variables
+    SET @WARNNING = 0;
+    SET @BALANCE = 0;
+	SET @OUT_QTY_DETAILS=0
+SET @OUT_QTY_TEMP=0
+    SET @OUT_QTY = 0;
+    SET @WARN_QTY = 0;
+    SET @IN_QTY = 0;
+	SELECT @DATE_JOB=convert(datetime,[D_DATE] , 111)  FROM T_WORK_JOB  WHERE T_ID=1
+    -- Get TYPE_CODE and MAIN_ITEM_CODE in a single query
+    SELECT @TYPE_CODE = TYPE_CODE, 
+           @MAIN_ITEM_CODE = MAIN_ITEM_CODE 
+    FROM T_ITEMS 
+    WHERE ITEM_CODE = @ITEM_CODE;
+
+    -- Call update procedure
+	EXEC (''[P_UPDATE_ITEM_STORE_QTY_ANOTHER]'');	
+   
+		SET @MSG_RESPONSE= N'''' 
+    -- If TYPE_CODE is 6, handle recipe items
+    IF @TYPE_CODE = 6 --وصفة
+    BEGIN
+        -- Use EXISTS to check for related items in V_ITEM_RECIPE_STORE
+        IF EXISTS (SELECT 1 FROM V_ITEM_RECIPE_STORE WHERE ITEM_CODE_MAIN = @ITEM_CODE)
+        BEGIN
+            DECLARE ITEM_CHILD_CURSOR CURSOR FOR 
+                SELECT ITEM_CODE 
+                FROM V_ITEM_RECIPE_STORE 
+                WHERE ITEM_CODE_MAIN = @ITEM_CODE ORDER BY DEVIDED_QTY ASC;
+
+            OPEN ITEM_CHILD_CURSOR;
+            FETCH NEXT FROM ITEM_CHILD_CURSOR INTO @ITEM_CHILD_CODE;
+
+            WHILE @@FETCH_STATUS = 0
+            BEGIN
+
+			SELECT @ITEM_CHILD_NAME=ITEM_NAME FROM T_ITEMS WHERE ITEM_CODE=@ITEM_CHILD_CODE
+			SELECT @QTY_RECIPE=QTY FROM T_ITEM_RECIPE WHERE ITEM_CODE=@ITEM_CHILD_CODE AND ITEM_CODE_MAIN=@ITEM_CODE
+                SET @WARNNING = 2;
+                -- Combine the retrieval of IN_QTY, WARN_QTY, and OUT_QTY into a single query
+                SELECT @IN_QTY = ISNULL(QTY_IN, 0), 
+                       @WARN_QTY = ISNULL(QTY_WER, 0), 
+                       @OUT_QTY = ISNULL(QTY_OUT, 0)
+                FROM T_ITEM_STORE  
+                WHERE ITEM_CODE = @ITEM_CHILD_CODE 
+                  AND DATE_JOB = @DATE_JOB ;
+
+                -- Calculate balance
+                SET @BALANCE =FLOOR( ((@IN_QTY - @OUT_QTY)/@QTY_RECIPE)-@QTY_SELL);
+
+                -- If balance is below warning quantity, set warning flag
+                IF @BALANCE+1 <= @WARN_QTY
+                BEGIN
+                    SET @WARNNING = 1;
+   -- PRINT @ITEM_CHILD_NAME+N'':'' +CAST(@BALANCE AS NVARCHAR(MAX))
+					--SET @BALANCE_CHECK=(@IN_QTY - @OUT_QTY)
+					SET @BALANCE_CHECK=FLOOR(@BALANCE+@QTY_SELL) 
+	--PRINT @ITEM_CHILD_NAME+N'':BALANCE_CHECK :'' +CAST(@BALANCE_CHECK AS NVARCHAR(MAX))
+                    SET @MSG_RESPONSE= N''الــــرصيد المتبقي للمادة : '' +@ITEM_CHILD_NAME + N''  :'' + CAST(@BALANCE_CHECK AS NVARCHAR(MAX));
+                   
+				    GOTO JUMP_CURSOR;
+                END;
+
+
+                FETCH NEXT FROM ITEM_CHILD_CURSOR INTO @ITEM_CHILD_CODE;
+            END;
+
+            JUMP_CURSOR:
+            CLOSE ITEM_CHILD_CURSOR;
+            DEALLOCATE ITEM_CHILD_CURSOR;
+
+
+        END;
+		ELSE
+        BEGIN
+			SELECT @ITEM_CHILD_NAME=ITEM_NAME FROM T_ITEMS WHERE ITEM_CODE=@ITEM_CODE
+			SET @MSG_RESPONSE= N''المادة : '' +@ITEM_CHILD_NAME + N''  غير مخزنية'' ;
+            SET @WARNNING = 0;
+            SET @BALANCE = CASE WHEN @TYPE_CODE = 10 THEN 77777777 ELSE 88888888 END;
+        END;
+    END
+    -- Handle non-recipe items (TYPE_CODE = 10 or other)
+	 ELSE IF @TYPE_CODE=10 -- مادة فرعية
+    BEGIN
+        -- Check if the item exists in the store and handle accordingly
+        IF EXISTS (SELECT 1 FROM T_ITEM_STORE WHERE ITEM_CODE = @MAIN_ITEM_CODE AND DATE_JOB = @DATE_JOB)
+        BEGIN
+            SET @WARNNING = 2;
+
+			SELECT @ITEM_CHILD_NAME=ITEM_NAME FROM T_ITEMS WHERE ITEM_CODE=@ITEM_CODE
+			SELECT @QTY_RECIPE=QTY_PARENT FROM T_ITEMS WHERE  ITEM_CODE=@ITEM_CODE
+            -- Retrieve IN_QTY, WARN_QTY, and OUT_QTY in a single query
+          
+		   SELECT @IN_QTY=ISNULL(QTY_IN,0), @WARN_QTY=ISNULL(QTY_WER,0) FROM T_ITEM_STORE  WHERE ITEM_CODE=@MAIN_ITEM_CODE AND DATE_JOB BETWEEN @DATE_JOB AND @DATE_JOB
+SELECT @OUT_QTY_DETAILS=ISNULL(SUM(QTY*QTY_PARENT),0) FROM V_SALES_DETAILS WHERE MAIN_ITEM_CODE=@MAIN_ITEM_CODE AND BILL_DATE BETWEEN @DATE_JOB AND @DATE_JOB
+SELECT @OUT_QTY_TEMP=ISNULL(SUM(QTY*QTY_PARENT),0) FROM V_SALES_TEMP WHERE MAIN_ITEM_CODE=@MAIN_ITEM_CODE AND BILL_DATE BETWEEN @DATE_JOB AND @DATE_JOB
+SET @OUT_QTY=@OUT_QTY_DETAILS+@OUT_QTY_TEMP
+            -- Calculate balance
+            SET @BALANCE =FLOOR( ((@IN_QTY - @OUT_QTY)/@QTY_RECIPE)-@QTY_SELL);
+
+            -- If balance is below warning quantity, set warning flag
+            IF @BALANCE+1 <= @WARN_QTY 
+                SET @WARNNING = 1;
+				SET @BALANCE_CHECK=FLOOR(@BALANCE+@QTY_SELL)
+                    SET @MSG_RESPONSE= N''الرصيد المتبقي للمادة : '' +@ITEM_CHILD_NAME + N''  :'' + CAST(@BALANCE_CHECK AS NVARCHAR(MAX));
+                   
+   
+        END
+        ELSE
+        BEGIN
+			SELECT @ITEM_CHILD_NAME=ITEM_NAME FROM T_ITEMS WHERE ITEM_CODE=@ITEM_CODE
+			SET @MSG_RESPONSE= N''المادة : '' +@ITEM_CHILD_NAME + N''  غير مخزنية'' ;
+            SET @WARNNING = 0;
+            SET @BALANCE = CASE WHEN @TYPE_CODE = 10 THEN 77777777 ELSE 88888888 END;
+        END;
+    END;
+    ELSE  -- مادة اخرى
+    BEGIN
+        -- Check if the item exists in the store and handle accordingly
+        IF EXISTS (SELECT 1 FROM T_ITEM_STORE WHERE ITEM_CODE = @ITEM_CODE AND DATE_JOB = @DATE_JOB)
+        BEGIN
+            SET @WARNNING = 2;
+			SELECT @ITEM_CHILD_NAME=ITEM_NAME FROM T_ITEMS WHERE ITEM_CODE=@ITEM_CODE
+			SELECT @QTY_RECIPE=QTY_PARENT FROM T_ITEMS WHERE ITEM_CODE=@ITEM_CODE
+            -- Retrieve IN_QTY, WARN_QTY, and OUT_QTY in a single query
+            SELECT @IN_QTY = ISNULL(QTY_IN, 0), 
+                   @WARN_QTY = ISNULL(QTY_WER, 0), 
+                   @OUT_QTY = ISNULL(QTY_OUT, 0)
+            FROM T_ITEM_STORE  
+            WHERE ITEM_CODE = @ITEM_CODE 
+              AND DATE_JOB = @DATE_JOB;
+
+            -- Calculate balance
+            SET @BALANCE = (@IN_QTY - @OUT_QTY)-@QTY_SELL;
+
+            -- If balance is below warning quantity, set warning flag
+            IF @BALANCE+1 <= @WARN_QTY 
+                SET @WARNNING = 1;
+				--SET @BALANCE_CHECK=(@IN_QTY - @OUT_QTY)
+				SET @BALANCE_CHECK=@BALANCE+@QTY_SELL
+                    SET @MSG_RESPONSE= N''الرصيد المتبقي للمادة : '' +@ITEM_CHILD_NAME + N''  :'' + CAST(@BALANCE_CHECK AS NVARCHAR(MAX));
+                   
+   
+        END
+        ELSE
+        BEGIN
+			SELECT @ITEM_CHILD_NAME=ITEM_NAME FROM T_ITEMS WHERE ITEM_CODE=@ITEM_CODE
+			SET @MSG_RESPONSE= N''المادة : '' +@ITEM_CHILD_NAME + N''  غير مخزنية'' ;
+            SET @WARNNING = 0;
+            SET @BALANCE = CASE WHEN @TYPE_CODE = 10 THEN 77777777 ELSE 88888888 END;
+        END;
+    END;
+
+	SELECT @BALANCE AS BALANCE ,@WARNNING AS WARNNING ,@MSG_RESPONSE AS MSG_RESPONSE
+    COMMIT;
+END;
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_DELETE_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_DELETE_TEMP_APP]') AND type in (N'P', N'PC'))
 BEGIN
 EXEC dbo.sp_executesql @statement = N'
 
@@ -1191,6 +1676,70 @@ EXEC dbo.sp_executesql @statement = N'
 
 
 
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_DELETE_TEMP_APP]
+@BILL_NUMBER  int
+AS
+ 
+BEGIN
+ 
+DELETE FROM  T_SALES_TEMP_APP_QTY WHERE BILL_NUMBER=@BILL_NUMBER
+            
+SELECT 1 AS ID,N''تمت الحذف بنجاح بنجاح'' AS RESPONSE
+ 
+
+
+
+
+ 
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
 CREATE PROCEDURE [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]
 @TABLE_CODE INT,
 @USER_CODE INT 	
@@ -1201,47 +1750,32 @@ DECLARE
 @BILL_ORDER INT , 
 @IS_ON_OFF INT,
 @DATE_JOB DATE,
-@CC_COUNT INT
+@CC_COUNT INT, 
+@CAPTAIN_NAME NVARCHAR(MAX)
 BEGIN TRAN
 BEGIN
 SET @BILL_NUMBER=0
 SET @BILL_ORDER=0
 
 SELECT  @IS_ON_OFF=IS_ON_OFF,@DATE_JOB=D_DATE FROM T_WORK_JOB WHERE T_ID=1
+
 PRINT @IS_ON_OFF
 IF @IS_ON_OFF=0 GOTO ASASAS
 
 SELECT @CC_COUNT=COUNT(BILL_NUMBER) FROM T_SALES WHERE TABLE_CODE=@TABLE_CODE AND WORK_CODE<>1 AND BILL_DATE=@DATE_JOB
 IF @CC_COUNT=0
 BEGIN
-
---DECLARE BOX_CURSOR CURSOR FOR SELECT  BILL_NUMBER FROM T_SALES WHERE  USER_CODE=@USER_CODE AND WORK_CODE=0 ;
+SELECT TOP(1) @CAPTAIN_NAME=USER_NAME FROM T_USERS WHERE USER_CODE=@USER_CODE
 
 DECLARE
---@BILL_LOOP INT,
+
 
 
 @COMPANY_TITAL nvarchar(max)
 
 
 
---OPEN BOX_CURSOR
 
---FETCH NEXT FROM BOX_CURSOR INTO @BILL_LOOP
---WHILE @@FETCH_STATUS = 0
---BEGIN
-
---delete FROM T_SALES WHERE BILL_NUMBER=@BILL_LOOP
-
---DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_LOOP
-
-
---FETCH NEXT FROM BOX_CURSOR INTO @BILL_LOOP
-
---END
-
---CLOSE BOX_CURSOR
---DEALLOCATE BOX_CURSOR
 
 
 SELECT TOP(1) @DATE_JOB=D_DATE FROM T_WORK_JOB WHERE T_ID=1
@@ -1279,7 +1813,8 @@ INSERT INTO [dbo].[T_SALES]
            ,[NET_NET_SALES]
            ,[NET_ARBAH]
            ,[NOTE]
-           ,[KITCHEN_NOTE])
+           ,[KITCHEN_NOTE]
+		   ,[CAPTAIN_NAME])
      VALUES
            (@COMPANY_TITAL + CAST(@BILL_NUMBER AS varchar)
            ,@BILL_NUMBER
@@ -1307,7 +1842,8 @@ INSERT INTO [dbo].[T_SALES]
            ,0
            ,0
            ,N''''
-           ,N'''')
+           ,N''''
+		   ,@CAPTAIN_NAME)
 
 SELECT   @BILL_NUMBER AS BILL_NUMBER ,@BILL_ORDER AS BILL_ORDER
 GOTO ASASAS
@@ -1351,7 +1887,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_CATEGORE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_CATEGORE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1414,7 +1950,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1488,7 +2024,225 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_BY_NAME]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_GET_ITEM_BY_NAME]
+@ITEM_NAME NVARCHAR(MAX) 
+
+AS
+
+
+BEGIN
+ 
+
+ 
+SELECT ITEM_CODE, ITEM_NAME, CATEGORY_CODE, CATEGORY_NAME, TYPE_CODE, TYPE_NAME, COST,SELL_SALA AS  SELL, ACTIVE, SORT, PRINTER_ID, ITEM_BARCODE, SHOW_MENU, ITEM_NOTE, IMG_URL, IMAGE, ITEM_NAME_EN, ITEM_NOTE_EN, TIME_USE, IS_STORE, MAIN_ITEM_CODE, QTY_PARENT, BACK_COLOR, FONT_COLOR, SELL AS SELL_SAFARAY ,SELL_SALA, SELL_DELEVERY, SELL_APP  FROM   V_ITEMS_ON_POS WHERE ITEM_NAME LIKE +''%''+ @ITEM_NAME+ ''%'' AND TYPE_CODE NOT IN (10,7) ORDER BY SORT,ITEM_CODE  
+ 
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]
+AS
+
+
+BEGIN
+ 
+
+ 
+SELECT * FROM T_ITEM_SALES_NOTE ORDER BY T_ID
+ 
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]
+AS
+
+
+BEGIN
+
+DECLARE
+    @DATE_JOBSS DATE,
+    @sql NVARCHAR(200)
+
+-- Fetch the date
+SELECT @DATE_JOBSS = CONVERT(DATE, [D_DATE], 111) FROM T_WORK_JOB WHERE T_ID = 1
+
+-- Build the dynamic SQL query with date converted to a string
+SET @sql = N''EXEC [P_UPDATE_ITEM_STORE_QTY] @DATE_JOB = '''''' + CONVERT(NVARCHAR(10), @DATE_JOBSS, 111) + ''''''''
+
+-- Execute the dynamic SQL
+EXEC sp_executesql @sql
+
+
+
+ 
+SELECT T_ID AS S_CODE,ITEM_NAME+'' ( ''+ CAST(QTY_REMAIN AS nvarchar(5))+'' )'' AS S_NAME  FROM  V_ITEM_STORE WHERE DATE_JOB = convert(datetime,@DATE_JOBSS , 111)   
+ 
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1567,7 +2321,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_QISM_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_QISM_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1579,17 +2333,43 @@ EXEC dbo.sp_executesql @statement = N'
 
 
 CREATE proc [dbo].[P_API_REST_GET_QISM_LIST]  
+
+
+	@USER_CODE INT
 	as
 
 	set nocount on
 	 
 	begin 
-	 
-	  
- 
-SELECT * FROM  T_QISM WHERE ACTIVE=1 OR QISM_CODE=0
+	DECLARE 
+	@LEVEL_CODE INT
+	SELECT  @LEVEL_CODE=LEVEL_CODE FROM T_USERS WHERE USER_CODE=@USER_CODE
+DECLARE @json NVARCHAR(MAX) =(select LEVEL_ADD from T_LEVEL WHERE LEVEL_CODE=@LEVEL_CODE )
+-- Extract the value of LV_QISM_DEFOULT
+DECLARE @start INT = CHARINDEX(''"LV_QISM_DEFOULT":'', @json)
+DECLARE @valueStart INT = CHARINDEX('':'', @json, @start) + 1
+DECLARE @valueEnd INT = CHARINDEX('','', @json, @valueStart)
+
+-- Extracting the value between the quotes and trimming extra spaces or quotes
+DECLARE @LV_QISM_DEFOULT NVARCHAR(MAX)
+SET @LV_QISM_DEFOULT = LTRIM(RTRIM(REPLACE(
+    SUBSTRING(@json, @valueStart, @valueEnd - @valueStart), 
+    ''"'', ''''
+)))
+
+--SELECT @LV_QISM_DEFOULT AS LV_QISM_DEFOULT
+	IF @LV_QISM_DEFOULT=0
+	BEGIN
+	SELECT * FROM  T_QISM WHERE ACTIVE=1 OR QISM_CODE=0
 		
-    
+  
+	END
+	ELSE
+	BEGIN
+	SELECT * FROM  T_QISM WHERE ACTIVE=1 AND QISM_CODE=@LV_QISM_DEFOULT
+	END	  
+ 
+  
 	 
 	 
 	end 
@@ -1603,7 +2383,7 @@ SELECT * FROM  T_QISM WHERE ACTIVE=1 OR QISM_CODE=0
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_BY_USER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_BY_USER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1621,32 +2401,37 @@ AS
 
 BEGIN
 IF @QISM_CODE=0
-BEGIN
-IF @IS_OPEN=100
-BEGIN
-SELECT *  FROM T_TABLE WHERE (  USER_CODE=@USER_CODE)
-END
-ELSE
-BEGIN
-SELECT *  FROM T_TABLE WHERE ( IS_OPEN=@IS_OPEN AND USER_CODE=@USER_CODE)
-END
+			BEGIN
+			IF @IS_OPEN=100
+					BEGIN
+					SELECT *  FROM T_TABLE WHERE  ( IS_OPEN=0 OR USER_CODE=@USER_CODE or   USER_CODE is NULL or USER_CODE=0)
+					END
+			ELSE
+					BEGIN
+					IF @IS_OPEN=0	SELECT *  FROM T_TABLE WHERE ( IS_OPEN=@IS_OPEN )
+					ELSE
+					SELECT *  FROM T_TABLE WHERE ( IS_OPEN=@IS_OPEN AND (USER_CODE=@USER_CODE or   USER_CODE is NULL or USER_CODE=0))
+				
+					END
 
  
-END
+			END
 
 ELSE
-BEGIN
+			BEGIN
 
 
- IF @IS_OPEN=100
-BEGIN
-SELECT *  FROM T_TABLE WHERE QISM_CODE=@QISM_CODE AND(   USER_CODE=@USER_CODE)
-END
-ELSE
-BEGIN
-SELECT *  FROM T_TABLE WHERE QISM_CODE=@QISM_CODE AND( IS_OPEN=@IS_OPEN AND USER_CODE=@USER_CODE)
-END
-END
+			 IF @IS_OPEN=100
+					BEGIN
+					SELECT *  FROM T_TABLE WHERE QISM_CODE=@QISM_CODE AND (IS_OPEN=0 OR USER_CODE=@USER_CODE or   USER_CODE is NULL or USER_CODE=0)
+					END
+			ELSE
+					BEGIN
+					IF @IS_OPEN=0 SELECT *  FROM T_TABLE WHERE QISM_CODE=@QISM_CODE AND IS_OPEN=@IS_OPEN
+					ELSE
+					SELECT *  FROM T_TABLE WHERE QISM_CODE=@QISM_CODE AND( IS_OPEN=@IS_OPEN AND  (USER_CODE=@USER_CODE or   USER_CODE is NULL or USER_CODE=0))
+					END
+			END
 
 END	
 --OPTIMIZE THIS QUERY
@@ -1682,7 +2467,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1694,7 +2479,8 @@ EXEC dbo.sp_executesql @statement = N'
 
 
 CREATE proc [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]  
-@QISM_CODE INT
+@QISM_CODE INT,
+@USER_CODE INT
 	as
 
 	set nocount on
@@ -1702,15 +2488,15 @@ CREATE proc [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]
 	begin 
 IF @QISM_CODE=0
 BEGIN
-SELECT 100  AS IS_OPEN  ,N''الكل''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 100  AS IS_OPEN  ,N''الكل''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE where USER_CODE=@USER_CODE or IS_OPEN=0 ) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
-SELECT 1  AS IS_OPEN  ,N''الانتظار''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=1) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 1  AS IS_OPEN  ,N''الانتظار''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=1 AND USER_CODE=@USER_CODE ) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
-SELECT 2  AS IS_OPEN  ,N''مشغولة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=2) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 2  AS IS_OPEN  ,N''مشغولة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=2 AND USER_CODE=@USER_CODE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
-SELECT 3  AS IS_OPEN  ,N''ستفرغ قريباً''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=3) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 3  AS IS_OPEN  ,N''ستفرغ قريباً''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=3 AND USER_CODE=@USER_CODE ) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
-SELECT 10  AS IS_OPEN  ,N''المحجوزة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=10) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 10  AS IS_OPEN  ,N''المحجوزة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=10 AND USER_CODE=@USER_CODE ) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
 SELECT 0  AS IS_OPEN  ,N''الفارغة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=0) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 
@@ -1718,15 +2504,15 @@ SELECT 0  AS IS_OPEN  ,N''الفارغة''+N'' ''+ N''(''+CAST((SELECT COUNT(TAB
 END
 ELSE
 BEGIN
-SELECT 100  AS IS_OPEN  ,N''الكل''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE QISM_CODE=@QISM_CODE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 100  AS IS_OPEN  ,N''الكل''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE QISM_CODE=@QISM_CODE AND( USER_CODE=@USER_CODE or   USER_CODE is NULL or USER_CODE=0 OR IS_OPEN=0 )) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
-SELECT 1  AS IS_OPEN  ,N''الانتظار''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=1 AND QISM_CODE=@QISM_CODE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 1  AS IS_OPEN  ,N''الانتظار''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=1 AND QISM_CODE=@QISM_CODE AND USER_CODE=@USER_CODE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
-SELECT 2  AS IS_OPEN  ,N''مشغولة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=2 AND QISM_CODE=@QISM_CODE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 2  AS IS_OPEN  ,N''مشغولة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=2 AND QISM_CODE=@QISM_CODE AND USER_CODE=@USER_CODE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
-SELECT 3  AS IS_OPEN  ,N''ستفرغ قريباً''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=3 AND QISM_CODE=@QISM_CODE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 3  AS IS_OPEN  ,N''ستفرغ قريباً''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=3 AND QISM_CODE=@QISM_CODE AND USER_CODE=@USER_CODE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
-SELECT 10  AS IS_OPEN  ,N''المحجوزة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=10 AND QISM_CODE=@QISM_CODE) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
+SELECT 10  AS IS_OPEN  ,N''المحجوزة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=10 AND QISM_CODE=@QISM_CODE AND USER_CODE=@USER_CODE ) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 UNION
 SELECT 0  AS IS_OPEN  ,N''الفارغة''+N'' ''+ N''(''+CAST((SELECT COUNT(TABLE_CODE) FROM T_TABLE WHERE IS_OPEN=0 AND QISM_CODE=@QISM_CODE ) AS NVARCHAR(5))+N'')'' AS NAME_OPEN 
 
@@ -1747,7 +2533,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_CODE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_CODE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1768,7 +2554,7 @@ CREATE proc [dbo].[P_API_REST_GET_USER_CODE]
 	begin 
 	 
 	  
-SELECT    *  FROM   T_USERS WHERE  USER_NAME=@USER_NAME AND USER_PWD=@USER_PWD
+SELECT    *  FROM   T_USERS WHERE  USER_NAME=@USER_NAME AND APP_PWD=@USER_PWD
 
 		
     
@@ -1785,7 +2571,343 @@ SELECT    *  FROM   T_USERS WHERE  USER_NAME=@USER_NAME AND USER_PWD=@USER_PWD
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_SALES_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_USER_SALES_TABLE]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_GET_USER_SALES_TABLE]
+@APP_PWD	nvarchar(MAX)	,
+@BILL_ID	nvarchar(MAX)	,
+@BILL_TA	nvarchar(MAX)	 
+
+AS
+DECLARE
+@CC_COUNT INT,
+@CC_COUNT_ID INT,
+@CC_COUNT_USER INT,
+@BILL_SEC INT,
+@BILL_CHECK INT,
+@IS_STORE_APP INT,
+@T_ID INT
+BEGIN
+TO_FIRST:
+SET @BILL_SEC=0
+SELECT @BILL_CHECK=COUNT(T_ID) FROM T_SALES_TABLE WHERE T_ID=0
+SELECT @IS_STORE_APP=ISNULL(P_VALUE,0) FROM T_PARAMETERS WHERE P_CODE=8
+IF @BILL_CHECK=0
+BEGIN
+SET	@BILL_SEC=33
+			SELECT @BILL_SEC AS SEC_RESPONSE
+				RETURN
+END
+SELECT @CC_COUNT=count(T_ID)  FROM T_WORK_JOB WHERE IS_ON_OFF=1
+IF @CC_COUNT=0
+BEGIN
+SET	@BILL_SEC=22
+			SELECT @BILL_SEC AS SEC_RESPONSE
+				RETURN
+END
+SELECT @CC_COUNT=ISNULL(DESCRIPTION,0)-6565286 FROM T_SALES_TABLE WHERE T_ID=0
+IF @BILL_ID <> N''0'' AND @BILL_TA <> N''0''
+BEGIN
+SELECT  @CC_COUNT_ID=COUNT(T_ID) FROM T_SALES_TABLE WHERE BILL_ID LIKE @BILL_ID AND BILL_TA LIKE @BILL_TA
+	IF @CC_COUNT_ID=0
+		BEGIN
+SELECT @CC_COUNT=ISNULL(DESCRIPTION,0) FROM T_SALES_TABLE WHERE T_ID=0
+SELECT @T_ID=ISNULL(MAX(T_ID),0)+1 FROM T_SALES_TABLE  
+
+INSERT INTO [dbo].[T_SALES_TABLE]
+           ([T_ID]
+           ,[BILL_ID]
+           ,[BILL_TA]
+           ,[DESCRIPTION]
+           ,[ACTIVE])
+     VALUES
+           (@T_ID
+           ,@BILL_ID
+           ,@BILL_TA
+           ,@CC_COUNT
+           ,1)
+		   GOTO TO_FIRST
+		END
+		ELSE
+		BEGIN
+
+
+		SELECT TOP (1) @T_ID=ISNULL(T_ID,0) FROM T_SALES_TABLE WHERE BILL_ID LIKE @BILL_ID AND BILL_TA LIKE @BILL_TA
+
+	END
+
+		PRINT @T_ID
+		IF @T_ID=0
+				BEGIN
+				SET	@BILL_SEC=66
+				RETURN
+				END
+		ELSE
+				BEGIN
+					IF @T_ID>@CC_COUNT 
+						BEGIN
+						SET	@BILL_SEC=77
+							SELECT @BILL_SEC AS SEC_RESPONSE
+						RETURN
+						END
+					ELSE
+						BEGIN
+						SELECT @CC_COUNT_USER=COUNT(USER_CODE) FROM T_USERS WHERE APP_PWD LIKE @APP_PWD AND ACTIVE=1
+						IF @CC_COUNT_USER=0
+						BEGIN
+						SET	@BILL_SEC=99
+							SELECT @BILL_SEC AS SEC_RESPONSE
+						RETURN
+						END
+						 
+							SELECT top(1) *,@IS_STORE_APP AS IS_STORE_APP FROM T_USERS WHERE APP_PWD LIKE @APP_PWD AND ACTIVE=1
+						SET	@BILL_SEC=1
+							SELECT @BILL_SEC AS SEC_RESPONSE
+						RETURN
+						END
+
+					END
+
+
+		END
+ ELSE IF @BILL_ID <> N''0'' AND @BILL_TA = N''0''
+ BEGIN
+ SELECT  @CC_COUNT_ID=COUNT(T_ID) FROM T_SALES_TABLE WHERE BILL_ID LIKE @BILL_ID AND BILL_TA LIKE @BILL_TA
+	IF @CC_COUNT_ID=0
+		BEGIN
+ SELECT @CC_COUNT=ISNULL(DESCRIPTION,0) FROM T_SALES_TABLE WHERE T_ID=0
+SELECT @T_ID=ISNULL(MAX(T_ID),0)+1 FROM T_SALES_TABLE  
+
+INSERT INTO [dbo].[T_SALES_TABLE]
+           ([T_ID]
+           ,[BILL_ID]
+           ,[BILL_TA]
+           ,[DESCRIPTION]
+           ,[ACTIVE])
+     VALUES
+           (@T_ID
+           ,@BILL_ID
+           ,@BILL_TA
+           ,@CC_COUNT
+           ,1)
+		   GOTO TO_FIRST
+END
+SELECT  @CC_COUNT_ID=COUNT(T_ID) FROM T_SALES_TABLE WHERE BILL_ID LIKE @BILL_ID 
+	IF @CC_COUNT_ID=0
+		BEGIN
+		SET	@BILL_SEC=66
+			SELECT @BILL_SEC AS SEC_RESPONSE
+				RETURN
+		END
+		ELSE
+		BEGIN
+		SELECT TOP (1) @T_ID=ISNULL(T_ID,0) FROM T_SALES_TABLE WHERE BILL_ID LIKE @BILL_ID
+
+	END
+
+		PRINT @T_ID
+		IF @T_ID=0
+				BEGIN
+				SET	@BILL_SEC=66
+					SELECT @BILL_SEC AS SEC_RESPONSE
+				RETURN
+				END
+		ELSE
+				BEGIN
+					IF @T_ID>@CC_COUNT 
+						BEGIN
+						SET	@BILL_SEC=77
+							SELECT @BILL_SEC AS SEC_RESPONSE
+						RETURN
+						END
+					ELSE
+						BEGIN
+
+					SELECT @CC_COUNT_USER=COUNT(USER_CODE) FROM T_USERS WHERE APP_PWD LIKE @APP_PWD AND ACTIVE=1
+						IF @CC_COUNT_USER=0
+						BEGIN
+						SET	@BILL_SEC=99
+							SELECT @BILL_SEC AS SEC_RESPONSE
+						RETURN
+						END
+					 
+							SELECT top(1) *,@IS_STORE_APP AS IS_STORE_APP FROM T_USERS WHERE APP_PWD LIKE @APP_PWD AND ACTIVE=1
+						SET	@BILL_SEC=1
+							SELECT @BILL_SEC AS SEC_RESPONSE
+						RETURN
+						END
+
+					END
+
+
+		END
+ 		ELSE IF @BILL_ID = N''0'' AND @BILL_TA <> N''0''
+ BEGIN
+SELECT  @CC_COUNT_ID=COUNT(T_ID) FROM T_SALES_TABLE WHERE BILL_TA LIKE @BILL_TA 
+	IF @CC_COUNT_ID=0
+		BEGIN
+		SET	@BILL_SEC=66
+			SELECT @BILL_SEC AS SEC_RESPONSE
+				RETURN
+		END
+		ELSE
+		BEGIN
+		SELECT TOP (1) @T_ID=ISNULL(T_ID,0) FROM T_SALES_TABLE WHERE BILL_TA LIKE @BILL_TA
+
+	END
+
+		PRINT @T_ID
+		IF @T_ID=0
+				BEGIN
+				SET	@BILL_SEC=66
+					SELECT @BILL_SEC AS SEC_RESPONSE
+				RETURN
+				END
+		ELSE
+				BEGIN
+					IF @T_ID>@CC_COUNT 
+						BEGIN
+						SET	@BILL_SEC=77
+							SELECT @BILL_SEC AS SEC_RESPONSE
+						RETURN
+						END
+					ELSE
+						BEGIN
+
+						SELECT @CC_COUNT_USER=COUNT(USER_CODE) FROM T_USERS WHERE APP_PWD LIKE @APP_PWD AND ACTIVE=1
+						IF @CC_COUNT_USER=0
+						BEGIN
+						SET	@BILL_SEC=99
+							SELECT @BILL_SEC AS SEC_RESPONSE
+						RETURN
+						END
+						SELECT top(1) *,@IS_STORE_APP AS IS_STORE_APP FROM T_USERS WHERE APP_PWD LIKE @APP_PWD AND ACTIVE=1
+						 
+						SET	@BILL_SEC=1
+							SELECT @BILL_SEC AS SEC_RESPONSE
+						RETURN
+						END
+
+					END
+
+
+		END
+
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_TABLE_ALL]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_USER_TABLE_ALL]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_GET_USER_TABLE_ALL]
+@LEVEL_CODE INT 
+
+AS
+
+BEGIN
+  
+SELECT  * FROM   V_USERS_ON WHERE LEVEL_CODE=@LEVEL_CODE   AND ACTIVE=1 ORDER BY USER_NAME
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1899,7 +3021,156 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_TABLE_INFO]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_INSERT_TEMP_APP]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_INSERT_TEMP_APP]
+@BILL_NUMBER  int, 
+@ITEM_CODE  int, 
+@QTY  float, 
+@USER_CODE  int 
+AS
+ 
+BEGIN
+ 
+ IF NOT EXISTS (select [T_ID] from [T_SALES_TEMP_APP_QTY] where [BILL_NUMBER] =@BILL_NUMBER and [ITEM_CODE]=@ITEM_CODE  )INSERT INTO [dbo].[T_SALES_TEMP_APP_QTY]  ([BILL_NUMBER]  ,[BILL_TIME]  ,[ITEM_CODE] ,[QTY]  ,[USER_CODE])  VALUES (@BILL_NUMBER  ,GETDATE()  ,@ITEM_CODE  ,@QTY  ,@USER_CODE ) else update [T_SALES_TEMP_APP_QTY] set QTY=@QTY where [BILL_NUMBER] =@BILL_NUMBER and [ITEM_CODE]=@ITEM_CODE 
+ 
+SELECT 1 AS ID,N''تمت الاضافة بنجاح'' AS RESPONSE
+ 
+
+
+
+
+ 
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_SUBMIT_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_SUBMIT_ORDER]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_SUBMIT_ORDER]
+@BILL_NUMBER INT ,
+@TABLE_CODE INT 
+
+
+AS
+ 
+BEGIN
+ 
+UPDATE   [dbo].[T_TABLE] SET IS_OPEN = 2  WHERE  [TABLE_CODE] = @TABLE_CODE  
+ UPDATE   [dbo].[T_SALES] SET TT_RECIVE = GETDATE()  WHERE  [BILL_NUMBER] = @BILL_NUMBER  
+
+SELECT 1 AS ID,N''تم تسليم الطلب الى الطاولة بنجاح'' AS RESPONSE
+
+  
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_TABLE_INFO]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1973,7 +3244,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_USER_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_USER_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2040,7 +3311,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_DASHBORD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_DASHBORD]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2148,7 +3419,7 @@ HAVING       (YEAR(BILL_DATE) =DATEPART(YEAR, @D2))
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_ITEM]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_ITEM]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2216,7 +3487,7 @@ SELECT    * into #tempSale1 FROM   V_ITEMS_ON
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2288,7 +3559,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2359,7 +3630,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2432,7 +3703,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_HOUR]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_HOUR]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2502,7 +3773,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2577,7 +3848,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2652,7 +3923,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_MONTH]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_MONTH]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2724,7 +3995,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_USERS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_USERS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2799,7 +4070,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_WEEK]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_WEEK]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2869,7 +4140,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_YEAR]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_YEAR]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2943,7 +4214,132 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_EXIST_COLUMNS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_DELETE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_DELETE_ORDERS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_API_TABOOR_DELETE_ORDERS]
+    @ORDER_NO INT 
+AS
+BEGIN
+	DELETE T_TABOOR_ORDERS WHERE ORDER_NO = @ORDER_NO  
+	IF @@ROWCOUNT = 0
+	BEGIN
+		RAISERROR(''يرجى التأكد من رقم الفاتورة'', 16, 1);
+		RETURN;
+	END
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_GET_ORDERS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_API_TABOOR_GET_ORDERS]
+AS
+BEGIN
+    DECLARE @REFRESH_TIME INT =5;
+	SELECT T_TABOOR_ORDERS.*,T_TABOOR_ORDER_TYPES.* FROM T_TABOOR_ORDERS INNER JOIN T_TABOOR_ORDER_TYPES ON  T_TABOOR_ORDER_TYPES.ID= T_TABOOR_ORDERS.ORDER_TYPE;
+	SELECT TIME_RESET  AS REFRESH FROM T_TABOOR_TIME_RESET WHERE ID =3
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_TYPES]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_GET_TYPES]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROC [dbo].[P_API_TABOOR_GET_TYPES] AS 
+BEGIN 
+SELECT * FROM T_TABOOR_ORDER_TYPES
+END 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_INSERT_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_INSERT_ORDERS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_API_TABOOR_INSERT_ORDERS]
+    @ORDER_NO INT 
+AS
+BEGIN
+    DECLARE @LASTCREATEDATE DATETIME;
+	DECLARE @LASTHOURS INT;
+	DECLARE @LASTMINUTE INT;
+
+    SELECT TOP 1 @LASTCREATEDATE = CREATE_DATE  FROM T_TABOOR_ORDERS ORDER BY ID DESC;
+	SELECT  @LASTHOURS = TIME_RESET FROM T_TABOOR_TIME_RESET WHERE ID =1;
+	SELECT  @LASTMINUTE = TIME_RESET FROM T_TABOOR_TIME_RESET WHERE ID =2;
+	DELETE FROM T_TABOOR_ORDERS WHERE FINISH_DATE IS NOT NULL AND DATEADD(MINUTE, @LASTMINUTE, FINISH_DATE) <= GETDATE();
+	DELETE FROM T_TABOOR_ORDERS WHERE CREATE_DATE IS NOT NULL AND DATEADD(HOUR, @LASTHOURS, @LASTCREATEDATE) <= GETDATE()OR @LASTCREATEDATE > GETDATE()
+	INSERT INTO T_TABOOR_ORDERS (ORDER_TYPE,CREATE_DATE,ORDER_NO) VALUES(1,GETDATE(),@ORDER_NO)
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_ORDERS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_API_TABOOR_UPDATE_ORDERS]
+    @ORDER_NO INT 
+AS
+BEGIN
+	UPDATE T_TABOOR_ORDERS SET  ORDER_TYPE =2 ,FINISH_DATE =GETDATE() WHERE ORDER_NO = @ORDER_NO  
+	IF @@ROWCOUNT = 0
+	BEGIN
+		RAISERROR(''يرجى التأكد من رقم الفاتورة'', 16, 1);
+		RETURN;
+	END
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TYPES]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_TYPES]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROC [dbo].[P_API_TABOOR_UPDATE_TYPES] 
+@BG_COLOR VARCHAR(MAX),
+@FONT_COLOR VARCHAR(MAX),
+@ID INT
+AS 
+BEGIN 
+	UPDATE  T_TABOOR_ORDER_TYPES SET BG_COLOR = @BG_COLOR ,FONT_COLOR =@FONT_COLOR WHERE ID =@ID
+	IF @@ROWCOUNT = 0
+	BEGIN
+		RAISERROR(''يرجى التأكد من العملية'', 16, 1);
+		RETURN;
+	END
+END 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_CHECK_EXIST_COLUMNS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2982,6 +4378,25 @@ END
 DELETE FROM T_SIP_PHONE WHERE ACTIVE=0
 
 
+ --////////////////////////////////////////////////////////////T_DRIVER/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+IF NOT EXISTS(SELECT TOP 1 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE [TABLE_NAME] = N''T_USER_DETAILS'' AND [COLUMN_NAME] = N''IS_CHECKED'')
+BEGIN
+--/////////***** 
+ SET XACT_ABORT ON     
+BEGIN TRANSACTION
+ALTER TABLE T_USER_DETAILS ADD [IS_CHECKED] BIT NULL
+ ALTER TABLE [dbo].[T_USER_DETAILS] ADD  CONSTRAINT [DF_T_USER_DETAILS_IS_CHECKED]  DEFAULT ((0)) FOR [IS_CHECKED]
+COMMIT TRANSACTION
+SET XACT_ABORT OFF 
+ --/////////***** 
+ END  
+   ELSE
+ BEGIN
+
+EXEC(''UPDATE [T_USER_DETAILS] SET [IS_CHECKED]=0 WHERE IS_CHECKED IS NULL  '')
+ 
+ END
 --////////////////////////////////////////////////////////////T_DRIVER/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 IF NOT EXISTS(SELECT TOP 1 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE [TABLE_NAME] = N''T_DRIVER'' AND [COLUMN_NAME] = N''USER_APP'')
@@ -4001,7 +5416,7 @@ SET @SUBMIT_FLAG=1
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_INSERT_COLUMNS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_INSERT_COLUMNS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4017,6 +5432,21 @@ CREATE PROCEDURE [dbo].[P_CHECK_INSERT_COLUMNS]
 
 AS
 BEGIN
+
+
+
+SET IDENTITY_INSERT [dbo].[T_TABOOR_ORDER_TYPES] ON 
+IF NOT EXISTS (select [ID] from [T_TABOOR_ORDER_TYPES] where [ID] =1 )INSERT [dbo].[T_TABOOR_ORDER_TYPES] ([ID], [TYPE], [BG_COLOR], [FONT_COLOR], [SORT]) VALUES (1, N''قيد الانتظار'', N''FDF5D1'', N''FFA71E'', 1)
+IF NOT EXISTS (select [ID] from [T_TABOOR_ORDER_TYPES] where [ID] =2 )INSERT [dbo].[T_TABOOR_ORDER_TYPES] ([ID], [TYPE], [BG_COLOR], [FONT_COLOR], [SORT]) VALUES (2, N''مكتملة'', N''D2FAE3'', N''27AD5E'', 1)
+SET IDENTITY_INSERT [dbo].[T_TABOOR_ORDER_TYPES] OFF
+
+SET IDENTITY_INSERT [dbo].[T_TABOOR_TIME_RESET] ON 
+IF NOT EXISTS (select [ID] from [T_TABOOR_TIME_RESET] where [ID] =1 )INSERT [dbo].[T_TABOOR_TIME_RESET] ([ID], [TIME_RESET], [DSCRP]) VALUES (1, 6, N''لتصفير الطلبات بالساعة'')
+IF NOT EXISTS (select [ID] from [T_TABOOR_TIME_RESET] where [ID] =2 )INSERT [dbo].[T_TABOOR_TIME_RESET] ([ID], [TIME_RESET], [DSCRP]) VALUES (2, 10, N''لحذف الطلبات القديمة بالدقيقة'')
+IF NOT EXISTS (select [ID] from [T_TABOOR_TIME_RESET] where [ID] =3 )INSERT [dbo].[T_TABOOR_TIME_RESET] ([ID], [TIME_RESET], [DSCRP]) VALUES (3, 5, N''تحديث الطلبات بالثواني'')
+SET IDENTITY_INSERT [dbo].[T_TABOOR_TIME_RESET] OFF
+ 
+
 IF NOT EXISTS (select [APP_CODE] from [T_APP_TYPE] where [APP_CODE] =0 ) INSERT [dbo].[T_APP_TYPE] ([APP_CODE], [APP_NAME], [APP_DISCOUNT], [ACTIVE], [IVC_CODE], [IS_ROUND], [ROUND_VALUE], [ROUND_TYPE], [ROUND_EXIST]) VALUES (0, N'' '', 0, 1, NULL, NULL, NULL, NULL, NULL)
 IF NOT EXISTS (select [APP_CODE] from [T_APP_TYPE] where [APP_CODE] =1 )INSERT [dbo].[T_APP_TYPE] ([APP_CODE], [APP_NAME], [APP_DISCOUNT], [ACTIVE], [IVC_CODE], [IS_ROUND], [ROUND_VALUE], [ROUND_TYPE], [ROUND_EXIST]) VALUES (1, N''طلباتي'', 0, 1, NULL, NULL, NULL, NULL, NULL)
 IF NOT EXISTS (select [APP_CODE] from [T_APP_TYPE] where [APP_CODE] =2 )INSERT [dbo].[T_APP_TYPE] ([APP_CODE], [APP_NAME], [APP_DISCOUNT], [ACTIVE], [IVC_CODE], [IS_ROUND], [ROUND_VALUE], [ROUND_TYPE], [ROUND_EXIST]) VALUES (2, N''ع السريع'', 0, 1, NULL, NULL, NULL, NULL, NULL)
@@ -4047,11 +5477,15 @@ IF NOT EXISTS (select [P_CODE] from [T_PARAMETERS] where [P_CODE] =1 )INSERT [db
 IF NOT EXISTS (select [P_CODE] from [T_PARAMETERS] where [P_CODE] =2 )INSERT [dbo].[T_PARAMETERS] ([P_CODE], [P_TYPE], [P_VALUE], [P_DESC]) VALUES (2, N''BILL_ORDER'', CAST(0 AS Decimal(18, 0)), NULL)
 IF NOT EXISTS (select [P_CODE] from [T_PARAMETERS] where [P_CODE] =3 )INSERT [dbo].[T_PARAMETERS] ([P_CODE], [P_TYPE], [P_VALUE], [P_DESC]) VALUES (3, N''BILL_SEQ'', CAST(0 AS Decimal(18, 0)), convert(varchar,getdate() , 111))
 IF NOT EXISTS (select [P_CODE] from [T_PARAMETERS] where [P_CODE] =6 )INSERT [dbo].[T_PARAMETERS] ([P_CODE], [P_TYPE], [P_VALUE], [P_DESC]) VALUES (6, N''BILL_RECIPE'', CAST(0 AS Decimal(18, 0)), convert(varchar,getdate() , 111))
+IF NOT EXISTS (select [P_CODE] from [T_PARAMETERS] where [P_CODE] =7 )INSERT [dbo].[T_PARAMETERS] ([P_CODE], [P_TYPE], [P_VALUE], [P_DESC]) VALUES (7, N''IS_STORE'', CAST(0 AS Decimal(18, 0)), convert(varchar,getdate() , 111))
+IF NOT EXISTS (select [P_CODE] from [T_PARAMETERS] where [P_CODE] =8 )INSERT [dbo].[T_PARAMETERS] ([P_CODE], [P_TYPE], [P_VALUE], [P_DESC]) VALUES (8, N''IS_STORE_APP'', CAST(0 AS Decimal(18, 0)), convert(varchar,getdate() , 111))
 
 SET IDENTITY_INSERT [dbo].[T_PRINTER] ON 
 
 IF NOT EXISTS (select [T_ID] from [T_PRINTER] where [T_ID] =0 ) INSERT [dbo].[T_PRINTER] ([T_ID], [PRINTER_NAME], [DEVICE_NAME], [IS_SCALE]) VALUES (0, NULL, NULL, 0)
 SET IDENTITY_INSERT [dbo].[T_PRINTER] OFF
+
+IF NOT EXISTS (select [T_ID] from [T_SALES_TABLE] where [T_ID] =0 ) INSERT [dbo].[T_SALES_TABLE] ([T_ID], [BILL_ID], [BILL_TA], [DESCRIPTION], [ACTIVE] ) VALUES (0, N''0'', N''0'', 6565286, 0 )
 
 IF NOT EXISTS (select [QISM_CODE] from [T_QISM] where [QISM_CODE] =-4 ) INSERT [dbo].[T_QISM] ([QISM_CODE], [QISM_NAME], [TABLE_FROM], [TABLE_TO], [ACTIVE]) VALUES (-4, N''تطبيقات'', 0, 0, 0)
 IF NOT EXISTS (select [QISM_CODE] from [T_QISM] where [QISM_CODE] =-3 ) INSERT [dbo].[T_QISM] ([QISM_CODE], [QISM_NAME], [TABLE_FROM], [TABLE_TO], [ACTIVE]) VALUES (-3, N''ديليفري'', 0, 0, 0)
@@ -4070,7 +5504,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4262,7 +5696,7 @@ END;
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_final]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_final]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4462,7 +5896,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4614,7 +6048,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4767,7 +6201,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4920,7 +6354,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5116,7 +6550,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_NAME_SPACE_UPDATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_NAME_SPACE_UPDATE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5221,7 +6655,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5342,7 +6776,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_BUT_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_BUT_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5453,7 +6887,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5516,6 +6950,19 @@ DELETE FROM T_SALES_DETAILS_HISTORY
 DELETE FROM T_SALES_DETAILS
 DELETE FROM T_SALES_DETAILS_RETURN
 DELETE FROM T_SALES_TEMP
+DELETE FROM T_SALES_TEMP_APP_QTY
+UPDATE [dbo].[T_TABLE]
+   SET  [TABLE_NAME] = N''''
+      ,[TABLE_NOTE] = N''''
+      ,[NO_CLIENT] = 0
+      ,[IS_OPEN] = 0
+      ,[START_TIME] = NULL
+      ,[USER_CODE] = N''''
+      ,[IS_ENTRY] = 0
+      ,[USER_ENTRY] = N''''
+  
+
+
 SET @SUBMIT_FLAG=1
 	
 END
@@ -5551,7 +6998,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5631,7 +7078,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_ALL]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_ALL]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5718,7 +7165,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5897,7 +7344,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5943,7 +7390,7 @@ select @ID = (select ID from @generated_keys)
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_PRINTER_SELECT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_PRINTER_SELECT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6013,7 +7460,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6068,6 +7515,7 @@ SELECT BILL_BRANCH
   
 
   DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
+ DELETE FROM T_SALES_TEMP_APP_QTY WHERE BILL_NUMBER=@BILL_NUMBER
 	SET @SUBMIT_FLAG=1
 	
 END
@@ -6101,7 +7549,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6269,7 +7717,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6359,7 +7807,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6457,7 +7905,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6557,7 +8005,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_ITEM_STORE_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6655,7 +8103,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6838,7 +8286,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ID_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ID_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6877,7 +8325,7 @@ UPDATE caller
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6907,6 +8355,12 @@ BEGIN
                     FROM V_SALES_TEMP
                     WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
                       AND BILL_DATE = @DATE_JOB
+                ), 0)+
+                ISNULL((
+                    SELECT SUM(QTY * QTY_PARENT)
+                    FROM V_SALES_TEMP_APP
+                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                       
                 ), 0)
     WHERE EXISTS (
         SELECT 1
@@ -6926,6 +8380,12 @@ BEGIN
                 ISNULL((
                     SELECT SUM(QTY_SALES_TEMP)
                     FROM V_SALES_ITEM_RECIPE_TEMP
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      AND DATE_JOB = @DATE_JOB
+                ), 0)+
+                ISNULL((
+                    SELECT SUM(QTY_SALES_TEMP)
+                    FROM V_SALES_ITEM_RECIPE_TEMP_APP
                     WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
                       AND DATE_JOB = @DATE_JOB
                 ), 0)
@@ -6949,6 +8409,12 @@ BEGIN
                     FROM T_SALES_TEMP
                     WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
                       AND BILL_DATE = @DATE_JOB
+                ), 0)+
+                ISNULL((
+                    SELECT SUM(QTY)
+                    FROM T_SALES_TEMP_APP_QTY
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      
                 ), 0)
     WHERE EXISTS (
         SELECT 1
@@ -6963,7 +8429,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6991,6 +8457,12 @@ BEGIN
                     FROM V_SALES_TEMP
                     WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
                       AND BILL_DATE = @DATE_JOB
+                ), 0)+
+                ISNULL((
+                    SELECT SUM(QTY * QTY_PARENT)
+                    FROM V_SALES_TEMP_APP
+                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                     
                 ), 0)
     WHERE EXISTS (
         SELECT 1
@@ -7010,6 +8482,12 @@ BEGIN
                 ISNULL((
                     SELECT SUM(QTY_SALES_TEMP)
                     FROM V_SALES_ITEM_RECIPE_TEMP
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      AND DATE_JOB = @DATE_JOB
+                ), 0)+
+                ISNULL((
+                    SELECT SUM(QTY_SALES_TEMP)
+                    FROM V_SALES_ITEM_RECIPE_TEMP_APP
                     WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
                       AND DATE_JOB = @DATE_JOB
                 ), 0)
@@ -7033,6 +8511,12 @@ BEGIN
                     FROM T_SALES_TEMP
                     WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
                       AND BILL_DATE = @DATE_JOB
+                ), 0)+
+                ISNULL((
+                    SELECT SUM(QTY)
+                    FROM T_SALES_TEMP_APP_QTY
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                       
                 ), 0)
     WHERE EXISTS (
         SELECT 1
@@ -7046,7 +8530,110 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    DECLARE @DATE_JOB DATE;
+    SELECT @DATE_JOB = D_DATE FROM T_WORK_JOB WHERE T_ID = 1;
+
+    -- Updating QTY_OUT for TYPE_CODE = 5
+    UPDATE T_ITEM_STORE
+    SET QTY_OUT = ISNULL((
+                    SELECT SUM(QTY * QTY_PARENT)
+                    FROM V_SALES_DETAILS
+                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      AND BILL_DATE = @DATE_JOB
+                ), 0) +
+                ISNULL((
+                    SELECT SUM(QTY * QTY_PARENT)
+                    FROM V_SALES_TEMP
+                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      AND BILL_DATE = @DATE_JOB
+                ), 0)+
+                ISNULL((
+                    SELECT SUM(QTY * QTY_PARENT)
+                    FROM V_SALES_TEMP_APP
+                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      
+                ), 0)
+    WHERE EXISTS (
+        SELECT 1
+        FROM T_ITEMS
+        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE = 5 AND DATE_JOB = @DATE_JOB
+    )
+    AND DATE_JOB BETWEEN @DATE_JOB AND @DATE_JOB;
+
+    -- Updating QTY_OUT for TYPE_CODE = 7
+    UPDATE T_ITEM_STORE
+    SET QTY_OUT = ISNULL((
+                    SELECT SUM(QTY_SALES)
+                    FROM V_SALES_ITEM_RECIPE
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      AND DATE_JOB = @DATE_JOB
+                ), 0) +
+                ISNULL((
+                    SELECT SUM(QTY_SALES_TEMP)
+                    FROM V_SALES_ITEM_RECIPE_TEMP
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      AND DATE_JOB = @DATE_JOB
+                ), 0) +
+                ISNULL((
+                    SELECT SUM(QTY_SALES_TEMP)
+                    FROM V_SALES_ITEM_RECIPE_TEMP_APP
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      AND DATE_JOB = @DATE_JOB
+                ), 0)
+    WHERE EXISTS (
+        SELECT 1
+        FROM T_ITEMS
+        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE = 7 AND DATE_JOB = @DATE_JOB
+    )
+    AND DATE_JOB = @DATE_JOB;
+
+    -- Updating QTY_OUT for all other TYPE_CODE
+    UPDATE T_ITEM_STORE
+    SET QTY_OUT = ISNULL((
+                    SELECT SUM(QTY)
+                    FROM T_SALES_DETAILS
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      AND BILL_DATE = @DATE_JOB
+                ), 0) +
+                ISNULL((
+                    SELECT SUM(QTY)
+                    FROM T_SALES_TEMP
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      AND BILL_DATE = @DATE_JOB
+                ), 0)+
+                ISNULL((
+                    SELECT SUM(QTY)
+                    FROM T_SALES_TEMP_APP_QTY
+                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
+                      
+                ), 0)
+    WHERE EXISTS (
+        SELECT 1
+        FROM T_ITEMS
+        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE NOT IN (5, 7) AND DATE_JOB = @DATE_JOB
+    )
+    AND DATE_JOB BETWEEN @DATE_JOB AND @DATE_JOB;
+
+ 
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7178,7 +8765,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7216,6 +8803,7 @@ DECLARE
 @TYPE_CODE INT,
 @OUT_QTY_DETAILS	float,
 @OUT_QTY_TEMP	float,
+@OUT_QTY_TEMP_APP	float,
 @OUT_QTY	float
 BEGIN TRAN
 BEGIN
@@ -7244,7 +8832,9 @@ SELECT @TYPE_CODE=TYPE_CODE FROM T_ITEMS WHERE ITEM_CODE=@ITEM_CODE
 
 SELECT @OUT_QTY_DETAILS=ISNULL(SUM(QTY_SALES),0) FROM V_SALES_ITEM_RECIPE WHERE ITEM_CODE=@ITEM_CODE AND DATE_JOB = @DATE_JOB  
 SELECT @OUT_QTY_TEMP=ISNULL(SUM(QTY_SALES_TEMP),0) FROM V_SALES_ITEM_RECIPE_TEMP WHERE ITEM_CODE=@ITEM_CODE AND DATE_JOB = @DATE_JOB  
-SET @OUT_QTY=@OUT_QTY_DETAILS+@OUT_QTY_TEMP
+SELECT @OUT_QTY_TEMP_APP=ISNULL(SUM(QTY_SALES_TEMP),0) FROM V_SALES_ITEM_RECIPE_TEMP_APP WHERE ITEM_CODE=@ITEM_CODE AND DATE_JOB = @DATE_JOB  
+
+SET @OUT_QTY=@OUT_QTY_DETAILS+@OUT_QTY_TEMP+@OUT_QTY_TEMP_APP
 UPDATE T_ITEM_STORE SET QTY_OUT=@OUT_QTY WHERE T_ID=@T_ID_CURSOR
 
 --END
@@ -7290,7 +8880,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7326,7 +8916,7 @@ SET @SUBMIT_FLAG=0
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7425,7 +9015,96 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_CALL_CENTER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES_PRINT]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_T_SALES_PRINT]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_UPDATE_T_SALES_PRINT]
+
+@BILL_NUMBER	decimal(18, 0)	,	
+@CALL_NO	nvarchar(MAX)	,
+@INVOICE_CODE	int	,
+@WORK_CODE	int	,	
+@USER_CODE	int	,
+@DISCOUNT_SELL	float	,
+@SERVICE_SELL	float	,
+@APP_CODE	int	,
+@CLIENT_CODE	int	,
+@IVC_CODE	int	,
+@IS_CASH	int	,
+@SUBMIT_FLAG INT OUTPUT
+AS
+DECLARE
+@TOT_QTY	float	,
+@TOT_COST	float	,
+@TOT_SELL	float	,
+@NET_SALES	float	,
+@APP_PERCENT	float	,
+@NET_NET_SALES	float	,
+@NET_ARBAH	float	
+
+BEGIN
+SET @SUBMIT_FLAG=0
+SELECT @TOT_QTY=ISNULL(SUM( QTY),0)  FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
+SELECT @TOT_COST =ISNULL(SUM( TOTAL_COST),0)  FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
+
+SELECT @TOT_SELL=ISNULL(SUM( TOTAL),0)  FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
+SET @NET_SALES=(@TOT_SELL-@DISCOUNT_SELL)+@SERVICE_SELL
+
+SELECT @APP_PERCENT=ISNULL( APP_DISCOUNT,0)  FROM T_APP_TYPE WHERE APP_CODE=@APP_CODE
+SET @NET_NET_SALES=@NET_SALES  --((@NET_SALES*@APP_PERCENT)/100)
+SET @NET_ARBAH=@NET_NET_SALES-@TOT_COST
+
+UPDATE [dbo].[T_SALES]
+   SET 
+
+      [CALL_NO] = @CALL_NO
+	    ,[BILL_TIME] = GETDATE()
+      ,[INVOICE_CODE] = @INVOICE_CODE
+      ,[WORK_CODE] = @WORK_CODE
+      ,[USER_CODE] = @USER_CODE
+      ,[TOT_QTY] = @TOT_QTY
+      ,[TOT_COST] = @TOT_COST
+      ,[TOT_SELL] = @TOT_SELL
+      ,[DISCOUNT_SELL] = @DISCOUNT_SELL
+      ,[SERVICE_SELL] = @SERVICE_SELL
+      ,[NET_SALES] = @NET_SALES
+      ,[APP_CODE] = @APP_CODE
+      ,[APP_PERCENT] = @APP_PERCENT
+      ,[NET_NET_SALES] = @NET_NET_SALES
+      ,[NET_ARBAH] = @NET_ARBAH
+  	  ,[CLIENT_CODE] = @CLIENT_CODE
+      ,[IVC_CODE] =@IVC_CODE
+      ,[IS_CASH] = @IS_CASH
+ WHERE BILL_NUMBER=@BILL_NUMBER
+
+ UPDATE T_SALES_TEMP SET WORK_CODE=@WORK_CODE WHERE BILL_NUMBER=@BILL_NUMBER
+
+
+	SET @SUBMIT_FLAG=1
+	
+END
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_CALL_CENTER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7485,7 +9164,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7551,7 +9230,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7625,7 +9304,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7687,7 +9366,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7745,7 +9424,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7804,7 +9483,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7864,7 +9543,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7922,7 +9601,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7978,7 +9657,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8034,7 +9713,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8093,7 +9772,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8153,7 +9832,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8213,7 +9892,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8273,7 +9952,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_BILL_NEW_SALES_BY_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_BILL_NEW_SALES_BY_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8450,7 +10129,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_CHANGE_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_CHANGE_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8531,7 +10210,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_SAFARY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_SAFARY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8684,7 +10363,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8859,7 +10538,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8919,7 +10598,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_TABLE_BY_USER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_TABLE_BY_USER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8991,7 +10670,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9195,7 +10874,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE_ADD]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE_ADD]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9275,7 +10954,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_INSERT_TABLE_APP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_INSERT_TABLE_APP]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9359,7 +11038,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_UPDATE_TABLE_INFO]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_UPDATE_TABLE_INFO]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9434,7 +11113,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_UPDATE_USER_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PF_UPDATE_USER_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9501,7 +11180,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9563,7 +11242,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE_ENTERY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE_ENTERY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9668,7 +11347,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_ERADAT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_ERADAT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9721,7 +11400,7 @@ FROM            dbo.V_ERADAT
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EXPENSES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EXPENSES]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9772,7 +11451,7 @@ FROM            dbo.V_EXPENSES
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9830,7 +11509,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9890,7 +11569,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9949,7 +11628,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10010,7 +11689,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_APPLICATION]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_APPLICATION]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10076,7 +11755,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10150,7 +11829,7 @@ SELECT [USER_CODE],USER_NAME
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH_FINAL]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH_FINAL]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10210,7 +11889,7 @@ SELECT
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_BILL]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_BILL]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10269,7 +11948,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CAPTAIN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CAPTAIN]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10334,7 +12013,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CASH_DEBIT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CASH_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10391,7 +12070,7 @@ ORDER BY TOTAL_SELL DESC
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CATEGORY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10459,7 +12138,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DATE_NET]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DATE_NET]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10522,7 +12201,7 @@ ORDER BY BILL_ORDER DESC
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DAY_NAME]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10585,7 +12264,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DISCOUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DISCOUNT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10642,7 +12321,7 @@ GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10702,7 +12381,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10764,7 +12443,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10922,7 +12601,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL_USER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL_USER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11083,7 +12762,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11140,7 +12819,7 @@ ORDER BY TOTAL_SELL DESC
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11195,7 +12874,7 @@ FROM            dbo.T_SALES
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11256,7 +12935,7 @@ FROM            dbo.T_SALES INNER JOIN
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11318,7 +12997,7 @@ SELECT
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11375,7 +13054,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_GEFT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11435,7 +13114,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11492,7 +13171,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RETURN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11551,7 +13230,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11614,7 +13293,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NET_DATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NET_DATE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11673,7 +13352,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NO_CLIENT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NO_CLIENT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11741,7 +13420,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_PRINTER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11803,7 +13482,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_RECIPIENT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_RECIPIENT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11866,7 +13545,7 @@ ORDER BY dbo.V_SALES_ON.RECIPIENT_CODE ASC
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_SERVICES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_SERVICES]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11923,7 +13602,7 @@ GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_USER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_USER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11981,7 +13660,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12034,7 +13713,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12088,7 +13767,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  View [dbo].[V_SALES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12119,7 +13798,7 @@ ORDER BY dbo.T_SALES.BILL_NUMBER
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12139,7 +13818,7 @@ FROM        dbo.T_SALES_TEMP INNER JOIN
                   dbo.V_SALES ON dbo.T_SALES_TEMP.BILL_NUMBER = dbo.V_SALES.BILL_NUMBER
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12158,7 +13837,7 @@ GROUP BY S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12178,7 +13857,7 @@ WHERE        (dbo.V_SALES.WORK_CODE = 10)
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_REGION]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_REGION]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12193,7 +13872,7 @@ GROUP BY CLIENT_REGION
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12214,7 +13893,7 @@ WHERE     (dbo.T_SALES_TEMP.IS_PRINT = 0)
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_RETURN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12235,7 +13914,7 @@ FROM            dbo.T_SALES_DETAILS_RETURN INNER JOIN
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ON]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12261,7 +13940,7 @@ WHERE        (dbo.T_SALES.WORK_CODE = 1)
 ORDER BY dbo.T_SALES.BILL_NUMBER
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_BEST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_BEST]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12277,7 +13956,7 @@ GROUP BY CLIENT_REGION
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_HUB]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_HUB]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12295,7 +13974,7 @@ WHERE        (dbo.V_SALES.WORK_CODE = 20) OR
                          (dbo.V_SALES.WORK_CODE = 25)
 ' 
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12309,7 +13988,7 @@ FROM        dbo.T_DRIVER LEFT OUTER JOIN
 GROUP BY dbo.T_DRIVER.T_ID, dbo.T_DRIVER.DRIVER_NAME
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_TABEE3]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_TABEE3]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12331,7 +14010,7 @@ WHERE        (dbo.V_SALES.WORK_CODE = 10)OR   (dbo.V_SALES.WORK_CODE = 20)
 
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON_JOB]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON_JOB]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12352,7 +14031,7 @@ ORDER BY dbo.T_ITEMS.SORT
 
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEM_STORE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_STORE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12368,7 +14047,7 @@ FROM            dbo.T_ITEM_STORE LEFT OUTER JOIN
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12391,7 +14070,7 @@ FROM        dbo.T_SALES_TEMP INNER JOIN
 WHERE     (dbo.T_SALES_TEMP.IS_PRINT = 0) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12412,7 +14091,7 @@ FROM            dbo.T_ITEM_CATEGORY RIGHT OUTER JOIN
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ON_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ON_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12439,7 +14118,7 @@ WHERE     (dbo.T_SALES.WORK_CODE = 1)
 ORDER BY dbo.T_SALES.BILL_NUMBER
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_WAITING]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_WAITING]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12455,7 +14134,7 @@ WHERE        (WORK_CODE = 2)
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_LIST_APPLICATION]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_LIST_APPLICATION]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12470,7 +14149,7 @@ GROUP BY CLIENT_PHONE, APP_CODE, APP_NAME
 HAVING        (APP_CODE = 10)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TATMA]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TATMA]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12490,7 +14169,7 @@ FROM        dbo.T_ITEM_PRINTER INNER JOIN
                   dbo.T_USERS ON dbo.T_SALES_TEMP.USER_CODE = dbo.T_USERS.USER_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12507,7 +14186,7 @@ HAVING     (dbo.T_DRIVER.ACTIVE = 1)
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12524,7 +14203,7 @@ GROUP BY CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12543,7 +14222,7 @@ FROM        dbo.T_SALES_TEMP INNER JOIN
 WHERE     (dbo.T_SALES_TEMP.IS_PRINT = 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12563,7 +14242,7 @@ FROM            dbo.T_SALES_TEMP INNER JOIN
 WHERE        (dbo.T_SALES_TEMP.IS_DELETE = 1)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12585,7 +14264,7 @@ FROM        dbo.T_SALES_TEMP INNER JOIN
 WHERE     (dbo.T_SALES_TEMP.IS_DELETE = 1) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_CLIENT_CASH]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_CLIENT_CASH]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12599,7 +14278,7 @@ WHERE        (ACTIVE = 1)
 GROUP BY CLIENT_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_CLIENT_INVOICE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_CLIENT_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12617,7 +14296,7 @@ GROUP BY dbo.T_CLIENT.CLIENT_CODE, dbo.T_CLIENT.CLIENT_NAME, dbo.T_CLIENT.CLIENT
 HAVING        (dbo.T_CLIENT.CLIENT_CODE > 0) AND (dbo.T_CLIENT.CLIENT_ACTIVE = 1) AND (dbo.T_SALES.IS_CASH = 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_CLIENT_DEBIT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_CLIENT_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12633,7 +14312,7 @@ FROM            dbo.V_CLIENT_INVOICE LEFT OUTER JOIN
                          dbo.V_CLIENT_CASH ON dbo.V_CLIENT_INVOICE.CLIENT_CODE = dbo.V_CLIENT_CASH.CLIENT_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DAY_NAME]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12648,7 +14327,7 @@ GROUP BY BILL_DATE, INVOICE_CODE, INVOICE_NAME, NET_NET_SALES
 HAVING        (SUM(NET_NET_SALES) <> 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12667,7 +14346,7 @@ WHERE        (dbo.T_ITEMS.ACTIVE = 1) AND (dbo.T_ITEMS.IS_STORE = 1)
 ORDER BY dbo.T_ITEMS.SORT
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEM_BARCODE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_BARCODE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12684,7 +14363,7 @@ FROM            dbo.T_ITEM_BARCODE INNER JOIN
 
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEM_SCALE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_SCALE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12701,7 +14380,7 @@ WHERE        (dbo.V_ITEMS_ON.TYPE_CODE = 4) AND (LEN(dbo.V_ITEMS_ON.ITEM_BARCODE
 
 ' 
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12721,7 +14400,45 @@ HAVING     (dbo.T_DRIVER.ACTIVE = 1) AND COUNT(dbo.V_SALES_DELEVERY_HUB.BILL_NUM
 
 ' 
 GO
-/****** Object:  View [dbo].[V_CATEGORY_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_APP]'))
+EXEC dbo.sp_executesql @statement = N'
+CREATE VIEW [dbo].[V_SALES_TEMP_APP]
+AS
+SELECT     dbo.T_SALES_TEMP_APP_QTY.T_ID,   dbo.T_SALES_TEMP_APP_QTY.BILL_NUMBER,    dbo.T_SALES_TEMP_APP_QTY.BILL_TIME, dbo.T_SALES_TEMP_APP_QTY.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, 
+                  dbo.T_SALES_TEMP_APP_QTY.QTY,    dbo.T_SALES_TEMP_APP_QTY.USER_CODE,  dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT 
+FROM        dbo.T_SALES_TEMP_APP_QTY INNER JOIN
+                  dbo.T_ITEMS ON dbo.T_SALES_TEMP_APP_QTY.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
+                 dbo.V_SALES ON dbo.T_SALES_TEMP_APP_QTY.BILL_NUMBER = dbo.V_SALES.BILL_NUMBER
+
+' 
+GO
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]'))
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]
+AS
+SELECT     S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY AS QTY_RECIPE,
+                      (SELECT     SUM(QTY) AS Expr1
+                       FROM        dbo.V_SALES_TEMP_APP
+                       WHERE      (ITEM_CODE = R.ITEM_CODE_MAIN) ) * R.QTY AS QTY_SALES_TEMP
+FROM        dbo.T_ITEM_STORE AS S INNER JOIN
+                  dbo.T_ITEM_RECIPE AS R ON S.ITEM_CODE = R.ITEM_CODE
+GROUP BY S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY
+
+
+' 
+GO
+/****** Object:  View [dbo].[V_CATEGORY_ON]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12773,7 +14490,7 @@ GROUP BY
 
 ' 
 GO
-/****** Object:  View [dbo].[V_CLIENT_NOTIFICATION]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_CLIENT_NOTIFICATION]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12786,7 +14503,7 @@ FROM            dbo.T_APP_CLIENT
 WHERE        (IS_BLOCK = 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_EMP_ENTRY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_EMP_ENTRY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12803,7 +14520,7 @@ FROM            dbo.T_EMP_ENTER INNER JOIN
 
 ' 
 GO
-/****** Object:  View [dbo].[V_ERADAT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ERADAT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12820,7 +14537,7 @@ FROM            dbo.T_ERADAT LEFT OUTER JOIN
 
 ' 
 GO
-/****** Object:  View [dbo].[V_EXPENSES]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_EXPENSES]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12835,7 +14552,7 @@ FROM            dbo.T_EXPENSES LEFT OUTER JOIN
 
 ' 
 GO
-/****** Object:  View [dbo].[V_FREE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_FREE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12855,7 +14572,7 @@ ORDER BY TOTAL_ARBAH DESC
 
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEM_RECIPE_STORE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_RECIPE_STORE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12868,7 +14585,7 @@ FROM        dbo.T_ITEM_RECIPE INNER JOIN
                   dbo.T_ITEM_STORE ON dbo.T_ITEM_RECIPE.ITEM_CODE = dbo.T_ITEM_STORE.ITEM_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEM_STORE_JOB_DATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEM_STORE_JOB_DATE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12882,30 +14599,27 @@ GROUP BY DATE_JOB
 ORDER BY DATE_JOB DESC
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON_POS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON_POS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON_POS]'))
 EXEC dbo.sp_executesql @statement = N'
-
 CREATE VIEW [dbo].[V_ITEMS_ON_POS]
 AS
-SELECT        TOP (100) PERCENT dbo.T_ITEMS.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_ITEMS.CATEGORY_CODE, dbo.T_ITEM_CATEGORY.CATEGORY_NAME, dbo.T_ITEMS.TYPE_CODE, dbo.T_ITEM_TYPE.TYPE_NAME, 
-                         dbo.T_ITEMS.COST, dbo.T_ITEMS.SELL, dbo.T_ITEMS.ACTIVE, dbo.T_ITEMS.SORT, dbo.T_ITEMS.PRINTER_ID, dbo.T_ITEMS.ITEM_BARCODE, dbo.T_ITEMS.SHOW_MENU, dbo.T_ITEMS.ITEM_NOTE, dbo.T_ITEMS.IMG_URL, 
-                         dbo.T_ITEMS.IMAGE, dbo.T_ITEMS.ITEM_NAME_EN, dbo.T_ITEMS.ITEM_NOTE_EN, dbo.T_ITEMS.TIME_USE, dbo.T_ITEMS.IS_STORE, dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT, 
-                         dbo.T_ITEMS.BACK_COLOR, dbo.T_ITEMS.FONT_COLOR, dbo.T_ITEMS.SELL_SALA, dbo.T_ITEMS.SELL_DELEVERY, dbo.T_ITEMS.SELL_APP 
-FROM            dbo.T_ITEMS INNER JOIN
-                         dbo.T_ITEM_CATEGORY ON dbo.T_ITEMS.CATEGORY_CODE = dbo.T_ITEM_CATEGORY.CATEGORY_CODE INNER JOIN
-                         dbo.T_ITEM_TYPE ON dbo.T_ITEMS.TYPE_CODE = dbo.T_ITEM_TYPE.TYPE_CODE
-WHERE        (dbo.T_ITEMS.ACTIVE = 1) --AND (dbo.T_ITEMS.IS_STORE = 1)
+SELECT     TOP (100) PERCENT dbo.T_ITEMS.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_ITEMS.CATEGORY_CODE, dbo.T_ITEM_CATEGORY.CATEGORY_NAME, dbo.T_ITEMS.TYPE_CODE, dbo.T_ITEM_TYPE.TYPE_NAME, dbo.T_ITEMS.COST, dbo.T_ITEMS.SELL, dbo.T_ITEMS.ACTIVE, 
+                  dbo.T_ITEMS.SORT, dbo.T_ITEMS.PRINTER_ID, dbo.T_ITEMS.ITEM_BARCODE, dbo.T_ITEMS.SHOW_MENU, dbo.T_ITEMS.ITEM_NOTE, dbo.T_ITEMS.IMG_URL, dbo.T_ITEMS.IMAGE, dbo.T_ITEMS.ITEM_NAME_EN, dbo.T_ITEMS.ITEM_NOTE_EN, dbo.T_ITEMS.TIME_USE, 
+                  dbo.T_ITEMS.IS_STORE, dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT, dbo.T_ITEMS.BACK_COLOR, dbo.T_ITEMS.FONT_COLOR, dbo.T_ITEMS.SELL_SALA, dbo.T_ITEMS.SELL_DELEVERY, dbo.T_ITEMS.SELL_APP
+FROM        dbo.T_ITEMS INNER JOIN
+                  dbo.T_ITEM_CATEGORY ON dbo.T_ITEMS.CATEGORY_CODE = dbo.T_ITEM_CATEGORY.CATEGORY_CODE INNER JOIN
+                  dbo.T_ITEM_TYPE ON dbo.T_ITEMS.TYPE_CODE = dbo.T_ITEM_TYPE.TYPE_CODE
+WHERE     (dbo.T_ITEMS.ACTIVE = 1) 
 ORDER BY dbo.T_ITEMS.SORT
-
 
 ' 
 GO
-/****** Object:  View [dbo].[V_REGION_LIST]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_REGION_LIST]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12921,7 +14635,7 @@ SELECT        TOP (100) PERCENT CLIENT_REGION FROM            dbo.T_SALES GROUP 
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_GEFT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12941,7 +14655,7 @@ FROM            dbo.T_ITEM_CATEGORY RIGHT OUTER JOIN
 WHERE        (dbo.T_ITEMS.TYPE_CODE <> 20)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_TYPE_6]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_TYPE_6]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12958,7 +14672,7 @@ FROM        dbo.T_ITEMS LEFT OUTER JOIN
 WHERE     (dbo.T_ITEMS.TYPE_CODE = 6)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_HISTORY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_HISTORY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12981,7 +14695,7 @@ FROM            dbo.T_SALES_HISTORY LEFT OUTER JOIN
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_HISTORY_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_HISTORY_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12996,7 +14710,7 @@ SELECT  CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS
 FROM T_SALES_HISTORY
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_INVOICE_DISCOUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_INVOICE_DISCOUNT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13027,7 +14741,7 @@ HAVING        (dbo.T_SALES.DISCOUNT_SELL <> 0)
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_INVOICE_GEFT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_INVOICE_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13060,7 +14774,7 @@ HAVING        (dbo.T_SALES_DETAILS.TOTAL = 0) AND (dbo.T_ITEMS.TYPE_CODE <> 20)
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_DATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_DATE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13080,7 +14794,7 @@ ORDER BY TOTAL_ARBAH DESC
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_GEFT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13098,7 +14812,7 @@ HAVING        (dbo.T_SALES.WORK_CODE = 1) AND (dbo.T_SALES_DETAILS.TOTAL = 0) AN
 ORDER BY TOTAL_ARBAH DESC
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13115,7 +14829,7 @@ FROM        dbo.T_ITEM_STORE AS S INNER JOIN
 GROUP BY S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ORDER]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13146,7 +14860,7 @@ WHERE     (dbo.T_SALES.WORK_CODE = 1) OR
                   (dbo.T_SALES.WORK_CODE = 20)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_RETURN]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13171,7 +14885,7 @@ WHERE  dbo.T_SALES.WORK_CODE=100
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PA]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PA]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13185,7 +14899,7 @@ FROM        dbo.T_SALES_TEMP INNER JOIN
 GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13204,7 +14918,7 @@ GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_P
 HAVING        (dbo.T_SALES_TEMP.IS_PRINT = 0) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13223,7 +14937,7 @@ GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_P
 HAVING        (dbo.T_SALES_TEMP.IS_PRINT = 1) AND (dbo.T_SALES_TEMP.IS_DELETE = 1) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13242,7 +14956,7 @@ GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_P
 HAVING        (dbo.T_SALES_TEMP.IS_DELETE = 1) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13261,7 +14975,7 @@ GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_P
 HAVING        (dbo.T_SALES_TEMP.IS_PRINT = 0) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13280,7 +14994,7 @@ GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_P
 HAVING        (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TATMA_CATEGORY]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TATMA_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13298,7 +15012,7 @@ FROM        dbo.T_ITEM_PRINTER RIGHT OUTER JOIN
 WHERE      (dbo.T_ITEM_PRINTER.QISM_CODE = 0)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_USER_DATE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SALES_USER_DATE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13318,7 +15032,7 @@ ORDER BY TOTAL_ARBAH
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SIP_PHONE]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_SIP_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13337,7 +15051,7 @@ GROUP BY dbo.T_SIP_PHONE.T_ID, dbo.T_SIP_PHONE.PHONE_NO, dbo.T_SIP_PHONE.D_DATE,
 
 ' 
 GO
-/****** Object:  View [dbo].[V_USERS_ON]    Script Date: 2024/09/17 1:15:32 ******/
+/****** Object:  View [dbo].[V_USERS_ON]    Script Date: 2024/11/13 2:34:23 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13620,6 +15334,150 @@ End
 GO
 IF NOT EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPaneCount' , N'SCHEMA',N'dbo', N'VIEW',N'V_ITEM_RECIPE_STORE', NULL,NULL))
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_ITEM_RECIPE_STORE'
+GO
+IF NOT EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPane1' , N'SCHEMA',N'dbo', N'VIEW',N'V_ITEMS_ON_POS', NULL,NULL))
+EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPane1', @value=N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
+Begin DesignProperties = 
+   Begin PaneConfigurations = 
+      Begin PaneConfiguration = 0
+         NumPanes = 4
+         Configuration = "(H (1[40] 4[20] 2[20] 3) )"
+      End
+      Begin PaneConfiguration = 1
+         NumPanes = 3
+         Configuration = "(H (1 [50] 4 [25] 3))"
+      End
+      Begin PaneConfiguration = 2
+         NumPanes = 3
+         Configuration = "(H (1 [50] 2 [25] 3))"
+      End
+      Begin PaneConfiguration = 3
+         NumPanes = 3
+         Configuration = "(H (4 [30] 2 [40] 3))"
+      End
+      Begin PaneConfiguration = 4
+         NumPanes = 2
+         Configuration = "(H (1 [56] 3))"
+      End
+      Begin PaneConfiguration = 5
+         NumPanes = 2
+         Configuration = "(H (2 [66] 3))"
+      End
+      Begin PaneConfiguration = 6
+         NumPanes = 2
+         Configuration = "(H (4 [50] 3))"
+      End
+      Begin PaneConfiguration = 7
+         NumPanes = 1
+         Configuration = "(V (3))"
+      End
+      Begin PaneConfiguration = 8
+         NumPanes = 3
+         Configuration = "(H (1[56] 4[18] 2) )"
+      End
+      Begin PaneConfiguration = 9
+         NumPanes = 2
+         Configuration = "(H (1 [75] 4))"
+      End
+      Begin PaneConfiguration = 10
+         NumPanes = 2
+         Configuration = "(H (1[66] 2) )"
+      End
+      Begin PaneConfiguration = 11
+         NumPanes = 2
+         Configuration = "(H (4 [60] 2))"
+      End
+      Begin PaneConfiguration = 12
+         NumPanes = 1
+         Configuration = "(H (1) )"
+      End
+      Begin PaneConfiguration = 13
+         NumPanes = 1
+         Configuration = "(V (4))"
+      End
+      Begin PaneConfiguration = 14
+         NumPanes = 1
+         Configuration = "(V (2))"
+      End
+      ActivePaneConfig = 0
+   End
+   Begin DiagramPane = 
+      Begin Origin = 
+         Top = 0
+         Left = 0
+      End
+      Begin Tables = 
+         Begin Table = "T_ITEMS"
+            Begin Extent = 
+               Top = 6
+               Left = 38
+               Bottom = 161
+               Right = 249
+            End
+            DisplayFlags = 280
+            TopColumn = 14
+         End
+         Begin Table = "T_ITEM_CATEGORY"
+            Begin Extent = 
+               Top = 162
+               Left = 38
+               Bottom = 317
+               Right = 294
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "T_ITEM_TYPE"
+            Begin Extent = 
+               Top = 6
+               Left = 287
+               Bottom = 117
+               Right = 475
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 9
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 11
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_ITEMS_ON_POS'
+GO
+IF NOT EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPaneCount' , N'SCHEMA',N'dbo', N'VIEW',N'V_ITEMS_ON_POS', NULL,NULL))
+EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_ITEMS_ON_POS'
 GO
 IF NOT EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPane1' , N'SCHEMA',N'dbo', N'VIEW',N'V_SALES_ITEM_RECIPE', NULL,NULL))
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPane1', @value=N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
