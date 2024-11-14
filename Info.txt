@@ -1,0 +1,6 @@
+ConnectionString= Data Source=.\SALES_DEV;Initial Catalog=RESTAURANT_DB;User ID=sa;Password=12345;Integrated Security=False 
+Speedoo_Location = C:\Program Files (x86)\IraqSoft\SPEEDOO
+destinationPath= C:\MySettingRESTAURANT\Update\LastVersion\SPEEDOO-REST-3.0.5.0-UPDATE.zip
+Compress_Location= C:\MySettingRESTAURANT\Update\OldVersion\ 
+Db_Location = C:\MySettingRESTAURANT\Update\DatabaseBackup\ 
+DATABASE_NAME = RESTAURANT_DB
