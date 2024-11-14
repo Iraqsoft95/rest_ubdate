@@ -237,12 +237,12 @@ set   Update_Exe_Patt=%Update_File%Update_Exe
 mkdir %Update_Exe_Patt%
 @REM ---------------- creat Info.txt------------------------
 set "InfoPath=%Update_File%Info.txt"
-echo ConnectionString=Data Source=.\SALES_DEV;Initial Catalog=RESTAURANT_DB;User ID=sa;Password=12345;Integrated Security=False > "%InfoPath%"
-echo Speedoo_Location=%FolderPath% >> "%InfoPath%"
-echo destinationPath=C:\MySettingRESTAURANT\Update\LastVersion\SPEEDOO-REST-3.0.5.0-UPDATE.zip >> "%InfoPath%"
-echo Compress_Location=C:\MySettingRESTAURANT\Update\OldVersion\ >> "%InfoPath%"
-echo Db_Location=C:\MySettingRESTAURANT\Update\DatabaseBackup\ >> "%InfoPath%"
-echo DATABASE_NAME=RESTAURANT_DB >> "%InfoPath%"
+echo ConnectionString= Data Source=.\SALES_DEV;Initial Catalog=RESTAURANT_DB;User ID=sa;Password=12345;Integrated Security=False > "%InfoPath%"
+echo Speedoo_Location= %FolderPath% >> "%InfoPath%"
+echo destinationPath= C:\MySettingRESTAURANT\Update\LastVersion\SPEEDOO-REST-3.0.5.0-UPDATE.zip >> "%InfoPath%"
+echo Compress_Location= C:\MySettingRESTAURANT\Update\OldVersion\ >> "%InfoPath%"
+echo Db_Location= C:\MySettingRESTAURANT\Update\DatabaseBackup\ >> "%InfoPath%"
+echo DATABASE_NAME= RESTAURANT_DB >> "%InfoPath%"
 
 @REM ---------------- download UPDATE_REST.exe Update.txt Info.txt ------------------------
 :download
