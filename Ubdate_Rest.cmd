@@ -101,6 +101,7 @@ if not exist "%BACKUP_DIR%" (
 )
 
 @REM -------------------------> Copy Mysetting Speedoo to file 
+:serch_Shortcut
 set "Shortcut_Part=SPEEDOO REST"
 set "UserDesktop=%USERPROFILE%\Desktop"
 set "PublicDesktop=C:\Users\Public\Desktop"
@@ -122,6 +123,12 @@ if not defined TargetPath (
             goto :found
         )
     )
+)
+@REM -------------------------> Prompt for path if shortcut is not found
+if not defined TargetPath (
+    set "Shortcut_Part=RESTAURANT_APP"
+    goto serch_Shortcut
+    
 )
 
 @REM -------------------------> Prompt for path if shortcut is not found
