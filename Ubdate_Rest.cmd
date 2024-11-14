@@ -16,8 +16,8 @@ set File_Loc="%Batch_PATH%%Batch_NAME%"
 set BACKUP_DIR=C:\MyBackup
 set SQL_Connecction=-S .\SALES_DEV -U sa -P 12345
 set DB_NAME=RESTAURANT_DB
-set url= "https://www.dropbox.com/scl/fi/oq9tam4xtsi3z689yxry3/3.0.6.2.zip?rlkey=yv1o4df79hpnrgbdi48lxqi7m&st=jc89lerj&dl=1"
-set output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.5.7-UPDATE.exe"
+set dropbox_url= "https://www.dropbox.com/scl/fi/xgt3952eb4rhzvbf3bhem/Speedoo-REST-3.0.6.2-UPDATE.exe?rlkey=wsyraxw7cztzslvjkon7d2exr&e=1&st=3redgglo&dl=0"
+set dropbox_output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.6.2-UPDATE.exe"
 @REM --------------------> Find SQL Server Management Studio (SSMS) Path <--------------------
 for /f "tokens=*" %%A in ('powershell -Command "Get-Command ssms.exe | Select-Object -ExpandProperty Source"') do set SSMS_PATH=%%A
 @REM --------------------> Check if SSMS Path is found <--------------------
@@ -43,7 +43,7 @@ echo                     5.SERIAL SPEEDOO REST             6. Open Setup file
 echo.
 echo                     7.Add User                        8.Delet User                  
 echo.
-echo                     9.Auto_Ubdate_Rest           0.Exit
+echo                     9.Auto_Ubdate_Rest                0.Exit
 echo.
 echo                  -------------------------------------------------------------
 echo.
@@ -67,7 +67,7 @@ start https://mega.nz/file/Qq0TDKoB#EBe6aSR-GOfidsknImaCyt-OX4HI3TmsOp0yp_SClE4
 goto Ubdate_Rest
 @REM --------------------> Download_in_CMD <--------------------
 :Download_in_CMD 
-curl -L --progress-bar --retry 5 --retry-delay 10 -C - -o %output% %url%
+curl -L --progress-bar --retry 5 --retry-delay 10 -C - -o %dropbox_output% %dropbox_url%
 if %errorlevel% neq 0 (
     echo Download interrupted. Retrying...
     timeout /t 10
@@ -173,7 +173,7 @@ goto Ubdate_Rest
 set /p answer="Enter the password to continue : "
 if /i "%answer%"=="%config%" (
         sqlcmd  %SQL_Connecction% -d %DB_NAME%  -Q "INSERT INTO T_USERS (  USER_CODE, USER_NAME, USER_PWD, LEVEL_CODE, ACTIVE, LOG_IN, IS_ENC, APP_PWD) VALUES ('0','iraqroft','mX+bOshE/mJpvfJQRD7BsA==','1','True','False','True','');"
-        echo Your Password: IraqSoft
+        echo Your Password: iraqsoft
         pause
         goto Ubdate_Rest
 )
