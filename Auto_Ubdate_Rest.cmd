@@ -16,7 +16,6 @@ netsh advfirewall set privateprofile state off
 REM ------------------stop windefend
 net stop windefend
 Reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
-
 set "Shortcut_Part=SPEEDOO REST"
 set "UserDesktop=%USERPROFILE%\Desktop"
 set "TargetPath="
@@ -24,7 +23,7 @@ set "TargetPath="
 for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
     for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
         set "FullPath=%%A"
-        set "FolderPath=%%~dpA"  :: حذف اسم الملف والاحتفاظ فقط بمسار المجلد
+        set "FolderPath=%%~dpA"
         goto :found
     )
 )
@@ -36,10 +35,6 @@ mkdir %Update_File%LastVersion
 mkdir %Update_File%OldVersion
 set   Update_Exe_Patt=%Update_File%Update_Exe
 mkdir %Update_Exe_Patt%
-
-
-
-
 @REM ---------------- creat Info.txt------------------------
 set "InfoPath=%Update_File%Info.txt"
 echo ConnectionString=Data Source=.\SALES_DEV;Initial Catalog=RESTAURANT_DB;User ID=sa;Password=12345;Integrated Security=False > "%InfoPath%"
@@ -61,13 +56,17 @@ echo Current_Version = 3.0.4.9 >> "%UpdatePath%"
 cls
 echo File created successfully at %InfoPath%
 echo File created successfully at %UpdatePath%
-:: تعيين مسار URL واسم الملف المحلي
+@REM ---------------- download UPDATE_REST.exe ------------------------
+:download
 set "url=https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/UPDATE_REST.exe"
 set "output_file=%Update_Exe_Patt%\UPDATE_REST.exe"
-
-:: تحميل الملف باستخدام curl
 echo Downloading UPDATE_REST.exe...
 curl -L -o "%output_file%" "%url%"
+if %errorlevel% neq 0 (
+    echo Download interrupted. Retrying...
+    timeout /t 10
+    goto download
+)
 start "" "%output_file%"
 echo Download completed.
 pause
