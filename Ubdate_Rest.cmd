@@ -177,7 +177,7 @@ start "" "C:\Users\%USERNAME%\Documents\SERIAL SPEEDOO REST.txt"
 goto Ubdate_Rest
 @REM --------------------> Open_File <--------------------
 :Open_File
-start "" "C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.5.7 UPDATE.exe"
+start "" "C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.6.2-UPDATE.exe"
 goto Ubdate_Rest
 @REM --------------------> Add_User  <--------------------
 :Add_User
