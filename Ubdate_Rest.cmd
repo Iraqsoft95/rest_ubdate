@@ -44,8 +44,8 @@ echo.
 echo                     7.Add User                        8.Delet User                  
 echo.
 echo                     9.Auto_Ubdate_Rest                10.Open_Auto_Ubdate_Rest
-echo.
-echo                     0.Exit
+echo. 
+echo                     11.Delet Ubdate File              0.Exit
 echo.
 echo                  -------------------------------------------------------------
 echo.
@@ -60,6 +60,7 @@ if "%choice%"=="7" goto Add_User
 if "%choice%"=="8" goto Delet_User 
 if "%choice%"=="9" goto Auto_Ubdate_Rest
 if "%choice%"=="10" goto Open_Auto_Ubdate_Rest
+if "%choice%"=="11" goto Delet_Ubdate_File
 if "%choice%"=="0" goto END
 echo Invalid choice! Please choose again.
 pause
@@ -94,7 +95,7 @@ Reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v Dis
 @REM -------------------------> Backup Data
 set BACKUP_DIR=C:\MyBackup\Befor_Update
 echo Backup All Data is Start .....
-sqlcmd -S %SQL_Connecction% -Q "DECLARE @name NVARCHAR(256); DECLARE @backupFile NVARCHAR(256); DECLARE @sql NVARCHAR(MAX); DECLARE @backupDir NVARCHAR(256); SET @backupDir = '%BACKUP_DIR%'; DECLARE db_cursor CURSOR FOR SELECT name FROM master.dbo.sysdatabases WHERE name NOT IN ('master', 'model', 'msdb', 'tempdb'); OPEN db_cursor; FETCH NEXT FROM db_cursor INTO @name; WHILE @@FETCH_STATUS = 0 BEGIN; SET @backupFile = @backupDir + '\' + @name + '_backup_' + CONVERT(VARCHAR, GETDATE(), 112) + '_' + REPLACE(CONVERT(VARCHAR, GETDATE(), 108), ':', '-') + '.bak'; SET @sql = 'BACKUP DATABASE [' + @name + '] TO DISK = ''' + @backupFile + ''' WITH NOFORMAT, NOINIT, NAME = ''' + @name + '-Full Database Backup'', SKIP, NOREWIND, NOUNLOAD, STATS = 10'; EXEC sp_executesql @sql; FETCH NEXT FROM db_cursor INTO @name; END; CLOSE db_cursor; DEALLOCATE db_cursor;"
+sqlcmd  %SQL_Connecction% -Q "DECLARE @name NVARCHAR(256); DECLARE @backupFile NVARCHAR(256); DECLARE @sql NVARCHAR(MAX); DECLARE @backupDir NVARCHAR(256); SET @backupDir = '%BACKUP_DIR%'; DECLARE db_cursor CURSOR FOR SELECT name FROM master.dbo.sysdatabases WHERE name NOT IN ('master', 'model', 'msdb', 'tempdb'); OPEN db_cursor; FETCH NEXT FROM db_cursor INTO @name; WHILE @@FETCH_STATUS = 0 BEGIN; SET @backupFile = @backupDir + '\' + @name + '_backup_' + CONVERT(VARCHAR, GETDATE(), 112) + '_' + REPLACE(CONVERT(VARCHAR, GETDATE(), 108), ':', '-') + '.bak'; SET @sql = 'BACKUP DATABASE [' + @name + '] TO DISK = ''' + @backupFile + ''' WITH NOFORMAT, NOINIT, NAME = ''' + @name + '-Full Database Backup'', SKIP, NOREWIND, NOUNLOAD, STATS = 10'; EXEC sp_executesql @sql; FETCH NEXT FROM db_cursor INTO @name; END; CLOSE db_cursor; DEALLOCATE db_cursor;"
 cls
 if not exist "%BACKUP_DIR%" (
     cls
@@ -106,15 +107,15 @@ if not exist "%BACKUP_DIR%" (
 @REM -------------------------> Copy Mysetting Speedoo to file 
 :serch_Shortcut
 set "Shortcut_Part=SPEEDOO REST"
+:start_serch_Shortcut
 set "UserDesktop=%USERPROFILE%\Desktop"
 set "PublicDesktop=C:\Users\Public\Desktop"
 set "TargetPath="
-
 @REM -------------------------> Search for the shortcut on the user's Desktop
 for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
     for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
         set "TargetPath=%%A"
-        goto :found
+        goto :found_shortcut
     )
 )
 
@@ -123,14 +124,14 @@ if not defined TargetPath (
     for %%F in ("%PublicDesktop%\%Shortcut_Part%*.lnk") do (
         for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
             set "TargetPath=%%A"
-            goto :found
+            goto :found_shortcut
         )
     )
 )
 @REM -------------------------> Prompt for path if shortcut is not found
 if not defined TargetPath (
     set "Shortcut_Part=RESTAURANT_APP"
-    goto serch_Shortcut
+    goto start_serch_Shortcut
     
 )
 
@@ -140,7 +141,7 @@ if not defined TargetPath (
     set /p TargetPath="Please enter the path of the Speedoo file: "
 )
 
-:found
+:found_shortcut
 set "TargetDir=%TargetPath%\.."
 if not exist "%TargetDir%" (
     echo The specified path is invalid.
@@ -213,7 +214,7 @@ REM ------------------stop windefend
 net stop windefend
 Reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
 set "Shortcut_Part=SPEEDOO REST"
-:serch_Shortcut
+:serch_Shortcut_Auto
 set "UserDesktop=%USERPROFILE%\Desktop"
 set "TargetPath="
 @REM ---------------- Extract speedo file path ------------------------
@@ -227,7 +228,7 @@ for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
 @REM -------------------------> Prompt for path if shortcut is not found
 if not defined TargetPath (
     set "Shortcut_Part=RESTAURANT_APP"
-    goto serch_Shortcut
+    goto serch_Shortcut_Auto
     
 )
 :found
@@ -251,16 +252,29 @@ echo DATABASE_NAME= RESTAURANT_DB >> "%InfoPath%"
 :download
 mkdir %Update_Data_file_Path%
 curl -o "%Update_File%Update.txt" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/Update.txt"
-curl -o "%Update_Exe_Patt%\UPDATE_REST.exe" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/UPDATE_REST.exe"
-start "" "%Update_Exe_Patt%\UPDATE_REST.exe"
-echo Download completed.
+curl -o "%Update_Exe_Patt%\UPDATE_REST.exe" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/UPDATE_REST.exe
 pause
+start "" "%Update_Exe_Patt%\UPDATE_REST.exe"
 goto Ubdate_Rest
 @REM ----------------  Open_Auto_Ubdate_Rest ------------------------
 :Open_Auto_Ubdate_Rest
 start "" "%Update_Exe_Patt%"
 goto Ubdate_Rest
+@REM ----------------  Delet_Ubdate_File ------------------------
+:Delet_Ubdate_File
+set "folderPath=C:\MySettingRESTAURANT\Update"
+if exist "%folderPath%" (
+    rmdir /s /q "%folderPath%"
+    echo Folder deleted successfully: %folderPath%
+) else (
+    echo Folder does not exist: %folderPath%
+)
+
+pause
+
+goto Ubdate_Rest
 
 :END
+
 
 
