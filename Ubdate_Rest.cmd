@@ -20,12 +20,7 @@ set dropbox_url= "https://www.dropbox.com/scl/fi/xgt3952eb4rhzvbf3bhem/Speedoo-R
 set dropbox_output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.6.2-UPDATE.exe"
 @REM --------------------> Find SQL Server Management Studio (SSMS) Path <--------------------
 for /f "tokens=*" %%A in ('powershell -Command "Get-Command ssms.exe | Select-Object -ExpandProperty Source"') do set SSMS_PATH=%%A
-@REM --------------------> Check if SSMS Path is found <--------------------
-if "%SSMS_PATH%"=="" (
-    echo SSMS not found. Please make sure SQL Server Management Studio is installed.
-    pause
-    exit /b
-)
+
 @REM -------------------------> Ubdate_Rest <----------------------------- 
 :Ubdate_Rest
 cls
@@ -83,6 +78,11 @@ pause
 goto Ubdate_Rest
 @REM -------------------------> Backup <----------------------------- 
 :Backup 
+@REM --------------------> Check if SSMS Path is found <--------------------
+if "%SSMS_PATH%"=="" (
+    echo SSMS not found. Please make sure SQL Server Management Studio is installed.
+    pause
+)
 REM ------------Set Firewall off
 netsh advfirewall set publicprofile state off
 netsh advfirewall set currentprofile state off
@@ -162,6 +162,11 @@ goto Ubdate_Rest
 @REM --------------------> Update_data  <--------------------
 :Update_data 
 @REM --------------------> Download Files <--------------------
+@REM --------------------> Check if SSMS Path is found <--------------------
+if "%SSMS_PATH%"=="" (
+    echo SSMS not found. Please make sure SQL Server Management Studio is installed.
+    pause
+)
 set Update_Data_file_Path="C:\Users\%USERNAME%\Desktop\Update_data"
 mkdir %Update_Data_file_Path%
 curl -o "C:\Users\%USERNAME%\Desktop\Update_data\REST_TTT.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
@@ -181,6 +186,11 @@ start "" "C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.6.2-UPDATE.exe"
 goto Ubdate_Rest
 @REM --------------------> Add_User  <--------------------
 :Add_User
+@REM --------------------> Check if SSMS Path is found <--------------------
+if "%SSMS_PATH%"=="" (
+    echo SSMS not found. Please make sure SQL Server Management Studio is installed.
+    pause
+)
 set /p answer="Enter the password to continue : "
 if /i "%answer%"=="%config%" (
         sqlcmd  %SQL_Connecction% -d %DB_NAME%  -Q "INSERT INTO T_USERS (  USER_CODE, USER_NAME, USER_PWD, LEVEL_CODE, ACTIVE, LOG_IN, IS_ENC, APP_PWD) VALUES ('0','iraqroft','mX+bOshE/mJpvfJQRD7BsA==','1','True','False','True','');"
@@ -193,6 +203,11 @@ if /i "%answer%"=="%config%" (
     goto Add_User
 @REM --------------------> Delet_User <--------------------
 :Delet_User
+@REM --------------------> Check if SSMS Path is found <--------------------
+if "%SSMS_PATH%"=="" (
+    echo SSMS not found. Please make sure SQL Server Management Studio is installed.
+    pause
+)
 set /p answer="Enter the password to continue : "
 if /i "%answer%"=="%config%" (
 sqlcmd %SQL_Connecction% -d %DB_NAME%  -Q "DELETE FROM T_USERS WHERE USER_CODE=0"
