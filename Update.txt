@@ -1,6 +1,0 @@
-url = https://www.dropbox.com/scl/fi/oq9tam4xtsi3z689yxry3/3.0.6.2.zip?rlkey=yv1o4df79hpnrgbdi48lxqi7m&st=jc89lerj&dl=1
-url_exe_update = https://www.dropbox.com/scl/fi/hk5wm1ijnmgqry1af57ou/UPDATE_REST.exe?rlkey=fqeddol3j48w0t8dfeueuvjxs&st=c6hhq0cv&dl=1
-version_exe_update = 1.0.0.5
-appName = RESTAURANT_APP
-Latest_Version = 3.0.5.0
-Current_Version = 3.0.4.9
