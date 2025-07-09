@@ -1,5 +1,3 @@
-USE [RESTAURANT_DB]
-GO
 
 DECLARE	@return_value int,
 		@SUBMIT_FLAG int
