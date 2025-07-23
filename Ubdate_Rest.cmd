@@ -229,14 +229,14 @@ mkdir %Update_Data_file_Path%
 if "%App_Name_choice%"=="1" (
     set TTT_path="C:\Users\%USERNAME%\Desktop\Update_data\POS_TTT.sql"
     set VVV_path="C:\Users\%USERNAME%\Desktop\Update_data\POS_VVV_PPP.sql"
-    curl -o !TTT_path! "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_TTT.sql"
-    curl -o !VVV_path! "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_VVV_PPP.sql"
+    curl -o %TTT_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_TTT.sql"
+    curl -o %VVV_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_VVV_PPP.sql"
     goto Start_Update
 ) else if "%App_Name_choice%"=="2" (
     set TTT_path="C:\Users\%USERNAME%\Desktop\Update_data\REST_TTT.sql"
     set VVV_path="C:\Users\%USERNAME%\Desktop\Update_data\REST_VVV_PPP.sql"
-    curl -o !TTT_path! "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
-    curl -o !VVV_path! "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
+    curl -o %TTT_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
+    curl -o %VVV_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
     goto Start_Update
 ) else (
     echo Invalid choice! Please choose again.
