@@ -9,6 +9,8 @@ exit /b
 
 @REM --------------------> Variables <--------------------
 :main
+@REM color 0A
+color 0F
 set config=22
 set "Batch_Path=%~dp0"
 set "Batch_NAME=%~nx0"
@@ -47,6 +49,7 @@ echo.
 set /p App_Name_choice="           Please choose an option : "
 if "%App_Name_choice%"=="1" (
     set mega_url= https://mega.nz/file/lz1WSISK#0L9XmcArOMxO0o1dLMdDVWxFRKrdwJdubwNw9ZS7eYY
+    set mega_output="C:\Users\%USERNAME%\Downloads\SPEEDOO POS 1.3.8.4 UPDATE.exe"
 
     set dropbox_url= "https://www.dropbox.com/scl/fi/p5svl5yfmihdyuva6c158/SPEEDOO-POS-1.3.8.4-UPDATE.exe?rlkey=tms77f0sc9xe5he1l2m9mmvxu&e=1&dl=0"
     set dropbox_output="C:\Users\%USERNAME%\Downloads\SPEEDOO-POS-1.3.8.4-UPDATE.exe"
@@ -60,8 +63,9 @@ if "%App_Name_choice%"=="1" (
 
     set App_Name=SPEEDOO POS
     goto Ubdate_App
-) else  (
+) else if "%App_Name_choice%"=="2" (
     set mega_url= https://mega.nz/file/Qq0TDKoB#EBe6aSR-GOfidsknImaCyt-OX4HI3TmsOp0yp_SClE4
+    set mega_output="C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.6.2 UPDATE.exe"
 
     set dropbox_url= "https://www.dropbox.com/scl/fi/xgt3952eb4rhzvbf3bhem/Speedoo-REST-3.0.6.2-UPDATE.exe?rlkey=wsyraxw7cztzslvjkon7d2exr&e=1&st=3redgglo&dl=0"
     set dropbox_output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.6.2-UPDATE.exe"
@@ -75,7 +79,11 @@ if "%App_Name_choice%"=="1" (
 
     set App_Name=SPEEDOO REST 
     goto Ubdate_App
-) 
+) else (
+    echo Invalid choice! Please choose again.
+    pause
+    goto App_Name
+)
 
 
 @REM -------------------------> Ubdate_App <----------------------------- 
@@ -83,35 +91,55 @@ if "%App_Name_choice%"=="1" (
 cls
 echo.
 echo.
-echo                  -------------------------------------------------------------
-echo.                                       Ubdate %App_Name%
-echo                  -------------------------------------------------------------
+echo.           
 echo.
-echo                     1.Download Mega                   2.Download dropbox 
-echo.       
-echo                     3.Backup                          4.Update data   
-echo.
-echo                     5.SERIAL SPEEDOO                  6. Open Setup file                  
-echo.
-echo                     7.Add User                        8.Delet User                  
-echo.
-echo                                         0.GO Back
-echo.
-echo                  -------------------------------------------------------------
+echo.                                                                                              
+echo             /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+echo             \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+echo             /\/\                                                                                    /\/\
+echo             \/\/                                  Ubdate %App_Name%                                 \/\/
+echo             /\/\            ------------------------------------------------------------            /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                 1.Download Mega                   2.Download dropbox               /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                 3.Backup                          4.Update data                    /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                 5.SERIAL SPEEDOO                  6. Open Setup file               /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                 7.Add User                        8.Delet User                     /\/\
+echo             \/\/                                                                                    \/\/
+echo             \/\/                 0.GO Back                                                          \/\/
+echo             /\/\                                                                                    /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+echo             \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 echo.
 set /p choice="Please choose an option : "
-if "%choice%"=="1" goto Download 
-if "%choice%"=="2" goto Download_in_CMD 
-if "%choice%"=="3" goto Backup
-if "%choice%"=="4" goto Update_data 
-if "%choice%"=="5" goto SERIAL_SPEEDOO_REST
-if "%choice%"=="6" goto Open_File
-if "%choice%"=="7" goto Add_User 
-if "%choice%"=="8" goto Delet_User 
-if "%choice%"=="0" goto END
-echo Invalid choice! Please choose again.
-pause
-goto Ubdate_App
+if "%choice%"=="1" (
+   goto Download 
+) else if "%choice%"=="2" (
+    goto Download_in_CMD 
+) else if "%choice%"=="3" (
+    goto Backup
+) else if "%choice%"=="4" (
+    goto Update_data 
+) else if "%choice%"=="5" (
+    goto SERIAL_SPEEDOO_REST    
+) else if "%choice%"=="6" (
+    goto Open_File  
+) else if "%choice%"=="7" (
+    goto Add_User   
+) else if "%choice%"=="8" (
+    goto Delet_User
+) else if "%choice%"=="0" (
+    goto END
+) else (
+    echo Invalid choice! Please choose again.
+    pause
+    goto Ubdate_App
+)
+
+
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Download Mega >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Download 
     start %mega_url%
@@ -195,19 +223,32 @@ goto Ubdate_App
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Update_data >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Update_data 
 set "SSMS_PATH=C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe"
-
-@REM --------------------> Download Files <--------------------
-@REM --------------------> Check if SSMS Path is found <--------------------
-
 set Update_Data_file_Path="%UserDesktop%\Update_data"
 mkdir %Update_Data_file_Path%
-curl -o "%UserDesktop%\Update_data\REST_TTT.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
-curl -o "%UserDesktop%\Update_data\REST_VVV_PPP.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
-@REM curl -o "C:\Users\%USERNAME%\Desktop\Update_data\P_CHECK_EXIST_COLUMNS.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/P_CHECK_EXIST_COLUMNS.sql"
-@REM --------------------> Create check exist <--------------------
+
+if "%App_Name_choice%"=="1" (
+    set TTT_path="C:\Users\%USERNAME%\Desktop\Update_data\POS_TTT.sql"
+    set VVV_path="C:\Users\%USERNAME%\Desktop\Update_data\POS_VVV_PPP.sql"
+    curl -o %TTT_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_TTT.sql"
+    curl -o %VVV_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_VVV_PPP.sql"
+    goto Start_Update
+) else if "%App_Name_choice%"=="2" (
+    set TTT_path="C:\Users\%USERNAME%\Desktop\Update_data\REST_TTT.sql"
+    set VVV_path="C:\Users\%USERNAME%\Desktop\Update_data\REST_VVV_PPP.sql"
+    curl -o %TTT_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
+    curl -o %VVV_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
+    goto Start_Update
+) else (
+    echo Invalid choice! Please choose again.
+    pause
+    goto App_Name
+)
+
+:Start_Update
+@@REM --------------------> Create check exist <--------------------
 set FOLDER_PATH=%UserDesktop%\Update_data
-set FILE_NAME=P_CHECK_EXIST_COLUMNS.sql
-set FULL_PATH=%FOLDER_PATH%\%FILE_NAME%
+set CHECK_EXIST=P_CHECK_EXIST_COLUMNS.sql
+set CHECK_EXIST_PATH=%FOLDER_PATH%\%CHECK_EXIST%
 if not exist "%FOLDER_PATH%" (
     mkdir "%FOLDER_PATH%"
 )
@@ -226,9 +267,9 @@ if not exist "%FOLDER_PATH%" (
     echo SELECT 'Return Value' = ^@return_value
     echo.
     echo GO
-) > "%FULL_PATH%"
+) > "%CHECK_EXIST_PATH%"
 @REM --------------------> Open SQL Scripts in One Session <--------------------
-set SQL_FILES="%FOLDER_PATH%\REST_TTT.sql" "%FOLDER_PATH%\REST_VVV_PPP.sql" "%FOLDER_PATH%\P_CHECK_EXIST_COLUMNS.sql"
+set SQL_FILES=%TTT_path% %VVV_path% "!CHECK_EXIST_PATH!"
 start "" "%SSMS_PATH%" %SQL_FILES%
 goto Ubdate_App
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SERIAL_SPEEDOO_REST >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -238,7 +279,17 @@ SERIAL SPEEDOO REST.txt
 goto Ubdate_App
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Open_File >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Open_File
-start "" %dropbox_output%
+if exist "%mega_output%" (
+    echo Running: %mega_output%
+    start "" "%mega_output%"
+) else if exist "%dropbox_output%" (
+    echo Running: %dropbox_output%
+    start "" "%dropbox_output%"
+) else (
+    echo [ERROR] Neither update file was found.
+    pause
+)
+start "" %Setup_file%
 goto Ubdate_App
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Add_User >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Add_User
