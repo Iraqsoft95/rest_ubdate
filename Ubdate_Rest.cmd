@@ -1,6 +1,6 @@
 @echo off
 @REM --------------------> Run Batch As Admin <--------------------
-setlocal
+setlocal EnableDelayedExpansion
 REM check if file Run Us Admin
 openfiles >nul 2>&1
 if '%errorlevel%' == '0' goto main
@@ -9,62 +9,142 @@ exit /b
 
 @REM --------------------> Variables <--------------------
 :main
+@REM color 0A
+color 0F
 set config=22
 set "Batch_Path=%~dp0"
 set "Batch_NAME=%~nx0"
 set File_Loc="%Batch_PATH%%Batch_NAME%"
-set BACKUP_DIR=C:\MyBackup
-set SQL_Connecction=-S .\SALES_DEV -U sa -P 12345
+set BACKUP_DIR=C:\MyBackup/Befor_Update
+set SQL_Connection=-S .\SALES_DEV -E
 set DB_NAME=RESTAURANT_DB
-set dropbox_url= "https://www.dropbox.com/scl/fi/xgt3952eb4rhzvbf3bhem/Speedoo-REST-3.0.6.2-UPDATE.exe?rlkey=wsyraxw7cztzslvjkon7d2exr&e=1&st=3redgglo&dl=0"
-set dropbox_output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.6.2-UPDATE.exe"
-@REM --------------------> Find SQL Server Management Studio (SSMS) Path <--------------------
-for /f "tokens=*" %%A in ('powershell -Command "Get-Command ssms.exe | Select-Object -ExpandProperty Source"') do set SSMS_PATH=%%A
+set "UserDesktop=%USERPROFILE%\Desktop"
+set "PublicDesktop=C:\Users\Public\Desktop"
+set "PublicDocuments=C:\Users\Public\Documents"
+set "SQL_SERVICE=MSSQL$SALES_DEV"
+set "SERVER=.\SALES_DEV"
+set SQL_FILES="%FOLDER_PATH%\REST_TTT.sql" "%FOLDER_PATH%\REST_VVV_PPP.sql" "%FOLDER_PATH%\P_CHECK_EXIST_COLUMNS.sql"
 
-@REM -------------------------> Ubdate_Rest <----------------------------- 
-:Ubdate_Rest
+@REM -------------------------> App_Name <-------------------------
+:App_Name
 cls
 echo.
 echo.
-echo                  -------------------------------------------------------------
-echo.                                          Ubdate_Rest
-echo                  -------------------------------------------------------------
+echo.           
 echo.
-echo                     1.Download Mega                   2.Download dropbox 
-echo.       
-echo                     3.Backup                          4.Update data   
+echo.                                                                                              
+echo             /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+echo             \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+echo             /\/\                                                                                    /\/\
+echo             \/\/                                       App Name                                     \/\/
+echo             /\/\            ------------------------------------------------------------            /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                 1. SPEEDOO POS                   2. SPEEDOO REST                   /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                                                                                    /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+echo             \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 echo.
-echo                     5.SERIAL SPEEDOO REST             6. Open Setup file                  
+set /p App_Name_choice="           Please choose an option : "
+if "%App_Name_choice%"=="1" (
+    set mega_url= https://mega.nz/file/lz1WSISK#0L9XmcArOMxO0o1dLMdDVWxFRKrdwJdubwNw9ZS7eYY
+    set mega_output="C:\Users\%USERNAME%\Downloads\SPEEDOO POS 1.3.8.4 UPDATE.exe"
+
+    set dropbox_url= "https://www.dropbox.com/scl/fi/p5svl5yfmihdyuva6c158/SPEEDOO-POS-1.3.8.4-UPDATE.exe?rlkey=tms77f0sc9xe5he1l2m9mmvxu&e=1&dl=0"
+    set dropbox_output="C:\Users\%USERNAME%\Downloads\SPEEDOO-POS-1.3.8.4-UPDATE.exe"
+
+    set "Shortcut_Part=SPEEDOO POS"
+    set "MySettingName=MySettingSPEEDOO"
+
+    set "SERIAL_SPEEDOO=SERIAL SPEEDOO.txt"
+
+    set DB_NAME=SPEEDOO_DB
+
+    set App_Name=SPEEDOO POS
+    goto Ubdate_App
+) else if "%App_Name_choice%"=="2" (
+    set mega_url= https://mega.nz/file/Qq0TDKoB#EBe6aSR-GOfidsknImaCyt-OX4HI3TmsOp0yp_SClE4
+    set mega_output="C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.6.2 UPDATE.exe"
+
+    set dropbox_url= "https://www.dropbox.com/scl/fi/xgt3952eb4rhzvbf3bhem/Speedoo-REST-3.0.6.2-UPDATE.exe?rlkey=wsyraxw7cztzslvjkon7d2exr&e=1&st=3redgglo&dl=0"
+    set dropbox_output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.6.2-UPDATE.exe"
+    
+    set "Shortcut_Part=SPEEDOO REST"
+    set "MySettingName=MySettingRESTAURANT"
+
+    set "SERIAL_SPEEDOO=SERIAL SPEEDOO REST.txt"
+
+    set DB_NAME=RESTAURANT_DB
+
+    set App_Name=SPEEDOO REST 
+    goto Ubdate_App
+) else (
+    echo Invalid choice! Please choose again.
+    pause
+    goto App_Name
+)
+
+
+@REM -------------------------> Ubdate_App <----------------------------- 
+:Ubdate_App
+cls
 echo.
-echo                     7.Add User                        8.Delet User                  
 echo.
-echo                     9.Auto_Ubdate_Rest                10.Open_Auto_Ubdate_Rest
-echo. 
-echo                     11.Delet Ubdate File              0.Exit
+echo.           
 echo.
-echo                  -------------------------------------------------------------
+echo.                                                                                              
+echo             /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+echo             \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+echo             /\/\                                                                                    /\/\
+echo             \/\/                                  Ubdate %App_Name%                                 \/\/
+echo             /\/\            ------------------------------------------------------------            /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                 1.Download Mega                   2.Download dropbox               /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                 3.Backup                          4.Update data                    /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                 5.SERIAL SPEEDOO                  6. Open Setup file               /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\                 7.Add User                        8.Delet User                     /\/\
+echo             \/\/                                                                                    \/\/
+echo             \/\/                 0.GO Back                                                          \/\/
+echo             /\/\                                                                                    /\/\
+echo             \/\/                                                                                    \/\/
+echo             /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+echo             \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 echo.
 set /p choice="Please choose an option : "
-if "%choice%"=="1" goto Download 
-if "%choice%"=="2" goto Download_in_CMD 
-if "%choice%"=="3" goto Backup
-if "%choice%"=="4" goto Update_data 
-if "%choice%"=="5" goto SERIAL_SPEEDOO_REST
-if "%choice%"=="6" goto Open_File
-if "%choice%"=="7" goto Add_User 
-if "%choice%"=="8" goto Delet_User 
-if "%choice%"=="9" goto Auto_Ubdate_Rest
-if "%choice%"=="10" goto Open_Auto_Ubdate_Rest
-if "%choice%"=="11" goto Delet_Ubdate_File
-if "%choice%"=="0" goto END
-echo Invalid choice! Please choose again.
-pause
-goto Ubdate_Rest
-@REM -------------------------> Download <----------------------------- 
+if "%choice%"=="1" (
+   goto Download 
+) else if "%choice%"=="2" (
+    goto Download_in_CMD 
+) else if "%choice%"=="3" (
+    goto Backup
+) else if "%choice%"=="4" (
+    goto Update_data 
+) else if "%choice%"=="5" (
+    goto SERIAL_SPEEDOO_REST    
+) else if "%choice%"=="6" (
+    goto Open_File  
+) else if "%choice%"=="7" (
+    goto Add_User   
+) else if "%choice%"=="8" (
+    goto Delet_User
+) else if "%choice%"=="0" (
+    goto END
+) else (
+    echo Invalid choice! Please choose again.
+    pause
+    goto Ubdate_App
+)
+
+
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Download Mega >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Download 
-start https://mega.nz/file/Qq0TDKoB#EBe6aSR-GOfidsknImaCyt-OX4HI3TmsOp0yp_SClE4
-goto Ubdate_Rest
-@REM --------------------> Download_in_CMD <--------------------
+    start %mega_url%
+    goto Ubdate_App
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Download Dropbox >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Download_in_CMD 
 curl -L --progress-bar --retry 5 --retry-delay 10 -C - -o %dropbox_output% %dropbox_url%
 if %errorlevel% neq 0 (
@@ -75,14 +155,9 @@ if %errorlevel% neq 0 (
 echo Download Complete. Waiting To Opening The File...
 start "" %dropbox_output%
 pause
-goto Ubdate_Rest
-@REM -------------------------> Backup <----------------------------- 
+goto Ubdate_App
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Backup >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Backup 
-@REM --------------------> Check if SSMS Path is found <--------------------
-if "%SSMS_PATH%"=="" (
-    echo SSMS not found. Please make sure SQL Server Management Studio is installed.
-    pause
-)
 REM ------------Set Firewall off
 netsh advfirewall set publicprofile state off
 netsh advfirewall set currentprofile state off
@@ -93,203 +168,230 @@ REM ------------------stop windefend
 net stop windefend
 Reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
 @REM -------------------------> Backup Data
-set BACKUP_DIR=C:\MyBackup\Befor_Update
-echo Backup All Data is Start .....
-sqlcmd  %SQL_Connecction% -Q "DECLARE @name NVARCHAR(256); DECLARE @backupFile NVARCHAR(256); DECLARE @sql NVARCHAR(MAX); DECLARE @backupDir NVARCHAR(256); SET @backupDir = '%BACKUP_DIR%'; DECLARE db_cursor CURSOR FOR SELECT name FROM master.dbo.sysdatabases WHERE name NOT IN ('master', 'model', 'msdb', 'tempdb'); OPEN db_cursor; FETCH NEXT FROM db_cursor INTO @name; WHILE @@FETCH_STATUS = 0 BEGIN; SET @backupFile = @backupDir + '\' + @name + '_backup_' + CONVERT(VARCHAR, GETDATE(), 112) + '_' + REPLACE(CONVERT(VARCHAR, GETDATE(), 108), ':', '-') + '.bak'; SET @sql = 'BACKUP DATABASE [' + @name + '] TO DISK = ''' + @backupFile + ''' WITH NOFORMAT, NOINIT, NAME = ''' + @name + '-Full Database Backup'', SKIP, NOREWIND, NOUNLOAD, STATS = 10'; EXEC sp_executesql @sql; FETCH NEXT FROM db_cursor INTO @name; END; CLOSE db_cursor; DEALLOCATE db_cursor;"
-cls
+echo Backup is start .....
+sqlcmd %SQL_Connection% -Q "DECLARE @name NVARCHAR(256), @backupFile NVARCHAR(512), @sql NVARCHAR(MAX), @backupDir NVARCHAR(256); SET @backupDir = N'%BACKUP_DIR%'; DECLARE db_cursor CURSOR FOR SELECT name FROM master.dbo.sysdatabases WHERE name NOT IN ('master','model','msdb','tempdb'); OPEN db_cursor; FETCH NEXT FROM db_cursor INTO @name; WHILE @@FETCH_STATUS = 0 BEGIN SET @backupFile = @backupDir + '\' + @name + '__' + REPLACE(CONVERT(CHAR(10), GETDATE(), 120), '-', '-') + '_' + LEFT(REPLACE(CONVERT(CHAR(5), GETDATE(), 108), ':', '-'), 5) + '.bak'; SET @backupFile = REPLACE(@backupFile, ' ', '_'); SET @sql = 'BACKUP DATABASE [' + @name + '] TO DISK = ''' + @backupFile + ''' WITH NOFORMAT, NOINIT, NAME = ''' + @name + '-Full Database Backup'', SKIP, NOREWIND, NOUNLOAD, STATS = 10'; EXEC sp_executesql @sql; FETCH NEXT FROM db_cursor INTO @name; END; CLOSE db_cursor; DEALLOCATE db_cursor;"
 if not exist "%BACKUP_DIR%" (
-    cls
     mkdir "%BACKUP_DIR%"
     echo Folder created: %BACKUP_DIR%
-    goto Backup
-)
-
+    goto Backup 
+) 
+echo Backup Successful in folder %BACKUP_DIR%
 @REM -------------------------> Copy Mysetting Speedoo to file 
-:serch_Shortcut
-set "Shortcut_Part=SPEEDOO REST"
 :start_serch_Shortcut
-set "UserDesktop=%USERPROFILE%\Desktop"
-set "PublicDesktop=C:\Users\Public\Desktop"
 set "TargetPath="
-@REM -------------------------> Search for the shortcut on the user's Desktop
-for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
+@REM -------------------------> check if shortcut in user desktop
+for %%F in ("%UserDesktop%\!Shortcut_Part!*.lnk") do (
     for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
         set "TargetPath=%%A"
-        goto :found_shortcut
+        goto found_shortcut
     )
 )
-
 @REM -------------------------> Search on Public Desktop if not found on the User's Desktop
 if not defined TargetPath (
-    for %%F in ("%PublicDesktop%\%Shortcut_Part%*.lnk") do (
+    for %%F in ("%PublicDesktop%\!Shortcut_Part!*.lnk") do (
         for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
             set "TargetPath=%%A"
-            goto :found_shortcut
+            goto found_shortcut
         )
     )
 )
 @REM -------------------------> Prompt for path if shortcut is not found
 if not defined TargetPath (
-    set "Shortcut_Part=RESTAURANT_APP"
-    goto start_serch_Shortcut
+    if "%App_Name_choice%"=="1"  (
+        set "Shortcut_Part=SPEEDOO_APP"
+        goto start_serch_Shortcut
     
+    ) else  (
+        set "Shortcut_Part=RESTAURANT_APP"
+        goto start_serch_Shortcut
+    ) 
 )
-
-@REM -------------------------> Prompt for path if shortcut is not found
+@REM -------------------------> check if not defined
 if not defined TargetPath (
-    echo Could not find a shortcut containing "%Shortcut_Part%" on any desktop.
-    set /p TargetPath="Please enter the path of the Speedoo file: "
+    cls
+    echo Could not find the shortcut for !Shortcut_File! on either User or Public Desktop.
+    set /p TargetPath="Please type the path of Speedoo file location: "
 )
-
 :found_shortcut
 set "TargetDir=%TargetPath%\.."
-if not exist "%TargetDir%" (
-    echo The specified path is invalid.
+mkdir "%BACKUP_DIR%\%MySettingName%"
+robocopy "%TargetDir%\%MySettingName%" "%BACKUP_DIR%\%MySettingName%" /E /COPYALL /R:0 /W:0 /V /ZB
+echo %TargetDir% 
+powershell -Command "Compress-Archive -Path '%BACKUP_DIR%\*' -DestinationPath '%BACKUP_DIR%.zip' -Force"
+pause
+goto Ubdate_App
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Update_data >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+:Update_data 
+set "SSMS_PATH=C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe"
+set Update_Data_file_Path="%UserDesktop%\Update_data"
+mkdir %Update_Data_file_Path%
+
+if "%App_Name_choice%"=="1" (
+    set TTT_path="C:\Users\%USERNAME%\Desktop\Update_data\POS_TTT.sql"
+    set VVV_path="C:\Users\%USERNAME%\Desktop\Update_data\POS_VVV_PPP.sql"
+    curl -o !TTT_path! "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_TTT.sql"
+    curl -o !VVV_path! "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_VVV_PPP.sql"
+    goto Start_Update
+) else if "%App_Name_choice%"=="2" (
+    set TTT_path="C:\Users\%USERNAME%\Desktop\Update_data\REST_TTT.sql"
+    set VVV_path="C:\Users\%USERNAME%\Desktop\Update_data\REST_VVV_PPP.sql"
+    curl -o !TTT_path! "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
+    curl -o !VVV_path! "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
+    goto Start_Update
+) else (
+    echo Invalid choice! Please choose again.
     pause
-    exit /b
+    goto App_Name
 )
 
-@REM -------------------------> Create backup directory and copy files
-set "MySettingName=MySettingRESTAURANT"
-mkdir "%Befor_Update_Path%\%MySettingName%"
-robocopy "%TargetDir%\%MySettingName%" "%BACKUP_DIR%\%MySettingName%" /E /COPYALL /R:0 /W:0 /V /ZB
-cls
-echo.
-echo.
-echo Backup Done! in  : %BACKUP_DIR% 
-pause
-goto Ubdate_Rest
-@REM --------------------> Update_data  <--------------------
-:Update_data 
-@REM --------------------> Download Files <--------------------
-@REM --------------------> Check if SSMS Path is found <--------------------
-if "%SSMS_PATH%"=="" (
-    echo SSMS not found. Please make sure SQL Server Management Studio is installed.
-    pause
+:Start_Update
+@@REM --------------------> Create check exist <--------------------
+set FOLDER_PATH=%UserDesktop%\Update_data
+set CHECK_EXIST=P_CHECK_EXIST_COLUMNS.sql
+set CHECK_EXIST_PATH=%FOLDER_PATH%\%CHECK_EXIST%
+if not exist "%FOLDER_PATH%" (
+    mkdir "%FOLDER_PATH%"
 )
-set Update_Data_file_Path="C:\Users\%USERNAME%\Desktop\Update_data"
-mkdir %Update_Data_file_Path%
-curl -o "C:\Users\%USERNAME%\Desktop\Update_data\REST_TTT.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
-curl -o "C:\Users\%USERNAME%\Desktop\Update_data\REST_VVV_PPP.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
-curl -o "C:\Users\%USERNAME%\Desktop\Update_data\P_CHECK_EXIST_COLUMNS.sql" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/P_CHECK_EXIST_COLUMNS.sql"
+(
+    echo USE [!DB_NAME!]
+    echo GO
+    echo.
+    echo DECLARE ^@return_value int,
+    echo         ^@SUBMIT_FLAG int
+    echo.
+    echo EXEC ^@return_value = [dbo].[P_CHECK_EXIST_COLUMNS]
+    echo      ^@SUBMIT_FLAG = ^@SUBMIT_FLAG OUTPUT
+    echo.
+    echo SELECT ^@SUBMIT_FLAG as N'^@SUBMIT_FLAG'
+    echo.
+    echo SELECT 'Return Value' = ^@return_value
+    echo.
+    echo GO
+) > "%CHECK_EXIST_PATH%"
 @REM --------------------> Open SQL Scripts in One Session <--------------------
-set SQL_FILES="C:\Users\%USERNAME%\Desktop\Update_data\REST_TTT.sql" "C:\Users\%USERNAME%\Desktop\Update_data\REST_VVV_PPP.sql" "C:\Users\%USERNAME%\Desktop\Update_data\P_CHECK_EXIST_COLUMNS.sql"
+set SQL_FILES=%TTT_path% %VVV_path% "!CHECK_EXIST_PATH!"
 start "" "%SSMS_PATH%" %SQL_FILES%
-goto Ubdate_Rest
-@REM --------------------> SERIAL_SPEEDOO_REST <--------------------
+goto Ubdate_App
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SERIAL_SPEEDOO_REST >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :SERIAL_SPEEDOO_REST
-start "" "C:\Users\%USERNAME%\Documents\SERIAL SPEEDOO REST.txt"
-goto Ubdate_Rest
-@REM --------------------> Open_File <--------------------
+start "" "C:\Users\%USERNAME%\Documents\%SERIAL_SPEEDOO%"
+SERIAL SPEEDOO REST.txt
+goto Ubdate_App
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Open_File >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Open_File
-start "" "C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.6.2-UPDATE.exe"
-goto Ubdate_Rest
-@REM --------------------> Add_User  <--------------------
+if exist "%mega_output%" (
+    echo Running: %mega_output%
+    start "" "%mega_output%"
+) else if exist "%dropbox_output%" (
+    echo Running: %dropbox_output%
+    start "" "%dropbox_output%"
+) else (
+    echo [ERROR] Neither update file was found.
+    pause
+)
+start "" %Setup_file%
+goto Ubdate_App
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Add_User >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Add_User
-@REM --------------------> Check if SSMS Path is found <--------------------
-if "%SSMS_PATH%"=="" (
-    echo SSMS not found. Please make sure SQL Server Management Studio is installed.
-    pause
+
+call :AUTH
+if /I "!user_input!"=="!decoded_config!" (
+    call :Check_Sql_Connection
+        if "%App_Name_choice%"=="" (
+            sqlcmd !SQL_Connection! -d %DB_NAME%  -Q "INSERT INTO T_USERS (USER_CODE, USER_NAME, USER_PWD, LEVEL_CODE, ACTIVE, LOG_IN, BOX_CODE, IS_ENC, SECURETY_CODE, APP_PWD, TYPE_PRICE_CODE, STORE_CODE, MANDOOB_CODE, LEVEL_APP, DRIVER_CODE, TYPE_CH_OFFER) VALUES ('0','IraqSoft','foiUfmc49d0iGecozsVrBA==','1','True','False','5000','True','3','-10','-10','-10','','1','0','');"
+             echo Your Password: IraqSoft
+            pause
+            goto Ubdate_App
+
+        ) else (
+            sqlcmd !SQL_Connection! -d %DB_NAME%  -Q "INSERT INTO T_USERS (USER_CODE, USER_NAME, USER_PWD, LEVEL_CODE, ACTIVE, LOG_IN, IS_ENC, APP_PWD) VALUES ('0','IraqSoft','foiUfmc49d0iGecozsVrBA==','1','True','False','True','');"
+            echo Your Password: IraqSoft
+            pause
+            goto Ubdate_App
+        )
+
+) else (
+    goto Add_User 
 )
-set /p answer="Enter the password to continue : "
-if /i "%answer%"=="%config%" (
-        sqlcmd  %SQL_Connecction% -d %DB_NAME%  -Q "INSERT INTO T_USERS (  USER_CODE, USER_NAME, USER_PWD, LEVEL_CODE, ACTIVE, LOG_IN, IS_ENC, APP_PWD) VALUES ('0','iraqroft','mX+bOshE/mJpvfJQRD7BsA==','1','True','False','True','');"
-        echo Your Password: iraqsoft
-        pause
-        goto Ubdate_Rest
-)
-    echo Invalid config! Please try again.
-    pause
     goto Add_User
-@REM --------------------> Delet_User <--------------------
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Delet_User  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Delet_User
 @REM --------------------> Check if SSMS Path is found <--------------------
-if "%SSMS_PATH%"=="" (
-    echo SSMS not found. Please make sure SQL Server Management Studio is installed.
-    pause
-)
-set /p answer="Enter the password to continue : "
-if /i "%answer%"=="%config%" (
-sqlcmd %SQL_Connecction% -d %DB_NAME%  -Q "DELETE FROM T_USERS WHERE USER_CODE=0"
-pause
-goto Ubdate_Rest
+    call :AUTH  
+    if /I "!user_input!"=="!decoded_config!" (
+        call :Check_Sql_Connection
+        sqlcmd !SQL_Connection! -d %DB_NAME%  -Q "DELETE FROM T_USERS WHERE USER_CODE=0"
+        pause
+        goto Main_Menu
 ) else (
     goto Delet_User
 )
 
-@REM --------------------> Auto_Ubdate_Rest <--------------------
-:Auto_Ubdate_Rest
-REM ------------Set Firewall off
-netsh advfirewall set publicprofile state off
-netsh advfirewall set currentprofile state off
-netsh advfirewall set domainprofile state off
-netsh advfirewall set allprofiles state off
-netsh advfirewall set privateprofile state off
-REM ------------------stop windefend
-net stop windefend
-Reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
-set "Shortcut_Part=SPEEDOO REST"
-:serch_Shortcut_Auto
-set "UserDesktop=%USERPROFILE%\Desktop"
-set "TargetPath="
-@REM ---------------- Extract speedo file path ------------------------
-for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
-    for /f "delims=" %%A in ('powershell -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"') do (
-        set "FullPath=%%A"
-        set "FolderPath=%%~dpA"
-        goto :found
+
+pause
+
+goto Ubdate_App
+@REM -------------------------> AUTH <-----------------------------
+
+:AUTH
+set config=MTk5NQ==
+for /f "delims=" %%A in (
+  'powershell -noprofile -command "$pass = Read-Host '       Type Password: ' -AsSecureString; $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pass); [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR).Trim()"'
+) do set "user_input=%%A"
+
+for /f "delims=" %%B in (
+  'powershell -noprofile -command "[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('%config%'))"'
+) do set "decoded_config=%%B"
+
+set "user_input=!user_input: =!"
+set "decoded_config=!decoded_config: =!"
+exit /b
+@REM -------------------------> Check Sql Connection <-----------------------------
+:Check_Sql_Connection
+@REM ------------------------->  Check if the SQL Server service is running
+sc query "%SQL_SERVICE%" | find "RUNNING" >nul
+if %ERRORLEVEL% NEQ 0 (
+    echo SQL Server service "%SQL_SERVICE%" is not running.
+    echo Attempting to start the service...
+    net start "%SQL_SERVICE%" >nul 2>&1
+    timeout /t 5 >nul
+    sc query "%SQL_SERVICE%" | find "RUNNING" >nul
+    if %ERRORLEVEL% NEQ 0 (
+        echo Failed to start SQL Server service.
+        pause
+        exit /b
+    ) else (
+        echo SQL Server service started successfully.
     )
 )
-@REM -------------------------> Prompt for path if shortcut is not found
-if not defined TargetPath (
-    set "Shortcut_Part=RESTAURANT_APP"
-    goto serch_Shortcut_Auto
+@REM -------------------------> Try to connect
+sqlcmd !SQL_Connection! -Q "SELECT 1" >nul 2>&1
+
+if %ERRORLEVEL% NEQ 0 (
+    echo Failed to connect. Enter password of SA again.
+    set /p PASS=Enter SA password: 
+    set "SQL_Connection=-S %SERVER% -U %USER% -P !PASS!"
     
-)
-:found
-if "%FolderPath:~-1%"=="\" set "FolderPath=%FolderPath:~0,-1%"
-set "Update_File=C:\MySettingRESTAURANT\Update\"
-mkdir %Update_File%DatabaseBackup
-mkdir %Update_File%LastVersion
-mkdir %Update_File%OldVersion
-set   Update_Exe_Patt=%Update_File%Update_Exe
-mkdir %Update_Exe_Patt%
-@REM ---------------- creat Info.txt------------------------
-set "InfoPath=%Update_File%Info.txt"
-echo ConnectionString= Data Source=.\SALES_DEV;Initial Catalog=RESTAURANT_DB;User ID=sa;Password=12345;Integrated Security=False > "%InfoPath%"
-echo Speedoo_Location= %FolderPath% >> "%InfoPath%"
-echo destinationPath= C:\MySettingRESTAURANT\Update\LastVersion\SPEEDOO-REST-3.0.5.0-UPDATE.zip >> "%InfoPath%"
-echo Compress_Location= C:\MySettingRESTAURANT\Update\OldVersion\ >> "%InfoPath%"
-echo Db_Location= C:\MySettingRESTAURANT\Update\DatabaseBackup\ >> "%InfoPath%"
-echo DATABASE_NAME= RESTAURANT_DB >> "%InfoPath%"
-
-@REM ---------------- download UPDATE_REST.exe Update.txt Info.txt ------------------------
-:download
-mkdir %Update_Data_file_Path%
-curl -o "%Update_File%Update.txt" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/Update.txt"
-curl -o "%Update_Exe_Patt%\UPDATE_REST.exe" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/UPDATE_REST.exe
-pause
-start "" "%Update_Exe_Patt%\UPDATE_REST.exe"
-goto Ubdate_Rest
-@REM ----------------  Open_Auto_Ubdate_Rest ------------------------
-:Open_Auto_Ubdate_Rest
-start "" "%Update_Exe_Patt%"
-goto Ubdate_Rest
-@REM ----------------  Delet_Ubdate_File ------------------------
-:Delet_Ubdate_File
-set "folderPath=C:\MySettingRESTAURANT\Update"
-if exist "%folderPath%" (
-    rmdir /s /q "%folderPath%"
-    echo Folder deleted successfully: %folderPath%
+    sqlcmd !SQL_Connection! -Q "SELECT 1" >nul 2>&1
+    if !ERRORLEVEL! NEQ 0 (
+        echo Connection failed again.
+    ) else (
+        echo Connection successful.
+    )
 ) else (
-    echo Folder does not exist: %folderPath%
+    echo Connection successful.
 )
+@REM -------------------------> Check if database exists
 
-pause
+sqlcmd !SQL_Connection! -Q "IF EXISTS (SELECT name FROM sys.databases WHERE name = N'!DB_NAME!') SELECT 'Database exists' ELSE SELECT 'Database does not exist'" >nul 2>&1
 
-goto Ubdate_Rest
-
+if %ERRORLEVEL% NEQ 0 (
+    echo Database does not exist.
+) else (
+    echo Database exists.
+)
+exit /b
 :END
-
+goto App_Name
 
 
