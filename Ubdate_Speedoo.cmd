@@ -108,7 +108,7 @@ echo             /\/\                 5.SERIAL SPEEDOO                  6. Open 
 echo             \/\/                                                                                    \/\/
 echo             /\/\                 7.Add User                        8.Delet User                     /\/\
 echo             \/\/                                                                                    \/\/
-echo             \/\/                 0.GO Back                                                          \/\/
+echo             \/\/                 9.Config                          0.GO Back                        \/\/
 echo             /\/\                                                                                    /\/\
 echo             \/\/                                                                                    \/\/
 echo             /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -131,6 +131,8 @@ if "%choice%"=="1" (
     goto Add_User   
 ) else if "%choice%"=="8" (
     goto Delet_User
+) else if "%choice%"=="9" (
+    goto config
 ) else if "%choice%"=="0" (
     goto END
 ) else (
@@ -330,6 +332,12 @@ if /I "!user_input!"=="!decoded_config!" (
 
 pause
 
+goto Ubdate_App
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< config  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+:config
+ curl -o "C:\Users\%USERNAME%\Downloads\SPEEDOO_APP.exe.config" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/SPEEDOO_APP.exe.config"
+copy "C:\Users\%USERNAME%\Downloads\SPEEDOO_APP.exe.config" !TargetDir! /Y
+pause
 goto Ubdate_App
 @REM -------------------------> AUTH <-----------------------------
 
