@@ -335,23 +335,15 @@ pause
 goto Ubdate_App
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< config  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :config
-
-@echo off
-setlocal EnableDelayedExpansion
-
 set "UserDesktop=%USERPROFILE%\Desktop"
 set "PublicDesktop=%PUBLIC%\Desktop"
 set "config_Dir=%UserDesktop%\config"
 set "ConfigName=SPEEDOO_APP.exe.config"
 set "ConfigPath=%config_Dir%\%ConfigName%"
 set "Download_URL=https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/%ConfigName%"
-set "App_Name_choice=1"
-set "Shortcut_Part="
-
 if not exist "%config_Dir%" (
     mkdir "%config_Dir%"
 )
-
 if not exist "%ConfigPath%" (
     echo Downloading config file...
     curl -L -o "%ConfigPath%" "%Download_URL%"
@@ -363,44 +355,24 @@ if not exist "%ConfigPath%" (
         exit /b
     )
 )
-
-if "%App_Name_choice%"=="1" (
-    set "Shortcut_Part=SPEEDOO_APP"
-) else (
-    set "Shortcut_Part=RESTAURANT_APP"
+call :searchShortcut "SPEEDOO POS"
+if not defined SpeedooPath (
+    call :searchShortcut "SPEEDOO_APP"
 )
-
-set "SpeedooPath="
-for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
-    for /f "usebackq delims=" %%A in (`powershell -nologo -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"`) do (
-        set "SpeedooPath=%%~dpA"
-        goto found_shortcut_config
-    )
-)
-
-for %%F in ("%PublicDesktop%\%Shortcut_Part%*.lnk") do (
-    for /f "usebackq delims=" %%A in (`powershell -nologo -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"`) do (
-        set "SpeedooPath=%%~dpA"
-        goto found_shortcut_config
-    )
-)
-
 if not defined SpeedooPath (
     cls
     echo Could not find a shortcut on the desktop.
     set /p SpeedooPath="Please enter the full folder path where the app is installed: "
 )
-
 :found_shortcut_config
 echo Config file will be copied to: !SpeedooPath!
 copy /Y "%ConfigPath%" "!SpeedooPath!" >nul
 echo Config file copied.
 
-:: إنهاء
 pause
 goto Ubdate_App
 
-@REM -------------------------> AUTH <-----------------------------
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< AUTH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 :AUTH
 set config=MTk5NQ==
@@ -415,7 +387,7 @@ for /f "delims=" %%B in (
 set "user_input=!user_input: =!"
 set "decoded_config=!decoded_config: =!"
 exit /b
-@REM -------------------------> Check Sql Connection <-----------------------------
+@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Check_Sql_Connection  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Check_Sql_Connection
 @REM ------------------------->  Check if the SQL Server service is running
 sc query "%SQL_SERVICE%" | find "RUNNING" >nul
