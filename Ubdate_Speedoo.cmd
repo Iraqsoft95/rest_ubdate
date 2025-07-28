@@ -289,7 +289,7 @@ if not exist "%FOLDER_PATH%" (
     echo GO
 ) > "%CHECK_EXIST_PATH%"
 @REM --------------------> Open SQL Scripts in One Session <--------------------
-set SQL_FILES=%TTT_path% %VVV_path% "!CHECK_EXIST_PATH!"
+set SQL_FILES="%TTT_path%" "%VVV_path%" "!CHECK_EXIST_PATH!"
 start "" "%SSMS_PATH%" %SQL_FILES%
 goto Ubdate_App
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SERIAL_SPEEDOO_REST >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
