@@ -225,27 +225,45 @@ goto Ubdate_App
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Update_data >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Update_data 
 set "SSMS_PATH=C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe"
-set Update_Data_file_Path="%UserDesktop%\Update_data"
-mkdir %Update_Data_file_Path%
+set "UpdateFolder=C:\Users\%USERNAME%\Desktop\Update_data"
+if not exist "%UpdateFolder%" mkdir "%UpdateFolder%"
+
 
 if "%App_Name_choice%"=="1" (
-    set TTT_path="C:\Users\%USERNAME%\Desktop\Update_data\POS_TTT.sql"
-    set VVV_path="C:\Users\%USERNAME%\Desktop\Update_data\POS_VVV_PPP.sql"
-    curl -o %TTT_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_TTT.sql"
-    curl -o %VVV_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_VVV_PPP.sql"
+    set "TTT_path=%UpdateFolder%\POS_TTT.sql"
+    set "VVV_path=%UpdateFolder%\POS_VVV_PPP.sql"
+
+    if exist "!TTT_path!" del /f /q "!TTT_path!"
+    if exist "!VVV_path!" del /f /q "!VVV_path!"
+
+    curl -o "!TTT_path!" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_TTT.sql"
+    curl -o "!VVV_path!" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/POS_VVV_PPP.sql"
+
+    echo.
+    echo Files for POS downloaded successfully.
+    pause
     goto Start_Update
+
 ) else if "%App_Name_choice%"=="2" (
-    set TTT_path="C:\Users\%USERNAME%\Desktop\Update_data\REST_TTT.sql"
-    set VVV_path="C:\Users\%USERNAME%\Desktop\Update_data\REST_VVV_PPP.sql"
-    curl -o %TTT_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
-    curl -o %VVV_path% "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
+    set "TTT_path=%UpdateFolder%\REST_TTT.sql"
+    set "VVV_path=%UpdateFolder%\REST_VVV_PPP.sql"
+
+    if exist "!TTT_path!" del /f /q "!TTT_path!"
+    if exist "!VVV_path!" del /f /q "!VVV_path!"
+
+    curl -o "!TTT_path!" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/REST_TTT.sql"
+    curl -o "!VVV_path!" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/RESTVVV_PPP.sql"
+
+    echo.
+    echo Files for REST downloaded successfully.
+    pause
     goto Start_Update
+
 ) else (
     echo Invalid choice! Please choose again.
     pause
     goto App_Name
 )
-
 :Start_Update
 @@REM --------------------> Create check exist <--------------------
 set FOLDER_PATH=%UserDesktop%\Update_data
