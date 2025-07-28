@@ -371,7 +371,26 @@ echo Config file copied.
 
 pause
 goto Ubdate_App
+:: -----------------------------------------------
+:searchShortcut
+set "Shortcut_Part=%~1"
 
+
+for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
+    for /f "usebackq delims=" %%A in (`powershell -nologo -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"`) do (
+        set "SpeedooPath=%%~dpA"
+        goto :eof
+    )
+)
+
+
+for %%F in ("%PublicDesktop%\%Shortcut_Part%*.lnk") do (
+    for /f "usebackq delims=" %%A in (`powershell -nologo -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"`) do (
+        set "SpeedooPath=%%~dpA"
+        goto :eof
+    )
+)
+goto :eof
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< AUTH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 :AUTH
