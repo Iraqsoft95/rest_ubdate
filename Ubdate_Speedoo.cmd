@@ -48,11 +48,11 @@ echo             \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 echo.
 set /p App_Name_choice="           Please choose an option : "
 if "%App_Name_choice%"=="1" (
-    set mega_url= https://mega.nz/file/lz1WSISK#0L9XmcArOMxO0o1dLMdDVWxFRKrdwJdubwNw9ZS7eYY
-    set mega_output="C:\Users\%USERNAME%\Downloads\SPEEDOO POS 1.3.8.4 UPDATE.exe"
+    set mega_url= https://mega.nz/file/4v9ESLoT#gDrH4V1AQ8KJtPKoshHA6OMu-Vx0j-WDDMWRfzaNx8E
+    set mega_output="C:\Users\%USERNAME%\Downloads\SPEEDOO POS 1.4.0.4 UPDATE.exe"
 
-    set dropbox_url= "https://www.dropbox.com/scl/fi/p5svl5yfmihdyuva6c158/SPEEDOO-POS-1.3.8.4-UPDATE.exe?rlkey=tms77f0sc9xe5he1l2m9mmvxu&e=1&dl=0"
-    set dropbox_output="C:\Users\%USERNAME%\Downloads\SPEEDOO-POS-1.3.8.4-UPDATE.exe"
+    set dropbox_url= "https://www.dropbox.com/scl/fi/do8r76x2r4zvoema8vj0t/SPEEDOO-POS-1.4.0.4-UPDATE.exe?rlkey=ciknyio2rrwego70u0cggeu1h&st=9arxe198&dl=0"
+    set dropbox_output="C:\Users\%USERNAME%\Downloads\SPEEDOO-POS-1.4.0.4-UPDATE.exe"
 
     set "Shortcut_Part=SPEEDOO POS"
     set "MySettingName=MySettingSPEEDOO"
@@ -108,7 +108,7 @@ echo             /\/\                 5.SERIAL SPEEDOO                  6. Open 
 echo             \/\/                                                                                    \/\/
 echo             /\/\                 7.Add User                        8.Delet User                     /\/\
 echo             \/\/                                                                                    \/\/
-echo             \/\/                 9.Config                          0.GO Back                        \/\/
+echo             \/\/                 0.GO Back                                                          \/\/
 echo             /\/\                                                                                    /\/\
 echo             \/\/                                                                                    \/\/
 echo             /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
@@ -131,8 +131,6 @@ if "%choice%"=="1" (
     goto Add_User   
 ) else if "%choice%"=="8" (
     goto Delet_User
-) else if "%choice%"=="9" (
-    goto config
 ) else if "%choice%"=="0" (
     goto END
 ) else (
@@ -299,17 +297,16 @@ SERIAL SPEEDOO REST.txt
 goto Ubdate_App
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Open_File >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Open_File
-if exist "%mega_output%" (
+if exist %mega_output% (
     echo Running: %mega_output%
-    start "" "%mega_output%"
-) else if exist "%dropbox_output%" (
+    start "" %mega_output%
+) else if exist %dropbox_output% (
     echo Running: %dropbox_output%
-    start "" "%dropbox_output%"
+    start "" %dropbox_output%
 ) else (
     echo [ERROR] Neither update file was found.
     pause
 )
-start "" %Setup_file%
 goto Ubdate_App
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Add_User >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :Add_User
@@ -351,64 +348,7 @@ if /I "!user_input!"=="!decoded_config!" (
 pause
 
 goto Ubdate_App
-@REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< config  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-:config
-set "UserDesktop=%USERPROFILE%\Desktop"
-set "PublicDesktop=%PUBLIC%\Desktop"
-set "config_Dir=%UserDesktop%\config"
-set "ConfigName=SPEEDOO_APP.exe.config"
-set "ConfigPath=%config_Dir%\%ConfigName%"
-set "Download_URL=https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/%ConfigName%"
-if not exist "%config_Dir%" (
-    mkdir "%config_Dir%"
-)
-if not exist "%ConfigPath%" (
-    echo Downloading config file...
-    curl -L -o "%ConfigPath%" "%Download_URL%"
-    if exist "%ConfigPath%" (
-        echo Download complete.
-    ) else (
-        echo Failed to download config file.
-        pause
-        exit /b
-    )
-)
-call :searchShortcut "SPEEDOO POS"
-if not defined SpeedooPath (
-    call :searchShortcut "SPEEDOO_APP"
-)
-if not defined SpeedooPath (
-    cls
-    echo Could not find a shortcut on the desktop.
-    set /p SpeedooPath="Please enter the full folder path where the app is installed: "
-)
-:found_shortcut_config
-echo Config file will be copied to: !SpeedooPath!
-copy /Y "%ConfigPath%" "!SpeedooPath!" >nul
-echo Config file copied.
-
-pause
-goto Ubdate_App
-:: -----------------------------------------------
-:searchShortcut
-set "Shortcut_Part=%~1"
-
-
-for %%F in ("%UserDesktop%\%Shortcut_Part%*.lnk") do (
-    for /f "usebackq delims=" %%A in (`powershell -nologo -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"`) do (
-        set "SpeedooPath=%%~dpA"
-        goto :eof
-    )
-)
-
-
-for %%F in ("%PublicDesktop%\%Shortcut_Part%*.lnk") do (
-    for /f "usebackq delims=" %%A in (`powershell -nologo -command "(New-Object -ComObject WScript.Shell).CreateShortcut('%%F').TargetPath"`) do (
-        set "SpeedooPath=%%~dpA"
-        goto :eof
-    )
-)
-goto :eof
+@REM 
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< AUTH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 :AUTH
