@@ -1,6 +1,5 @@
-USE [RESTAURANT_DB]
-GO
-/****** Object:  Table [dbo].[caller]    Script Date: 2024/11/13 2:33:57 ******/
+
+/****** Object:  Table [dbo].[caller]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9,9 +8,9 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ca
 BEGIN
 CREATE TABLE [dbo].[caller](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[phone] [nvarchar](max) NULL,
+	[phone] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[status] [int] NULL,
-	[TOKEN] [nvarchar](max) NULL,
+	[TOKEN] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_caller] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -19,7 +18,30 @@ CREATE TABLE [dbo].[caller](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_BRANCH]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_A_DATA_RESTURANT]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_A_DATA_RESTURANT]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_A_DATA_RESTURANT](
+	[T_ID] [int] NOT NULL,
+	[BRANCH_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[PC_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[SERVER_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[USER_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[USER_PASSWORD] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[DATABASE_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[C_DATE] [datetime] NULL,
+ CONSTRAINT [PK_T_A_DATA_RESTURANT] PRIMARY KEY CLUSTERED 
+(
+	[T_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_APP_BRANCH]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -28,9 +50,9 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_APP_BRANCH](
 	[T_ID] [int] NOT NULL,
-	[NAME_BRANCH] [nvarchar](max) NULL,
-	[SIGN_BRANCH] [nvarchar](max) NULL,
-	[APP_LINK] [nvarchar](max) NULL,
+	[NAME_BRANCH] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[SIGN_BRANCH] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[APP_LINK] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_APP_BRANCH] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -38,7 +60,7 @@ CREATE TABLE [dbo].[T_APP_BRANCH](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_CALL_CENTER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_APP_CALL_CENTER]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -49,14 +71,14 @@ CREATE TABLE [dbo].[T_APP_CALL_CENTER](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[BILL_NUMBER_SERVER] [int] NULL,
 	[BILL_ORDER_SERVER] [int] NULL,
-	[USER_CREATE] [nvarchar](max) NULL,
-	[INFO] [nvarchar](max) NULL,
-	[DETAILS] [nvarchar](max) NULL,
-	[NOTE_TABE3] [nvarchar](max) NULL,
+	[USER_CREATE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[INFO] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DETAILS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[NOTE_TABE3] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[C_DATE] [datetime] NULL,
 	[IS_PRINT] [bit] NULL,
 	[IS_INSERT] [bit] NULL,
-	[USER_INSERT] [nvarchar](max) NULL,
+	[USER_INSERT] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[INSERT_C_DATE] [datetime] NULL,
 	[BILL_NUMBER] [int] NULL,
 	[BILL_ORDER] [int] NULL,
@@ -67,7 +89,7 @@ CREATE TABLE [dbo].[T_APP_CALL_CENTER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_CLIENT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_APP_CLIENT]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -76,16 +98,16 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_APP_CLIENT](
 	[CLIENT_CODE] [int] IDENTITY(1,1) NOT NULL,
-	[CLIENT_NAME] [nvarchar](max) NULL,
-	[CLIENT_REGION] [nvarchar](max) NULL,
-	[CLIENT_PHONE] [nvarchar](max) NULL,
-	[CLIENT_ADDRESS] [nvarchar](max) NULL,
-	[USER_NAME] [nvarchar](max) NULL,
-	[USER_PWD] [nvarchar](max) NULL,
-	[NOTE_1] [nvarchar](max) NULL,
-	[NOTE_2] [nvarchar](max) NULL,
-	[LOCATION_X] [nvarchar](max) NULL,
-	[LOCATION_Y] [nvarchar](max) NULL,
+	[CLIENT_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_REGION] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_PHONE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_ADDRESS] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[USER_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[USER_PWD] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[NOTE_1] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[NOTE_2] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[LOCATION_X] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[LOCATION_Y] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[ACTIVE] [bit] NULL,
 	[IS_BLOCK] [bit] NULL,
 	[C_DATE] [datetime] NULL,
@@ -96,7 +118,7 @@ CREATE TABLE [dbo].[T_APP_CLIENT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_INVOICE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_APP_INVOICE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -107,21 +129,21 @@ CREATE TABLE [dbo].[T_APP_INVOICE](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[D_DATE] [date] NULL,
 	[D_TIME] [datetime] NULL,
-	[INFO] [nvarchar](max) NULL,
-	[DETAILS] [nvarchar](max) NULL,
+	[INFO] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DETAILS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[B_CODE] [int] NULL,
 	[IS_INSERT] [bit] NULL,
-	[BILL_GIUD] [nvarchar](max) NULL,
-	[BILL_BRANCH] [nvarchar](max) NULL,
-	[CLIENT_NAME] [nvarchar](max) NULL,
-	[CLIENT_PHONE] [nvarchar](max) NULL,
-	[CLIENT_ADDRESS] [nvarchar](max) NULL,
-	[B_NAME] [nvarchar](max) NULL,
-	[USER_CREATE] [nvarchar](max) NULL,
-	[DEVICE_ID] [nvarchar](max) NULL,
+	[BILL_GIUD] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[BILL_BRANCH] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_PHONE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_ADDRESS] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[B_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[USER_CREATE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[DEVICE_ID] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[IS_ACCEPT] [int] NULL,
-	[TOKEN_APP] [nvarchar](max) NULL,
-	[BRANCH] [nvarchar](max) NULL,
+	[TOKEN_APP] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[BRANCH] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_APP_INVOICE] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -129,7 +151,7 @@ CREATE TABLE [dbo].[T_APP_INVOICE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_REPORT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_APP_REPORT]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -138,11 +160,11 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_APP_REPORT](
 	[T_ID] [int] NOT NULL,
-	[R_I] [nvarchar](max) NULL,
-	[R_U] [nvarchar](max) NULL,
-	[R_UP] [nvarchar](max) NULL,
-	[R_TO] [nvarchar](max) NULL,
-	[R_S] [nvarchar](max) NULL,
+	[R_I] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[R_U] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[R_UP] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[R_TO] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[R_S] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_APP_REPORT] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -150,7 +172,7 @@ CREATE TABLE [dbo].[T_APP_REPORT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_SAFARY]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_APP_SAFARY]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -161,8 +183,8 @@ CREATE TABLE [dbo].[T_APP_SAFARY](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[D_DATE] [date] NULL,
 	[D_TIME] [datetime] NULL,
-	[INFO] [nvarchar](max) NULL,
-	[DETAILS] [nvarchar](max) NULL,
+	[INFO] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DETAILS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[INVOICE_CODE] [int] NULL,
 	[IS_INSERT] [bit] NULL,
 	[BILL_NUMBER] [int] NULL,
@@ -178,7 +200,7 @@ CREATE TABLE [dbo].[T_APP_SAFARY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_TABLE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_APP_TABLE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -189,8 +211,8 @@ CREATE TABLE [dbo].[T_APP_TABLE](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[D_DATE] [date] NULL,
 	[D_TIME] [datetime] NULL,
-	[INFO] [nvarchar](max) NULL,
-	[DETAILS] [nvarchar](max) NULL,
+	[INFO] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DETAILS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[INVOICE_CODE] [int] NULL,
 	[IS_INSERT] [bit] NULL,
 	[BILL_NUMBER] [int] NULL,
@@ -206,7 +228,35 @@ CREATE TABLE [dbo].[T_APP_TABLE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_TYPE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_APP_TABLE_BARCODE]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_APP_TABLE_BARCODE]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_APP_TABLE_BARCODE](
+	[T_ID] [int] IDENTITY(1,1) NOT NULL,
+	[D_DATE] [date] NULL,
+	[D_TIME] [datetime] NULL,
+	[INFO] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DETAILS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[INVOICE_CODE] [int] NULL,
+	[IS_INSERT] [bit] NULL,
+	[BILL_NUMBER] [int] NULL,
+	[BILL_ORDER] [int] NULL,
+	[TABLE_CODE] [int] NULL,
+	[USER_CODE] [int] NULL,
+	[IS_ACCEPT] [int] NULL,
+	[C_DATE] [datetime] NULL,
+ CONSTRAINT [PK_T_APP_TABLE_BARCODE] PRIMARY KEY CLUSTERED 
+(
+	[T_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_APP_TYPE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -215,7 +265,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_APP_TYPE](
 	[APP_CODE] [int] NOT NULL,
-	[APP_NAME] [nvarchar](max) NULL,
+	[APP_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[APP_DISCOUNT] [float] NULL,
 	[ACTIVE] [bit] NULL,
 	[IVC_CODE] [int] NULL,
@@ -228,10 +278,10 @@ CREATE TABLE [dbo].[T_APP_TYPE](
 (
 	[APP_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CALL_NUMBER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_CALL_NUMBER]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -247,7 +297,7 @@ CREATE TABLE [dbo].[T_CALL_NUMBER](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CAPTAIN]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_CAPTAIN]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -256,16 +306,16 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_CAPTAIN](
 	[CAPTAIN_CODE] [int] IDENTITY(1,1) NOT NULL,
-	[CAPTAIN_NAME] [nvarchar](max) NULL,
+	[CAPTAIN_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[ACTIVE] [bit] NULL,
  CONSTRAINT [PK_T_CAPTAIN] PRIMARY KEY CLUSTERED 
 (
 	[CAPTAIN_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CLIENT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_CLIENT]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -274,20 +324,20 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_CLIENT](
 	[CLIENT_CODE] [int] NOT NULL,
-	[CLIENT_NAME] [nvarchar](max) NULL,
-	[CLIENT_PHONE] [nvarchar](max) NULL,
-	[CLIENT_REGION] [nvarchar](max) NULL,
-	[CLIENT_ADDRESS] [nvarchar](max) NULL,
+	[CLIENT_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_PHONE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_REGION] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_ADDRESS] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[CLIENT_ACTIVE] [bit] NULL,
 	[C_DATE] [datetime] NULL,
  CONSTRAINT [PK_T_CLIENT] PRIMARY KEY CLUSTERED 
 (
 	[CLIENT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CLIENT_CASH]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_CLIENT_CASH]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -308,7 +358,7 @@ CREATE TABLE [dbo].[T_CLIENT_CASH](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_COMPANY]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_COMPANY]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -317,10 +367,10 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_COMPANY](
 	[T_ID] [int] NOT NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[COMPANY_LOGO] [image] NULL,
-	[COMPANY_PHONE] [nvarchar](max) NULL,
-	[COMPANY_TITAL] [nvarchar](max) NULL,
+	[COMPANY_PHONE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[COMPANY_TITAL] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_COMPANY] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -328,7 +378,7 @@ CREATE TABLE [dbo].[T_COMPANY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CONFIGRATION]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_CONFIGRATION]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -337,18 +387,56 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_CONFIGRATION](
 	[T_ID] [int] NOT NULL,
-	[TELEGRAM] [nvarchar](max) NULL,
-	[TL_ID] [nvarchar](max) NULL,
-	[TL_S] [nvarchar](max) NULL,
-	[TELE_MAIN] [nvarchar](max) NULL,
+	[TELEGRAM] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[TL_ID] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[TL_S] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[TELE_MAIN] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_CONFIGRATION] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_CUSTOM_REPORTS]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_CUSTOM_REPORTS]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_CUSTOM_REPORTS](
+	[REPORT_ID] [int] IDENTITY(1,1) NOT NULL,
+	[REPORT_CODE] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
+	[REPORT_NAME_AR] [nvarchar](200) COLLATE Arabic_CI_AS NOT NULL,
+	[CATEGORY_NAME] [nvarchar](100) COLLATE Arabic_CI_AS NULL,
+	[SQL_TEXT] [nvarchar](max) COLLATE Arabic_CI_AS NOT NULL,
+	[PARAMS_JSON] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[REPX_PATH] [nvarchar](400) COLLATE Arabic_CI_AS NULL,
+	[REPX_FILE] [varbinary](max) NULL,
+	[IS_ACTIVE] [bit] NOT NULL,
+	[DEFAULT_EXPORT] [nvarchar](10) COLLATE Arabic_CI_AS NULL,
+	[PRINTER_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[ALLOW_DIRECT_PRINT] [bit] NOT NULL,
+	[CREATED_BY] [nvarchar](100) COLLATE Arabic_CI_AS NULL,
+	[CREATED_AT] [datetime] NOT NULL,
+	[UPDATED_AT] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[REPORT_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[REPORT_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DISCOUNT]    Script Date: 2024/11/13 2:33:57 ******/
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[T_DISCOUNT]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -366,7 +454,97 @@ CREATE TABLE [dbo].[T_DISCOUNT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DRIVER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_DISCOUNT_RULE]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_DISCOUNT_RULE](
+	[RULE_ID] [int] IDENTITY(1,1) NOT NULL,
+	[RULE_NAME] [nvarchar](100) COLLATE Arabic_CI_AS NOT NULL,
+	[ENABLED] [bit] NOT NULL,
+	[RULE_KIND] [tinyint] NOT NULL,
+	[DISCOUNT_TYPE] [tinyint] NOT NULL,
+	[DISCOUNT_VALUE] [decimal](18, 3) NOT NULL,
+	[START_DATE] [date] NULL,
+	[END_DATE] [date] NULL,
+	[START_TIME] [time](0) NULL,
+	[END_TIME] [time](0) NULL,
+	[MIN_ORDER] [decimal](18, 3) NULL,
+	[MAX_DISCOUNT_PER_ORDER] [decimal](18, 3) NULL,
+	[INVOICE_CODE] [int] NULL,
+	[BRANCH_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[PRIORITY] [int] NOT NULL,
+	[STACKABLE] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RULE_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_DISCOUNT_RULE_ITEM]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE_ITEM]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_DISCOUNT_RULE_ITEM](
+	[RULE_ID] [int] NOT NULL,
+	[ITEM_CODE] [int] NOT NULL,
+ CONSTRAINT [PK_T_DISCOUNT_RULE_ITEM] PRIMARY KEY CLUSTERED 
+(
+	[RULE_ID] ASC,
+	[ITEM_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_DISCOUNT_RULE_PHONE]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE_PHONE]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_DISCOUNT_RULE_PHONE](
+	[RULE_ID] [int] NOT NULL,
+	[PHONE_NORM] [nvarchar](20) COLLATE Arabic_CI_AS NOT NULL,
+	[PHONE_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+ CONSTRAINT [PK_T_DISCOUNT_RULE_PHONE] PRIMARY KEY CLUSTERED 
+(
+	[RULE_ID] ASC,
+	[PHONE_NORM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_DISCOUNT_USAGE]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_USAGE]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_DISCOUNT_USAGE](
+	[RULE_ID] [int] NOT NULL,
+	[PHONE_NORM] [nvarchar](20) COLLATE Arabic_CI_AS NOT NULL,
+	[USE_DATE] [date] NOT NULL,
+	[USE_COUNT] [int] NOT NULL,
+	[TOTAL_DISCOUNT] [decimal](18, 3) NOT NULL,
+ CONSTRAINT [PK_T_DISCOUNT_USAGE] PRIMARY KEY CLUSTERED 
+(
+	[RULE_ID] ASC,
+	[PHONE_NORM] ASC,
+	[USE_DATE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_DRIVER]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -375,18 +553,18 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_DRIVER](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
-	[DRIVER_NAME] [nvarchar](max) NULL,
-	[USER_APP] [nvarchar](max) NULL,
-	[PASSWORD_APP] [nvarchar](max) NULL,
+	[DRIVER_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[USER_APP] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[PASSWORD_APP] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[ACTIVE] [bit] NULL,
  CONSTRAINT [PK_T_DRIVER] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DRIVER_TRACKING]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_DRIVER_TRACKING]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -397,9 +575,9 @@ CREATE TABLE [dbo].[T_DRIVER_TRACKING](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[DRIVER_CODE] [int] NULL,
 	[D_DATE] [datetime] NULL,
-	[LIN_X] [nvarchar](max) NULL,
-	[LIN_Y] [nvarchar](max) NULL,
-	[LIN_Z] [nvarchar](max) NULL,
+	[LIN_X] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[LIN_Y] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[LIN_Z] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_DRIVER_TRACKING] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -407,7 +585,7 @@ CREATE TABLE [dbo].[T_DRIVER_TRACKING](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_EMP_ENTER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_EMP_ENTER]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -418,7 +596,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_EMP_ENTER](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[D_DATE] [date] NULL,
 	[D_TIME] [datetime] NULL,
 	[EMP_CODE] [int] NULL,
@@ -426,7 +604,7 @@ CREATE TABLE [dbo].[T_EMP_ENTER](
 	[END_TIME] [datetime] NULL,
 	[TOTAL_MUNIT]  AS (datediff(minute,[START_TIME],[END_TIME])),
 	[TOTAL_HOUR]  AS (CONVERT([varchar](5),dateadd(minute,datediff(minute,[START_TIME],[END_TIME]),(0)),(114))),
-	[NOTE] [nvarchar](max) NULL,
+	[NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_PAID] [bit] NULL,
  CONSTRAINT [PK_T_EMP_ENTER] PRIMARY KEY CLUSTERED 
 (
@@ -437,7 +615,7 @@ END
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[T_EMP_ENTER_REPORT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_EMP_ENTER_REPORT]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -450,7 +628,7 @@ CREATE TABLE [dbo].[T_EMP_ENTER_REPORT](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
 	[D_DATE] [date] NULL,
 	[EMP_CODE] [int] NULL,
-	[EMP_NAME] [nvarchar](max) NULL,
+	[EMP_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[START_TIME] [datetime] NULL,
 	[END_TIME] [datetime] NULL,
 	[TOTAL_MUNIT]  AS (datediff(minute,[START_TIME],[END_TIME])),
@@ -460,12 +638,12 @@ CREATE TABLE [dbo].[T_EMP_ENTER_REPORT](
 (
 	[T_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[T_EMPLOYEE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_EMPLOYEE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -474,24 +652,24 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_EMPLOYEE](
 	[EMP_CODE] [int] NOT NULL,
-	[EMP_NAME] [nvarchar](max) NULL,
-	[EMP_CARD] [nvarchar](max) NULL,
+	[EMP_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[EMP_CARD] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[EMP_SALLARY] [float] NULL,
 	[PER_DAY] [float] NULL,
 	[JOB_HOUR] [float] NULL,
 	[PRICE_HOUR]  AS ((nullif([EMP_SALLARY],(0))/nullif([PER_DAY],(0)))/nullif([JOB_HOUR],(0))),
 	[PRICE_MINUTE]  AS (((nullif([EMP_SALLARY],(0))/nullif([PER_DAY],(0)))/nullif([JOB_HOUR],(0)))/(60)),
-	[JOB_FROM] [nvarchar](10) NOT NULL,
-	[JOB_TO] [nvarchar](10) NULL,
+	[JOB_FROM] [nvarchar](10) COLLATE Arabic_CI_AS NOT NULL,
+	[JOB_TO] [nvarchar](10) COLLATE Arabic_CI_AS NULL,
 	[ACTIVE] [bit] NULL,
  CONSTRAINT [PK_T_EMPLOYEE] PRIMARY KEY CLUSTERED 
 (
 	[EMP_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ERADAT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ERADAT]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -502,12 +680,12 @@ CREATE TABLE [dbo].[T_ERADAT](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[D_DATE] [date] NULL,
 	[D_TIME] [datetime] NULL,
-	[EXP_TYPE] [nvarchar](max) NULL,
+	[EXP_TYPE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[AMO] [float] NULL,
-	[NOTE] [nvarchar](max) NULL,
+	[NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[USER_CODE] [int] NULL,
 	[IS_TRANS] [bit] NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_ERADAT] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -515,7 +693,7 @@ CREATE TABLE [dbo].[T_ERADAT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_EXPENSES]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_EXPENSES]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -526,12 +704,12 @@ CREATE TABLE [dbo].[T_EXPENSES](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[D_DATE] [date] NULL,
 	[D_TIME] [datetime] NULL,
-	[EXP_TYPE] [nvarchar](max) NULL,
+	[EXP_TYPE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[AMO] [float] NULL,
-	[NOTE] [nvarchar](max) NULL,
+	[NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[USER_CODE] [int] NULL,
 	[IS_TRANS] [bit] NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_EXPENSES] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -539,7 +717,7 @@ CREATE TABLE [dbo].[T_EXPENSES](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_FDB]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_FDB]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -549,9 +727,9 @@ BEGIN
 CREATE TABLE [dbo].[T_FDB](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[S1] [int] NULL,
-	[S2] [nvarchar](max) NULL,
-	[S3] [nvarchar](max) NULL,
-	[S4] [nvarchar](max) NULL,
+	[S2] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[S3] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[S4] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[D_DATE] [datetime] NULL,
  CONSTRAINT [PK_T_FDB] PRIMARY KEY CLUSTERED 
 (
@@ -560,7 +738,7 @@ CREATE TABLE [dbo].[T_FDB](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_FILE_EXCEL]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_FILE_EXCEL]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -569,7 +747,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_FILE_EXCEL](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
-	[FILE_PATH] [nvarchar](max) NULL,
+	[FILE_PATH] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_UPLOAD] [bit] NULL,
  CONSTRAINT [PK_T_FILE_EXCEL] PRIMARY KEY CLUSTERED 
 (
@@ -578,7 +756,27 @@ CREATE TABLE [dbo].[T_FILE_EXCEL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_INVOICE_TYPE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_IMPORT_PHONE]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_IMPORT_PHONE]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_IMPORT_PHONE](
+	[T_ID] [int] IDENTITY(1,1) NOT NULL,
+	[CLIENT_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_PHONE] [nvarchar](20) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_REGION] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_ADDRESS] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+ CONSTRAINT [PK_T_IMPORT_PHONE] PRIMARY KEY CLUSTERED 
+(
+	[T_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_INVOICE_TYPE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -587,7 +785,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_INVOICE_TYPE](
 	[INVOICE_CODE] [int] NOT NULL,
-	[INVOICE_NAME] [nvarchar](max) NOT NULL,
+	[INVOICE_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NOT NULL,
 	[ACTIVE] [bit] NULL,
  CONSTRAINT [PK_T_INVOICE_TYPE] PRIMARY KEY CLUSTERED 
 (
@@ -596,7 +794,7 @@ CREATE TABLE [dbo].[T_INVOICE_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_BARCODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEM_BARCODE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -607,7 +805,7 @@ CREATE TABLE [dbo].[T_ITEM_BARCODE](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[ITEM_CODE] [int] NULL,
 	[TYPE_VAL] [int] NULL,
-	[ITEM_BARCODE] [nvarchar](max) NULL,
+	[ITEM_BARCODE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_ITEM_BARCODE] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -615,7 +813,7 @@ CREATE TABLE [dbo].[T_ITEM_BARCODE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_CATEGORY]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEM_CATEGORY]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -624,13 +822,13 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_ITEM_CATEGORY](
 	[CATEGORY_CODE] [int] NOT NULL,
-	[CATEGORY_NAME] [nvarchar](50) NULL,
-	[CATEGORY_NAME_EN] [nvarchar](50) NULL,
+	[CATEGORY_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[CATEGORY_NAME_EN] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[ACTIVE] [bit] NULL,
 	[SHOW_MENU] [bit] NULL,
-	[CATEGORY_IMAGE_PATH] [nvarchar](max) NULL,
-	[BACK_COLOR] [nvarchar](max) NULL,
-	[FONT_COLOR] [nvarchar](max) NULL,
+	[CATEGORY_IMAGE_PATH] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[BACK_COLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[FONT_COLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[SORT] [int] NULL,
  CONSTRAINT [PK_T_ITEM_CATEGORY] PRIMARY KEY CLUSTERED 
 (
@@ -639,7 +837,7 @@ CREATE TABLE [dbo].[T_ITEM_CATEGORY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_NOTE_PRICE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEM_NOTE_PRICE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -649,7 +847,7 @@ BEGIN
 CREATE TABLE [dbo].[T_ITEM_NOTE_PRICE](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[ITEM_CODE] [int] NULL,
-	[NOTE_NAME] [nvarchar](max) NULL,
+	[NOTE_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[ADD_PRICE] [float] NULL,
  CONSTRAINT [PK_T_ITEM_NOTE_PRICE] PRIMARY KEY CLUSTERED 
 (
@@ -658,7 +856,7 @@ CREATE TABLE [dbo].[T_ITEM_NOTE_PRICE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_PRINTER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEM_PRINTER]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -677,7 +875,25 @@ CREATE TABLE [dbo].[T_ITEM_PRINTER](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_RECIPE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEM_PRINTER_MORE]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_PRINTER_MORE]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_ITEM_PRINTER_MORE](
+	[T_ID] [int] IDENTITY(1,1) NOT NULL,
+	[ITEM_CODE] [int] NULL,
+	[PRINTER_ID] [int] NULL,
+ CONSTRAINT [PK_T_ITEM_PRINTER_MORE] PRIMARY KEY CLUSTERED 
+(
+	[T_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_ITEM_RECIPE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -696,7 +912,7 @@ CREATE TABLE [dbo].[T_ITEM_RECIPE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_SALES_NOTE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEM_SALES_NOTE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -705,7 +921,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_ITEM_SALES_NOTE](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
-	[INFO_NAME] [nvarchar](max) NULL,
+	[INFO_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_ITEM_SALES_NOTE] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -713,7 +929,7 @@ CREATE TABLE [dbo].[T_ITEM_SALES_NOTE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_STORE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEM_STORE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -735,7 +951,7 @@ CREATE TABLE [dbo].[T_ITEM_STORE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_TYPE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEM_TYPE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -744,7 +960,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_ITEM_TYPE](
 	[TYPE_CODE] [int] NOT NULL,
-	[TYPE_NAME] [nvarchar](50) NULL,
+	[TYPE_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_ITEM_TYPE] PRIMARY KEY CLUSTERED 
 (
 	[TYPE_CODE] ASC
@@ -752,7 +968,7 @@ CREATE TABLE [dbo].[T_ITEM_TYPE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEMS]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEMS]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -761,7 +977,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_ITEMS](
 	[ITEM_CODE] [int] NOT NULL,
-	[ITEM_NAME] [nvarchar](50) NULL,
+	[ITEM_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[CATEGORY_CODE] [int] NULL,
 	[TYPE_CODE] [int] NULL,
 	[COST] [float] NULL,
@@ -769,19 +985,19 @@ CREATE TABLE [dbo].[T_ITEMS](
 	[SORT] [int] NULL,
 	[ACTIVE] [bit] NULL,
 	[PRINTER_ID] [int] NULL,
-	[ITEM_NOTE] [nvarchar](max) NULL,
-	[IMG_URL] [nvarchar](max) NULL,
+	[ITEM_NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[IMG_URL] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IMAGE] [image] NULL,
-	[ITEM_NAME_EN] [nvarchar](max) NULL,
-	[ITEM_NOTE_EN] [nvarchar](max) NULL,
-	[TIME_USE] [nvarchar](max) NULL,
+	[ITEM_NAME_EN] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[ITEM_NOTE_EN] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[TIME_USE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_STORE] [bit] NULL,
-	[ITEM_BARCODE] [nvarchar](max) NULL,
+	[ITEM_BARCODE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[SHOW_MENU] [bit] NULL,
 	[MAIN_ITEM_CODE] [int] NULL,
 	[QTY_PARENT] [float] NULL,
-	[BACK_COLOR] [nvarchar](max) NULL,
-	[FONT_COLOR] [nvarchar](max) NULL,
+	[BACK_COLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[FONT_COLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[SELL_SALA] [float] NULL,
 	[SELL_DELEVERY] [float] NULL,
 	[SELL_APP] [float] NULL,
@@ -792,7 +1008,7 @@ CREATE TABLE [dbo].[T_ITEMS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEMS_REPORT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_ITEMS_REPORT]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -803,13 +1019,13 @@ CREATE TABLE [dbo].[T_ITEMS_REPORT](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[REPORT_CODE] [int] NULL,
 	[ITEM_CODE] [int] NULL,
-	[ITEM_NAME] [nvarchar](max) NULL,
-	[REPORT_ITEM_ID] [nvarchar](max) NULL,
-	[REPORT_ITEM_CODE] [nvarchar](max) NULL,
-	[REPORT_ITEM_NAME] [nvarchar](max) NULL,
-	[REPORT_ITEM_DISCREPTION] [nvarchar](max) NULL,
-	[REPORT_ITEM_PRICE] [nvarchar](max) NULL,
-	[REPORT_ITEM_CATEGORY] [nvarchar](max) NULL,
+	[ITEM_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[REPORT_ITEM_ID] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[REPORT_ITEM_CODE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[REPORT_ITEM_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[REPORT_ITEM_DISCREPTION] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[REPORT_ITEM_PRICE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[REPORT_ITEM_CATEGORY] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[REPORT_ITEM_TYPE] [int] NULL,
  CONSTRAINT [PK_T_ITEMS_REPORT] PRIMARY KEY CLUSTERED 
 (
@@ -818,7 +1034,7 @@ CREATE TABLE [dbo].[T_ITEMS_REPORT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_IVC_TYPE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_IVC_TYPE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -827,15 +1043,15 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_IVC_TYPE](
 	[IVC_CODE] [int] NOT NULL,
-	[IVC_NAME] [nvarchar](max) NULL,
+	[IVC_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_IVC_TYPE] PRIMARY KEY CLUSTERED 
 (
 	[IVC_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_LEVEL]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_LEVEL]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -844,8 +1060,8 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_LEVEL](
 	[LEVEL_CODE] [int] NOT NULL,
-	[LEVEL_NAME] [nvarchar](50) NULL,
-	[LEVEL_ADD] [nvarchar](max) NULL,
+	[LEVEL_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[LEVEL_ADD] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[MAIN_A] [bit] NULL,
 	[MAIN_B] [bit] NULL,
 	[MAIN_C] [bit] NULL,
@@ -916,7 +1132,7 @@ CREATE TABLE [dbo].[T_LEVEL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_NOTFICATION_TITLE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_NOTFICATION_TITLE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -926,18 +1142,18 @@ BEGIN
 CREATE TABLE [dbo].[T_NOTFICATION_TITLE](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[DATE] [datetime] NULL,
-	[TITLE] [nvarchar](max) NULL,
-	[DESCRPTIONS] [nvarchar](max) NULL,
+	[TITLE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[DESCRPTIONS] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[STATUS] [int] NULL,
-	[DEVICES_ID] [nvarchar](max) NULL,
+	[DEVICES_ID] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_NOTFICATION_TITLE] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_NSR]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_NSR]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -948,9 +1164,9 @@ CREATE TABLE [dbo].[T_NSR](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
 	[S1] [int] NULL,
 	[S2] [datetime] NULL,
-	[S3] [nvarchar](max) NULL,
-	[S4] [nvarchar](max) NULL,
-	[S5] [nvarchar](max) NULL,
+	[S3] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[S4] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[S5] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[S_IMAGE] [image] NULL,
 	[ACTIVE] [bit] NULL,
  CONSTRAINT [PK_T_NSR] PRIMARY KEY CLUSTERED 
@@ -960,7 +1176,7 @@ CREATE TABLE [dbo].[T_NSR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PARAMETERS]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_PARAMETERS]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -969,9 +1185,9 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_PARAMETERS](
 	[P_CODE] [int] NOT NULL,
-	[P_TYPE] [nvarchar](max) NULL,
+	[P_TYPE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[P_VALUE] [decimal](18, 0) NULL,
-	[P_DESC] [nvarchar](max) NULL,
+	[P_DESC] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_PARAMETERS] PRIMARY KEY CLUSTERED 
 (
 	[P_CODE] ASC
@@ -979,7 +1195,31 @@ CREATE TABLE [dbo].[T_PARAMETERS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PRINTER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_PAYMENT_TRANSACTION]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_PAYMENT_TRANSACTION]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_PAYMENT_TRANSACTION](
+	[T_ID] [int] IDENTITY(1,1) NOT NULL,
+	[BILL_NUMBER] [int] NULL,
+	[B_CODE] [int] NULL,
+	[AMOUNTS] [float] NULL,
+	[TRANSACTION_ID] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[MSG_RESULT] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[C_DATE] [datetime] NULL,
+	[USER_CREATE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DEVICE_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+ CONSTRAINT [PK_T_PAYMENT_TRANSACTION] PRIMARY KEY CLUSTERED 
+(
+	[T_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_PRINTER]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -988,8 +1228,8 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_PRINTER](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
-	[PRINTER_NAME] [nvarchar](max) NULL,
-	[DEVICE_NAME] [nvarchar](max) NULL,
+	[PRINTER_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DEVICE_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_SCALE] [bit] NULL,
  CONSTRAINT [PK_T_PRINTER] PRIMARY KEY CLUSTERED 
 (
@@ -998,7 +1238,7 @@ CREATE TABLE [dbo].[T_PRINTER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_QISM]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_QISM]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1007,7 +1247,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_QISM](
 	[QISM_CODE] [int] NOT NULL,
-	[QISM_NAME] [nvarchar](max) NULL,
+	[QISM_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[TABLE_FROM] [int] NULL,
 	[TABLE_TO] [int] NULL,
 	[ACTIVE] [bit] NULL,
@@ -1018,7 +1258,7 @@ CREATE TABLE [dbo].[T_QISM](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_RECIPIENTS]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_RECIPIENTS]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1027,18 +1267,46 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_RECIPIENTS](
 	[RECIPIENT_CODE] [int] NOT NULL,
-	[RECIPIENT_NAME] [nvarchar](max) NULL,
+	[RECIPIENT_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[DISCOUNT_PERCENT] [float] NULL,
-	[RECIPIENT_BARCODE] [nvarchar](max) NULL,
+	[RECIPIENT_BARCODE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[ACTIVE] [bit] NULL,
  CONSTRAINT [PK_T_RECIPIENTS] PRIMARY KEY CLUSTERED 
 (
 	[RECIPIENT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[T_REPORT_SPECIAL]    Script Date: 2025/09/06 3:36:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_REPORT_SPECIAL]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[T_REPORT_SPECIAL](
+	[T_ID] [int] NOT NULL,
+	[REPORT_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[REPORT_HEADER] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[IS_LANDSCAPE] [bit] NULL,
+	[IS_RTL] [bit] NULL,
+	[SS_SQL] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[SORT] [int] NULL,
+	[SUMMARY_COL] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[MULTILINE_COL] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[REPORT_SIZE] [nvarchar](20) COLLATE Arabic_CI_AS NULL,
+	[TECH_COLS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[SORT_EXPR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[HIGHLIGHT_JSON] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+ CONSTRAINT [PK_T_REPORT_SPECIAL] PRIMARY KEY CLUSTERED 
+(
+	[T_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_REPORT_USER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_REPORT_USER]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1048,7 +1316,7 @@ BEGIN
 CREATE TABLE [dbo].[T_REPORT_USER](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
 	[D_DATE] [date] NULL,
-	[USER_NAME] [nvarchar](50) NULL,
+	[USER_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[TOTAL_COST] [float] NULL,
 	[TOTAL_SELL] [float] NULL,
 	[TOTAL_ARBAH] [float] NULL,
@@ -1059,7 +1327,7 @@ CREATE TABLE [dbo].[T_REPORT_USER](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_RETURN_SALES_NOTE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_RETURN_SALES_NOTE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1068,7 +1336,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_RETURN_SALES_NOTE](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
-	[INFO_NAME] [nvarchar](max) NULL,
+	[INFO_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_RETURN_SALES_NOTE] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -1076,7 +1344,7 @@ CREATE TABLE [dbo].[T_RETURN_SALES_NOTE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1086,19 +1354,19 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[T_SALES](
-	[BILL_BRANCH] [nvarchar](50) NOT NULL,
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[BILL_NUMBER] [numeric](18, 0) NOT NULL,
 	[BILL_ORDER] [numeric](18, 0) NULL,
 	[BILL_DATE] [date] NULL,
 	[BILL_TIME] [datetime] NULL,
 	[TABLE_CODE] [int] NULL,
-	[CALL_NO] [nvarchar](max) NULL,
+	[CALL_NO] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[INVOICE_CODE] [int] NULL,
-	[CLIENT_NAME] [nvarchar](max) NULL,
-	[CLIENT_REGION] [nvarchar](max) NULL,
-	[CLIENT_PHONE] [nvarchar](20) NULL,
-	[CLIENT_ADDRESS] [nvarchar](max) NULL,
-	[DRIVER_NAME] [nvarchar](max) NULL,
+	[CLIENT_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_REGION] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_PHONE] [nvarchar](20) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_ADDRESS] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[DRIVER_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[WORK_CODE] [int] NULL,
 	[USER_CODE] [int] NULL,
 	[TOT_QTY] [float] NULL,
@@ -1111,27 +1379,27 @@ CREATE TABLE [dbo].[T_SALES](
 	[APP_PERCENT] [float] NULL,
 	[NET_NET_SALES] [float] NULL,
 	[NET_ARBAH] [float] NULL,
-	[NOTE] [nvarchar](max) NULL,
+	[NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_TRANS] [bit] NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[TT_SEND] [datetime] NULL,
 	[TT_RECIVE] [datetime] NULL,
 	[TT_PRINT] [datetime] NULL,
 	[TT_CASH] [datetime] NULL,
-	[CAPTAIN_NAME] [nvarchar](50) NULL,
-	[KITCHEN_NOTE] [nvarchar](200) NULL,
-	[LIN_X] [nvarchar](max) NULL,
-	[LIN_Y] [nvarchar](max) NULL,
-	[NAME_BRANCH] [nvarchar](max) NULL,
+	[CAPTAIN_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[KITCHEN_NOTE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[LIN_X] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[LIN_Y] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[NAME_BRANCH] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[BILL_SERVER] [int] NULL,
 	[STATUS_APP] [int] NULL,
 	[KITCHEN_DISPLAY_STATE] [int] NULL,
-	[KITCHEN_DISPALY_MIN] [nvarchar](max) NULL,
+	[KITCHEN_DISPALY_MIN] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[CLIENT_CODE] [int] NULL,
 	[IVC_CODE] [int] NULL,
 	[IS_CASH] [int] NULL,
 	[NO_CLIENT] [int] NULL,
-	[DISCOUNT_NOTE] [nvarchar](max) NULL,
+	[DISCOUNT_NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[RECIPIENT_CODE] [int] NULL,
 	[TIME_ACCEPT] [datetime] NULL,
 	[TIME_ARRIVED] [datetime] NULL,
@@ -1152,7 +1420,7 @@ END
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[T_SALES_DETAILS]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES_DETAILS]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1161,7 +1429,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_SALES_DETAILS](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[BILL_BRANCH] [nvarchar](50) NULL,
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[BILL_NUMBER] [numeric](18, 0) NULL,
 	[BILL_ORDER] [numeric](18, 0) NULL,
 	[BILL_DATE] [date] NULL,
@@ -1176,7 +1444,7 @@ CREATE TABLE [dbo].[T_SALES_DETAILS](
 	[WORK_CODE] [int] NULL,
 	[USER_CODE] [int] NULL,
 	[IS_TRANS] [bit] NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_SALES_DETAILS] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -1184,7 +1452,7 @@ CREATE TABLE [dbo].[T_SALES_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_DETAILS_HISTORY]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES_DETAILS_HISTORY]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1193,7 +1461,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_SALES_DETAILS_HISTORY](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[BILL_BRANCH] [nvarchar](50) NULL,
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[BILL_NUMBER] [numeric](18, 0) NULL,
 	[BILL_ORDER] [numeric](18, 0) NULL,
 	[BILL_DATE] [date] NULL,
@@ -1208,7 +1476,7 @@ CREATE TABLE [dbo].[T_SALES_DETAILS_HISTORY](
 	[WORK_CODE] [int] NULL,
 	[USER_CODE] [int] NULL,
 	[IS_TRANS] [bit] NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_SALES_DETAILS_HISTORY] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -1216,7 +1484,7 @@ CREATE TABLE [dbo].[T_SALES_DETAILS_HISTORY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_DETAILS_R]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES_DETAILS_R]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1225,7 +1493,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_SALES_DETAILS_R](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[BILL_BRANCH] [nvarchar](50) NULL,
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[BILL_NUMBER] [numeric](18, 0) NULL,
 	[BILL_ORDER] [numeric](18, 0) NULL,
 	[BILL_DATE] [date] NULL,
@@ -1240,7 +1508,7 @@ CREATE TABLE [dbo].[T_SALES_DETAILS_R](
 	[WORK_CODE] [int] NULL,
 	[USER_CODE] [int] NULL,
 	[IS_TRANS] [bit] NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_SALES_DETAILS_R] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -1248,7 +1516,7 @@ CREATE TABLE [dbo].[T_SALES_DETAILS_R](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_DETAILS_RETURN]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES_DETAILS_RETURN]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1257,7 +1525,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_SALES_DETAILS_RETURN](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[BILL_BRANCH] [nvarchar](50) NULL,
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[BILL_NUMBER] [numeric](18, 0) NULL,
 	[BILL_ORDER] [numeric](18, 0) NULL,
 	[BILL_DATE] [date] NULL,
@@ -1272,7 +1540,7 @@ CREATE TABLE [dbo].[T_SALES_DETAILS_RETURN](
 	[WORK_CODE] [int] NULL,
 	[USER_CODE] [int] NULL,
 	[IS_TRANS] [bit] NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_SALES_DETAILS_RETURN] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -1280,7 +1548,7 @@ CREATE TABLE [dbo].[T_SALES_DETAILS_RETURN](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_HISTORY]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES_HISTORY]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1288,19 +1556,19 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_HISTORY]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[T_SALES_HISTORY](
-	[BILL_BRANCH] [nvarchar](50) NULL,
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[BILL_NUMBER] [numeric](18, 0) NOT NULL,
 	[BILL_ORDER] [numeric](18, 0) NULL,
 	[BILL_DATE] [date] NULL,
 	[BILL_TIME] [datetime] NULL,
 	[TABLE_CODE] [int] NULL,
-	[CALL_NO] [nvarchar](max) NULL,
+	[CALL_NO] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[INVOICE_CODE] [int] NULL,
-	[CLIENT_NAME] [nvarchar](max) NULL,
-	[CLIENT_REGION] [nvarchar](max) NULL,
-	[CLIENT_PHONE] [nvarchar](max) NULL,
-	[CLIENT_ADDRESS] [nvarchar](max) NULL,
-	[DRIVER_NAME] [nvarchar](max) NULL,
+	[CLIENT_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_REGION] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_PHONE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_ADDRESS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DRIVER_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[WORK_CODE] [int] NULL,
 	[USER_CODE] [int] NULL,
 	[TOT_QTY] [float] NULL,
@@ -1313,19 +1581,19 @@ CREATE TABLE [dbo].[T_SALES_HISTORY](
 	[APP_PERCENT] [float] NULL,
 	[NET_NET_SALES] [float] NULL,
 	[NET_ARBAH] [float] NULL,
-	[NOTE] [nvarchar](max) NULL,
+	[NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_TRANS] [bit] NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[TT_SEND] [datetime] NULL,
 	[TT_RECIVE] [datetime] NULL,
 	[TT_PRINT] [datetime] NULL,
 	[TT_CASH] [datetime] NULL,
-	[CAPTAIN_NAME] [nvarchar](50) NULL,
-	[KITCHEN_NOTE] [nvarchar](200) NULL
+	[CAPTAIN_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[KITCHEN_NOTE] [nvarchar](200) COLLATE Arabic_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_R]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES_R]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1334,19 +1602,19 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_SALES_R](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[BILL_BRANCH] [nvarchar](50) NOT NULL,
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NOT NULL,
 	[BILL_NUMBER] [numeric](18, 0) NOT NULL,
 	[BILL_ORDER] [numeric](18, 0) NULL,
 	[BILL_DATE] [date] NULL,
 	[BILL_TIME] [datetime] NULL,
 	[TABLE_CODE] [int] NULL,
-	[CALL_NO] [nvarchar](max) NULL,
+	[CALL_NO] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[INVOICE_CODE] [int] NULL,
-	[CLIENT_NAME] [nvarchar](max) NULL,
-	[CLIENT_REGION] [nvarchar](max) NULL,
-	[CLIENT_PHONE] [nvarchar](max) NULL,
-	[CLIENT_ADDRESS] [nvarchar](max) NULL,
-	[DRIVER_NAME] [nvarchar](max) NULL,
+	[CLIENT_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_REGION] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_PHONE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_ADDRESS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DRIVER_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[WORK_CODE] [int] NULL,
 	[USER_CODE] [int] NULL,
 	[TOT_QTY] [float] NULL,
@@ -1359,15 +1627,15 @@ CREATE TABLE [dbo].[T_SALES_R](
 	[APP_PERCENT] [float] NULL,
 	[NET_NET_SALES] [float] NULL,
 	[NET_ARBAH] [float] NULL,
-	[NOTE] [nvarchar](max) NULL,
+	[NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_TRANS] [bit] NULL,
-	[COMPANY_NAME] [nvarchar](max) NULL,
+	[COMPANY_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[TT_SEND] [datetime] NULL,
 	[TT_RECIVE] [datetime] NULL,
 	[TT_PRINT] [datetime] NULL,
 	[TT_CASH] [datetime] NULL,
-	[CAPTAIN_NAME] [nvarchar](50) NULL,
-	[KITCHEN_NOTE] [nvarchar](200) NULL,
+	[CAPTAIN_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[KITCHEN_NOTE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_SALES_R] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -1375,7 +1643,7 @@ CREATE TABLE [dbo].[T_SALES_R](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_TABLE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES_TABLE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1384,8 +1652,8 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_SALES_TABLE](
 	[T_ID] [int] NOT NULL,
-	[BILL_ID] [nvarchar](max) NULL,
-	[BILL_TA] [nvarchar](max) NULL,
+	[BILL_ID] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[BILL_TA] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[DESCRIPTION] [int] NULL,
 	[ACTIVE] [bit] NULL,
 	[C_DATE] [datetime] NULL,
@@ -1393,10 +1661,10 @@ CREATE TABLE [dbo].[T_SALES_TABLE](
 (
 	[T_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_TEMP]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES_TEMP]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1405,7 +1673,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_SALES_TEMP](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[BILL_BRANCH] [nvarchar](50) NULL,
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[BILL_NUMBER] [numeric](18, 0) NULL,
 	[BILL_ORDER] [numeric](18, 0) NULL,
 	[BILL_DATE] [date] NULL,
@@ -1419,7 +1687,7 @@ CREATE TABLE [dbo].[T_SALES_TEMP](
 	[ARBAH]  AS ([SELL]*[QTY]-[COST]*[QTY]),
 	[WORK_CODE] [int] NULL,
 	[USER_CODE] [int] NULL,
-	[ITEM_NOTE] [nvarchar](max) NULL,
+	[ITEM_NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_PRINT] [int] NULL,
 	[IS_DELETE] [int] NULL,
 	[SEQ] [int] NULL,
@@ -1430,7 +1698,7 @@ CREATE TABLE [dbo].[T_SALES_TEMP](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_TEMP_APP_QTY]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SALES_TEMP_APP_QTY]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1451,7 +1719,7 @@ CREATE TABLE [dbo].[T_SALES_TEMP_APP_QTY](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SERVER_MAIN]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SERVER_MAIN]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1460,11 +1728,11 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_SERVER_MAIN](
 	[T_ID] [int] NOT NULL,
-	[IP_NAME] [nvarchar](max) NULL,
-	[SERVER_NAME] [nvarchar](max) NULL,
-	[USER_NAME] [nvarchar](max) NULL,
-	[USER_PASSWORD] [nvarchar](max) NULL,
-	[DATABASE_NAME] [nvarchar](max) NULL,
+	[IP_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[SERVER_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[USER_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[USER_PASSWORD] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[DATABASE_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_SERVER_MAIN] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -1472,7 +1740,7 @@ CREATE TABLE [dbo].[T_SERVER_MAIN](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SERVICE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SERVICE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1490,7 +1758,7 @@ CREATE TABLE [dbo].[T_SERVICE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SETTING]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SETTING]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1498,46 +1766,46 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_SETTING]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[T_SETTING](
-	[PC_NAME] [nvarchar](max) NOT NULL,
-	[RONGTA_IP_ADDRESS] [nvarchar](max) NULL,
+	[PC_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NOT NULL,
+	[RONGTA_IP_ADDRESS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[RONGTA_WEIGHT_DIRECT] [bit] NULL,
 	[RONGTA_SCALE_ON] [bit] NULL,
 	[SHOW_TOTAL] [bit] NULL,
-	[Path_report] [nvarchar](max) NULL,
-	[printer_name] [nvarchar](max) NULL,
+	[Path_report] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[printer_name] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[flag_print] [bit] NULL,
 	[MSG_SAVE] [bit] NULL,
 	[FLAG_EDIT] [bit] NULL,
-	[Path_report_ITEMS] [nvarchar](max) NULL,
-	[Path_report_USERS] [nvarchar](max) NULL,
-	[PORT_NAME] [nvarchar](max) NULL,
+	[Path_report_ITEMS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[Path_report_USERS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[PORT_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[CUSTOMER_DISPLAY] [bit] NULL,
 	[IS_PRINT_KITCHEN_ALL] [bit] NULL,
-	[PRINTER_NAME_KITCHEN_ALL] [nvarchar](max) NULL,
-	[Path_report_KITCHEN_ALL] [nvarchar](max) NULL,
-	[Path_report_KITCHEN_PRINTER] [nvarchar](max) NULL,
+	[PRINTER_NAME_KITCHEN_ALL] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[Path_report_KITCHEN_ALL] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[Path_report_KITCHEN_PRINTER] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_PRINT_KETCHEN] [bit] NULL,
-	[DATABASE_NAME] [nvarchar](max) NULL,
+	[DATABASE_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_CALL_NO] [bit] NULL,
 	[DF_INVOICE_CODE] [int] NULL,
-	[Path_report_SAFARY] [nvarchar](max) NULL,
-	[SKIN_NAME] [nvarchar](max) NULL,
+	[Path_report_SAFARY] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[SKIN_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_GEFT] [bit] NULL,
 	[IS_SIP] [bit] NULL,
-	[SKIN_POLLETE] [nvarchar](max) NULL,
+	[SKIN_POLLETE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_CAPTAIN] [bit] NULL,
 	[IS_FORM_CASH] [bit] NULL,
 	[IS_LAST_WAIT] [bit] NULL,
 	[IS_CALL_NO_SALA] [bit] NULL,
-	[KEY_BARCODE] [nvarchar](max) NULL,
+	[KEY_BARCODE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[SALES_BARCODE] [bit] NULL,
 	[SAVE_SETTING_DATE] [bit] NULL,
 	[ROUND_250] [bit] NULL,
-	[PRINTER_NAME_DELEVERY] [nvarchar](max) NULL
+	[PRINTER_NAME_DELEVERY] [nvarchar](max) COLLATE Arabic_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SETTING_NEW]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SETTING_NEW]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1545,12 +1813,12 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_SETTING_NEW]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [dbo].[T_SETTING_NEW](
-	[PC_NAME] [nvarchar](max) NOT NULL,
-	[SETTINGS] [nvarchar](max) NULL
+	[PC_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NOT NULL,
+	[SETTINGS] [nvarchar](max) COLLATE Arabic_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SIP_PHONE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SIP_PHONE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1559,7 +1827,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_SIP_PHONE](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
-	[PHONE_NO] [nvarchar](50) NULL,
+	[PHONE_NO] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[D_DATE] [date] NULL,
 	[D_TIME] [datetime] NULL,
 	[USER_CODE] [int] NULL,
@@ -1571,7 +1839,7 @@ CREATE TABLE [dbo].[T_SIP_PHONE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SORT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_SORT]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1581,7 +1849,7 @@ BEGIN
 CREATE TABLE [dbo].[T_SORT](
 	[T_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
 	[CODE] [int] NOT NULL,
-	[NAME] [nvarchar](50) NULL,
+	[NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_SORT] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -1589,7 +1857,7 @@ CREATE TABLE [dbo].[T_SORT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TABLE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_TABLE]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1599,16 +1867,16 @@ BEGIN
 CREATE TABLE [dbo].[T_TABLE](
 	[TABLE_CODE] [int] NOT NULL,
 	[QISM_CODE] [int] NULL,
-	[TABLE_NO] [nvarchar](50) NULL,
-	[TABLE_NAME] [nvarchar](50) NULL,
-	[TABLE_NOTE] [nvarchar](max) NULL,
+	[TABLE_NO] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[TABLE_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[TABLE_NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[NO_CLIENT] [int] NULL,
 	[IS_OPEN] [int] NULL,
 	[START_TIME] [datetime] NULL,
 	[DIFF_TIME]  AS (datediff(minute,[START_TIME],getdate())),
 	[USER_CODE] [int] NULL,
 	[IS_ENTRY] [bit] NULL,
-	[USER_ENTRY] [nvarchar](max) NULL,
+	[USER_ENTRY] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_TABLE] PRIMARY KEY CLUSTERED 
 (
 	[TABLE_CODE] ASC
@@ -1616,7 +1884,7 @@ CREATE TABLE [dbo].[T_TABLE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TABOOR_ORDER_TYPES]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_TABOOR_ORDER_TYPES]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1625,18 +1893,38 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_TABOOR_ORDER_TYPES](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[TYPE] [nvarchar](max) NULL,
-	[BG_COLOR] [nvarchar](max) NULL,
-	[FONT_COLOR] [nvarchar](max) NULL,
-	[Sort] [int] NULL,
- CONSTRAINT [PK_T_TABOOR_ORDER_TYPES] PRIMARY KEY CLUSTERED 
+	[TYPE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[SORT] [int] NULL,
+	[BG_COLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[HEADER_FONTSIZE] [float] NULL,
+	[HEADER_COLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CARD_BGCOLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CARD_RADIUS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CARD_THICKNESS_HEIGHT] [int] NULL,
+	[CARD_THICKNESS_COLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CARD_SHADOW_COLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CARD_SHADOW_ELEVATION] [int] NULL,
+	[CARD_FONTCOLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CARD_FONTSIZE] [float] NULL,
+	[CARD_SUBTITLE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CARD_SUBTITLE_COLOR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[CARD_SUBTITLE_FONTSIZE] [float] NULL,
+	[MAX_ROW] [int] NULL,
+	[MAX_COLUMN] [int] NULL,
+	[BG_IMAGE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[BG_IMAGE_OPACITY] [float] NULL,
+	[BG_IMAGE_POSITION] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[BG_IMAGE_SIZE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[SHOW_IMG] [bit] NULL,
+	[CARD_SUBTITLE_VISIBLE] [bit] NULL,
+ CONSTRAINT [PK_T_ORDER_TYPES] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TABOOR_ORDERS]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_TABOOR_ORDERS]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1649,14 +1937,14 @@ CREATE TABLE [dbo].[T_TABOOR_ORDERS](
 	[CREATE_DATE] [datetime] NULL,
 	[ORDER_TYPE] [int] NULL,
 	[FINISH_DATE] [datetime] NULL,
- CONSTRAINT [PK_T_TABOOR_ORDERS] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_T_ORDERS] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TABOOR_TIME_RESET]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_TABOOR_TIME_RESET]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1666,15 +1954,16 @@ BEGIN
 CREATE TABLE [dbo].[T_TABOOR_TIME_RESET](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[TIME_RESET] [float] NULL,
-	[DSCRP] [nvarchar](max) NULL,
- CONSTRAINT [PK_T_TABOOR_TIME_RESET] PRIMARY KEY CLUSTERED 
+	[DSCRP] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[IS_SHOW] [bit] NULL,
+ CONSTRAINT [PK_T_TIME_RESET] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_USER_DETAILS]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_USER_DETAILS]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1686,13 +1975,13 @@ CREATE TABLE [dbo].[T_USER_DETAILS](
 	[JOB_DATE] [date] NULL,
 	[D_DATE] [date] NULL,
 	[D_TIME] [datetime] NULL,
-	[USER_NAME] [nvarchar](50) NULL,
-	[SCREEN_NAME] [nvarchar](50) NULL,
-	[PROCCESS_TYPE] [nvarchar](50) NULL,
+	[USER_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[SCREEN_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[PROCCESS_TYPE] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[BILL_NUMBER] [numeric](18, 0) NULL,
 	[BILL_BRANCH] [int] NULL,
 	[AMO] [float] NULL,
-	[NOTE] [nvarchar](max) NULL,
+	[NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[IS_CHECKED] [bit] NULL,
  CONSTRAINT [PK_T_USER_DETAILS] PRIMARY KEY CLUSTERED 
 (
@@ -1701,7 +1990,7 @@ CREATE TABLE [dbo].[T_USER_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_USERS]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_USERS]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1710,21 +1999,21 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_USERS](
 	[USER_CODE] [int] NOT NULL,
-	[USER_NAME] [nvarchar](max) NOT NULL,
-	[USER_PWD] [nvarchar](max) NULL,
+	[USER_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[USER_PWD] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[LEVEL_CODE] [int] NULL,
 	[ACTIVE] [bit] NULL,
 	[LOG_IN] [bit] NULL,
 	[IS_ENC] [bit] NULL,
-	[APP_PWD] [nvarchar](max) NULL,
+	[APP_PWD] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_USERS] PRIMARY KEY CLUSTERED 
 (
 	[USER_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_VERSION]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_VERSION]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1733,7 +2022,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_VERSION](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
-	[V_NO] [nvarchar](50) NULL,
+	[V_NO] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[C_DATE] [datetime] NULL,
  CONSTRAINT [PK_T_VERSION] PRIMARY KEY CLUSTERED 
 (
@@ -1742,7 +2031,7 @@ CREATE TABLE [dbo].[T_VERSION](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_VERSION_DATA]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_VERSION_DATA]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1751,7 +2040,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_VERSION_DATA](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
-	[V_NO] [nvarchar](max) NULL,
+	[V_NO] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
 	[C_DATE] [datetime] NULL,
  CONSTRAINT [PK_T_VERSION_DATA] PRIMARY KEY CLUSTERED 
 (
@@ -1760,7 +2049,7 @@ CREATE TABLE [dbo].[T_VERSION_DATA](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_VERSION_NEW]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_VERSION_NEW]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1769,7 +2058,7 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_
 BEGIN
 CREATE TABLE [dbo].[T_VERSION_NEW](
 	[T_ID] [int] IDENTITY(1,1) NOT NULL,
-	[V_NO] [nvarchar](50) NULL,
+	[V_NO] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
 	[C_DATE] [datetime] NULL,
  CONSTRAINT [PK_T_VERSION_NEW] PRIMARY KEY CLUSTERED 
 (
@@ -1778,7 +2067,7 @@ CREATE TABLE [dbo].[T_VERSION_NEW](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_WORK_JOB]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Table [dbo].[T_WORK_JOB]    Script Date: 2025/09/06 3:36:22 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1797,7 +2086,78 @@ CREATE TABLE [dbo].[T_WORK_JOB](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Index [IDX_ACTIVE_SHOW_MENU]    Script Date: 2024/11/13 2:33:57 ******/
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_T_CUSTOM_REPORTS_CODE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_CUSTOM_REPORTS]') AND name = N'IX_T_CUSTOM_REPORTS_CODE')
+CREATE UNIQUE NONCLUSTERED INDEX [IX_T_CUSTOM_REPORTS_CODE] ON [dbo].[T_CUSTOM_REPORTS]
+(
+	[REPORT_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_TDR_DATE_TIME]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE]') AND name = N'IX_TDR_DATE_TIME')
+CREATE NONCLUSTERED INDEX [IX_TDR_DATE_TIME] ON [dbo].[T_DISCOUNT_RULE]
+(
+	[START_DATE] ASC,
+	[END_DATE] ASC,
+	[START_TIME] ASC,
+	[END_TIME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_TDR_ENABLED_PRIORITY]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE]') AND name = N'IX_TDR_ENABLED_PRIORITY')
+CREATE NONCLUSTERED INDEX [IX_TDR_ENABLED_PRIORITY] ON [dbo].[T_DISCOUNT_RULE]
+(
+	[ENABLED] ASC,
+	[PRIORITY] ASC,
+	[RULE_KIND] ASC,
+	[INVOICE_CODE] ASC,
+	[BRANCH_NAME] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_TDRI_ITEM]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE_ITEM]') AND name = N'IX_TDRI_ITEM')
+CREATE NONCLUSTERED INDEX [IX_TDRI_ITEM] ON [dbo].[T_DISCOUNT_RULE_ITEM]
+(
+	[ITEM_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_TDRP_PHONE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE_PHONE]') AND name = N'IX_TDRP_PHONE')
+CREATE NONCLUSTERED INDEX [IX_TDRP_PHONE] ON [dbo].[T_DISCOUNT_RULE_PHONE]
+(
+	[PHONE_NORM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IDX_T_IMPORT_PHONE_CLIENT_PHONE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_IMPORT_PHONE]') AND name = N'IDX_T_IMPORT_PHONE_CLIENT_PHONE')
+CREATE NONCLUSTERED INDEX [IDX_T_IMPORT_PHONE_CLIENT_PHONE] ON [dbo].[T_IMPORT_PHONE]
+(
+	[CLIENT_PHONE] ASC
+)
+INCLUDE ( 	[CLIENT_NAME],
+	[CLIENT_REGION],
+	[CLIENT_ADDRESS]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_T_ITEM_BARCODE_ITEM_CODE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_BARCODE]') AND name = N'IX_T_ITEM_BARCODE_ITEM_CODE')
+CREATE NONCLUSTERED INDEX [IX_T_ITEM_BARCODE_ITEM_CODE] ON [dbo].[T_ITEM_BARCODE]
+(
+	[ITEM_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IDX_ACTIVE_SHOW_MENU]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_CATEGORY]') AND name = N'IDX_ACTIVE_SHOW_MENU')
 CREATE NONCLUSTERED INDEX [IDX_ACTIVE_SHOW_MENU] ON [dbo].[T_ITEM_CATEGORY]
 (
@@ -1805,21 +2165,69 @@ CREATE NONCLUSTERED INDEX [IDX_ACTIVE_SHOW_MENU] ON [dbo].[T_ITEM_CATEGORY]
 	[SHOW_MENU] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_CATEGORY_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_CATEGORY_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_CATEGORY]') AND name = N'IDX_CATEGORY_CODE')
 CREATE NONCLUSTERED INDEX [IDX_CATEGORY_CODE] ON [dbo].[T_ITEM_CATEGORY]
 (
 	[CATEGORY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_SORT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_SORT]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_CATEGORY]') AND name = N'IDX_SORT')
 CREATE NONCLUSTERED INDEX [IDX_SORT] ON [dbo].[T_ITEM_CATEGORY]
 (
 	[SORT] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_ACTIVE_SHOW_MENU]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IX_T_ITEM_RECIPE_ITEM_CODE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_RECIPE]') AND name = N'IX_T_ITEM_RECIPE_ITEM_CODE')
+CREATE NONCLUSTERED INDEX [IX_T_ITEM_RECIPE_ITEM_CODE] ON [dbo].[T_ITEM_RECIPE]
+(
+	[ITEM_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_T_ITEM_RECIPE_MAIN_CHILD]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_RECIPE]') AND name = N'IX_T_ITEM_RECIPE_MAIN_CHILD')
+CREATE NONCLUSTERED INDEX [IX_T_ITEM_RECIPE_MAIN_CHILD] ON [dbo].[T_ITEM_RECIPE]
+(
+	[ITEM_CODE_MAIN] ASC,
+	[ITEM_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_T_ITEM_STORE_Cover]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_STORE]') AND name = N'IX_T_ITEM_STORE_Cover')
+CREATE NONCLUSTERED INDEX [IX_T_ITEM_STORE_Cover] ON [dbo].[T_ITEM_STORE]
+(
+	[ITEM_CODE] ASC,
+	[DATE_JOB] ASC
+)
+INCLUDE ( 	[QTY_IN],
+	[QTY_WER],
+	[QTY_OUT]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_T_ITEM_STORE_DATE_JOB]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_STORE]') AND name = N'IX_T_ITEM_STORE_DATE_JOB')
+CREATE NONCLUSTERED INDEX [IX_T_ITEM_STORE_DATE_JOB] ON [dbo].[T_ITEM_STORE]
+(
+	[DATE_JOB] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_T_ITEM_STORE_ITEM_CODE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_STORE]') AND name = N'IX_T_ITEM_STORE_ITEM_CODE')
+CREATE NONCLUSTERED INDEX [IX_T_ITEM_STORE_ITEM_CODE] ON [dbo].[T_ITEM_STORE]
+(
+	[ITEM_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_T_ITEM_STORE_ITEMCODE_DATE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_STORE]') AND name = N'IX_T_ITEM_STORE_ITEMCODE_DATE')
+CREATE NONCLUSTERED INDEX [IX_T_ITEM_STORE_ITEMCODE_DATE] ON [dbo].[T_ITEM_STORE]
+(
+	[ITEM_CODE] ASC,
+	[DATE_JOB] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IDX_ACTIVE_SHOW_MENU]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDX_ACTIVE_SHOW_MENU')
 CREATE NONCLUSTERED INDEX [IDX_ACTIVE_SHOW_MENU] ON [dbo].[T_ITEMS]
 (
@@ -1827,14 +2235,14 @@ CREATE NONCLUSTERED INDEX [IDX_ACTIVE_SHOW_MENU] ON [dbo].[T_ITEMS]
 	[SHOW_MENU] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_CATEGORY_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_CATEGORY_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDX_CATEGORY_CODE')
 CREATE NONCLUSTERED INDEX [IDX_CATEGORY_CODE] ON [dbo].[T_ITEMS]
 (
 	[CATEGORY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_ITEM_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_ITEM_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDX_ITEM_CODE')
 CREATE NONCLUSTERED INDEX [IDX_ITEM_CODE] ON [dbo].[T_ITEMS]
 (
@@ -1844,21 +2252,21 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_ITEM_NAME]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_ITEM_NAME]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDX_ITEM_NAME')
 CREATE NONCLUSTERED INDEX [IDX_ITEM_NAME] ON [dbo].[T_ITEMS]
 (
 	[ITEM_NAME] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_SORT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_SORT]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDX_SORT')
 CREATE NONCLUSTERED INDEX [IDX_SORT] ON [dbo].[T_ITEMS]
 (
 	[SORT] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDXT_ITEMS_ACTIVE_SHOW_MENU]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDXT_ITEMS_ACTIVE_SHOW_MENU]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDXT_ITEMS_ACTIVE_SHOW_MENU')
 CREATE NONCLUSTERED INDEX [IDXT_ITEMS_ACTIVE_SHOW_MENU] ON [dbo].[T_ITEMS]
 (
@@ -1866,14 +2274,14 @@ CREATE NONCLUSTERED INDEX [IDXT_ITEMS_ACTIVE_SHOW_MENU] ON [dbo].[T_ITEMS]
 	[SHOW_MENU] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDXT_ITEMS_CATEGORY_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDXT_ITEMS_CATEGORY_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDXT_ITEMS_CATEGORY_CODE')
 CREATE NONCLUSTERED INDEX [IDXT_ITEMS_CATEGORY_CODE] ON [dbo].[T_ITEMS]
 (
 	[CATEGORY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDXT_ITEMS_ITEM_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDXT_ITEMS_ITEM_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDXT_ITEMS_ITEM_CODE')
 CREATE NONCLUSTERED INDEX [IDXT_ITEMS_ITEM_CODE] ON [dbo].[T_ITEMS]
 (
@@ -1883,28 +2291,52 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDXT_ITEMS_ITEM_NAME]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDXT_ITEMS_ITEM_NAME]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDXT_ITEMS_ITEM_NAME')
 CREATE NONCLUSTERED INDEX [IDXT_ITEMS_ITEM_NAME] ON [dbo].[T_ITEMS]
 (
 	[ITEM_NAME] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDXT_ITEMS_SORT]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDXT_ITEMS_SORT]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDXT_ITEMS_SORT')
 CREATE NONCLUSTERED INDEX [IDXT_ITEMS_SORT] ON [dbo].[T_ITEMS]
 (
 	[SORT] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_BILL_NUMBER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IX_T_ITEMS_ITEM_CODE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IX_T_ITEMS_ITEM_CODE')
+CREATE NONCLUSTERED INDEX [IX_T_ITEMS_ITEM_CODE] ON [dbo].[T_ITEMS]
+(
+	[ITEM_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IDX_SALES_BILL_RECIPIENT_WORK]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IDX_SALES_BILL_RECIPIENT_WORK')
+CREATE NONCLUSTERED INDEX [IDX_SALES_BILL_RECIPIENT_WORK] ON [dbo].[T_SALES]
+(
+	[BILL_NUMBER] ASC,
+	[RECIPIENT_CODE] ASC,
+	[WORK_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IDX_SALES_BILLNUMBER_WORKCODE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IDX_SALES_BILLNUMBER_WORKCODE')
+CREATE NONCLUSTERED INDEX [IDX_SALES_BILLNUMBER_WORKCODE] ON [dbo].[T_SALES]
+(
+	[BILL_NUMBER] ASC,
+	[WORK_CODE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IDX_T_SALES_BILL_NUMBER]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IDX_T_SALES_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_BILL_NUMBER] ON [dbo].[T_SALES]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_CLIENT_CODE_BILL_DATE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_CLIENT_CODE_BILL_DATE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IDX_T_SALES_CLIENT_CODE_BILL_DATE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_CLIENT_CODE_BILL_DATE] ON [dbo].[T_SALES]
 (
@@ -1915,14 +2347,14 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_SALES_CLIENT_PHONE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_CLIENT_PHONE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IDX_T_SALES_CLIENT_PHONE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_CLIENT_PHONE] ON [dbo].[T_SALES]
 (
 	[CLIENT_PHONE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_INVOICE_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_INVOICE_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IDX_T_SALES_INVOICE_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_INVOICE_CODE] ON [dbo].[T_SALES]
 (
@@ -1932,7 +2364,35 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_SALES_DETAILS_BILL_BRANCH_BILL_DATE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [UX_T_SALES_BILL_BRANCH]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'UX_T_SALES_BILL_BRANCH')
+CREATE UNIQUE NONCLUSTERED INDEX [UX_T_SALES_BILL_BRANCH] ON [dbo].[T_SALES]
+(
+	[BILL_BRANCH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IDX_SALES_DETAILS_BILLDATE_ITEMCODE_BILLNUMBER]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_SALES_DETAILS_BILLDATE_ITEMCODE_BILLNUMBER')
+CREATE NONCLUSTERED INDEX [IDX_SALES_DETAILS_BILLDATE_ITEMCODE_BILLNUMBER] ON [dbo].[T_SALES_DETAILS]
+(
+	[BILL_DATE] ASC,
+	[ITEM_CODE] ASC,
+	[BILL_NUMBER] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IDX_SALES_DETAILS_DATE_ITEM_BILL]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_SALES_DETAILS_DATE_ITEM_BILL')
+CREATE NONCLUSTERED INDEX [IDX_SALES_DETAILS_DATE_ITEM_BILL] ON [dbo].[T_SALES_DETAILS]
+(
+	[BILL_DATE] ASC,
+	[ITEM_CODE] ASC,
+	[BILL_NUMBER] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IDX_T_SALES_DETAILS_BILL_BRANCH_BILL_DATE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_T_SALES_DETAILS_BILL_BRANCH_BILL_DATE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_BILL_BRANCH_BILL_DATE] ON [dbo].[T_SALES_DETAILS]
 (
@@ -1940,21 +2400,21 @@ CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_BILL_BRANCH_BILL_DATE] ON [dbo].[
 	[BILL_DATE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_DETAILS_BILL_NUMBER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_DETAILS_BILL_NUMBER]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_T_SALES_DETAILS_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_BILL_NUMBER] ON [dbo].[T_SALES_DETAILS]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_DETAILS_ITEM_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_DETAILS_ITEM_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_T_SALES_DETAILS_ITEM_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_ITEM_CODE] ON [dbo].[T_SALES_DETAILS]
 (
 	[ITEM_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_DETAILS_USER_CODE_WORK_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_DETAILS_USER_CODE_WORK_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_T_SALES_DETAILS_USER_CODE_WORK_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_USER_CODE_WORK_CODE] ON [dbo].[T_SALES_DETAILS]
 (
@@ -1962,10 +2422,34 @@ CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_USER_CODE_WORK_CODE] ON [dbo].[T_
 	[WORK_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
+/****** Object:  Index [IX_T_SALES_DETAILS_Cover]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IX_T_SALES_DETAILS_Cover')
+CREATE NONCLUSTERED INDEX [IX_T_SALES_DETAILS_Cover] ON [dbo].[T_SALES_DETAILS]
+(
+	[BILL_DATE] ASC
+)
+INCLUDE ( 	[QTY]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_T_SALES_DETAILS_MAIN_ITEM_DATE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IX_T_SALES_DETAILS_MAIN_ITEM_DATE')
+CREATE NONCLUSTERED INDEX [IX_T_SALES_DETAILS_MAIN_ITEM_DATE] ON [dbo].[T_SALES_DETAILS]
+(
+	[BILL_DATE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IDX_RETURNS_DATE_ITEM_BILL]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS_RETURN]') AND name = N'IDX_RETURNS_DATE_ITEM_BILL')
+CREATE NONCLUSTERED INDEX [IDX_RETURNS_DATE_ITEM_BILL] ON [dbo].[T_SALES_DETAILS_RETURN]
+(
+	[BILL_DATE] ASC,
+	[ITEM_CODE] ASC,
+	[BILL_NUMBER] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_SALES_TEMP_BILL_BRANCH_BILL_DATE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_TEMP_BILL_BRANCH_BILL_DATE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_TEMP]') AND name = N'IDX_T_SALES_TEMP_BILL_BRANCH_BILL_DATE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_TEMP_BILL_BRANCH_BILL_DATE] ON [dbo].[T_SALES_TEMP]
 (
@@ -1973,27 +2457,48 @@ CREATE NONCLUSTERED INDEX [IDX_T_SALES_TEMP_BILL_BRANCH_BILL_DATE] ON [dbo].[T_S
 	[BILL_DATE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_TEMP_BILL_NUMBER]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_TEMP_BILL_NUMBER]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_TEMP]') AND name = N'IDX_T_SALES_TEMP_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_TEMP_BILL_NUMBER] ON [dbo].[T_SALES_TEMP]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_TEMP_ITEM_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_TEMP_ITEM_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_TEMP]') AND name = N'IDX_T_SALES_TEMP_ITEM_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_TEMP_ITEM_CODE] ON [dbo].[T_SALES_TEMP]
 (
 	[ITEM_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_TEMP_USER_CODE_WORK_CODE]    Script Date: 2024/11/13 2:33:57 ******/
+/****** Object:  Index [IDX_T_SALES_TEMP_USER_CODE_WORK_CODE]    Script Date: 2025/09/06 3:36:22 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_TEMP]') AND name = N'IDX_T_SALES_TEMP_USER_CODE_WORK_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_TEMP_USER_CODE_WORK_CODE] ON [dbo].[T_SALES_TEMP]
 (
 	[USER_CODE] ASC,
 	[WORK_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_T_SALES_TEMP_Cover]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_TEMP]') AND name = N'IX_T_SALES_TEMP_Cover')
+CREATE NONCLUSTERED INDEX [IX_T_SALES_TEMP_Cover] ON [dbo].[T_SALES_TEMP]
+(
+	[BILL_DATE] ASC
+)
+INCLUDE ( 	[QTY]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_T_SALES_TEMP_MAIN_ITEM_DATE]    Script Date: 2025/09/06 3:36:22 ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_TEMP]') AND name = N'IX_T_SALES_TEMP_MAIN_ITEM_DATE')
+CREATE NONCLUSTERED INDEX [IX_T_SALES_TEMP_MAIN_ITEM_DATE] ON [dbo].[T_SALES_TEMP]
+(
+	[BILL_DATE] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_T_A_DATA_RESTURANT_C_DATE]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_A_DATA_RESTURANT] ADD  CONSTRAINT [DF_T_A_DATA_RESTURANT_C_DATE]  DEFAULT (getdate()) FOR [C_DATE]
+END
+
 GO
 IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_T_APP_CALL_CENTER_C_DATE]') AND type = 'D')
 BEGIN
@@ -2016,6 +2521,60 @@ GO
 IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_T_APP_TABLE_C_DATE]') AND type = 'D')
 BEGIN
 ALTER TABLE [dbo].[T_APP_TABLE] ADD  CONSTRAINT [DF_T_APP_TABLE_C_DATE]  DEFAULT (getdate()) FOR [C_DATE]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_T_APP_TABLE_BARCODE_C_DATE]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_APP_TABLE_BARCODE] ADD  CONSTRAINT [DF_T_APP_TABLE_BARCODE_C_DATE]  DEFAULT (getdate()) FOR [C_DATE]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__T_CUSTOM___IS_AC__5E769188]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_CUSTOM_REPORTS] ADD  DEFAULT ((1)) FOR [IS_ACTIVE]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__T_CUSTOM___ALLOW__5F6AB5C1]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_CUSTOM_REPORTS] ADD  DEFAULT ((0)) FOR [ALLOW_DIRECT_PRINT]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__T_CUSTOM___CREAT__605ED9FA]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_CUSTOM_REPORTS] ADD  DEFAULT (getdate()) FOR [CREATED_AT]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__T_DISCOUN__ENABL__6B117297]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_DISCOUNT_RULE] ADD  DEFAULT ((1)) FOR [ENABLED]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__T_DISCOUN__PRIOR__6C0596D0]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_DISCOUNT_RULE] ADD  DEFAULT ((100)) FOR [PRIORITY]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__T_DISCOUN__STACK__6CF9BB09]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_DISCOUNT_RULE] ADD  DEFAULT ((0)) FOR [STACKABLE]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__T_DISCOUN__USE_C__758F010A]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_DISCOUNT_USAGE] ADD  DEFAULT ((0)) FOR [USE_COUNT]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF__T_DISCOUN__TOTAL__76832543]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_DISCOUNT_USAGE] ADD  DEFAULT ((0)) FOR [TOTAL_DISCOUNT]
 END
 
 GO
@@ -2589,6 +3148,12 @@ ALTER TABLE [dbo].[T_TABLE] ADD  CONSTRAINT [DF_T_TABLE_IS_OPEN]  DEFAULT ((0)) 
 END
 
 GO
+IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_T_TABOOR_ORDER_TYPES_SHOW_IMG]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[T_TABOOR_ORDER_TYPES] ADD  CONSTRAINT [DF_T_TABOOR_ORDER_TYPES_SHOW_IMG]  DEFAULT ((1)) FOR [SHOW_IMG]
+END
+
+GO
 IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_T_USER_DETAILS_IS_CHECKED]') AND type = 'D')
 BEGIN
 ALTER TABLE [dbo].[T_USER_DETAILS] ADD  CONSTRAINT [DF_T_USER_DETAILS_IS_CHECKED]  DEFAULT ((0)) FOR [IS_CHECKED]
@@ -2624,4 +3189,25 @@ BEGIN
 ALTER TABLE [dbo].[T_VERSION_NEW] ADD  CONSTRAINT [DF_T_VERSION_NEW_C_DATE]  DEFAULT (getdate()) FOR [C_DATE]
 END
 
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_TDRI_RULE]') AND parent_object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE_ITEM]'))
+ALTER TABLE [dbo].[T_DISCOUNT_RULE_ITEM]  WITH CHECK ADD  CONSTRAINT [FK_TDRI_RULE] FOREIGN KEY([RULE_ID])
+REFERENCES [dbo].[T_DISCOUNT_RULE] ([RULE_ID])
+GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_TDRI_RULE]') AND parent_object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE_ITEM]'))
+ALTER TABLE [dbo].[T_DISCOUNT_RULE_ITEM] CHECK CONSTRAINT [FK_TDRI_RULE]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_TDRP_RULE]') AND parent_object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE_PHONE]'))
+ALTER TABLE [dbo].[T_DISCOUNT_RULE_PHONE]  WITH CHECK ADD  CONSTRAINT [FK_TDRP_RULE] FOREIGN KEY([RULE_ID])
+REFERENCES [dbo].[T_DISCOUNT_RULE] ([RULE_ID])
+GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_TDRP_RULE]') AND parent_object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_RULE_PHONE]'))
+ALTER TABLE [dbo].[T_DISCOUNT_RULE_PHONE] CHECK CONSTRAINT [FK_TDRP_RULE]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_TDU_RULE]') AND parent_object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_USAGE]'))
+ALTER TABLE [dbo].[T_DISCOUNT_USAGE]  WITH CHECK ADD  CONSTRAINT [FK_TDU_RULE] FOREIGN KEY([RULE_ID])
+REFERENCES [dbo].[T_DISCOUNT_RULE] ([RULE_ID])
+GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_TDU_RULE]') AND parent_object_id = OBJECT_ID(N'[dbo].[T_DISCOUNT_USAGE]'))
+ALTER TABLE [dbo].[T_DISCOUNT_USAGE] CHECK CONSTRAINT [FK_TDU_RULE]
 GO

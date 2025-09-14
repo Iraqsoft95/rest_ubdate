@@ -1,5 +1,4 @@
-USE [RESTAURANT_DB]
-GO
+
 IF  EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPaneCount' , N'SCHEMA',N'dbo', N'VIEW',N'V_SALES_ITEM_RECIPE_TEMP', NULL,NULL))
 EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPaneCount' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_SALES_ITEM_RECIPE_TEMP'
 
@@ -40,926 +39,1050 @@ IF  EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPane1' , N'SCHEM
 EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPane1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'V_CATEGORY_ON'
 
 GO
-/****** Object:  View [dbo].[V_USERS_ON]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_USERS_ON]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_USERS_ON]'))
 DROP VIEW [dbo].[V_USERS_ON]
 GO
-/****** Object:  View [dbo].[V_SIP_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SIP_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SIP_PHONE]'))
 DROP VIEW [dbo].[V_SIP_PHONE]
 GO
-/****** Object:  View [dbo].[V_SALES_USER_DATE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_USER_DATE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_USER_DATE]'))
 DROP VIEW [dbo].[V_SALES_USER_DATE]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TATMA_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TATMA_CATEGORY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TATMA_CATEGORY]'))
 DROP VIEW [dbo].[V_SALES_TEMP_TATMA_CATEGORY]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PA]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PA]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PA]'))
 DROP VIEW [dbo].[V_SALES_TEMP_PA]
 GO
-/****** Object:  View [dbo].[V_SALES_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_RETURN]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_RETURN]'))
 DROP VIEW [dbo].[V_SALES_RETURN]
 GO
-/****** Object:  View [dbo].[V_SALES_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ORDER]'))
 DROP VIEW [dbo].[V_SALES_ORDER]
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE]'))
 DROP VIEW [dbo].[V_SALES_ITEM_RECIPE]
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_GEFT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_GEFT]'))
 DROP VIEW [dbo].[V_SALES_ITEM_GEFT]
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_DATE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_DATE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_DATE]'))
 DROP VIEW [dbo].[V_SALES_ITEM_DATE]
 GO
-/****** Object:  View [dbo].[V_SALES_INVOICE_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_INVOICE_GEFT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_INVOICE_GEFT]'))
 DROP VIEW [dbo].[V_SALES_INVOICE_GEFT]
 GO
-/****** Object:  View [dbo].[V_SALES_INVOICE_DISCOUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_INVOICE_DISCOUNT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_INVOICE_DISCOUNT]'))
 DROP VIEW [dbo].[V_SALES_INVOICE_DISCOUNT]
 GO
-/****** Object:  View [dbo].[V_SALES_HISTORY_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_HISTORY_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_HISTORY_PHONE]'))
 DROP VIEW [dbo].[V_SALES_HISTORY_PHONE]
 GO
-/****** Object:  View [dbo].[V_SALES_HISTORY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_HISTORY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_HISTORY]'))
 DROP VIEW [dbo].[V_SALES_HISTORY]
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_TYPE_6]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_TYPE_6]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS_TYPE_6]'))
 DROP VIEW [dbo].[V_SALES_DETAILS_TYPE_6]
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_GEFT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS_GEFT]'))
 DROP VIEW [dbo].[V_SALES_DETAILS_GEFT]
 GO
-/****** Object:  View [dbo].[V_REGION_LIST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_REGION_LIST]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_REGION_LIST]'))
 DROP VIEW [dbo].[V_REGION_LIST]
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON_POS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON_POS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON_POS]'))
 DROP VIEW [dbo].[V_ITEMS_ON_POS]
 GO
-/****** Object:  View [dbo].[V_ITEM_STORE_JOB_DATE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_STORE_JOB_DATE]'))
-DROP VIEW [dbo].[V_ITEM_STORE_JOB_DATE]
-GO
-/****** Object:  View [dbo].[V_ITEM_RECIPE_STORE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_RECIPE_STORE]'))
-DROP VIEW [dbo].[V_ITEM_RECIPE_STORE]
-GO
-/****** Object:  View [dbo].[V_FREE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_FREE]'))
-DROP VIEW [dbo].[V_FREE]
-GO
-/****** Object:  View [dbo].[V_EXPENSES]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_EXPENSES]'))
-DROP VIEW [dbo].[V_EXPENSES]
-GO
-/****** Object:  View [dbo].[V_ERADAT]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ERADAT]'))
-DROP VIEW [dbo].[V_ERADAT]
-GO
-/****** Object:  View [dbo].[V_EMP_ENTRY]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_EMP_ENTRY]'))
-DROP VIEW [dbo].[V_EMP_ENTRY]
-GO
-/****** Object:  View [dbo].[V_CLIENT_NOTIFICATION]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_NOTIFICATION]'))
-DROP VIEW [dbo].[V_CLIENT_NOTIFICATION]
-GO
-/****** Object:  View [dbo].[V_CATEGORY_ON]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CATEGORY_ON]'))
-DROP VIEW [dbo].[V_CATEGORY_ON]
-GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]'))
-DROP VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]
-GO
-/****** Object:  View [dbo].[V_SALES_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_APP]'))
-DROP VIEW [dbo].[V_SALES_TEMP_APP]
-GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]'))
-DROP VIEW [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]
-GO
-/****** Object:  View [dbo].[V_ITEM_SCALE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_SCALE]'))
-DROP VIEW [dbo].[V_ITEM_SCALE]
-GO
-/****** Object:  View [dbo].[V_ITEM_BARCODE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_BARCODE]'))
-DROP VIEW [dbo].[V_ITEM_BARCODE]
-GO
-/****** Object:  View [dbo].[V_ITEMS_ON]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON]'))
-DROP VIEW [dbo].[V_ITEMS_ON]
-GO
-/****** Object:  View [dbo].[V_SALES_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DAY_NAME]'))
-DROP VIEW [dbo].[V_SALES_DAY_NAME]
-GO
-/****** Object:  View [dbo].[V_CLIENT_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_DEBIT]'))
-DROP VIEW [dbo].[V_CLIENT_DEBIT]
-GO
-/****** Object:  View [dbo].[V_CLIENT_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_INVOICE]'))
-DROP VIEW [dbo].[V_CLIENT_INVOICE]
-GO
-/****** Object:  View [dbo].[V_CLIENT_CASH]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_CASH]'))
-DROP VIEW [dbo].[V_CLIENT_CASH]
-GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_DELETE]'))
-DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_DELETE]
-GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE_DELETE]'))
-DROP VIEW [dbo].[V_SALES_TEMP_TABLE_DELETE]
-GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE]'))
-DROP VIEW [dbo].[V_SALES_TEMP_TABLE]
-GO
-/****** Object:  View [dbo].[V_SALES_PHONE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_LIST]'))
-DROP VIEW [dbo].[V_SALES_PHONE_LIST]
-GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT_ON]'))
-DROP VIEW [dbo].[V_DRIVER_DELEVERY_COUNT_ON]
-GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TATMA]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TATMA]'))
-DROP VIEW [dbo].[V_SALES_TEMP_TATMA]
-GO
-/****** Object:  View [dbo].[V_SALES_PHONE_LIST_APPLICATION]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_LIST_APPLICATION]'))
-DROP VIEW [dbo].[V_SALES_PHONE_LIST_APPLICATION]
-GO
-/****** Object:  View [dbo].[V_SALES_WAITING]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_WAITING]'))
-DROP VIEW [dbo].[V_SALES_WAITING]
-GO
-/****** Object:  View [dbo].[V_SALES_ON_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ON_ITEMS]'))
-DROP VIEW [dbo].[V_SALES_ON_ITEMS]
-GO
-/****** Object:  View [dbo].[V_SALES_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS]'))
-DROP VIEW [dbo].[V_SALES_DETAILS]
-GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER]'))
-DROP VIEW [dbo].[V_SALES_TEMP_PRINTER]
-GO
-/****** Object:  View [dbo].[V_ITEM_STORE]    Script Date: 2024/11/13 2:34:23 ******/
-IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_STORE]'))
-DROP VIEW [dbo].[V_ITEM_STORE]
-GO
-/****** Object:  View [dbo].[V_ITEMS_ON_JOB]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON_JOB]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON_JOB]'))
 DROP VIEW [dbo].[V_ITEMS_ON_JOB]
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_TABEE3]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_ITEM_STORE_JOB_DATE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_STORE_JOB_DATE]'))
+DROP VIEW [dbo].[V_ITEM_STORE_JOB_DATE]
+GO
+/****** Object:  View [dbo].[V_ITEM_STORE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_STORE]'))
+DROP VIEW [dbo].[V_ITEM_STORE]
+GO
+/****** Object:  View [dbo].[V_ITEM_RECIPE_STORE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_RECIPE_STORE]'))
+DROP VIEW [dbo].[V_ITEM_RECIPE_STORE]
+GO
+/****** Object:  View [dbo].[V_ITEM_BARCODE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_BARCODE]'))
+DROP VIEW [dbo].[V_ITEM_BARCODE]
+GO
+/****** Object:  View [dbo].[V_FREE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_FREE]'))
+DROP VIEW [dbo].[V_FREE]
+GO
+/****** Object:  View [dbo].[V_EXPENSES]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_EXPENSES]'))
+DROP VIEW [dbo].[V_EXPENSES]
+GO
+/****** Object:  View [dbo].[V_ERADAT]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ERADAT]'))
+DROP VIEW [dbo].[V_ERADAT]
+GO
+/****** Object:  View [dbo].[V_EMP_ENTRY]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_EMP_ENTRY]'))
+DROP VIEW [dbo].[V_EMP_ENTRY]
+GO
+/****** Object:  View [dbo].[V_CLIENT_NOTIFICATION]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_NOTIFICATION]'))
+DROP VIEW [dbo].[V_CLIENT_NOTIFICATION]
+GO
+/****** Object:  View [dbo].[V_CATEGORY_ON]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CATEGORY_ON]'))
+DROP VIEW [dbo].[V_CATEGORY_ON]
+GO
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]'))
+DROP VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]
+GO
+/****** Object:  View [dbo].[V_SALES_TEMP_APP]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_APP]'))
+DROP VIEW [dbo].[V_SALES_TEMP_APP]
+GO
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]'))
+DROP VIEW [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]
+GO
+/****** Object:  View [dbo].[V_ITEM_SCALE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_SCALE]'))
+DROP VIEW [dbo].[V_ITEM_SCALE]
+GO
+/****** Object:  View [dbo].[V_ITEMS_ON]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON]'))
+DROP VIEW [dbo].[V_ITEMS_ON]
+GO
+/****** Object:  View [dbo].[V_SALES_DAY_NAME]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DAY_NAME]'))
+DROP VIEW [dbo].[V_SALES_DAY_NAME]
+GO
+/****** Object:  View [dbo].[V_CLIENT_DEBIT]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_DEBIT]'))
+DROP VIEW [dbo].[V_CLIENT_DEBIT]
+GO
+/****** Object:  View [dbo].[V_CLIENT_INVOICE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_INVOICE]'))
+DROP VIEW [dbo].[V_CLIENT_INVOICE]
+GO
+/****** Object:  View [dbo].[V_CLIENT_CASH]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_CASH]'))
+DROP VIEW [dbo].[V_CLIENT_CASH]
+GO
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_DELETE]'))
+DROP VIEW [dbo].[V_SALES_TEMP_PRINTER_DELETE]
+GO
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE_DELETE]'))
+DROP VIEW [dbo].[V_SALES_TEMP_TABLE_DELETE]
+GO
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE]'))
+DROP VIEW [dbo].[V_SALES_TEMP_TABLE]
+GO
+/****** Object:  View [dbo].[V_SALES_PHONE_LIST]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_LIST]'))
+DROP VIEW [dbo].[V_SALES_PHONE_LIST]
+GO
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT_ON]'))
+DROP VIEW [dbo].[V_DRIVER_DELEVERY_COUNT_ON]
+GO
+/****** Object:  View [dbo].[V_SALES_TEMP_TATMA]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TATMA]'))
+DROP VIEW [dbo].[V_SALES_TEMP_TATMA]
+GO
+/****** Object:  View [dbo].[V_SALES_PHONE_LIST_APPLICATION]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_LIST_APPLICATION]'))
+DROP VIEW [dbo].[V_SALES_PHONE_LIST_APPLICATION]
+GO
+/****** Object:  View [dbo].[V_SALES_WAITING]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_WAITING]'))
+DROP VIEW [dbo].[V_SALES_WAITING]
+GO
+/****** Object:  View [dbo].[V_SALES_ON_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ON_ITEMS]'))
+DROP VIEW [dbo].[V_SALES_ON_ITEMS]
+GO
+/****** Object:  View [dbo].[V_SALES_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS]'))
+DROP VIEW [dbo].[V_SALES_DETAILS]
+GO
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER]'))
+DROP VIEW [dbo].[V_SALES_TEMP_PRINTER]
+GO
+/****** Object:  View [dbo].[V_SALES_DELEVERY_TABEE3]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY_TABEE3]'))
 DROP VIEW [dbo].[V_SALES_DELEVERY_TABEE3]
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT]'))
 DROP VIEW [dbo].[V_DRIVER_DELEVERY_COUNT]
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_HUB]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_HUB]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY_HUB]'))
 DROP VIEW [dbo].[V_SALES_DELEVERY_HUB]
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_BEST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_BEST]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_BEST]'))
 DROP VIEW [dbo].[V_SALES_PHONE_BEST]
 GO
-/****** Object:  View [dbo].[V_SALES_ON]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ON]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ON]'))
 DROP VIEW [dbo].[V_SALES_ON]
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_RETURN]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS_RETURN]'))
 DROP VIEW [dbo].[V_SALES_DETAILS_RETURN]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]'))
 DROP VIEW [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_REGION]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_REGION]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY_REGION]'))
 DROP VIEW [dbo].[V_SALES_DELEVERY_REGION]
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY]'))
 DROP VIEW [dbo].[V_SALES_DELEVERY]
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE_TEMP]'))
 DROP VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP]
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP]'))
 DROP VIEW [dbo].[V_SALES_TEMP]
 GO
-/****** Object:  View [dbo].[V_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES]'))
 DROP VIEW [dbo].[V_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_USER_DETAILS_DELETE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_USER_DETAILS_DELETE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_USER_DETAILS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_USER_DETAILS]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_USER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_USER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_USER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_USER]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_SERVICES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_SERVICES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_SERVICES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_SERVICES]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_RECIPIENT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_RECIPIENT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_RECIPIENT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_RECIPIENT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_PRINTER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_PRINTER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_PRINTER]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NO_CLIENT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NO_CLIENT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_NO_CLIENT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_NO_CLIENT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NET_DATE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NET_DATE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_NET_DATE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_NET_DATE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RETURN]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_RETURN]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS_RETURN]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_RECIPIENT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_GEFT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_GEFT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS_GEFT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ITEMS]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE_A4_TYPE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE_A4]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_INVOICE]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL_USER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL_USER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_FINAL_USER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_FINAL_USER]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_FINAL]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_FINAL]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DRIVER_NAME_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DRIVER_NAME]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DRIVER_NAME]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DISCOUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DISCOUNT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DISCOUNT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DISCOUNT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DAY_NAME]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DAY_NAME]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DAY_NAME]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DATE_NET]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DATE_NET]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_DATE_NET]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_DATE_NET]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CATEGORY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_CATEGORY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_CATEGORY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CASH_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CASH_DEBIT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_CASH_DEBIT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_CASH_DEBIT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CAPTAIN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CAPTAIN]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_CAPTAIN]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_CAPTAIN]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_BILL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_BILL]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_BILL]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_BILL]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH_FINAL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH_FINAL]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ARBAH_FINAL]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ARBAH_FINAL]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ARBAH]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_ARBAH]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_APPLICATION]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_APPLICATION]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_APPLICATION]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_SALES_APPLICATION]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_REGION_BEST_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_REGION_BEST_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_REGION_BEST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_REGION_BEST]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_PHONE_BEST_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_PHONE_BEST_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_PHONE_BEST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_PHONE_BEST]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EXPENSES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EXPENSES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_EXPENSES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_EXPENSES]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_ERADAT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_ERADAT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_ERADAT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_ERADAT]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE_ENTERY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE_ENTERY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_EMPLOYEE_ENTERY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_EMPLOYEE_ENTERY]
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_EMPLOYEE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PV_GET_EMPLOYEE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_UPDATE_USER_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_CLIENT_DEBIT]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_CLIENT_DEBIT]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PV_GET_CLIENT_DEBIT]
+GO
+/****** Object:  StoredProcedure [dbo].[PF_UPDATE_USER_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_UPDATE_USER_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_UPDATE_USER_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_UPDATE_TABLE_INFO]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_UPDATE_TABLE_INFO]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_UPDATE_TABLE_INFO]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_UPDATE_TABLE_INFO]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_INSERT_TABLE_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_INSERT_TABLE_APP]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_INSERT_TABLE_APP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_INSERT_TABLE_APP]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE_ADD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE_ADD]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_USER_SALES_TABLE_ADD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_USER_SALES_TABLE_ADD]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_USER_SALES_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_USER_SALES_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_TABLE_BY_USER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_TABLE_BY_USER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_TABLE_BY_USER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_TABLE_BY_USER]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_TABLE_CODE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_BILL_BY_TABLE_CODE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_BILL_BY_TABLE_CODE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_SAFARY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_SAFARY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_BILL_BY_SAFARY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_GET_BILL_BY_SAFARY]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_CHANGE_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_CHANGE_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_CHANGE_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_CHANGE_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PF_BILL_NEW_SALES_BY_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_BILL_NEW_SALES_BY_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_BILL_NEW_SALES_BY_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PF_BILL_NEW_SALES_BY_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_TEMP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_TEMP]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_DETAILS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_DETAILS]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_V_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_V_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_SALES_INVOICE_LIST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_SALES_INVOICE_LIST]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_CALL_CENTER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_CALL_CENTER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PA_PRINT_CALL_CENTER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[PA_PRINT_CALL_CENTER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES_PRINT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES_PRINT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_T_SALES_PRINT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_T_SALES_PRINT]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_T_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_T_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_PHONE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_PHONE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ID_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ID_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ID_PHONE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_UPDATE_ID_PHONE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_TRANSFARE_PHONE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_TRANSFARE_PHONE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_ITEM_STORE_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_TRANSFARE_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_TRANSFARE_ITEM_STORE_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_PRINTER_SELECT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_PRINTER_SELECT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_PRINTER_SELECT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_PRINTER_SELECT]
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_PHONE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_INSERT_PHONE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_IMPORT_SALES_TVP]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_IMPORT_SALES_TVP]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_IMPORT_SALES_TVP]
+GO
+/****** Object:  StoredProcedure [dbo].[P_GET_SALES_SUMMARY_BY_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_GET_SALES_SUMMARY_BY_PHONE]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_GET_SALES_SUMMARY_BY_PHONE]
+GO
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES_OLD]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES_OLD]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES_OLD]
+GO
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_ALL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_ALL]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_SALES_NOT_USE_ALL]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE_ALL]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_SALES_NOT_USE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_MOVED_SALES]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_MOVED_SALES]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_DELETE_MOVED_SALES]
+GO
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_DATA_SALES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_DATA_SALES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_BUT_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_BUT_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_DATA_BUT_ITEMS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_DATA_BUT_ITEMS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_DATA]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_DELETE_DATA]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_NAME_SPACE_UPDATE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_NAME_SPACE_UPDATE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_NAME_SPACE_UPDATE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_NAME_SPACE_UPDATE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_OLD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_final]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_final]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY_final]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY_final]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_ITEM_STORE_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_INSERT_COLUMNS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_INSERT_COLUMNS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_INSERT_COLUMNS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_INSERT_COLUMNS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_EXIST_COLUMNS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_EXIST_COLUMNS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CHECK_EXIST_COLUMNS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_CHECK_EXIST_COLUMNS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TYPES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CALC_DISCOUNT_BEFORE_SAVE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CALC_DISCOUNT_BEFORE_SAVE]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_CALC_DISCOUNT_BEFORE_SAVE]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TYPES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_TYPES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_TABOOR_UPDATE_TYPES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TYPE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_TYPE]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_UPDATE_TYPE]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TIME_RESET]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_TIME_RESET]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_UPDATE_TIME_RESET]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_ORDERS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_TABOOR_UPDATE_ORDERS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_INSERT_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_INSERT_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_INSERT_ORDERS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_TABOOR_INSERT_ORDERS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_TYPES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_TYPES]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_GET_TYPES]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_TABOOR_GET_TYPES]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_TIME_RESET]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_GET_TIME_RESET]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_GET_TIME_RESET]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_GET_ORDERS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_TABOOR_GET_ORDERS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_DELETE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_DELETE_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_DELETE_ORDERS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_TABOOR_DELETE_ORDERS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_YEAR]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_DELETE_COMPLETED_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_DELETE_COMPLETED_ORDERS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_TABOOR_DELETE_COMPLETED_ORDERS]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_YEAR]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_YEAR]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_YEAR]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_WEEK]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_WEEK]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_WEEK]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_WEEK]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_USERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_USERS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_USERS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_USERS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_MONTH]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_MONTH]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_MONTH]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_MONTH]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_ITEMS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_HOUR]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_HOUR]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_HOUR]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_HOUR]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_DAYLY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_ITEM]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_ITEM]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_ITEM]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_ITEM]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_DASHBORD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_DASHBORD]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_RST_GET_DASHBORD]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_RST_GET_DASHBORD]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_USER_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_USER_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_UPDATE_USER_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_UPDATE_USER_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_TABLE_INFO]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_TABLE_INFO]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_UPDATE_TABLE_INFO]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_UPDATE_TABLE_INFO]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_SUBMIT_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_SUBMIT_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_SUBMIT_ORDER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_SUBMIT_ORDER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_TEMP_APP]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_INSERT_TEMP_APP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_INSERT_TEMP_APP]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE_BARCODE]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_INSERT_APP_TABLE_BARCODE]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_INSERT_APP_TABLE_BARCODE]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_INSERT_APP_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_INSERT_APP_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_TABLE_ALL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_TABLE_ALL]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_USER_TABLE_ALL]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_USER_TABLE_ALL]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_SALES_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_SALES_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_USER_SALES_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_USER_SALES_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_CODE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_CODE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_USER_CODE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_USER_CODE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_BY_USER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_BY_USER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_TABLE_BY_USER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_TABLE_BY_USER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_QISM_LIST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_QISM_LIST]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_QISM_LIST]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_QISM_LIST]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_NAME]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_BY_NAME]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_ITEM_BY_NAME]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_CATEGORE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_CATEGORE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_CATEGORE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_CATEGORE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE_OLD]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE_OLD]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE_OLD]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_DELETE_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_DELETE_TEMP_APP]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_DELETE_TEMP_APP]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_DELETE_TEMP_APP]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY_NEW]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHECK_ITEM_STORE_QTY_NEW]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY_NEW]
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHANGE_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_CHANGE_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_CAPTAIN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_CAPTAIN]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHANGE_CAPTAIN]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_CHANGE_CAPTAIN]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_BOOK_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_BOOK_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_BOOK_TABLE]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_REST_BOOK_TABLE]
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_DELETE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_DELETE_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_DELETE_ORDERS]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_API_DELETE_ORDERS]
 GO
-/****** Object:  StoredProcedure [dbo].[P_AAA_COLOR_DEFOULT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_AAA_COLOR_DEFOULT]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_AAA_COLOR_DEFOULT]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_AAA_COLOR_DEFOULT]
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_TATMA_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_TATMA_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_A_GET_TATMA_ORDER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_A_GET_TATMA_ORDER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_COUNT_TABOR]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_COUNT_TABOR]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_A_GET_COUNT_TABOR]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_A_GET_COUNT_TABOR]
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_BILL_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_BILL_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_A_GET_BILL_ORDER]') AND type in (N'P', N'PC'))
 DROP PROCEDURE [dbo].[P_A_GET_BILL_ORDER]
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_BILL_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  UserDefinedTableType [dbo].[SalesHeaderImportType]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.types st JOIN sys.schemas ss ON st.schema_id = ss.schema_id WHERE st.name = N'SalesHeaderImportType' AND ss.name = N'dbo')
+DROP TYPE [dbo].[SalesHeaderImportType]
+GO
+/****** Object:  UserDefinedTableType [dbo].[SalesDetailImportType]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.types st JOIN sys.schemas ss ON st.schema_id = ss.schema_id WHERE st.name = N'SalesDetailImportType' AND ss.name = N'dbo')
+DROP TYPE [dbo].[SalesDetailImportType]
+GO
+/****** Object:  UserDefinedTableType [dbo].[BillKeyType]    Script Date: 2025/09/06 3:36:47 ******/
+IF  EXISTS (SELECT * FROM sys.types st JOIN sys.schemas ss ON st.schema_id = ss.schema_id WHERE st.name = N'BillKeyType' AND ss.name = N'dbo')
+DROP TYPE [dbo].[BillKeyType]
+GO
+/****** Object:  UserDefinedTableType [dbo].[BillKeyType]    Script Date: 2025/09/06 3:36:47 ******/
+IF NOT EXISTS (SELECT * FROM sys.types st JOIN sys.schemas ss ON st.schema_id = ss.schema_id WHERE st.name = N'BillKeyType' AND ss.name = N'dbo')
+CREATE TYPE [dbo].[BillKeyType] AS TABLE(
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[BILL_NUMBER] [numeric](18, 0) NULL
+)
+GO
+/****** Object:  UserDefinedTableType [dbo].[SalesDetailImportType]    Script Date: 2025/09/06 3:36:47 ******/
+IF NOT EXISTS (SELECT * FROM sys.types st JOIN sys.schemas ss ON st.schema_id = ss.schema_id WHERE st.name = N'SalesDetailImportType' AND ss.name = N'dbo')
+CREATE TYPE [dbo].[SalesDetailImportType] AS TABLE(
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[BILL_NUMBER] [numeric](18, 0) NULL,
+	[BILL_ORDER] [numeric](18, 0) NULL,
+	[BILL_DATE] [date] NULL,
+	[BILL_TIME] [datetime] NULL,
+	[ITEM_CODE] [int] NULL,
+	[QTY] [float] NULL,
+	[COST] [float] NULL,
+	[SELL] [float] NULL,
+	[WORK_CODE] [int] NULL,
+	[USER_CODE] [int] NULL,
+	[IS_TRANS] [bit] NULL,
+	[COMPANY_NAME] [nvarchar](max) COLLATE Arabic_CI_AS NULL
+)
+GO
+/****** Object:  UserDefinedTableType [dbo].[SalesHeaderImportType]    Script Date: 2025/09/06 3:36:47 ******/
+IF NOT EXISTS (SELECT * FROM sys.types st JOIN sys.schemas ss ON st.schema_id = ss.schema_id WHERE st.name = N'SalesHeaderImportType' AND ss.name = N'dbo')
+CREATE TYPE [dbo].[SalesHeaderImportType] AS TABLE(
+	[BILL_BRANCH] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[BILL_NUMBER] [numeric](18, 0) NULL,
+	[BILL_ORDER] [numeric](18, 0) NULL,
+	[BILL_DATE] [date] NULL,
+	[BILL_TIME] [datetime] NULL,
+	[TABLE_CODE] [int] NULL,
+	[CALL_NO] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[INVOICE_CODE] [int] NULL,
+	[CLIENT_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_REGION] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_PHONE] [nvarchar](20) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_ADDRESS] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[DRIVER_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[WORK_CODE] [int] NULL,
+	[USER_CODE] [int] NULL,
+	[TOT_QTY] [float] NULL,
+	[TOT_COST] [float] NULL,
+	[TOT_SELL] [float] NULL,
+	[DISCOUNT_SELL] [float] NULL,
+	[SERVICE_SELL] [float] NULL,
+	[NET_SALES] [float] NULL,
+	[APP_CODE] [int] NULL,
+	[APP_PERCENT] [float] NULL,
+	[NET_NET_SALES] [float] NULL,
+	[NET_ARBAH] [float] NULL,
+	[NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[IS_TRANS] [bit] NULL,
+	[COMPANY_NAME] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[TT_SEND] [datetime] NULL,
+	[TT_RECIVE] [datetime] NULL,
+	[TT_PRINT] [datetime] NULL,
+	[TT_CASH] [datetime] NULL,
+	[CAPTAIN_NAME] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	[KITCHEN_NOTE] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[LIN_X] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[LIN_Y] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[NAME_BRANCH] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[BILL_SERVER] [int] NULL,
+	[STATUS_APP] [int] NULL,
+	[KITCHEN_DISPLAY_STATE] [int] NULL,
+	[KITCHEN_DISPALY_MIN] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[CLIENT_CODE] [int] NULL,
+	[IVC_CODE] [int] NULL,
+	[IS_CASH] [int] NULL,
+	[NO_CLIENT] [int] NULL,
+	[DISCOUNT_NOTE] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[RECIPIENT_CODE] [int] NULL,
+	[TIME_ACCEPT] [datetime] NULL,
+	[TIME_ARRIVED] [datetime] NULL,
+	[IS_DELEVERED_DRIVER] [int] NULL,
+	[TO_DRIVER_TIME] [datetime] NULL,
+	[TO_DELEVERD_TIME] [datetime] NULL,
+	[TO_CASH_TIME] [datetime] NULL,
+	[TO_CALL_TIME] [datetime] NULL
+)
+GO
+/****** Object:  StoredProcedure [dbo].[P_A_GET_BILL_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_A_GET_BILL_ORDER]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_A_GET_BILL_ORDER]
-@BILL_NUMBER INT,
-@BILL_ORDER INT OUTPUT
-
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_A_GET_BILL_ORDER]
+    @BILL_NUMBER INT,
+    @BILL_ORDER INT OUTPUT
 AS
 BEGIN
+    SET NOCOUNT ON;
 
-DECLARE
- 
-@DATE_JOB date,
-@DATE_PARAM date
-SELECT @DATE_JOB=convert(datetime,[D_DATE] , 111)  FROM T_WORK_JOB  WHERE T_ID=1
-SELECT @DATE_PARAM=convert(datetime,P_DESC , 111) FROM T_PARAMETERS WHERE P_CODE=3
- 
-IF @DATE_PARAM<>@DATE_JOB
-BEGIN
-UPDATE T_PARAMETERS SET P_VALUE=1,P_DESC=convert(datetime,@DATE_JOB , 111)  WHERE P_CODE=3
+    DECLARE @DATE_JOB date, @DATE_PARAM date;
+
+    BEGIN TRY
+        BEGIN TRAN;
+
+        -- جلب تواريخ يوم العمل والتاريخ في الباراميتر
+        SELECT @DATE_JOB = CONVERT(date, [D_DATE], 111)
+        FROM T_WORK_JOB WHERE T_ID = 1;
+
+        SELECT @DATE_PARAM = CONVERT(date, P_DESC, 111)
+        FROM T_PARAMETERS WHERE P_CODE = 3;
+
+        -- إعادة ضبط العداد إذا كان اليوم اختلف
+        IF @DATE_PARAM <> @DATE_JOB
+        BEGIN
+            UPDATE T_PARAMETERS
+            SET P_VALUE = 1, P_DESC = CONVERT(date, @DATE_JOB, 111)
+            WHERE P_CODE = 3;
+        END
+
+        -- جلب رقم الطلب الحالي
+        SELECT @BILL_ORDER = ISNULL(P_VALUE, 1)
+        FROM T_PARAMETERS WHERE P_CODE = 3;
+
+        -- تحديث رقم الطلب
+        UPDATE T_PARAMETERS
+        SET P_VALUE = P_VALUE + 1
+        WHERE P_CODE = 3;
+
+        -- تحديث الجداول المرتبطة
+        UPDATE T_SALES SET BILL_ORDER = @BILL_ORDER WHERE BILL_NUMBER = @BILL_NUMBER;
+        UPDATE T_SALES_TEMP SET BILL_ORDER = @BILL_ORDER WHERE BILL_NUMBER = @BILL_NUMBER;
+        UPDATE T_USER_DETAILS SET BILL_BRANCH = @BILL_ORDER WHERE BILL_NUMBER = @BILL_NUMBER;
+
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        -- عند الخطأ: إعادة 0 أو قيمة خاصة أو كما تريد
+        SET @BILL_ORDER = 0;
+    END CATCH
 END
- 
-
-Select @BILL_ORDER=ISNULL(P_VALUE,1) FROM T_PARAMETERS WHERE P_CODE=3
-
-UPDATE T_PARAMETERS SET P_VALUE=P_VALUE+1 WHERE P_CODE=3
-UPDATE T_SALES SET BILL_ORDER=@BILL_ORDER WHERE BILL_NUMBER=@BILL_NUMBER
-UPDATE T_SALES_TEMP SET BILL_ORDER=@BILL_ORDER WHERE BILL_NUMBER=@BILL_NUMBER
-UPDATE T_USER_DETAILS SET BILL_BRANCH=@BILL_ORDER WHERE BILL_NUMBER=@BILL_NUMBER
-
-END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_COUNT_TABOR]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_COUNT_TABOR]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1022,7 +1145,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_A_GET_TATMA_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_A_GET_TATMA_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1106,7 +1229,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_AAA_COLOR_DEFOULT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_AAA_COLOR_DEFOULT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1180,7 +1303,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_DELETE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_DELETE_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1201,7 +1324,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_BOOK_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_BOOK_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1303,7 +1426,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_CAPTAIN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_CAPTAIN]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1376,7 +1499,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHANGE_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1461,7 +1584,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1657,7 +1780,246 @@ END;
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_DELETE_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY_NEW]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_CHECK_ITEM_STORE_QTY_NEW]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+/*--------------------------------------------------------------
+  اسم الإجراء : P_API_REST_CHECK_ITEM_STORE_QTY
+  الغرض       : فحص رصيد المادة (أصلية / فرعية / وصفة) قبل البيع
+  النسخة      : مُحسَّنة – بدون CURSOR – مع TRY…CATCH
+--------------------------------------------------------------*/
+CREATE PROCEDURE [dbo].[P_API_REST_CHECK_ITEM_STORE_QTY_NEW]
+    @ITEM_CODE  INT ,
+    @QTY_SELL   FLOAT      -- الكمية المطلوب بيعها
+AS
+BEGIN
+    /* =========================
+       التحضير والمتغيرات العامة
+       ========================= */
+    DECLARE
+        @DATE_JOB       DATE ,
+        @TYPE_CODE      INT  ,
+        @MAIN_ITEM_CODE INT  ,
+        @ITEM_CHILD_CODE INT ,
+        @ITEM_CHILD_NAME NVARCHAR(MAX) ,
+        @QTY_RECIPE     FLOAT ,
+        @IN_QTY         FLOAT ,
+        @OUT_QTY        FLOAT ,
+        @WARN_QTY       FLOAT ,
+        @BALANCE        FLOAT ,
+        @BALANCE_CHECK  FLOAT ,
+        @WARNNING       INT   = 0 ,
+        @MSG_RESPONSE   NVARCHAR(250) = N'''' ;
+
+    /* =========================
+       START TRANSACTION + حماية
+       ========================= */
+    BEGIN TRY
+        BEGIN TRAN;
+
+        /* 1) تاريخ يوم العمل */
+        SELECT TOP (1)
+               @DATE_JOB = CONVERT(date , D_DATE , 111)
+        FROM   dbo.T_WORK_JOB
+        WHERE  T_ID = 1 ;
+
+        /* 2) بيانات المادة الأصلية */
+        SELECT
+            @TYPE_CODE      = TYPE_CODE      ,
+            @MAIN_ITEM_CODE = MAIN_ITEM_CODE ,
+            @ITEM_CHILD_NAME= ITEM_NAME      ,
+            @QTY_RECIPE     = QTY_PARENT
+        FROM dbo.T_ITEMS
+        WHERE ITEM_CODE = @ITEM_CODE ;
+
+        /* 3) تحديث الكميات (إجراء خارجي) */
+        EXEC dbo.P_UPDATE_ITEM_STORE_QTY_ANOTHER ;
+
+        /* ================ حالة الوصفة (TYPE_CODE = 6) ================ */
+        IF ( @TYPE_CODE = 6 )
+        BEGIN
+            ;WITH CTE_REC AS
+            (
+                SELECT TOP (1)
+                       R.ITEM_CODE ,
+                       IR.QTY                    AS QTY_RECIPE ,
+                       ISNULL(S.QTY_IN ,0)       AS IN_QTY     ,
+                       ISNULL(S.QTY_WER,0)       AS WARN_QTY   ,
+                       ISNULL(S.QTY_OUT,0)       AS OUT_QTY
+                FROM   dbo.V_ITEM_RECIPE_STORE  AS R
+                       JOIN  dbo.T_ITEM_RECIPE   AS IR ON IR.ITEM_CODE = R.ITEM_CODE
+                                                      AND IR.ITEM_CODE_MAIN = @ITEM_CODE
+                       LEFT  JOIN dbo.T_ITEM_STORE AS S ON S.ITEM_CODE = R.ITEM_CODE
+                                                      AND S.DATE_JOB  = @DATE_JOB
+                WHERE  R.ITEM_CODE_MAIN = @ITEM_CODE
+                ORDER BY R.DEVIDED_QTY
+            )
+            SELECT
+                @ITEM_CHILD_CODE = ITEM_CODE ,
+                @QTY_RECIPE      = QTY_RECIPE,
+                @IN_QTY          = IN_QTY    ,
+                @WARN_QTY        = WARN_QTY  ,
+                @OUT_QTY         = OUT_QTY
+            FROM CTE_REC ;
+
+            IF @ITEM_CHILD_CODE IS NOT NULL
+            BEGIN
+                SELECT @ITEM_CHILD_NAME = ITEM_NAME
+                FROM   dbo.T_ITEMS
+                WHERE  ITEM_CODE = @ITEM_CHILD_CODE ;
+
+                SET @BALANCE =
+                    FLOOR( ( ( @IN_QTY - @OUT_QTY ) / NULLIF(@QTY_RECIPE,0) ) - @QTY_SELL );
+
+                IF ( @BALANCE + 1 <= @WARN_QTY )
+                BEGIN
+                    SET @WARNNING      = 1 ;
+                    SET @BALANCE_CHECK = FLOOR( @BALANCE + @QTY_SELL );
+                    SET @MSG_RESPONSE  = N''الــــرصيد المتبقي للمادة : '' +
+                                         @ITEM_CHILD_NAME + N''  : '' +
+                                         CAST(@BALANCE_CHECK AS NVARCHAR) ;
+                END
+                ELSE
+                    SET @WARNNING = 2 ;
+            END
+            ELSE
+            BEGIN  -- لا توجد مكونات مخزنية
+                SET @MSG_RESPONSE = N''المادة : '' + @ITEM_CHILD_NAME + N''  غير مخزنية'' ;
+                SET @BALANCE      = 88888888 ;
+            END
+        END
+
+        /* ================ حالة المادة الفرعية (TYPE_CODE = 10) ================ */
+        ELSE IF ( @TYPE_CODE = 10 )
+        BEGIN
+            IF EXISTS ( SELECT 1
+                        FROM dbo.T_ITEM_STORE
+                        WHERE ITEM_CODE = @MAIN_ITEM_CODE
+                          AND DATE_JOB  = @DATE_JOB )
+            BEGIN
+                /* كميات المخزون */
+                SELECT
+                    @IN_QTY   = ISNULL(QTY_IN ,0) ,
+                    @WARN_QTY = ISNULL(QTY_WER,0)
+                FROM dbo.T_ITEM_STORE
+                WHERE ITEM_CODE = @MAIN_ITEM_CODE
+                  AND DATE_JOB  = @DATE_JOB ;
+
+                /* المبيعات (تفاصيل + مؤقت) */
+                SELECT @OUT_QTY = ISNULL(SUM(QTY * QTY_PARENT),0)
+                FROM
+                (
+                    SELECT QTY , QTY_PARENT
+                    FROM dbo.V_SALES_DETAILS
+                    WHERE MAIN_ITEM_CODE = @MAIN_ITEM_CODE
+                      AND BILL_DATE      = @DATE_JOB
+                    UNION ALL
+                    SELECT QTY , QTY_PARENT
+                    FROM dbo.V_SALES_TEMP
+                    WHERE MAIN_ITEM_CODE = @MAIN_ITEM_CODE
+                      AND BILL_DATE      = @DATE_JOB
+                ) AS X ;
+
+                SET @BALANCE =
+                    FLOOR( ( ( @IN_QTY - @OUT_QTY ) / NULLIF(@QTY_RECIPE,0) ) - @QTY_SELL );
+
+                IF ( @BALANCE + 1 <= @WARN_QTY )
+                BEGIN
+                    SET @WARNNING      = 1 ;
+                    SET @BALANCE_CHECK = FLOOR( @BALANCE + @QTY_SELL );
+                END
+                ELSE
+                    SET @WARNNING = 2 ;
+
+                SELECT @ITEM_CHILD_NAME = ITEM_NAME
+                FROM   dbo.T_ITEMS
+                WHERE  ITEM_CODE = @ITEM_CODE ;
+
+                SET @MSG_RESPONSE = N''الرصيد المتبقي للمادة : '' +
+                                    @ITEM_CHILD_NAME + N''  : '' +
+                                    CAST( IIF(@WARNNING=1,@BALANCE_CHECK,@BALANCE) AS NVARCHAR);
+            END
+            ELSE
+            BEGIN
+                SELECT @ITEM_CHILD_NAME = ITEM_NAME
+                FROM   dbo.T_ITEMS WHERE ITEM_CODE = @ITEM_CODE ;
+
+                SET @MSG_RESPONSE = N''المادة : '' + @ITEM_CHILD_NAME + N''  غير مخزنية'' ;
+                SET @BALANCE      = 77777777 ;
+            END
+        END
+
+        /* ================ حالة المواد الأخرى ================ */
+        ELSE
+        BEGIN
+            IF EXISTS ( SELECT 1
+                        FROM dbo.T_ITEM_STORE
+                        WHERE ITEM_CODE = @ITEM_CODE
+                          AND DATE_JOB  = @DATE_JOB )
+            BEGIN
+                SELECT
+                    @IN_QTY   = ISNULL(QTY_IN ,0) ,
+                    @WARN_QTY = ISNULL(QTY_WER,0) ,
+                    @OUT_QTY  = ISNULL(QTY_OUT,0)
+                FROM dbo.T_ITEM_STORE
+                WHERE ITEM_CODE = @ITEM_CODE
+                  AND DATE_JOB  = @DATE_JOB ;
+
+                SET @BALANCE = ( @IN_QTY - @OUT_QTY ) - @QTY_SELL ;
+
+                IF ( @BALANCE + 1 <= @WARN_QTY )
+                BEGIN
+                    SET @WARNNING      = 1 ;
+                    SET @BALANCE_CHECK = @BALANCE + @QTY_SELL ;
+                END
+                ELSE
+                    SET @WARNNING = 2 ;
+
+                SELECT @ITEM_CHILD_NAME = ITEM_NAME
+                FROM   dbo.T_ITEMS WHERE ITEM_CODE = @ITEM_CODE ;
+
+                SET @MSG_RESPONSE = N''الرصيد المتبقي للمادة : '' +
+                                    @ITEM_CHILD_NAME + N''  : '' +
+                                    CAST( IIF(@WARNNING=1,@BALANCE_CHECK,@BALANCE) AS NVARCHAR);
+            END
+            ELSE
+            BEGIN
+                SELECT @ITEM_CHILD_NAME = ITEM_NAME
+                FROM   dbo.T_ITEMS WHERE ITEM_CODE = @ITEM_CODE ;
+
+                SET @MSG_RESPONSE = N''المادة : '' + @ITEM_CHILD_NAME + N''  غير مخزنية'' ;
+                SET @BALANCE      = 88888888 ;
+            END
+        END
+
+        /* ================ الإخراج ================ */
+        SELECT  @BALANCE     AS BALANCE ,
+                @WARNNING    AS WARNNING ,
+                @MSG_RESPONSE AS MSG_RESPONSE ;
+
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF XACT_STATE() <> 0 ROLLBACK TRAN;
+
+        /* إرجاع خطأ مفيد */
+        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE(),
+                @ErrNum INT = ERROR_NUMBER();
+        RAISERROR(N''[P_API_REST_CHECK_ITEM_STORE_QTY] فشل التنفيذ: %s'' ,
+                  16 , 1 , @ErrMsg) WITH NOWAIT;
+    END CATCH
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_DELETE_TEMP_APP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1730,7 +2092,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1738,9 +2100,120 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]') AND type in (N'P', N'PC'))
 BEGIN
 EXEC dbo.sp_executesql @statement = N'
-
-
+/*
+    تحسينات:
+    - استعمال SEQUENCE: NEXT VALUE FOR dbo.SEQ_SALES_BILL
+    - منع السباق بــ UPDLOCK, HOLDLOCK عند فحص وجود فاتورة للطاولة وعند حساب BILL_ORDER
+    - مقارنة التاريخ بـ CAST(BILL_DATE AS DATE) = @DATE_JOB (أدق من CONVERT إلى نص)
+    - TRY/CATCH + XACT_ABORT لضمان ROLLBACK صحيح
+*/
 CREATE PROCEDURE [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE]
+    @TABLE_CODE INT,
+    @USER_CODE  INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
+
+    DECLARE
+        @BILL_NUMBER   INT           = 0,
+        @BILL_ORDER    INT           = 0,
+        @IS_ON_OFF     INT,
+        @DATE_JOB      DATE,
+        @CAPTAIN_NAME  NVARCHAR(MAX) = N'''',
+        @COMPANY_TITAL NVARCHAR(MAX) = N'''';
+
+    BEGIN TRY
+        BEGIN TRAN;
+
+        -- حالة الدوام وتاريخ اليوم التشغيلي
+        SELECT @IS_ON_OFF = IS_ON_OFF, @DATE_JOB = D_DATE
+        FROM dbo.T_WORK_JOB
+        WHERE T_ID = 1;
+
+        -- إن كان النظام متوقفاً لا ننشئ شيئاً
+        IF @IS_ON_OFF = 0
+        BEGIN
+            SELECT @BILL_NUMBER AS BILL_NUMBER, @BILL_ORDER AS BILL_ORDER;
+            COMMIT TRAN;
+            RETURN;
+        END
+
+        -- هل توجد فاتورة مفتوحة لهذه الطاولة اليوم؟ (قفل لمنع السباق)
+        SELECT TOP (1)
+            @BILL_NUMBER = BILL_NUMBER,
+            @BILL_ORDER  = BILL_ORDER
+        FROM dbo.T_SALES WITH (UPDLOCK, HOLDLOCK)
+        WHERE TABLE_CODE = @TABLE_CODE
+          AND WORK_CODE <> 1
+          AND CAST(BILL_DATE AS DATE) = @DATE_JOB
+        ORDER BY BILL_TIME DESC;
+
+        IF (@BILL_NUMBER IS NULL OR @BILL_NUMBER = 0)
+        BEGIN
+            -- لا توجد فاتورة مفتوحة → إنشاء جديدة
+
+            SELECT TOP (1) @CAPTAIN_NAME  = USER_NAME     FROM dbo.T_USERS   WHERE USER_CODE = @USER_CODE;
+            SELECT TOP (1) @COMPANY_TITAL = COMPANY_TITAL FROM dbo.T_COMPANY WHERE T_ID = 1;
+
+            -- رقم الفاتورة العام من الـ SEQUENCE (ذَرّي)
+            SET @BILL_NUMBER = NEXT VALUE FOR dbo.SEQ_SALES_BILL;
+
+            -- رقم الطلب اليومي (مع قفل على يوم التاريخ لمنع التنافس)
+            ;WITH L AS
+            (
+                SELECT MAX(BILL_ORDER) AS MaxOrder
+                FROM dbo.T_SALES WITH (UPDLOCK, HOLDLOCK)
+                WHERE CAST(BILL_DATE AS DATE) = @DATE_JOB
+            )
+            SELECT @BILL_ORDER = ISNULL(MaxOrder, 0) + 1 FROM L;
+
+            INSERT INTO dbo.T_SALES
+            (
+              BILL_BRANCH, BILL_NUMBER, BILL_ORDER, BILL_DATE, BILL_TIME,
+              TABLE_CODE, CALL_NO, INVOICE_CODE, CLIENT_NAME, CLIENT_REGION,
+              CLIENT_PHONE, CLIENT_ADDRESS, DRIVER_NAME, WORK_CODE, USER_CODE,
+              TOT_QTY, TOT_COST, TOT_SELL, DISCOUNT_SELL, SERVICE_SELL, NET_SALES,
+              APP_CODE, APP_PERCENT, NET_NET_SALES, NET_ARBAH, NOTE, KITCHEN_NOTE,
+              CAPTAIN_NAME
+            )
+            VALUES
+            (
+              @COMPANY_TITAL + CAST(@BILL_NUMBER AS VARCHAR(20)),
+              @BILL_NUMBER, @BILL_ORDER, @DATE_JOB, GETDATE(),
+              @TABLE_CODE, 0, 2, N'''', N'''', N'''', N'''', N'''',
+              0, @USER_CODE,
+              0, 0, 0, 0, 0, 0,
+              0, 0, 0, 0, N'''', N'''',
+              ISNULL(@CAPTAIN_NAME, N'''')
+            );
+        END
+
+        -- إخراج القيم (سواء كانت موجودة مسبقاً أو أُنشئت الآن)
+        SELECT @BILL_NUMBER AS BILL_NUMBER, @BILL_ORDER AS BILL_ORDER;
+
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF (XACT_STATE() <> 0) ROLLBACK TRAN;
+        ;THROW;
+    END CATCH
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE_OLD]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE_OLD]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_GET_BILL_BY_TABLE_CODE_OLD]
 @TABLE_CODE INT,
 @USER_CODE INT 	
 
@@ -1752,8 +2225,9 @@ DECLARE
 @DATE_JOB DATE,
 @CC_COUNT INT, 
 @CAPTAIN_NAME NVARCHAR(MAX)
-BEGIN TRAN
+ 
 BEGIN
+BEGIN TRANSACTION;
 SET @BILL_NUMBER=0
 SET @BILL_ORDER=0
 
@@ -1783,7 +2257,7 @@ SELECT TOP(1) @COMPANY_TITAL=COMPANY_TITAL FROM T_COMPANY WHERE T_ID=1
 
 
 SELECT @BILL_NUMBER=ISNULL(MAX(BILL_NUMBER),0) + 1 FROM T_SALES
-SELECT @BILL_ORDER= ISNULL(MAX(BILL_ORDER),0) + 1 FROM T_SALES WHERE BILL_DATE = convert(varchar,@DATE_JOB , 111) 
+SELECT @BILL_ORDER= ISNULL(MAX(BILL_ORDER),0) + 1 FROM T_SALES  WHERE BILL_DATE = convert(varchar,@DATE_JOB , 111) 
 
 
 INSERT INTO [dbo].[T_SALES]
@@ -1852,10 +2326,16 @@ END
 
 
 SELECT TOP(1) @BILL_NUMBER=BILL_NUMBER,@BILL_ORDER=BILL_ORDER FROM T_SALES WHERE TABLE_CODE=@TABLE_CODE AND WORK_CODE<>1 AND BILL_DATE=@DATE_JOB  ORDER BY BILL_TIME DESC --AND WORK_CODE=55
+
 SELECT   @BILL_NUMBER AS BILL_NUMBER ,@BILL_ORDER AS BILL_ORDER
+
+
+
  ASASAS:
+COMMIT TRANSACTION;
 END	--END OF PROGRAM
-commit
+ 
+
 
 
 
@@ -1887,7 +2367,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_CATEGORE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_CATEGORE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1950,7 +2430,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_CATEGORE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2024,7 +2504,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_BY_NAME]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2094,7 +2574,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_NOTE_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2160,7 +2640,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEM_STORE_BALANCE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2242,7 +2722,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2321,7 +2801,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_QISM_LIST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_QISM_LIST]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2383,7 +2863,7 @@ SET @LV_QISM_DEFOULT = LTRIM(RTRIM(REPLACE(
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_BY_USER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_BY_USER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2467,7 +2947,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_TABLE_STATUS_COUNT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2533,7 +3013,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_CODE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_CODE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2571,7 +3051,7 @@ SELECT    *  FROM   T_USERS WHERE  USER_NAME=@USER_NAME AND APP_PWD=@USER_PWD
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_SALES_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_SALES_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2843,7 +3323,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_TABLE_ALL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_GET_USER_TABLE_ALL]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2907,7 +3387,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2978,7 +3458,7 @@ SELECT @DATE_JOB=D_DATE  FROM T_WORK_JOB WHERE T_ID=1
            ,@USER_CODE 
            ,0
            ,GETDATE()) 
-
+ 
 SELECT 1 AS ID,N''تمت الاضافة بنجاح'' AS RESPONSE
 END
 
@@ -3021,7 +3501,122 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_APP_TABLE_BARCODE]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_REST_INSERT_APP_TABLE_BARCODE]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[P_API_REST_INSERT_APP_TABLE_BARCODE]
+@INFO  nvarchar(max), 
+@DETAILS  nvarchar(max), 
+@BILL_NUMBER  int, 
+@BILL_ORDER int ,
+@TABLE_CODE  int, 
+@USER_CODE  int 
+AS
+DECLARE
+@DATE_JOB DATE,
+@CC_COUNT INT
+
+BEGIN
+SELECT @CC_COUNT=COUNT(BILL_NUMBER)FROM T_SALES WHERE BILL_NUMBER=@BILL_NUMBER
+
+IF @CC_COUNT=0
+BEGIN
+
+SELECT 0 AS ID,N''لايوجد رقم فاتورة لهذه الطاولة'' AS RESPONSE
+END
+ELSE
+BEGIN
+SELECT @DATE_JOB=D_DATE  FROM T_WORK_JOB WHERE T_ID=1
+ 
+ INSERT INTO [dbo].[T_APP_TABLE_BARCODE]
+           ([D_DATE]
+           ,[D_TIME]
+           ,[INFO]
+           ,[DETAILS]
+           ,[INVOICE_CODE]
+           ,[IS_INSERT]
+           ,[BILL_NUMBER]
+           ,[BILL_ORDER]
+           ,[TABLE_CODE]
+           ,[USER_CODE]
+           ,[IS_ACCEPT]
+           ,[C_DATE])
+     VALUES
+           (@DATE_JOB
+           ,GETDATE()
+           ,N'''' 
+           ,@DETAILS 
+           ,2
+           ,0
+           ,@BILL_NUMBER 
+           ,@BILL_ORDER  
+           ,@TABLE_CODE 
+           ,@USER_CODE 
+           ,0
+           ,GETDATE()) 
+SELECT 1 AS ID,N''تمت الاضافة بنجاح'' AS RESPONSE
+END
+
+
+
+
+ 
+END	--END OF PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_REST_INSERT_TEMP_APP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3097,7 +3692,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_SUBMIT_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_SUBMIT_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3170,7 +3765,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_TABLE_INFO]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_TABLE_INFO]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3244,7 +3839,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_USER_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_REST_UPDATE_USER_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3311,7 +3906,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_DASHBORD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_DASHBORD]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3419,7 +4014,7 @@ HAVING       (YEAR(BILL_DATE) =DATEPART(YEAR, @D2))
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_ITEM]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_ITEM]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3487,7 +4082,7 @@ SELECT    * into #tempSale1 FROM   V_ITEMS_ON
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_CATEGORY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3559,7 +4154,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAY_NAME]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3630,7 +4225,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_DAYLY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3703,7 +4298,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_HOUR]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_HOUR]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3773,7 +4368,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_INVOICE_TYPE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3848,7 +4443,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3923,7 +4518,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_MONTH]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_MONTH]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3995,7 +4590,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_USERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_USERS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4070,7 +4665,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_WEEK]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_WEEK]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4140,7 +4735,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_YEAR]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_RST_GET_REPORT_BY_YEAR]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4214,7 +4809,23 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_DELETE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_DELETE_COMPLETED_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_DELETE_COMPLETED_ORDERS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROC [dbo].[P_API_TABOOR_DELETE_COMPLETED_ORDERS] 
+
+AS 
+BEGIN 
+	DELETE FROM T_TABOOR_ORDERS WHERE ORDER_TYPE = 2
+END 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_DELETE_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4236,7 +4847,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4246,15 +4857,29 @@ BEGIN
 EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_API_TABOOR_GET_ORDERS]
 AS
 BEGIN
-    DECLARE @REFRESH_TIME INT =5;
-	SELECT T_TABOOR_ORDERS.*,T_TABOOR_ORDER_TYPES.* FROM T_TABOOR_ORDERS INNER JOIN T_TABOOR_ORDER_TYPES ON  T_TABOOR_ORDER_TYPES.ID= T_TABOOR_ORDERS.ORDER_TYPE;
+	SELECT *,(select APP_NAME from V_SALES where CAST(V_SALES.BILL_ORDER AS int)= CAST(T_TABOOR_ORDERS.ORDER_NO AS INT) and V_SALES.BILL_DATE=(SELECT D_DATE  FROM T_WORK_JOB WHERE T_ID=1) ) AS APP_NAME FROM T_TABOOR_ORDERS
+	SELECT * FROM T_TABOOR_ORDER_TYPES 
 	SELECT TIME_RESET  AS REFRESH FROM T_TABOOR_TIME_RESET WHERE ID =3
 END
 
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_TYPES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_TIME_RESET]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_GET_TIME_RESET]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROC [dbo].[P_API_TABOOR_GET_TIME_RESET] AS 
+BEGIN 
+	SELECT * FROM T_TABOOR_TIME_RESET
+END 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_GET_TYPES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4263,12 +4888,12 @@ IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_
 BEGIN
 EXEC dbo.sp_executesql @statement = N'CREATE PROC [dbo].[P_API_TABOOR_GET_TYPES] AS 
 BEGIN 
-SELECT * FROM T_TABOOR_ORDER_TYPES
+	SELECT * FROM T_TABOOR_ORDER_TYPES
 END 
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_INSERT_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_INSERT_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4294,7 +4919,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_ORDERS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_ORDERS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4316,20 +4941,19 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TYPES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TIME_RESET]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_TYPES]') AND type in (N'P', N'PC'))
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_TIME_RESET]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'CREATE PROC [dbo].[P_API_TABOOR_UPDATE_TYPES] 
-@BG_COLOR VARCHAR(MAX),
-@FONT_COLOR VARCHAR(MAX),
+EXEC dbo.sp_executesql @statement = N'CREATE PROC [dbo].[P_API_TABOOR_UPDATE_TIME_RESET] 
+@TIME_RESET float,
 @ID INT
 AS 
 BEGIN 
-	UPDATE  T_TABOOR_ORDER_TYPES SET BG_COLOR = @BG_COLOR ,FONT_COLOR =@FONT_COLOR WHERE ID =@ID
+	UPDATE  T_TABOOR_TIME_RESET SET TIME_RESET = @TIME_RESET WHERE ID =@ID
 	IF @@ROWCOUNT = 0
 	BEGIN
 		RAISERROR(''يرجى التأكد من العملية'', 16, 1);
@@ -4339,7 +4963,379 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_EXIST_COLUMNS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TYPE]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_TYPE]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROC [dbo].[P_API_TABOOR_UPDATE_TYPE] 
+@TYPE NVARCHAR(MAX),
+@SORT INT,
+@BG_COLOR NVARCHAR(MAX),
+@CARD_RADIUS  NVARCHAR(MAX),
+@BG_IMAGE_POSITION  NVARCHAR(MAX),
+@BG_IMAGE_SIZE NVARCHAR(MAX),
+@HEADER_FONTSIZE FLOAT,
+@HEADER_COLOR NVARCHAR(MAX),
+@CARD_BGCOLOR NVARCHAR(MAX),
+@CARD_THICKNESS_HEIGHT INT,
+@CARD_THICKNESS_COLOR NVARCHAR(MAX),
+@CARD_SHADOW_COLOR NVARCHAR(MAX),
+@CARD_SHADOW_ELEVATION INT,
+@CARD_FONTCOLOR NVARCHAR(MAX),
+@CARD_FONTSIZE FLOAT,
+@CARD_SUBTITLE NVARCHAR(MAX),
+@CARD_SUBTITLE_COLOR NVARCHAR(MAX),
+@CARD_SUBTITLE_FONTSIZE FLOAT,
+@MAX_ROW INT,
+@MAX_COLUMN INT,
+@BG_IMAGE_OPACITY FLOAT,
+@BG_IMAGE NVARCHAR(MAX),
+@SHOW_IMG BIT,
+@ID INT
+AS 
+BEGIN 
+	UPDATE  T_TABOOR_ORDER_TYPES SET SHOW_IMG=@SHOW_IMG,  CARD_RADIUS=@CARD_RADIUS ,BG_IMAGE_POSITION= @BG_IMAGE_POSITION,BG_IMAGE_SIZE=@BG_IMAGE_SIZE, TYPE = @TYPE,SORT = @SORT,BG_COLOR = @BG_COLOR,HEADER_FONTSIZE = @HEADER_FONTSIZE,HEADER_COLOR = @HEADER_COLOR,CARD_BGCOLOR = @CARD_BGCOLOR, CARD_THICKNESS_HEIGHT = @CARD_THICKNESS_HEIGHT,CARD_THICKNESS_COLOR = @CARD_THICKNESS_COLOR,CARD_SHADOW_COLOR = @CARD_SHADOW_COLOR,CARD_SHADOW_ELEVATION = @CARD_SHADOW_ELEVATION,CARD_FONTCOLOR = @CARD_FONTCOLOR,CARD_FONTSIZE = @CARD_FONTSIZE,CARD_SUBTITLE = @CARD_SUBTITLE, CARD_SUBTITLE_COLOR = @CARD_SUBTITLE_COLOR,CARD_SUBTITLE_FONTSIZE = @CARD_SUBTITLE_FONTSIZE,MAX_ROW = @MAX_ROW,MAX_COLUMN = @MAX_COLUMN,BG_IMAGE = @BG_IMAGE ,BG_IMAGE_OPACITY=@BG_IMAGE_OPACITY WHERE ID =@ID
+	IF @@ROWCOUNT = 0
+	BEGIN
+		RAISERROR(''يرجى التأكد من العملية'', 16, 1);
+		RETURN;
+	END
+END 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_API_TABOOR_UPDATE_TYPES]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_API_TABOOR_UPDATE_TYPES]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROC [dbo].[P_API_TABOOR_UPDATE_TYPES] 
+@TYPE NVARCHAR(MAX),
+@SORT INT,
+@BG_COLOR NVARCHAR(MAX),
+@CARD_RADIUS  NVARCHAR(MAX),
+@BG_IMAGE_POSITION  NVARCHAR(MAX),
+@BG_IMAGE_SIZE NVARCHAR(MAX),
+@HEADER_FONTSIZE FLOAT,
+@HEADER_COLOR NVARCHAR(MAX),
+@CARD_BGCOLOR NVARCHAR(MAX),
+@CARD_THICKNESS_HEIGHT INT,
+@CARD_THICKNESS_COLOR NVARCHAR(MAX),
+@CARD_SHADOW_COLOR NVARCHAR(MAX),
+@CARD_SHADOW_ELEVATION INT,
+@CARD_FONTCOLOR NVARCHAR(MAX),
+@CARD_FONTSIZE FLOAT,
+@CARD_SUBTITLE NVARCHAR(MAX),
+@CARD_SUBTITLE_COLOR NVARCHAR(MAX),
+@CARD_SUBTITLE_FONTSIZE FLOAT,
+@MAX_ROW INT,
+@MAX_COLUMN INT,
+@BG_IMAGE_OPACITY FLOAT,
+@BG_IMAGE NVARCHAR(MAX),
+@SHOW_IMG BIT,
+@CARD_SUBTITLE_VISIBLE BIT,
+@ID INT
+AS 
+BEGIN 
+	UPDATE  T_TABOOR_ORDER_TYPES SET SHOW_IMG=@SHOW_IMG,  CARD_RADIUS=@CARD_RADIUS ,BG_IMAGE_POSITION= @BG_IMAGE_POSITION,BG_IMAGE_SIZE=@BG_IMAGE_SIZE, TYPE = @TYPE,SORT = @SORT,BG_COLOR = @BG_COLOR,HEADER_FONTSIZE = @HEADER_FONTSIZE,HEADER_COLOR = @HEADER_COLOR,CARD_BGCOLOR = @CARD_BGCOLOR, CARD_THICKNESS_HEIGHT = @CARD_THICKNESS_HEIGHT,CARD_THICKNESS_COLOR = @CARD_THICKNESS_COLOR,CARD_SHADOW_COLOR = @CARD_SHADOW_COLOR,CARD_SHADOW_ELEVATION = @CARD_SHADOW_ELEVATION,CARD_FONTCOLOR = @CARD_FONTCOLOR,CARD_FONTSIZE = @CARD_FONTSIZE,CARD_SUBTITLE = @CARD_SUBTITLE, CARD_SUBTITLE_COLOR = @CARD_SUBTITLE_COLOR,CARD_SUBTITLE_FONTSIZE = @CARD_SUBTITLE_FONTSIZE,MAX_ROW = @MAX_ROW,MAX_COLUMN = @MAX_COLUMN,BG_IMAGE = @BG_IMAGE ,BG_IMAGE_OPACITY=@BG_IMAGE_OPACITY,CARD_SUBTITLE_VISIBLE=@CARD_SUBTITLE_VISIBLE WHERE ID =@ID
+	IF @@ROWCOUNT = 0
+	BEGIN
+		RAISERROR(''يرجى التأكد من العملية'', 16, 1);
+		RETURN;
+	END
+END 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_CALC_DISCOUNT_BEFORE_SAVE]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_CALC_DISCOUNT_BEFORE_SAVE]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[P_CALC_DISCOUNT_BEFORE_SAVE]
+    @USER_CODE     INT,                    -- كود المستخدم (احتياطي)
+    @INVOICE_CODE  INT,                    -- نوع الفاتورة (1 سفري / 2 صالة / 3 دليفري / 4 تطبيق)
+    @CLIENT_PHONE  NVARCHAR(50) = NULL,    -- رقم هاتف العميل (اختياري)
+    @BILL_NUMBER   NUMERIC(18,0) = NULL,   -- رقم الفاتورة (اختياري)
+    @BILL_DATE     DATE = NULL,            -- تاريخ الفاتورة (اختياري)
+    @BILL_TIME     DATETIME = NULL         -- وقت الفاتورة (اختياري)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- (اختياري) مزامنة بعض بيانات الرأس
+    UPDATE dbo.T_SALES
+    SET INVOICE_CODE = @INVOICE_CODE,
+        CLIENT_PHONE = @CLIENT_PHONE
+    WHERE @BILL_NUMBER IS NOT NULL AND BILL_NUMBER = @BILL_NUMBER;
+
+    --------------------------------------------------------------------
+    -- 0) الوقت/التاريخ + تطبيع رقم الهاتف
+    --------------------------------------------------------------------
+    DECLARE @NOWD   DATETIME = ISNULL(@BILL_TIME, GETDATE());
+    DECLARE @TODAY  DATE     = ISNULL(@BILL_DATE, CAST(@NOWD AS DATE));
+    DECLARE @CURTIME TIME(0) = CONVERT(TIME(0), @NOWD);
+
+    DECLARE @PHONE_NORM NVARCHAR(20) = NULL;
+    IF @CLIENT_PHONE IS NOT NULL
+        SELECT @PHONE_NORM = REPLACE(REPLACE(REPLACE(@CLIENT_PHONE, ''+'',''''), '' '',''''),''-'','''');
+
+    --------------------------------------------------------------------
+    -- A) استنتاج نوع الطلب الفعلي (@CUR_INV)
+    --------------------------------------------------------------------
+    DECLARE @CUR_INV INT = NULL;
+
+    IF @BILL_NUMBER IS NOT NULL
+    BEGIN
+        SELECT TOP (1) @CUR_INV = T.INVOICE_CODE
+        FROM dbo.V_SALES_TEMP AS T WITH (NOLOCK)
+        WHERE T.BILL_NUMBER = @BILL_NUMBER;
+    END
+
+    IF @CUR_INV IS NULL
+        SET @CUR_INV = @INVOICE_CODE;
+
+    --------------------------------------------------------------------
+    -- B) البنود TEMP_ITEMS حسب رقم الفاتورة أو النوع الفعلي
+    --------------------------------------------------------------------
+    ;WITH TEMP_ITEMS AS (
+        SELECT
+            T.ITEM_CODE,
+            SUM(T.QTY)              AS QTY,
+            SUM(T.SELL * T.QTY)     AS LINE_TOTAL
+        FROM dbo.V_SALES_TEMP AS T WITH (NOLOCK)
+        WHERE
+            (
+                @BILL_NUMBER IS NOT NULL
+                AND T.BILL_NUMBER = @BILL_NUMBER
+            )
+            OR
+            (
+                @BILL_NUMBER IS NULL
+                AND @CUR_INV IS NOT NULL
+                AND T.INVOICE_CODE = @CUR_INV
+            )
+        GROUP BY T.ITEM_CODE
+    ),
+    ORDER_TOTAL AS (
+        SELECT SUM(LINE_TOTAL) AS GROSS_TOTAL FROM TEMP_ITEMS
+    ),
+
+    --------------------------------------------------------------------
+    -- C) القواعد المؤهلة (تاريخ/وقت/نوع/حالة)
+    --------------------------------------------------------------------
+    RULES_BASE AS (
+        SELECT R.*
+        FROM dbo.T_DISCOUNT_RULE AS R WITH (NOLOCK)
+        WHERE R.ENABLED = 1
+          AND (R.START_DATE IS NULL OR @TODAY >= R.START_DATE)
+          AND (R.END_DATE   IS NULL OR @TODAY <= R.END_DATE)
+          AND (
+                (R.START_TIME IS NULL AND R.END_TIME IS NULL)
+             OR (R.START_TIME IS NOT NULL AND R.END_TIME IS NULL
+                 AND @CURTIME >= CAST(R.START_TIME AS TIME(0)))
+             OR (R.START_TIME IS NULL AND R.END_TIME IS NOT NULL
+                 AND @CURTIME <= CAST(R.END_TIME AS TIME(0)))
+             OR (R.START_TIME IS NOT NULL AND R.END_TIME IS NOT NULL
+                 AND CAST(R.START_TIME AS TIME(0)) <= CAST(R.END_TIME AS TIME(0))
+                 AND @CURTIME BETWEEN CAST(R.START_TIME AS TIME(0)) AND CAST(R.END_TIME AS TIME(0)))
+             OR (R.START_TIME IS NOT NULL AND R.END_TIME IS NOT NULL
+                 AND CAST(R.START_TIME AS TIME(0)) > CAST(R.END_TIME AS TIME(0))
+                 AND ( @CURTIME >= CAST(R.START_TIME AS TIME(0))
+                       OR @CURTIME <= CAST(R.END_TIME   AS TIME(0)) ))
+          )
+          AND (R.INVOICE_CODE IS NULL OR R.INVOICE_CODE = @CUR_INV)
+    ),
+
+    --------------------------------------------------------------------
+    -- D) مطابقة الهاتف/المنتج + حد أدنى
+    --------------------------------------------------------------------
+    RULES_MATCHED AS (
+        SELECT DISTINCT
+            R.RULE_ID, R.RULE_NAME, R.RULE_KIND, R.DISCOUNT_TYPE, R.DISCOUNT_VALUE,
+            R.MIN_ORDER, R.MAX_DISCOUNT_PER_ORDER, R.PRIORITY, R.STACKABLE
+        FROM RULES_BASE AS R
+
+        OUTER APPLY (
+            SELECT 1 AS MATCH_PHONE
+            WHERE R.RULE_KIND IN (1,3,4)
+              AND (
+                    @PHONE_NORM IS NULL AND R.RULE_KIND IN (2,4)
+                 OR EXISTS ( SELECT 1
+                             FROM dbo.T_DISCOUNT_RULE_PHONE P WITH (NOLOCK)
+                             WHERE P.RULE_ID = R.RULE_ID AND P.PHONE_NORM = @PHONE_NORM )
+              )
+        ) MP
+
+        OUTER APPLY (
+            SELECT 1 AS MATCH_ITEM
+            WHERE R.RULE_KIND IN (2,3)
+              AND EXISTS (
+                SELECT 1
+                FROM dbo.T_DISCOUNT_RULE_ITEM I WITH (NOLOCK)
+                JOIN TEMP_ITEMS TI ON TI.ITEM_CODE = I.ITEM_CODE
+                WHERE I.RULE_ID = R.RULE_ID
+              )
+        ) MI
+
+        OUTER APPLY (
+            SELECT 1 AS PASS_KIND
+            WHERE (R.RULE_KIND = 1 AND MP.MATCH_PHONE = 1)
+               OR (R.RULE_KIND = 2 AND MI.MATCH_ITEM = 1)
+               OR (R.RULE_KIND = 3 AND MP.MATCH_PHONE = 1 AND MI.MATCH_ITEM = 1)
+               OR (R.RULE_KIND = 4 AND (SELECT GROSS_TOTAL FROM ORDER_TOTAL) IS NOT NULL)
+        ) PK
+
+        OUTER APPLY (
+            SELECT 1 AS PASS_MIN
+            WHERE R.MIN_ORDER IS NULL
+               OR (SELECT GROSS_TOTAL FROM ORDER_TOTAL) >= R.MIN_ORDER
+        ) PM
+
+        WHERE PK.PASS_KIND = 1 AND PM.PASS_MIN = 1
+    ),
+
+    --------------------------------------------------------------------
+    -- E) حساب الخصومات التفصيلية
+    --------------------------------------------------------------------
+    DETAILS AS (
+        -- سطور (منتج أو هاتف+منتج)
+        SELECT
+            ''LINE'' AS SCOPE_KIND,
+            R.RULE_ID, R.RULE_NAME, R.DISCOUNT_TYPE, R.DISCOUNT_VALUE, R.PRIORITY, R.STACKABLE,
+            TI.ITEM_CODE, TI.QTY, TI.LINE_TOTAL AS BASE_AMOUNT,
+            CASE 
+              WHEN R.DISCOUNT_TYPE = 1 THEN (TI.LINE_TOTAL * R.DISCOUNT_VALUE / 100.0)
+              WHEN R.DISCOUNT_TYPE = 2 THEN (R.DISCOUNT_VALUE * TI.QTY)
+            END AS DISCOUNT_AMOUNT
+        FROM RULES_MATCHED R
+        JOIN dbo.T_DISCOUNT_RULE_ITEM I ON I.RULE_ID = R.RULE_ID
+        JOIN TEMP_ITEMS TI             ON TI.ITEM_CODE = I.ITEM_CODE
+        WHERE R.RULE_KIND IN (2,3)
+
+        UNION ALL
+
+        -- فاتورة كاملة (هاتف أو عامة)
+        SELECT
+            ''ORDER'' AS SCOPE_KIND,
+            R.RULE_ID, R.RULE_NAME, R.DISCOUNT_TYPE, R.DISCOUNT_VALUE, R.PRIORITY, R.STACKABLE,
+            NULL AS ITEM_CODE, NULL AS QTY,
+            OT.GROSS_TOTAL AS BASE_AMOUNT,
+            CASE 
+              WHEN R.DISCOUNT_TYPE = 1 THEN (OT.GROSS_TOTAL * R.DISCOUNT_VALUE / 100.0)
+              WHEN R.DISCOUNT_TYPE = 2 THEN R.DISCOUNT_VALUE
+            END AS DISCOUNT_AMOUNT
+        FROM RULES_MATCHED R
+        CROSS APPLY (SELECT GROSS_TOTAL FROM ORDER_TOTAL) OT
+        WHERE R.RULE_KIND IN (1,4)
+    ),
+
+    --------------------------------------------------------------------
+    -- F) تطبيق سقف القاعدة إن وُجد
+    --------------------------------------------------------------------
+    DETAILS_TRIM AS (
+        SELECT 
+            D.SCOPE_KIND, D.RULE_ID, D.RULE_NAME, D.DISCOUNT_TYPE, D.DISCOUNT_VALUE, D.PRIORITY, D.STACKABLE,
+            D.ITEM_CODE, D.QTY, D.BASE_AMOUNT,
+            CASE 
+              WHEN R.MAX_DISCOUNT_PER_ORDER IS NOT NULL
+                   AND D.DISCOUNT_AMOUNT > R.MAX_DISCOUNT_PER_ORDER
+              THEN R.MAX_DISCOUNT_PER_ORDER
+              ELSE D.DISCOUNT_AMOUNT
+            END AS DISCOUNT_AMOUNT
+        FROM DETAILS D
+        JOIN dbo.T_DISCOUNT_RULE R ON R.RULE_ID = D.RULE_ID
+        WHERE D.DISCOUNT_AMOUNT > 0
+    )
+
+    --------------------------------------------------------------------
+    -- G) ترتيب + منع تراكم عبر الأنواع
+    --    (نختار نوع الخصم لأول قاعدة بالأولوية داخل النطاق/العنصر،
+    --     ثم نسمح بالتراكم داخل نفس النوع فقط حتى أول قاعدة غير قابلة للتراكم)
+    --------------------------------------------------------------------
+    ,BASE AS (
+        SELECT
+            D.*,
+            CASE WHEN D.SCOPE_KIND=''ORDER'' THEN 0 ELSE ISNULL(D.ITEM_CODE,0) END AS ITEM_KEY,
+            ROW_NUMBER() OVER (
+                PARTITION BY D.SCOPE_KIND,
+                             CASE WHEN D.SCOPE_KIND=''ORDER'' THEN 0 ELSE ISNULL(D.ITEM_CODE,0) END
+                ORDER BY D.PRIORITY, D.RULE_ID
+            ) AS RN_ALL
+        FROM DETAILS_TRIM AS D
+    ),
+    FIRST_TYPE AS (
+        SELECT
+            B.*,
+            MIN(CASE WHEN B.RN_ALL = 1 THEN B.DISCOUNT_TYPE END)
+                OVER (PARTITION BY B.SCOPE_KIND, B.ITEM_KEY) AS FIRST_DISCOUNT_TYPE
+        FROM BASE AS B
+    ),
+    FILTERED AS (
+        SELECT *
+        FROM FIRST_TYPE
+        WHERE DISCOUNT_TYPE = FIRST_DISCOUNT_TYPE   -- ⟵ نوع الخصم المعتمد داخل المجموعة
+    ),
+    RN_IN_TYPE AS (
+        SELECT
+            F.*,
+            ROW_NUMBER() OVER (
+                PARTITION BY F.SCOPE_KIND, F.ITEM_KEY, F.DISCOUNT_TYPE
+                ORDER BY F.PRIORITY, F.RULE_ID
+            ) AS RN_IN_TYPE
+        FROM FILTERED AS F
+    ),
+    MARK AS (
+        SELECT
+            R.*,
+            MIN(CASE WHEN ISNULL(R.STACKABLE,0) = 0 THEN R.RN_IN_TYPE END)
+                OVER (PARTITION BY R.SCOPE_KIND, R.ITEM_KEY, R.DISCOUNT_TYPE) AS FIRST_NONSTACK_RN
+        FROM RN_IN_TYPE AS R
+    )
+    SELECT
+        SCOPE_KIND, RULE_ID, RULE_NAME, DISCOUNT_TYPE, DISCOUNT_VALUE, PRIORITY, STACKABLE,
+        ITEM_CODE, QTY, BASE_AMOUNT, DISCOUNT_AMOUNT
+    INTO #DETAILS_APPLIED
+    FROM MARK
+    WHERE
+          FIRST_NONSTACK_RN IS NULL
+       OR RN_IN_TYPE <= FIRST_NONSTACK_RN;
+
+    --------------------------------------------------------------------
+    -- H) المخرجات
+    --------------------------------------------------------------------
+    SELECT 
+        SCOPE_KIND      AS [SCOPE_KIND],
+        RULE_ID         AS [RULE_ID],
+        RULE_NAME       AS [RULE_NAME],
+        DISCOUNT_TYPE   AS [DISCOUNT_TYPE],
+        DISCOUNT_VALUE  AS [DISCOUNT_VALUE],
+        PRIORITY        AS [PRIORITY],
+        STACKABLE       AS [STACKABLE],
+        ITEM_CODE       AS [ITEM_CODE],
+        QTY             AS [QTY],
+        BASE_AMOUNT     AS [BASE_AMOUNT],
+        DISCOUNT_AMOUNT AS [DISCOUNT_AMOUNT]
+    FROM #DETAILS_APPLIED
+    ORDER BY
+        CASE WHEN SCOPE_KIND=''ORDER'' THEN 0 ELSE 1 END,
+        [STACKABLE], [RULE_ID];
+
+    SELECT CAST(ISNULL(SUM(DISCOUNT_AMOUNT),0) AS DECIMAL(18,3)) AS TOTAL_DISCOUNT
+    FROM #DETAILS_APPLIED;
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_CHECK_EXIST_COLUMNS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4865,6 +5861,8 @@ END
  ELSE
  BEGIN
 IF NOT EXISTS (SELECT 1 FROM T_CLIENT WHERE CLIENT_CODE = 0) INSERT [dbo].[T_CLIENT] ([CLIENT_CODE], [CLIENT_NAME], [CLIENT_PHONE], [CLIENT_REGION], [CLIENT_ADDRESS], [CLIENT_ACTIVE]) VALUES (0, N''عميل نقدي'', N'''', N'''', N'''', 1) 
+IF NOT EXISTS (SELECT 1 FROM T_CLIENT WHERE CLIENT_CODE = 1000) INSERT [dbo].[T_CLIENT] ([CLIENT_CODE], [CLIENT_NAME], [CLIENT_PHONE], [CLIENT_REGION], [CLIENT_ADDRESS], [CLIENT_ACTIVE]) VALUES (1000, N''صندوق بطاقة كي كارد   POS'', N'''', N'''', N'''', 1) 
+IF NOT EXISTS (SELECT 1 FROM T_CLIENT WHERE CLIENT_CODE = 1001) INSERT [dbo].[T_CLIENT] ([CLIENT_CODE], [CLIENT_NAME], [CLIENT_PHONE], [CLIENT_REGION], [CLIENT_ADDRESS], [CLIENT_ACTIVE]) VALUES (1001, N''صندوق بطاقة SWITCH POS'', N'''', N'''', N'''', 1) 
  END
  --////////////////////////////////////////////////////////////T_RECIPIENTS/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -5416,7 +6414,7 @@ SET @SUBMIT_FLAG=1
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_INSERT_COLUMNS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_INSERT_COLUMNS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5435,17 +6433,30 @@ BEGIN
 
 
 
-SET IDENTITY_INSERT [dbo].[T_TABOOR_ORDER_TYPES] ON 
-IF NOT EXISTS (select [ID] from [T_TABOOR_ORDER_TYPES] where [ID] =1 )INSERT [dbo].[T_TABOOR_ORDER_TYPES] ([ID], [TYPE], [BG_COLOR], [FONT_COLOR], [SORT]) VALUES (1, N''قيد الانتظار'', N''FDF5D1'', N''FFA71E'', 1)
-IF NOT EXISTS (select [ID] from [T_TABOOR_ORDER_TYPES] where [ID] =2 )INSERT [dbo].[T_TABOOR_ORDER_TYPES] ([ID], [TYPE], [BG_COLOR], [FONT_COLOR], [SORT]) VALUES (2, N''مكتملة'', N''D2FAE3'', N''27AD5E'', 1)
-SET IDENTITY_INSERT [dbo].[T_TABOOR_ORDER_TYPES] OFF
-
-SET IDENTITY_INSERT [dbo].[T_TABOOR_TIME_RESET] ON 
-IF NOT EXISTS (select [ID] from [T_TABOOR_TIME_RESET] where [ID] =1 )INSERT [dbo].[T_TABOOR_TIME_RESET] ([ID], [TIME_RESET], [DSCRP]) VALUES (1, 6, N''لتصفير الطلبات بالساعة'')
-IF NOT EXISTS (select [ID] from [T_TABOOR_TIME_RESET] where [ID] =2 )INSERT [dbo].[T_TABOOR_TIME_RESET] ([ID], [TIME_RESET], [DSCRP]) VALUES (2, 10, N''لحذف الطلبات القديمة بالدقيقة'')
-IF NOT EXISTS (select [ID] from [T_TABOOR_TIME_RESET] where [ID] =3 )INSERT [dbo].[T_TABOOR_TIME_RESET] ([ID], [TIME_RESET], [DSCRP]) VALUES (3, 5, N''تحديث الطلبات بالثواني'')
-SET IDENTITY_INSERT [dbo].[T_TABOOR_TIME_RESET] OFF
  
+SET IDENTITY_INSERT [dbo].[T_TABOOR_ORDER_TYPES] ON 
+
+IF NOT EXISTS (select [ID] from [T_TABOOR_ORDER_TYPES] where [ID] =1 )INSERT [dbo].[T_TABOOR_ORDER_TYPES] ([ID], [TYPE], [SORT], [BG_COLOR], [HEADER_FONTSIZE], [HEADER_COLOR], [CARD_BGCOLOR], [CARD_RADIUS], [CARD_THICKNESS_HEIGHT], [CARD_THICKNESS_COLOR], [CARD_SHADOW_COLOR], [CARD_SHADOW_ELEVATION], [CARD_FONTCOLOR], [CARD_FONTSIZE], [CARD_SUBTITLE], [CARD_SUBTITLE_COLOR], [CARD_SUBTITLE_FONTSIZE], [MAX_ROW], [MAX_COLUMN], [BG_IMAGE], [BG_IMAGE_OPACITY], [BG_IMAGE_POSITION], [BG_IMAGE_SIZE], [SHOW_IMG]) VALUES (1, N''قيد التجهيز'', 1, N''41413e'', 25, N''FFFFFF'', N''FFFFFF'', N''0;0;0;0'', 5, N''FFFFFF'', N''000000'', 0, N''000000'', 20, N'' '', N''000000'', 20, 0, 15, N'''', 0, N''0;0;0;0'', N''150;150'', 0)
+IF NOT EXISTS (select [ID] from [T_TABOOR_ORDER_TYPES] where [ID] =2 )INSERT [dbo].[T_TABOOR_ORDER_TYPES] ([ID], [TYPE], [SORT], [BG_COLOR], [HEADER_FONTSIZE], [HEADER_COLOR], [CARD_BGCOLOR], [CARD_RADIUS], [CARD_THICKNESS_HEIGHT], [CARD_THICKNESS_COLOR], [CARD_SHADOW_COLOR], [CARD_SHADOW_ELEVATION], [CARD_FONTCOLOR], [CARD_FONTSIZE], [CARD_SUBTITLE], [CARD_SUBTITLE_COLOR], [CARD_SUBTITLE_FONTSIZE], [MAX_ROW], [MAX_COLUMN], [BG_IMAGE], [BG_IMAGE_OPACITY], [BG_IMAGE_POSITION], [BG_IMAGE_SIZE], [SHOW_IMG]) VALUES (2, N''الطلبات المكتملة'', 1, N''BDBDBC'', 45, N''FFFFFF'', N''FFFFFF'', N''0;0;0;0'', 5, N''27AD5E'', N''000000'', 1, N''000000'', 20, N'' '', N''000000'', 9.1, 3, 2, N'''', 0, N''0;0;0;0'', N''150;0'', 0)
+SET IDENTITY_INSERT [dbo].[T_TABOOR_ORDER_TYPES] OFF
+ 
+SET IDENTITY_INSERT [dbo].[T_TABOOR_TIME_RESET] ON 
+
+IF NOT EXISTS (select [ID] from [T_TABOOR_TIME_RESET] where [ID] =1 )INSERT [dbo].[T_TABOOR_TIME_RESET] ([ID], [TIME_RESET], [DSCRP], [IS_SHOW]) VALUES (1, 6, N''لتصفير الطلبات بالساعة'', 1)
+IF NOT EXISTS (select [ID] from [T_TABOOR_TIME_RESET] where [ID] =2 )INSERT [dbo].[T_TABOOR_TIME_RESET] ([ID], [TIME_RESET], [DSCRP], [IS_SHOW]) VALUES (2, 100, N''لحذف الطلبات القديمة بالدقيقة'', 1)
+IF NOT EXISTS (select [ID] from [T_TABOOR_TIME_RESET] where [ID] =3 )INSERT [dbo].[T_TABOOR_TIME_RESET] ([ID], [TIME_RESET], [DSCRP], [IS_SHOW]) VALUES (3, 2, N''تحديث الطلبات بالثواني'', 1)
+SET IDENTITY_INSERT [dbo].[T_TABOOR_TIME_RESET] OFF
+
+
+
+
+
+
+
+
+
+
+
 
 IF NOT EXISTS (select [APP_CODE] from [T_APP_TYPE] where [APP_CODE] =0 ) INSERT [dbo].[T_APP_TYPE] ([APP_CODE], [APP_NAME], [APP_DISCOUNT], [ACTIVE], [IVC_CODE], [IS_ROUND], [ROUND_VALUE], [ROUND_TYPE], [ROUND_EXIST]) VALUES (0, N'' '', 0, 1, NULL, NULL, NULL, NULL, NULL)
 IF NOT EXISTS (select [APP_CODE] from [T_APP_TYPE] where [APP_CODE] =1 )INSERT [dbo].[T_APP_TYPE] ([APP_CODE], [APP_NAME], [APP_DISCOUNT], [ACTIVE], [IVC_CODE], [IS_ROUND], [ROUND_VALUE], [ROUND_TYPE], [ROUND_EXIST]) VALUES (1, N''طلباتي'', 0, 1, NULL, NULL, NULL, NULL, NULL)
@@ -5504,7 +6515,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5566,7 +6577,7 @@ SET @OUT_QTY_TEMP=0
             DECLARE ITEM_CHILD_CURSOR CURSOR FOR 
                 SELECT ITEM_CODE 
                 FROM V_ITEM_RECIPE_STORE 
-                WHERE ITEM_CODE_MAIN = @ITEM_CODE ORDER BY DEVIDED_QTY ASC;
+                WHERE ITEM_CODE_MAIN = @ITEM_CODE ORDER BY DATE_JOB DESC, DEVIDED_QTY asc;
 
             OPEN ITEM_CHILD_CURSOR;
             FETCH NEXT FROM ITEM_CHILD_CURSOR INTO @ITEM_CHILD_CODE;
@@ -5696,7 +6707,7 @@ END;
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_final]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_final]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5896,7 +6907,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6048,7 +7059,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLD_OLD]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6201,7 +7212,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_OLODLODD]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6354,7 +7365,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_ITEM_STORE_QTY_RECIPE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6550,7 +7561,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_CHECK_NAME_SPACE_UPDATE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_CHECK_NAME_SPACE_UPDATE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6566,7 +7577,7 @@ CREATE PROCEDURE [dbo].[P_CHECK_NAME_SPACE_UPDATE]
 
 AS
 BEGIN
-
+UPDATE T_ITEMS SET ITEM_NAME=LTRIM(RTRIM(ITEM_NAME))
 UPDATE T_ITEMS SET CATEGORY_CODE=0 WHERE ITEM_CODE<=0
 UPDATE T_ITEM_CATEGORY SET SHOW_MENU=1 WHERE SHOW_MENU IS NULL
 UPDATE T_SALES SET CLIENT_PHONE=N'''' WHERE CLIENT_PHONE NOT LIKE N''07''+ ''%'' AND LEN(CLIENT_PHONE)>5
@@ -6648,6 +7659,31 @@ SET XACT_ABORT OFF
 ALTER TABLE T_SALES
 ALTER COLUMN [CLIENT_PHONE] NVARCHAR(20)
 
+BEGIN TRAN;
+EXEC sp_getapplock @Resource = ''SEQ_SALES_BILL_INIT'', @LockMode = ''Exclusive'', @LockOwner = ''Transaction'', @LockTimeout = 10000;
+
+DECLARE @MaxBill INT =
+(
+    SELECT ISNULL(MAX(BILL_NUMBER), 0)
+    FROM dbo.T_SALES WITH (TABLOCKX, HOLDLOCK)
+);
+DECLARE @StartWith NVARCHAR(20) = CONVERT(NVARCHAR(20), @MaxBill + 1);
+
+IF NOT EXISTS (SELECT 1 FROM sys.sequences WHERE name = ''SEQ_SALES_BILL'' AND SCHEMA_NAME(schema_id) = ''dbo'')
+BEGIN
+    DECLARE @SQL1 NVARCHAR(400) =
+    N''CREATE SEQUENCE dbo.SEQ_SALES_BILL AS INT START WITH '' + @StartWith + N'' INCREMENT BY 1 NO CACHE;'';
+    EXEC sp_executesql @SQL1;
+END
+ELSE
+BEGIN
+    DECLARE @SQL2 NVARCHAR(400) =
+    N''ALTER SEQUENCE dbo.SEQ_SALES_BILL RESTART WITH '' + @StartWith + N'';'';
+    EXEC sp_executesql @SQL2;
+END
+
+COMMIT;
+
 END
 
 
@@ -6655,7 +7691,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6683,7 +7719,8 @@ SET @SUBMIT_FLAG=0
 delete FROM T_SALES_TABLE WHERE T_ID>0
 UPDATE T_SALES_TABLE SET DESCRIPTION=6565286
 
-
+delete FROM T_IMPORT_PHONE
+delete FROM T_PAYMENT_TRANSACTION
 delete FROM T_ITEM_RECIPE
 delete FROM T_APP_CLIENT
 delete FROM T_APP_INVOICE
@@ -6776,7 +7813,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_BUT_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_BUT_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6804,7 +7841,8 @@ BEGIN
 SET @SUBMIT_FLAG=0
 delete FROM T_SALES_TABLE WHERE T_ID>0
 UPDATE T_SALES_TABLE SET DESCRIPTION=6565286
- 
+delete FROM T_IMPORT_PHONE
+ delete FROM T_PAYMENT_TRANSACTION
 delete FROM T_APP_CLIENT
 delete FROM T_APP_INVOICE
 delete FROM T_APP_TABLE
@@ -6887,7 +7925,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_DATA_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6914,43 +7952,30 @@ AS
 BEGIN
 SET @SUBMIT_FLAG=0
 
-delete FROM T_APP_INVOICE
-delete FROM T_APP_TABLE
-delete FROM T_NOTFICATION_TITLE
+delete FROM T_APP_INVOICE;
+delete FROM T_APP_TABLE;
+delete FROM T_NOTFICATION_TITLE;
 
-
-UPDATE [dbo].[T_SALES]
-   SET BILL_BRANCH=BILL_BRANCH+N''-''+ CONVERT(nvarchar, BILL_DATE, 101) 
-		,[WORK_CODE] = 888
-      ,[TOT_QTY] = 0
-      ,[TOT_COST] = 0
-      ,[TOT_SELL] = 0
-      ,[DISCOUNT_SELL] = 0
-      ,[SERVICE_SELL] = 0
-      ,[NET_SALES] = 0
-      ,[APP_PERCENT] = 0
-      ,[NET_NET_SALES] = 0
-      ,[NET_ARBAH] = 0
-      where WORK_CODE<>888
-DELETE FROM T_ITEM_STORE
-delete FROM T_SALES  where WORK_CODE<>888
+INSERT INTO T_IMPORT_PHONE (CLIENT_PHONE, CLIENT_NAME, CLIENT_REGION, CLIENT_ADDRESS)
+SELECT 
+    CLIENT_PHONE,
+    CLIENT_NAME,
+    CLIENT_REGION,
+    CLIENT_ADDRESS
+FROM T_SALES
+WHERE CLIENT_PHONE IS NOT NULL AND LTRIM(RTRIM(CLIENT_PHONE)) <> '''';
+ 
+DELETE FROM T_ITEM_STORE;
+delete FROM T_SALES  --where WORK_CODE<>888
 --delete FROM T_SALES  where (LEN(CLIENT_PHONE) < 5) 
-DELETE FROM T_SALES
-    WHERE BILL_BRANCH NOT IN
-    (
-        SELECT MAX(BILL_BRANCH) AS MaxRecordID
-        FROM T_SALES
-        GROUP BY CLIENT_NAME, CLIENT_PHONE,CLIENT_REGION,CLIENT_ADDRESS);
-                
-update T_SALES set BILL_NUMBER=0,BILL_ORDER=0 where WORK_CODE=888
-
-delete FROM T_CLIENT_CASH
-delete FROM T_SALES_HISTORY
-DELETE FROM T_SALES_DETAILS_HISTORY
-DELETE FROM T_SALES_DETAILS
-DELETE FROM T_SALES_DETAILS_RETURN
-DELETE FROM T_SALES_TEMP
-DELETE FROM T_SALES_TEMP_APP_QTY
+ 
+delete FROM T_CLIENT_CASH;
+delete FROM T_SALES_HISTORY;
+DELETE FROM T_SALES_DETAILS_HISTORY;
+DELETE FROM T_SALES_DETAILS;
+DELETE FROM T_SALES_DETAILS_RETURN;
+DELETE FROM T_SALES_TEMP;
+DELETE FROM T_SALES_TEMP_APP_QTY;
 UPDATE [dbo].[T_TABLE]
    SET  [TABLE_NAME] = N''''
       ,[TABLE_NOTE] = N''''
@@ -6959,7 +7984,7 @@ UPDATE [dbo].[T_TABLE]
       ,[START_TIME] = NULL
       ,[USER_CODE] = N''''
       ,[IS_ENTRY] = 0
-      ,[USER_ENTRY] = N''''
+      ,[USER_ENTRY] = N'''';
   
 
 
@@ -6998,7 +8023,47 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_MOVED_SALES]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_MOVED_SALES]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_DELETE_MOVED_SALES]
+    @Bills dbo.BillKeyType READONLY
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
+
+    BEGIN TRY
+        BEGIN TRAN;
+
+		DELETE   FROM dbo.T_SALES_TEMP  ;
+
+        DELETE D
+        FROM dbo.T_SALES_DETAILS AS D
+        JOIN @Bills AS B
+          ON B.BILL_BRANCH = D.BILL_BRANCH AND B.BILL_NUMBER = D.BILL_NUMBER;
+
+        DELETE S
+        FROM dbo.T_SALES AS S
+        JOIN @Bills AS B
+          ON B.BILL_BRANCH = S.BILL_BRANCH AND B.BILL_NUMBER = S.BILL_NUMBER;
+
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        DECLARE @Err NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR(N''فشل حذف المصدر: %s'', 16, 1, @Err);
+    END CATCH;
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7078,7 +8143,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_ALL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_ALL]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7165,12 +8230,164 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+/*
+   تحسينات:
+   - BILL_NUMBER من SEQUENCE مع تصحيح ذاتي إن تأخر عن MAX(BILL_NUMBER).
+   - حماية BILL_BRANCH من التكرار عبر فحص مقفول وإعادة توليد الرقم عند الحاجة.
+   - BILL_ORDER اليومي تحت UPDLOCK,HOLDLOCK على يوم @DATE_JOB.
+   - معاملة متماسكة + TRY/CATCH + XACT_ABORT.
+*/
+CREATE PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]
+    @USER_CODE      INT,
+    @DATE_JOB       DATE,
+    @COMPANY_TITAL  NVARCHAR(50),
+    @INVOICE_CODE   INT,
+    @TABLE_CODE     INT,
+    @BILL_NUMBER    INT OUTPUT,
+    @BILL_ORDER     INT OUTPUT,
+    @SUBMIT_FLAG    INT OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
+
+    BEGIN TRY
+        BEGIN TRAN;
+
+        /* ========= 1) تصحيح ذاتي للـ SEQUENCE إن لزم ========= */
+        DECLARE @Needed INT =
+        (
+            SELECT ISNULL(MAX(BILL_NUMBER), 0) + 1
+            FROM dbo.T_SALES WITH (UPDLOCK, HOLDLOCK)
+        );
+
+        DECLARE @Probe INT = NEXT VALUE FOR dbo.SEQ_SALES_BILL;
+        DECLARE @NextBill INT;
+
+        IF (@Probe < @Needed)
+        BEGIN
+            DECLARE @SQLFix NVARCHAR(200) =
+                N''ALTER SEQUENCE dbo.SEQ_SALES_BILL RESTART WITH '' + CONVERT(NVARCHAR(20), @Needed) + N'';'';
+            EXEC sp_executesql @SQLFix;
+            SET @NextBill = NEXT VALUE FOR dbo.SEQ_SALES_BILL;
+        END
+        ELSE
+        BEGIN
+            SET @NextBill = @Probe;
+        END
+
+        /* ========= 2) حساب BILL_ORDER اليومي تحت قفل ========= */
+        ;WITH L AS
+        (
+            SELECT MAX(BILL_ORDER) AS MaxOrder
+            FROM dbo.T_SALES WITH (UPDLOCK, HOLDLOCK)
+            WHERE CAST(BILL_DATE AS DATE) = @DATE_JOB
+        )
+        SELECT @BILL_ORDER = ISNULL(MaxOrder, 0) + 1 FROM L;
+
+        SET @BILL_NUMBER = @NextBill;
+
+        /* ========= 3) حزام الأمان لـ BILL_BRANCH ========= */
+        DECLARE @BILL_BRANCH_KEY VARCHAR(100) = @COMPANY_TITAL + CAST(@BILL_NUMBER AS VARCHAR(20));
+
+        WHILE EXISTS
+        (
+            SELECT 1
+            FROM dbo.T_SALES WITH (UPDLOCK, HOLDLOCK)  -- HOLDLOCK = Serializable
+            WHERE BILL_BRANCH = @BILL_BRANCH_KEY
+        )
+        BEGIN
+            SET @BILL_NUMBER = NEXT VALUE FOR dbo.SEQ_SALES_BILL;
+            SET @BILL_BRANCH_KEY = @COMPANY_TITAL + CAST(@BILL_NUMBER AS VARCHAR(20));
+        END
+
+        /* ========= 4) الإدراج ========= */
+        INSERT INTO dbo.T_SALES
+        (
+            BILL_BRANCH,
+            BILL_NUMBER,
+            BILL_ORDER,
+            BILL_DATE,
+            BILL_TIME,
+            TABLE_CODE,
+            CALL_NO,
+            INVOICE_CODE,
+            CLIENT_NAME,
+            CLIENT_REGION,
+            CLIENT_PHONE,
+            CLIENT_ADDRESS,
+            DRIVER_NAME,
+            WORK_CODE,
+            USER_CODE,
+            TOT_QTY,
+            TOT_COST,
+            TOT_SELL,
+            DISCOUNT_SELL,
+            SERVICE_SELL,
+            NET_SALES,
+            APP_CODE,
+            APP_PERCENT,
+            NET_NET_SALES,
+            NET_ARBAH,
+            NOTE,
+            KITCHEN_NOTE,
+            CLIENT_CODE,
+            IVC_CODE,
+            IS_CASH,
+            RECIPIENT_CODE
+        )
+        VALUES
+        (
+            @BILL_BRANCH_KEY,            -- BILL_BRANCH (مضمون عدم تكراره الآن)
+            @BILL_NUMBER,
+            @BILL_ORDER,
+            @DATE_JOB,
+            GETDATE(),
+            @TABLE_CODE,
+            0,
+            @INVOICE_CODE,
+            N'''', N'''', N'''', N'''', N'''',
+            0,
+            @USER_CODE,
+            0, 0, 0, 0, 0, 0,            -- TOT_QTY..NET_SALES
+            0, 0, 0, 0,                   -- APP_CODE..NET_ARBAH
+            N'''',
+            N'''',
+            0,
+            0,
+            1,
+            0
+        );
+
+        SET @SUBMIT_FLAG = 1;
+
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF (XACT_STATE() <> 0) ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = 0;
+        SET @BILL_NUMBER = ISNULL(@BILL_NUMBER, 0);
+        SET @BILL_ORDER  = ISNULL(@BILL_ORDER , 0);
+        ;THROW;
+    END CATCH
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES_OLD]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES_OLD]') AND type in (N'P', N'PC'))
 BEGIN
 EXEC dbo.sp_executesql @statement = N'
 
@@ -7189,7 +8406,8 @@ EXEC dbo.sp_executesql @statement = N'
 
 
 
-CREATE PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]
+
+CREATE PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES_OLD]
 @USER_CODE INT,	
 @DATE_JOB DATE,
 @COMPANY_TITAL nvarchar(50),
@@ -7201,9 +8419,9 @@ CREATE PROCEDURE [dbo].[P_DELETE_SALES_NOT_USE_NEW_SALES]
 
 AS
 
-BEGIN TRAN
+ 
 BEGIN
-
+BEGIN TRANSACTION;
 --DECLARE BOX_CURSOR CURSOR FOR SELECT  BILL_NUMBER FROM T_SALES WHERE  USER_CODE=@USER_CODE AND WORK_CODE=0 ;
 
 --DECLARE
@@ -7230,8 +8448,8 @@ BEGIN
 
 
 
-SELECT @BILL_NUMBER=ISNULL(MAX(BILL_NUMBER),0) + 1 FROM T_SALES
-SELECT @BILL_ORDER= ISNULL(MAX(BILL_ORDER),0) + 1 FROM T_SALES WHERE BILL_DATE = convert(varchar,@DATE_JOB , 111) 
+SELECT @BILL_NUMBER=ISNULL(MAX(BILL_NUMBER),0) + 1 FROM T_SALES ;
+SELECT @BILL_ORDER= ISNULL(MAX(BILL_ORDER),0) + 1 FROM T_SALES  WHERE BILL_DATE = convert(varchar,@DATE_JOB , 111)  ; 
 
 
 INSERT INTO [dbo].[T_SALES]
@@ -7306,11 +8524,12 @@ INSERT INTO [dbo].[T_SALES]
            
 
 SET @SUBMIT_FLAG=1
-
+COMMIT TRANSACTION;
 END	--END OF PROGRAM
 
 
-commit
+ 
+
 
 
 
@@ -7344,766 +8563,686 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_GET_SALES_SUMMARY_BY_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_GET_SALES_SUMMARY_BY_PHONE]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[P_GET_SALES_SUMMARY_BY_PHONE]
+    @Phone NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- 0) تطبيع رقم الهاتف
+    DECLARE @PhoneNorm NVARCHAR(50) = REPLACE(REPLACE(REPLACE(@Phone, ''+'',''''), '' '', ''''), ''-'', '''');
+
+    -- 1) جميع صيغ الهاتف المطابقة من الـ VIEW
+    DECLARE @Phones TABLE (VIEW_PHONE NVARCHAR(50) PRIMARY KEY);
+    INSERT INTO @Phones (VIEW_PHONE)
+    SELECT DISTINCT REPLACE(REPLACE(REPLACE(V.CLIENT_PHONE, ''+'',''''), '' '', ''''), ''-'', '''')
+    FROM dbo.V_SALES_PHONE_LIST AS V WITH (NOLOCK)
+    WHERE REPLACE(REPLACE(REPLACE(V.CLIENT_PHONE, ''+'',''''), '' '', ''''), ''-'', '''') = @PhoneNorm;
+
+    IF NOT EXISTS (SELECT 1 FROM @Phones)
+    BEGIN
+        RAISERROR (N''لا يوجد رقم مطابق في V_SALES_PHONE_LIST.'', 11, 1);
+        RETURN;
+    END
+
+    -- 2) فواتير هذا الهاتف من T_SALES (BILL_TIME فقط + فلترة WORK_CODE)
+    IF OBJECT_ID(''tempdb..#SALES'') IS NOT NULL DROP TABLE #SALES;
+    SELECT
+        S.BILL_NUMBER,
+        ORDER_DT   = TRY_CONVERT(DATETIME, S.BILL_TIME),
+        NET_AMOUNT = ISNULL(S.NET_NET_SALES, 0),
+        S.DRIVER_NAME
+    INTO #SALES
+    FROM dbo.T_SALES AS S WITH (NOLOCK)
+    JOIN @Phones P
+      ON REPLACE(REPLACE(REPLACE(S.CLIENT_PHONE, ''+'',''''), '' '', ''''), ''-'', '''') = P.VIEW_PHONE
+    WHERE S.WORK_CODE IN (1,10,20)
+      AND TRY_CONVERT(DATETIME, S.BILL_TIME) IS NOT NULL;
+
+    IF NOT EXISTS (SELECT 1 FROM #SALES)
+    BEGIN
+        RAISERROR (N''لا توجد فواتير صالحة زمنياً لهذا الرقم.'', 11, 1);
+        RETURN;
+    END
+
+    -- 3) الملخص
+    IF OBJECT_ID(''tempdb..#SUMMARY'') IS NOT NULL DROP TABLE #SUMMARY;
+    SELECT
+        FIRST_ORDER_DT   = MIN(ORDER_DT),
+        LAST_ORDER_DT    = MAX(ORDER_DT),
+        TOTAL_ORDERS     = COUNT(*),
+        TOTAL_NET_AMOUNT = SUM(NET_AMOUNT)
+    INTO #SUMMARY
+    FROM #SALES;
+
+    -- 4) آخر فاتورة
+    IF OBJECT_ID(''tempdb..#LAST_SALE'') IS NOT NULL DROP TABLE #LAST_SALE;
+    SELECT TOP (1) *
+    INTO #LAST_SALE
+    FROM #SALES
+    ORDER BY ORDER_DT DESC, BILL_NUMBER DESC;
+
+    -- 5) الإخراج النهائي + نص تفاصيل آخر طلب كسطور متعددة
+    SELECT 
+        CAST(S.FIRST_ORDER_DT AS DATE) AS FIRST_ORDER_DATE,        -- تاريخ أول طلب (Date)
+        S.LAST_ORDER_DT                AS LAST_ORDER_DATETIME,     -- تاريخ ووقت آخر طلب
+        S.TOTAL_ORDERS                 AS TOTAL_ORDERS_COUNT,      -- عدد الطلبات الكلي
+        S.TOTAL_NET_AMOUNT             AS TOTAL_ORDERS_NET_AMOUNT, -- مجموع مبالغ الطلبات
+        L.BILL_NUMBER                  AS LAST_BILL_NUMBER,        -- رقم آخر طلب
+        L.DRIVER_NAME                  AS LAST_DELIVERY_DRIVER,    -- آخر سائق ديليفري
+        ISNULL(
+            COALESCE(
+                -- 1) مرحّل: من T_SALES_DETAILS
+                STUFF((
+                    SELECT CHAR(13)+CHAR(10)
+                         + COALESCE(I.ITEM_NAME, N'''')
+                         + N'' ( '' + CAST(D.QTY AS NVARCHAR(50)) + N'' )''
+                    FROM dbo.T_SALES_DETAILS AS D WITH (NOLOCK)
+                    LEFT JOIN dbo.T_ITEMS AS I WITH (NOLOCK) ON I.ITEM_CODE = D.ITEM_CODE
+                    WHERE D.BILL_NUMBER = L.BILL_NUMBER
+                    -- إن لديك عمود ترتيب للسطر مثل LINE_NO استخدمه:
+                    -- ORDER BY D.LINE_NO
+                    ORDER BY I.ITEM_NAME
+                    FOR XML PATH(''''), TYPE
+                ).value(''.'', ''nvarchar(max)''), 1, 2, ''''),
+                -- 2) غير مرحّل: من T_SALES_TEMP
+                STUFF((
+                    SELECT CHAR(13)+CHAR(10)
+                         + COALESCE(I.ITEM_NAME, N'''')
+                         + N'' ( '' + CAST(T.QTY AS NVARCHAR(50)) + N'' )''
+                    FROM dbo.T_SALES_TEMP AS T WITH (NOLOCK)
+                    LEFT JOIN dbo.T_ITEMS AS I WITH (NOLOCK) ON I.ITEM_CODE = T.ITEM_CODE
+                    WHERE T.BILL_NUMBER = L.BILL_NUMBER
+                    -- ORDER BY T.LINE_NO
+                    ORDER BY I.ITEM_NAME
+                    FOR XML PATH(''''), TYPE
+                ).value(''.'', ''nvarchar(max)''), 1, 2, '''')
+            ),
+            N''''
+        ) AS LAST_ORDER_DETAILS_TEXT
+    FROM #SUMMARY S
+    CROSS JOIN #LAST_SALE L;
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_IMPORT_SALES_TVP]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_IMPORT_SALES_TVP]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_IMPORT_SALES_TVP]
+    @SalesHdr dbo.SalesHeaderImportType READONLY,
+    @SalesDet dbo.SalesDetailImportType READONLY
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
+
+    -- 1) تفكيك Prefix (رمز الفرع) والرقم من BILL_BRANCH
+    IF OBJECT_ID(''tempdb..#S'') IS NOT NULL DROP TABLE #S;
+    SELECT
+        SH.*,
+        Prefix = LEFT(SH.BILL_BRANCH,
+                      LEN(SH.BILL_BRANCH) -
+                      LEN(REVERSE(SUBSTRING(REVERSE(SH.BILL_BRANCH),
+                           1, NULLIF(PATINDEX(''%[^0-9]%'', REVERSE(SH.BILL_BRANCH)),0)-1)))),
+        OldNo  = TRY_CAST(REVERSE(SUBSTRING(REVERSE(SH.BILL_BRANCH),
+                           1, NULLIF(PATINDEX(''%[^0-9]%'', REVERSE(SH.BILL_BRANCH)),0)-1)) AS NUMERIC(18,0))
+    INTO #S
+    FROM @SalesHdr AS SH;
+
+    IF OBJECT_ID(''tempdb..#D'') IS NOT NULL DROP TABLE #D;
+    SELECT
+        SD.*,
+        Prefix = LEFT(SD.BILL_BRANCH,
+                      LEN(SD.BILL_BRANCH) -
+                      LEN(REVERSE(SUBSTRING(REVERSE(SD.BILL_BRANCH),
+                           1, NULLIF(PATINDEX(''%[^0-9]%'', REVERSE(SD.BILL_BRANCH)),0)-1)))),
+        OldNo  = TRY_CAST(REVERSE(SUBSTRING(REVERSE(SD.BILL_BRANCH),
+                           1, NULLIF(PATINDEX(''%[^0-9]%'', REVERSE(SD.BILL_BRANCH)),0)-1)) AS NUMERIC(18,0))
+    INTO #D
+    FROM @SalesDet AS SD;
+
+    IF EXISTS (SELECT 1 FROM #S WHERE Prefix IS NULL OR OldNo IS NULL)
+    BEGIN
+        RAISERROR(N''BILL_BRANCH غير قابل للفصل (Prefix/رقم). الصيغة يجب أن تكون مثل ABC123.'', 16, 1);
+        RETURN;
+    END
+
+    -- 2) حساب Max(BILL_NUMBER) لكل Prefix بالهدف مع قفل يمنع السباق
+    IF OBJECT_ID(''tempdb..#Maxes'') IS NOT NULL DROP TABLE #Maxes;
+    SELECT S.Prefix,
+           MaxBill = ISNULL((
+               SELECT MAX(TS.BILL_NUMBER)
+               FROM dbo.T_SALES AS TS WITH (UPDLOCK, HOLDLOCK)
+               WHERE TS.BILL_BRANCH LIKE S.Prefix + ''%''
+           ), 0)
+    INTO #Maxes
+    FROM (SELECT DISTINCT Prefix FROM #S) AS S;
+
+    -- 3) ترتيب داخلي وتوليد NewNo = MaxBill + rn (rn يبدأ من 1)
+    IF OBJECT_ID(''tempdb..#Map'') IS NOT NULL DROP TABLE #Map;
+    ;WITH Ordered AS
+    (
+        SELECT
+            Prefix,
+            OldNo,
+            BILL_NUMBER,
+            BILL_DATE,
+            BILL_TIME,
+            rn = ROW_NUMBER() OVER (
+                    PARTITION BY Prefix
+                    ORDER BY BILL_DATE, BILL_TIME, OldNo, BILL_NUMBER
+                 )
+        FROM #S
+    )
+    SELECT
+        o.Prefix,
+        o.OldNo,
+        NewNo = m.MaxBill + o.rn
+    INTO #Map
+    FROM Ordered AS o
+    JOIN #Maxes AS m
+      ON m.Prefix = o.Prefix;
+
+    BEGIN TRY
+        BEGIN TRAN;
+
+        -- 4) إدراج T_SALES بالأرقام الجديدة
+        INSERT INTO dbo.T_SALES
+        (
+            BILL_BRANCH, BILL_NUMBER, BILL_ORDER, BILL_DATE, BILL_TIME, TABLE_CODE,
+            CALL_NO, INVOICE_CODE, CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE,
+            CLIENT_ADDRESS, DRIVER_NAME, WORK_CODE, USER_CODE, TOT_QTY, TOT_COST,
+            TOT_SELL, DISCOUNT_SELL, SERVICE_SELL, NET_SALES, APP_CODE, APP_PERCENT,
+            NET_NET_SALES, NET_ARBAH, NOTE, IS_TRANS, COMPANY_NAME, TT_SEND, TT_RECIVE,
+            TT_PRINT, TT_CASH, CAPTAIN_NAME, KITCHEN_NOTE, LIN_X, LIN_Y, NAME_BRANCH,
+            BILL_SERVER, STATUS_APP, KITCHEN_DISPLAY_STATE, KITCHEN_DISPALY_MIN,
+            CLIENT_CODE, IVC_CODE, IS_CASH, NO_CLIENT, DISCOUNT_NOTE, RECIPIENT_CODE,
+            TIME_ACCEPT, TIME_ARRIVED, IS_DELEVERED_DRIVER, TO_DRIVER_TIME, TO_DELEVERD_TIME,
+            TO_CASH_TIME, TO_CALL_TIME
+        )
+        SELECT
+            NewBranch = M.Prefix + CONVERT(NVARCHAR(20), M.NewNo),
+            BILL_NUMBER = M.NewNo,
+            S.BILL_ORDER, S.BILL_DATE, S.BILL_TIME, S.TABLE_CODE,
+            S.CALL_NO, S.INVOICE_CODE, S.CLIENT_NAME, S.CLIENT_REGION, S.CLIENT_PHONE,
+            S.CLIENT_ADDRESS, S.DRIVER_NAME, S.WORK_CODE, S.USER_CODE, S.TOT_QTY, S.TOT_COST,
+            S.TOT_SELL, S.DISCOUNT_SELL, S.SERVICE_SELL, S.NET_SALES, S.APP_CODE, S.APP_PERCENT,
+            S.NET_NET_SALES, S.NET_ARBAH, S.NOTE, S.IS_TRANS, S.COMPANY_NAME, S.TT_SEND, S.TT_RECIVE,
+            S.TT_PRINT, S.TT_CASH, S.CAPTAIN_NAME, S.KITCHEN_NOTE, S.LIN_X, S.LIN_Y, S.NAME_BRANCH,
+            S.BILL_SERVER, S.STATUS_APP, S.KITCHEN_DISPLAY_STATE, S.KITCHEN_DISPALY_MIN,
+            S.CLIENT_CODE, S.IVC_CODE, S.IS_CASH, S.NO_CLIENT, S.DISCOUNT_NOTE, S.RECIPIENT_CODE,
+            S.TIME_ACCEPT, S.TIME_ARRIVED, S.IS_DELEVERED_DRIVER, S.TO_DRIVER_TIME, S.TO_DELEVERD_TIME,
+            S.TO_CASH_TIME, S.TO_CALL_TIME
+        FROM #S AS S
+        JOIN #Map AS M
+          ON M.Prefix = S.Prefix AND M.OldNo = S.OldNo;
+
+        -- 5) إدراج التفاصيل بالأرقام الجديدة
+        INSERT INTO dbo.T_SALES_DETAILS
+        (
+            BILL_BRANCH, BILL_NUMBER, BILL_ORDER, BILL_DATE, BILL_TIME,
+            ITEM_CODE, QTY, COST, SELL, WORK_CODE, USER_CODE, IS_TRANS, COMPANY_NAME
+        )
+        SELECT
+            NewBranch = M.Prefix + CONVERT(NVARCHAR(20), M.NewNo),
+            BILL_NUMBER = M.NewNo,
+            D.BILL_ORDER, D.BILL_DATE, D.BILL_TIME,
+            D.ITEM_CODE, D.QTY, D.COST, D.SELL, D.WORK_CODE, D.USER_CODE, D.IS_TRANS, D.COMPANY_NAME
+        FROM #D AS D
+        JOIN #Map AS M
+          ON M.Prefix = D.Prefix AND M.OldNo = D.OldNo;
+
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        DECLARE @Err NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR(N''فشل الإدراج في الهدف: %s'', 16, 1, @Err);
+        RETURN;
+    END CATCH
+
+    -- 6) نُعيد خريطة التحويل لاستخدامها بالحذف في المصدر
+    SELECT
+        Old_BILL_BRANCH = S.BILL_BRANCH,
+        Old_BILL_NUMBER = S.BILL_NUMBER,
+        New_BILL_BRANCH = M.Prefix + CONVERT(NVARCHAR(20), M.NewNo),
+        New_BILL_NUMBER = M.NewNo
+    FROM #S AS S
+    JOIN #Map AS M
+      ON M.Prefix = S.Prefix AND M.OldNo = S.OldNo
+    ORDER BY S.BILL_BRANCH, S.BILL_NUMBER;
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[P_INSERT_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_PHONE]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-CREATE PROCEDURE [dbo].[P_INSERT_PHONE]
-
-@phone	NVARCHAR(MAX),
-@TOKEN nvarchar(max) ,
-@ID  INT OUTPUT ,
-@SUBMIT_FLAG INT OUTPUT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_INSERT_PHONE]
+    @phone NVARCHAR(MAX),
+    @TOKEN NVARCHAR(MAX),
+    @ID INT OUTPUT,
+    @SUBMIT_FLAG INT OUTPUT
 AS
-	
 BEGIN
-SET @SUBMIT_FLAG=0
+    SET NOCOUNT ON;
+    SET @SUBMIT_FLAG = 0;
+    SET @ID = 0;
 
-DECLARE @generated_keys table([Id] int  )
+    BEGIN TRY
+        BEGIN TRAN;
 
-	INSERT INTO [dbo].[caller]
-           ([phone]
-           ,[status]
-		   ,[TOKEN])
+        DECLARE @generated_keys TABLE ([ID] INT);
 
-		      output inserted.ID into @generated_keys
-     VALUES
-           (@phone
-           ,1
-		   ,@TOKEN)
-		   
-select @ID = (select ID from @generated_keys)
+        INSERT INTO [dbo].[caller] ([phone], [status], [TOKEN])
+            OUTPUT inserted.ID INTO @generated_keys
+        VALUES (@phone, 1, @TOKEN);
 
-	IF @@ERROR <>0
-	BEGIN
-	ROLLBACK
-	RETURN
-	END
-	SET @SUBMIT_FLAG=1
-	END
+        SELECT @ID = ID FROM @generated_keys;
 
+        COMMIT TRAN;
+        SET @SUBMIT_FLAG = 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = -1;
+        SET @ID = 0;
+        -- ممكن إضافة سجل Log أو طباعة رسالة خطأ إذا لزم الأمر
+    END CATCH
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_PRINTER_SELECT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_PRINTER_SELECT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_PRINTER_SELECT]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_INSERT_PRINTER_SELECT]
-
-@PRINTER_ID	INT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_INSERT_PRINTER_SELECT]
+    @PRINTER_ID INT
 AS
 BEGIN
+    SET NOCOUNT ON;
 
+    BEGIN TRY
+        BEGIN TRAN;
 
+        DELETE FROM T_SORT;
 
+        INSERT INTO [dbo].[T_SORT] ([CODE], [NAME])
+        SELECT ITEM_CODE, ITEM_NAME
+        FROM [dbo].[T_ITEMS]
+        WHERE PRINTER_ID = @PRINTER_ID;
 
-DELETE FROM T_SORT 
-INSERT INTO [dbo].[T_SORT]
-           ([CODE]
-           ,[NAME])
-SELECT ITEM_CODE
-		,ITEM_NAME
-  FROM [dbo].T_ITEMS WHERE PRINTER_ID=@PRINTER_ID 
-  
-
- 
-	
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        -- يمكنك إضافة رسالة أو سجل LOG هنا عند الحاجة
+    END CATCH
 END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]
-
-@BILL_NUMBER	decimal(18, 0)	,		
-@SUBMIT_FLAG INT OUTPUT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_DETAILS_FROM_TEMP]
+    @BILL_NUMBER decimal(18, 0),
+    @SUBMIT_FLAG INT OUTPUT
 AS
 BEGIN
-SET @SUBMIT_FLAG=0
+    SET NOCOUNT ON;
+    SET @SUBMIT_FLAG = 0;
 
+    BEGIN TRY
+        BEGIN TRAN;
 
+       
+        DELETE FROM T_SALES_DETAILS WHERE BILL_NUMBER = @BILL_NUMBER;
 
-DELETE FROM T_SALES_DETAILS WHERE  BILL_NUMBER=@BILL_NUMBER 
-INSERT INTO [dbo].[T_SALES_DETAILS]
-           ([BILL_BRANCH]
-		   ,[BILL_NUMBER]
-           ,[BILL_ORDER]
-           ,[BILL_DATE]
-           ,[BILL_TIME]
-           ,[ITEM_CODE]
-           ,[QTY]
-           ,[COST]
-           ,[SELL]
-           ,[WORK_CODE]
-           ,[USER_CODE])
-SELECT BILL_BRANCH
-		,[BILL_NUMBER]
-      ,[BILL_ORDER]
-      ,[BILL_DATE]
-      ,[BILL_TIME]
-      ,[ITEM_CODE]
-      ,[QTY]
-      ,[COST]
-      ,[SELL]
-      ,[WORK_CODE]
-      ,[USER_CODE]
-  FROM [dbo].[T_SALES_TEMP] WHERE BILL_NUMBER=@BILL_NUMBER  ORDER BY SEQ DESC, T_ID ASC
-  
+        
+        INSERT INTO [dbo].[T_SALES_DETAILS]
+            ([BILL_BRANCH], [BILL_NUMBER], [BILL_ORDER], [BILL_DATE], [BILL_TIME],
+             [ITEM_CODE], [QTY], [COST], [SELL], [WORK_CODE], [USER_CODE])
+        SELECT 
+            BILL_BRANCH, BILL_NUMBER, BILL_ORDER, BILL_DATE, BILL_TIME,
+            ITEM_CODE, QTY, COST, SELL, WORK_CODE, USER_CODE
+        FROM [dbo].[T_SALES_TEMP]
+        WHERE BILL_NUMBER = @BILL_NUMBER
+        ORDER BY SEQ DESC, T_ID ASC;
 
-  DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
- DELETE FROM T_SALES_TEMP_APP_QTY WHERE BILL_NUMBER=@BILL_NUMBER
-	SET @SUBMIT_FLAG=1
-	
+         
+        DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER = @BILL_NUMBER;
+        DELETE FROM T_SALES_TEMP_APP_QTY WHERE BILL_NUMBER = @BILL_NUMBER;
+
+        COMMIT TRAN;
+        SET @SUBMIT_FLAG = 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = -1;
+        RETURN;
+    END CATCH
 END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]
-
-@BILL_BRANCH	nvarchar(50)	,		
-@SUBMIT_FLAG INT OUTPUT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_HISTORY_FROM_SALES]
+    @BILL_BRANCH nvarchar(50),
+    @SUBMIT_FLAG INT OUTPUT
 AS
 BEGIN
-SET @SUBMIT_FLAG=0
+    SET NOCOUNT ON;
+    SET @SUBMIT_FLAG = 0;
 
+    BEGIN TRY
+        BEGIN TRAN;
 
+       
+        INSERT INTO [dbo].[T_SALES_HISTORY] (
+            [BILL_BRANCH], [BILL_NUMBER], [BILL_ORDER], [BILL_DATE], [BILL_TIME],
+            [TABLE_CODE], [CALL_NO], [INVOICE_CODE], [CLIENT_NAME], [CLIENT_REGION],
+            [CLIENT_PHONE], [CLIENT_ADDRESS], [DRIVER_NAME], [WORK_CODE], [USER_CODE],
+            [TOT_QTY], [TOT_COST], [TOT_SELL], [DISCOUNT_SELL], [SERVICE_SELL],
+            [NET_SALES], [APP_CODE], [APP_PERCENT], [NET_NET_SALES], [NET_ARBAH],
+            [NOTE], [IS_TRANS], [COMPANY_NAME], [TT_SEND], [TT_RECIVE],
+            [TT_PRINT], [TT_CASH], [CAPTAIN_NAME], [KITCHEN_NOTE]
+        )
+        SELECT
+            [BILL_BRANCH], [BILL_NUMBER], [BILL_ORDER], [BILL_DATE], [BILL_TIME],
+            [TABLE_CODE], [CALL_NO], [INVOICE_CODE], [CLIENT_NAME], [CLIENT_REGION],
+            [CLIENT_PHONE], [CLIENT_ADDRESS], [DRIVER_NAME], [WORK_CODE], [USER_CODE],
+            [TOT_QTY], [TOT_COST], [TOT_SELL], [DISCOUNT_SELL], [SERVICE_SELL],
+            [NET_SALES], [APP_CODE], [APP_PERCENT], [NET_NET_SALES], [NET_ARBAH],
+            [NOTE], [IS_TRANS], [COMPANY_NAME], [TT_SEND], [TT_RECIVE],
+            [TT_PRINT], [TT_CASH], [CAPTAIN_NAME], [KITCHEN_NOTE]
+        FROM [dbo].[T_SALES]
+        WHERE BILL_BRANCH LIKE @BILL_BRANCH;
 
+       
+        DELETE FROM T_SALES WHERE BILL_BRANCH LIKE @BILL_BRANCH;
 
-INSERT INTO [dbo].[T_SALES_HISTORY]
-           ([BILL_BRANCH]
-           ,[BILL_NUMBER]
-           ,[BILL_ORDER]
-           ,[BILL_DATE]
-           ,[BILL_TIME]
-           ,[TABLE_CODE]
-           ,[CALL_NO]
-           ,[INVOICE_CODE]
-           ,[CLIENT_NAME]
-           ,[CLIENT_REGION]
-           ,[CLIENT_PHONE]
-           ,[CLIENT_ADDRESS]
-           ,[DRIVER_NAME]
-           ,[WORK_CODE]
-           ,[USER_CODE]
-           ,[TOT_QTY]
-           ,[TOT_COST]
-           ,[TOT_SELL]
-           ,[DISCOUNT_SELL]
-           ,[SERVICE_SELL]
-           ,[NET_SALES]
-           ,[APP_CODE]
-           ,[APP_PERCENT]
-           ,[NET_NET_SALES]
-           ,[NET_ARBAH]
-           ,[NOTE]
-           ,[IS_TRANS]
-           ,[COMPANY_NAME]
-           ,[TT_SEND]
-           ,[TT_RECIVE]
-           ,[TT_PRINT]
-           ,[TT_CASH]
-           ,[CAPTAIN_NAME]
-           ,[KITCHEN_NOTE])
-SELECT [BILL_BRANCH]
-      ,[BILL_NUMBER]
-      ,[BILL_ORDER]
-      ,[BILL_DATE]
-      ,[BILL_TIME]
-      ,[TABLE_CODE]
-      ,[CALL_NO]
-      ,[INVOICE_CODE]
-      ,[CLIENT_NAME]
-      ,[CLIENT_REGION]
-      ,[CLIENT_PHONE]
-      ,[CLIENT_ADDRESS]
-      ,[DRIVER_NAME]
-      ,[WORK_CODE]
-      ,[USER_CODE]
-      ,[TOT_QTY]
-      ,[TOT_COST]
-      ,[TOT_SELL]
-      ,[DISCOUNT_SELL]
-      ,[SERVICE_SELL]
-      ,[NET_SALES]
-      ,[APP_CODE]
-      ,[APP_PERCENT]
-      ,[NET_NET_SALES]
-      ,[NET_ARBAH]
-      ,[NOTE]
-      ,[IS_TRANS]
-      ,[COMPANY_NAME]
-      ,[TT_SEND]
-      ,[TT_RECIVE]
-      ,[TT_PRINT]
-      ,[TT_CASH]
-      ,[CAPTAIN_NAME]
-      ,[KITCHEN_NOTE]
-  FROM [dbo].[T_SALES]WHERE BILL_BRANCH LIKE @BILL_BRANCH 
- DELETE FROM T_SALES WHERE BILL_BRANCH LIKE @BILL_BRANCH 
-  
-  INSERT INTO [dbo].[T_SALES_DETAILS_HISTORY]
-           ([BILL_BRANCH]
-           ,[BILL_NUMBER]
-           ,[BILL_ORDER]
-           ,[BILL_DATE]
-           ,[BILL_TIME]
-           ,[ITEM_CODE]
-           ,[QTY]
-           ,[COST]
-           ,[SELL]
-           ,[WORK_CODE]
-           ,[USER_CODE]
-           ,[IS_TRANS]
-           ,[COMPANY_NAME])
+        
+        INSERT INTO [dbo].[T_SALES_DETAILS_HISTORY] (
+            [BILL_BRANCH], [BILL_NUMBER], [BILL_ORDER], [BILL_DATE], [BILL_TIME],
+            [ITEM_CODE], [QTY], [COST], [SELL], [WORK_CODE], [USER_CODE], [IS_TRANS], [COMPANY_NAME]
+        )
+        SELECT
+            [BILL_BRANCH], [BILL_NUMBER], [BILL_ORDER], [BILL_DATE], [BILL_TIME],
+            [ITEM_CODE], [QTY], [COST], [SELL], [WORK_CODE], [USER_CODE], [IS_TRANS], [COMPANY_NAME]
+        FROM [dbo].[T_SALES_DETAILS]
+        WHERE BILL_BRANCH LIKE @BILL_BRANCH;
 
-SELECT [BILL_BRANCH]
-      ,[BILL_NUMBER]
-      ,[BILL_ORDER]
-      ,[BILL_DATE]
-      ,[BILL_TIME]
-      ,[ITEM_CODE]
-      ,[QTY]
-      ,[COST]
-      ,[SELL]
-     ,[WORK_CODE]
-      ,[USER_CODE]
-      ,[IS_TRANS]
-      ,[COMPANY_NAME]
-  FROM [dbo].[T_SALES_DETAILS]WHERE BILL_BRANCH LIKE @BILL_BRANCH 
+       
+        DELETE FROM [dbo].[T_SALES_DETAILS] WHERE BILL_BRANCH LIKE @BILL_BRANCH;
 
-  DELETE FROM [dbo].[T_SALES_DETAILS]WHERE BILL_BRANCH LIKE @BILL_BRANCH 
+        
+        DELETE FROM T_SALES_TEMP WHERE BILL_BRANCH LIKE @BILL_BRANCH;
 
-  DELETE FROM T_SALES_TEMP WHERE BILL_BRANCH LIKE @BILL_BRANCH 
-	SET @SUBMIT_FLAG=1
-	
+        COMMIT TRAN;
+        SET @SUBMIT_FLAG = 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = -1;
+        RETURN;
+    END CATCH
 END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]
-
-@BILL_NUMBER	decimal(18, 0)	,		
-@SUBMIT_FLAG INT OUTPUT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_RETURN_FROM_TEMP]
+    @BILL_NUMBER decimal(18, 0),
+    @SUBMIT_FLAG INT OUTPUT
 AS
 BEGIN
-SET @SUBMIT_FLAG=0
+    SET NOCOUNT ON;
+    SET @SUBMIT_FLAG = 0;
 
+    BEGIN TRY
+        BEGIN TRAN;
 
+        -- حذف تفاصيل الفاتورة من جدول التفاصيل (اختياري: إذا كان ذلك فعلاً مطلوبًا!)
+        DELETE FROM T_SALES_DETAILS WHERE BILL_NUMBER = @BILL_NUMBER;
 
-DELETE FROM T_SALES_DETAILS WHERE  BILL_NUMBER=@BILL_NUMBER 
-INSERT INTO [dbo].[T_SALES_DETAILS_RETURN]
-           ([BILL_BRANCH]
-		   ,[BILL_NUMBER]
-           ,[BILL_ORDER]
-           ,[BILL_DATE]
-           ,[BILL_TIME]
-           ,[ITEM_CODE]
-           ,[QTY]
-           ,[COST]
-           ,[SELL]
-           ,[WORK_CODE]
-           ,[USER_CODE])
-SELECT BILL_BRANCH
-		,[BILL_NUMBER]
-      ,[BILL_ORDER]
-      ,[BILL_DATE]
-      ,[BILL_TIME]
-      ,[ITEM_CODE]
-      ,[QTY]
-      ,[COST]
-      ,[SELL]
-      ,[WORK_CODE]
-      ,[USER_CODE]
-  FROM [dbo].[T_SALES_TEMP] WHERE BILL_NUMBER=@BILL_NUMBER ORDER BY SEQ,T_ID ASC
-  
+        -- نقل تفاصيل المرتجعات من المؤقت إلى النهائي
+        INSERT INTO [dbo].[T_SALES_DETAILS_RETURN]
+            ([BILL_BRANCH], [BILL_NUMBER], [BILL_ORDER], [BILL_DATE], [BILL_TIME],
+             [ITEM_CODE], [QTY], [COST], [SELL], [WORK_CODE], [USER_CODE])
+        SELECT
+            BILL_BRANCH, BILL_NUMBER, BILL_ORDER, BILL_DATE, BILL_TIME,
+            ITEM_CODE, QTY, COST, SELL, WORK_CODE, USER_CODE
+        FROM [dbo].[T_SALES_TEMP]
+        WHERE BILL_NUMBER = @BILL_NUMBER
+        ORDER BY SEQ, T_ID ASC;
 
-  DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
-	SET @SUBMIT_FLAG=1
-	
+        -- حذف التفاصيل المؤقتة
+        DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER = @BILL_NUMBER;
+
+        COMMIT TRAN;
+        SET @SUBMIT_FLAG = 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = -1;
+        RETURN;
+    END CATCH
 END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]
-
-@BILL_NUMBER	decimal(18, 0)	,		
-@SUBMIT_FLAG INT OUTPUT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_TEMP_FROM_DETAILS]
+    @BILL_NUMBER decimal(18, 0),
+    @SUBMIT_FLAG INT OUTPUT
 AS
-declare
-@CC_COUNT AS INT
 BEGIN
-SET @SUBMIT_FLAG=0
+    SET NOCOUNT ON;
+    SET @SUBMIT_FLAG = 0;
 
-SELECT @CC_COUNT=COUNT(ITEM_CODE) FROM T_SALES_DETAILS WHERE BILL_NUMBER=@BILL_NUMBER
-IF @CC_COUNT<>0
-BEGIN
+    DECLARE @CC_COUNT INT;
 
+    BEGIN TRY
+        BEGIN TRAN;
 
-DELETE FROM T_SALES_TEMP WHERE  BILL_NUMBER=@BILL_NUMBER 
-INSERT INTO [dbo].[T_SALES_TEMP]
-           ([BILL_BRANCH]
-		   ,[BILL_NUMBER]
-           ,[BILL_ORDER]
-           ,[BILL_DATE]
-           ,[BILL_TIME]
-           ,[ITEM_CODE]
-           ,[QTY]
-           ,[COST]
-           ,[SELL]
-           ,[WORK_CODE]
-           ,[USER_CODE])
-SELECT BILL_BRANCH
-		,[BILL_NUMBER]
-      ,[BILL_ORDER]
-      ,[BILL_DATE]
-      ,[BILL_TIME]
-      ,[ITEM_CODE]
-      ,[QTY]
-      ,[COST]
-      ,[SELL]
-      ,[WORK_CODE]
-      ,[USER_CODE]
-  FROM [dbo].[T_SALES_DETAILS] WHERE BILL_NUMBER=@BILL_NUMBER ORDER BY T_ID ASC
-  --DELETE FROM T_SALES_DETAILS WHERE  BILL_NUMBER=@BILL_NUMBER 
-  UPDATE T_SALES SET WORK_CODE=2 WHERE  BILL_NUMBER=@BILL_NUMBER 
-update T_SALES_TEMP set IS_PRINT=1 where BILL_NUMBER=@BILL_NUMBER 
+        SELECT @CC_COUNT = COUNT(ITEM_CODE) FROM T_SALES_DETAILS WHERE BILL_NUMBER = @BILL_NUMBER;
+
+        IF @CC_COUNT <> 0
+        BEGIN
+            DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER = @BILL_NUMBER;
+
+            INSERT INTO [dbo].[T_SALES_TEMP]
+                ([BILL_BRANCH], [BILL_NUMBER], [BILL_ORDER], [BILL_DATE], [BILL_TIME],
+                 [ITEM_CODE], [QTY], [COST], [SELL], [WORK_CODE], [USER_CODE])
+            SELECT
+                BILL_BRANCH, BILL_NUMBER, BILL_ORDER, BILL_DATE, BILL_TIME,
+                ITEM_CODE, QTY, COST, SELL, WORK_CODE, USER_CODE
+            FROM [dbo].[T_SALES_DETAILS]
+            WHERE BILL_NUMBER = @BILL_NUMBER
+            ORDER BY T_ID ASC;
+
+            -- تحديث حالة الفاتورة
+            UPDATE T_SALES SET WORK_CODE = 2 WHERE BILL_NUMBER = @BILL_NUMBER;
+
+            -- ضبط حالة الطباعة في المؤقت
+            UPDATE T_SALES_TEMP SET IS_PRINT = 1 WHERE BILL_NUMBER = @BILL_NUMBER;
+        END
+        ELSE
+        BEGIN
+            -- حتى لو لم توجد تفاصيل، عيّن كل تفاصيل المؤقت كـ مطبوع (تحمي لو دخلت سابقًا)
+            UPDATE T_SALES_TEMP SET IS_PRINT = 1 WHERE BILL_NUMBER = @BILL_NUMBER;
+        END
+
+        COMMIT TRAN;
+        SET @SUBMIT_FLAG = 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = -1;
+    END CATCH
 END
-  update T_SALES_TEMP set IS_PRINT=1 where BILL_NUMBER=@BILL_NUMBER 
-
-	SET @SUBMIT_FLAG=1
-	
-END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]
-
-@BILL_NUMBER	decimal(18, 0)	,		
-@SUBMIT_FLAG INT OUTPUT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_INSERT_T_SALES_TEMP_FROM_RETURN]
+    @BILL_NUMBER decimal(18, 0),
+    @SUBMIT_FLAG INT OUTPUT
 AS
-declare
-@CC_COUNT AS INT
 BEGIN
-SET @SUBMIT_FLAG=0
+    SET NOCOUNT ON;
+    SET @SUBMIT_FLAG = 0;
 
-SELECT @CC_COUNT=COUNT(ITEM_CODE) FROM T_SALES_DETAILS WHERE BILL_NUMBER=@BILL_NUMBER
-IF @CC_COUNT<>0
-BEGIN
+    DECLARE @CC_COUNT INT;
 
+    BEGIN TRY
+        BEGIN TRAN;
 
-DELETE FROM T_SALES_TEMP WHERE  BILL_NUMBER=@BILL_NUMBER 
-INSERT INTO [dbo].[T_SALES_TEMP]
-           ([BILL_BRANCH]
-		   ,[BILL_NUMBER]
-           ,[BILL_ORDER]
-           ,[BILL_DATE]
-           ,[BILL_TIME]
-           ,[ITEM_CODE]
-           ,[QTY]
-           ,[COST]
-           ,[SELL]
-           ,[WORK_CODE]
-           ,[USER_CODE])
-SELECT BILL_BRANCH
-		,[BILL_NUMBER]
-      ,[BILL_ORDER]
-      ,[BILL_DATE]
-      ,[BILL_TIME]
-      ,[ITEM_CODE]
-      ,[QTY]
-      ,[COST]
-      ,[SELL]
-      ,[WORK_CODE]
-      ,[USER_CODE]
-  FROM [dbo].[T_SALES_DETAILS_RETURN] WHERE BILL_NUMBER=@BILL_NUMBER ORDER BY T_ID ASC
-  --DELETE FROM T_SALES_DETAILS WHERE  BILL_NUMBER=@BILL_NUMBER 
-  UPDATE T_SALES SET WORK_CODE=20 WHERE  BILL_NUMBER=@BILL_NUMBER 
-update T_SALES_TEMP set IS_PRINT=1 where BILL_NUMBER=@BILL_NUMBER 
+        SELECT @CC_COUNT = COUNT(ITEM_CODE) FROM T_SALES_DETAILS WHERE BILL_NUMBER = @BILL_NUMBER;
+
+        IF @CC_COUNT <> 0
+        BEGIN
+            DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER = @BILL_NUMBER;
+
+            INSERT INTO [dbo].[T_SALES_TEMP]
+                ([BILL_BRANCH], [BILL_NUMBER], [BILL_ORDER], [BILL_DATE], [BILL_TIME],
+                 [ITEM_CODE], [QTY], [COST], [SELL], [WORK_CODE], [USER_CODE])
+            SELECT
+                BILL_BRANCH, BILL_NUMBER, BILL_ORDER, BILL_DATE, BILL_TIME,
+                ITEM_CODE, QTY, COST, SELL, WORK_CODE, USER_CODE
+            FROM [dbo].[T_SALES_DETAILS_RETURN]
+            WHERE BILL_NUMBER = @BILL_NUMBER
+            ORDER BY T_ID ASC;
+
+            -- تحديث حالة الفاتورة للمرتجعات
+            UPDATE T_SALES SET WORK_CODE = 20 WHERE BILL_NUMBER = @BILL_NUMBER;
+
+            -- تعيين الطلبات كـ مطبوعة
+            UPDATE T_SALES_TEMP SET IS_PRINT = 1 WHERE BILL_NUMBER = @BILL_NUMBER;
+        END
+        ELSE
+        BEGIN
+            -- حتى لو لم توجد تفاصيل، عيّن كل تفاصيل المؤقت كـ مطبوع (تحمي لو دخلت سابقًا)
+            UPDATE T_SALES_TEMP SET IS_PRINT = 1 WHERE BILL_NUMBER = @BILL_NUMBER;
+        END
+
+        COMMIT TRAN;
+        SET @SUBMIT_FLAG = 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = -1;
+    END CATCH
 END
-  update T_SALES_TEMP set IS_PRINT=1 where BILL_NUMBER=@BILL_NUMBER 
-
-	SET @SUBMIT_FLAG=1
-	
-END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_ITEM_STORE_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_TRANSFARE_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_TRANSFARE_ITEM_STORE_QTY]
-@DATE_JOB	DATE	
-
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_TRANSFARE_ITEM_STORE_QTY]
+    @DATE_JOB DATE
 AS
-declare
-@DATE_OLD DATE,
-@CC_COUNT INT
-
-
-
-BEGIN TRAN
 BEGIN
+    SET NOCOUNT ON;
 
- SELECT  @CC_COUNT=COUNT(T_ID) FROM T_ITEM_STORE  WHERE DATE_JOB BETWEEN @DATE_JOB AND @DATE_JOB
-  IF @CC_COUNT=0
-  BEGIN
+    DECLARE @DATE_OLD DATE, @CC_COUNT INT;
 
- SELECT  @DATE_OLD=MAX(ISNULL(DATE_JOB,GETDATE())) FROM T_ITEM_STORE 
+    BEGIN TRY
+        BEGIN TRAN;
 
- 
-INSERT INTO [dbo].[T_ITEM_STORE]
-           ([DATE_JOB]
-           ,[ITEM_CODE]
-           ,[QTY_IN]
-           ,[QTY_OUT]
-           ,[QTY_WER])
-     SELECT
-	  @DATE_JOB
-      ,[ITEM_CODE]
-      ,[QTY_REMAIN]
-      ,0
-	  ,[QTY_WER]
-  FROM [dbo].[T_ITEM_STORE] WHERE DATE_JOB=@DATE_OLD
+        -- التأكد هل تم الترحيل بالفعل
+        SELECT @CC_COUNT = COUNT(T_ID)
+        FROM T_ITEM_STORE
+        WHERE DATE_JOB = @DATE_JOB;
 
+        IF @CC_COUNT = 0
+        BEGIN
+            SELECT @DATE_OLD = MAX(DATE_JOB)
+            FROM T_ITEM_STORE
+            WHERE DATE_JOB < @DATE_JOB; -- اجلب آخر تاريخ قبل اليوم الحالي فقط
 
-  END
+            IF @DATE_OLD IS NOT NULL
+            BEGIN
+                INSERT INTO [dbo].[T_ITEM_STORE]
+                    ([DATE_JOB], [ITEM_CODE], [QTY_IN], [QTY_OUT], [QTY_WER])
+                SELECT
+                    @DATE_JOB,
+                    ITEM_CODE,
+                    QTY_REMAIN,  -- الرصيد المتبقي يصبح هو الداخل لليوم الجديد
+                    0,
+                    QTY_WER
+                FROM [dbo].[T_ITEM_STORE]
+                WHERE DATE_JOB = @DATE_OLD;
+            END
+            -- else: لا يوجد ترحيل سابق، لا يتم ترحيل أي شيء.
+        END
 
-
-
-
-
-
-
-
-END	--END OF PROGRAM
-
-commit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        -- يمكن إضافة سجل أو رسالة خطأ هنا عند الحاجة
+    END CATCH
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_TRANSFARE_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8286,7 +9425,7 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ID_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ID_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8325,111 +9464,89 @@ UPDATE caller
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-CREATE PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY]
- @DATE_JOB DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY]
+    @DATE_JOB DATE
 AS
 BEGIN
     SET NOCOUNT ON;
-    
-    --DECLARE @DATE_JOB DATE;
-    --SELECT @DATE_JOB = D_DATE FROM T_WORK_JOB WHERE T_ID = 1;
 
-    -- Updating QTY_OUT for TYPE_CODE = 5
-    UPDATE T_ITEM_STORE
-    SET QTY_OUT = ISNULL((
-                    SELECT SUM(QTY * QTY_PARENT)
-                    FROM V_SALES_DETAILS
-                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY * QTY_PARENT)
-                    FROM V_SALES_TEMP
-                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0)+
-                ISNULL((
-                    SELECT SUM(QTY * QTY_PARENT)
-                    FROM V_SALES_TEMP_APP
-                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                       
-                ), 0)
-    WHERE EXISTS (
-        SELECT 1
-        FROM T_ITEMS
-        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE = 5 AND DATE_JOB = @DATE_JOB
-    )
-    AND DATE_JOB = @DATE_JOB;
+    -- تحديث الأصناف TYPE_CODE = 5 (أصناف رئيسية/مجمعات)
+    UPDATE S
+    SET S.QTY_OUT = 
+        ISNULL((
+            SELECT SUM(QTY * QTY_PARENT)
+            FROM V_SALES_DETAILS
+            WHERE MAIN_ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB
+        ), 0)
+        + ISNULL((
+            SELECT SUM(QTY * QTY_PARENT)
+            FROM V_SALES_TEMP
+            WHERE MAIN_ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB
+        ), 0)
+        + ISNULL((
+            SELECT SUM(QTY * QTY_PARENT)
+            FROM V_SALES_TEMP_APP
+            WHERE MAIN_ITEM_CODE = S.ITEM_CODE
+        ), 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    WHERE I.TYPE_CODE = 5 AND S.DATE_JOB = @DATE_JOB;
 
-    -- Updating QTY_OUT for TYPE_CODE = 7
-    UPDATE T_ITEM_STORE
-    SET QTY_OUT = ISNULL((
-                    SELECT SUM(QTY_SALES)
-                    FROM V_SALES_ITEM_RECIPE
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND DATE_JOB = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY_SALES_TEMP)
-                    FROM V_SALES_ITEM_RECIPE_TEMP
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND DATE_JOB = @DATE_JOB
-                ), 0)+
-                ISNULL((
-                    SELECT SUM(QTY_SALES_TEMP)
-                    FROM V_SALES_ITEM_RECIPE_TEMP_APP
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND DATE_JOB = @DATE_JOB
-                ), 0)
-    WHERE EXISTS (
-        SELECT 1
-        FROM T_ITEMS
-        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE = 7 AND DATE_JOB = @DATE_JOB
-    )
-     AND DATE_JOB = @DATE_JOB;
+    -- تحديث الأصناف TYPE_CODE = 7 (أصناف مصنعة/وصفات)
+    UPDATE S
+    SET S.QTY_OUT = 
+        ISNULL((
+            SELECT SUM(QTY_SALES)
+            FROM V_SALES_ITEM_RECIPE
+            WHERE ITEM_CODE = S.ITEM_CODE AND DATE_JOB = @DATE_JOB
+        ), 0)
+        + ISNULL((
+            SELECT SUM(QTY_SALES_TEMP)
+            FROM V_SALES_ITEM_RECIPE_TEMP
+            WHERE ITEM_CODE = S.ITEM_CODE AND DATE_JOB = @DATE_JOB
+        ), 0)
+        + ISNULL((
+            SELECT SUM(QTY_SALES_TEMP)
+            FROM V_SALES_ITEM_RECIPE_TEMP_APP
+            WHERE ITEM_CODE = S.ITEM_CODE AND DATE_JOB = @DATE_JOB
+        ), 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    WHERE I.TYPE_CODE = 7 AND S.DATE_JOB = @DATE_JOB;
 
-    -- Updating QTY_OUT for all other TYPE_CODE
-    UPDATE T_ITEM_STORE
-    SET QTY_OUT = ISNULL((
-                    SELECT SUM(QTY)
-                    FROM T_SALES_DETAILS
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY)
-                    FROM T_SALES_TEMP
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0)+
-                ISNULL((
-                    SELECT SUM(QTY)
-                    FROM T_SALES_TEMP_APP_QTY
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      
-                ), 0)
-    WHERE EXISTS (
-        SELECT 1
-        FROM T_ITEMS
-        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE NOT IN (5, 7) AND DATE_JOB = @DATE_JOB
-    )
-    AND DATE_JOB = @DATE_JOB;
-
- 
+    -- تحديث باقي الأصناف (الأصناف العادية)
+    UPDATE S
+    SET S.QTY_OUT =
+        ISNULL((
+            SELECT SUM(QTY)
+            FROM T_SALES_DETAILS
+            WHERE ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB
+        ), 0)
+        + ISNULL((
+            SELECT SUM(QTY)
+            FROM T_SALES_TEMP
+            WHERE ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB
+        ), 0)
+        + ISNULL((
+            SELECT SUM(QTY)
+            FROM T_SALES_TEMP_APP_QTY
+            WHERE ITEM_CODE = S.ITEM_CODE
+        ), 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    WHERE I.TYPE_CODE NOT IN (5, 7) AND S.DATE_JOB = @DATE_JOB;
 END
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8444,101 +9561,47 @@ BEGIN
     DECLARE @DATE_JOB DATE;
     SELECT @DATE_JOB = D_DATE FROM T_WORK_JOB WHERE T_ID = 1;
 
-    -- Updating QTY_OUT for TYPE_CODE = 5
-    UPDATE T_ITEM_STORE
-    SET QTY_OUT = ISNULL((
-                    SELECT SUM(QTY * QTY_PARENT)
-                    FROM V_SALES_DETAILS
-                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY * QTY_PARENT)
-                    FROM V_SALES_TEMP
-                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0)+
-                ISNULL((
-                    SELECT SUM(QTY * QTY_PARENT)
-                    FROM V_SALES_TEMP_APP
-                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                     
-                ), 0)
-    WHERE EXISTS (
-        SELECT 1
-        FROM T_ITEMS
-        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE = 5 AND DATE_JOB = @DATE_JOB
-    )
-    AND DATE_JOB BETWEEN @DATE_JOB AND @DATE_JOB;
+    -- تحديث QTY_OUT للأصناف من النوع 5 (رئيسي/مجمع)
+    UPDATE S
+    SET S.QTY_OUT = 
+        ISNULL((SELECT SUM(QTY * QTY_PARENT) FROM V_SALES_DETAILS WHERE MAIN_ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY * QTY_PARENT) FROM V_SALES_TEMP WHERE MAIN_ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY * QTY_PARENT) FROM V_SALES_TEMP_APP WHERE MAIN_ITEM_CODE = S.ITEM_CODE), 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    WHERE I.TYPE_CODE = 5 AND S.DATE_JOB = @DATE_JOB;
 
-    -- Updating QTY_OUT for TYPE_CODE = 7
-    UPDATE T_ITEM_STORE
-    SET QTY_OUT = ISNULL((
-                    SELECT SUM(QTY_SALES)
-                    FROM V_SALES_ITEM_RECIPE
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND DATE_JOB = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY_SALES_TEMP)
-                    FROM V_SALES_ITEM_RECIPE_TEMP
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND DATE_JOB = @DATE_JOB
-                ), 0)+
-                ISNULL((
-                    SELECT SUM(QTY_SALES_TEMP)
-                    FROM V_SALES_ITEM_RECIPE_TEMP_APP
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND DATE_JOB = @DATE_JOB
-                ), 0)
-    WHERE EXISTS (
-        SELECT 1
-        FROM T_ITEMS
-        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE = 7 AND DATE_JOB = @DATE_JOB
-    )
-    AND DATE_JOB = @DATE_JOB;
+    -- تحديث QTY_OUT للأصناف من النوع 7 (وصفات/مصنعة)
+    UPDATE S
+    SET S.QTY_OUT = 
+        ISNULL((SELECT SUM(QTY_SALES) FROM V_SALES_ITEM_RECIPE WHERE ITEM_CODE = S.ITEM_CODE AND DATE_JOB = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY_SALES_TEMP) FROM V_SALES_ITEM_RECIPE_TEMP WHERE ITEM_CODE = S.ITEM_CODE AND DATE_JOB = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY_SALES_TEMP) FROM V_SALES_ITEM_RECIPE_TEMP_APP WHERE ITEM_CODE = S.ITEM_CODE AND DATE_JOB = @DATE_JOB), 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    WHERE I.TYPE_CODE = 7 AND S.DATE_JOB = @DATE_JOB;
 
-    -- Updating QTY_OUT for all other TYPE_CODE
-    UPDATE T_ITEM_STORE
-    SET QTY_OUT = ISNULL((
-                    SELECT SUM(QTY)
-                    FROM T_SALES_DETAILS
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY)
-                    FROM T_SALES_TEMP
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0)+
-                ISNULL((
-                    SELECT SUM(QTY)
-                    FROM T_SALES_TEMP_APP_QTY
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                       
-                ), 0)
-    WHERE EXISTS (
-        SELECT 1
-        FROM T_ITEMS
-        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE NOT IN (5, 7) AND DATE_JOB = @DATE_JOB
-    )
-    AND DATE_JOB BETWEEN @DATE_JOB AND @DATE_JOB;
-
- 
+    -- تحديث QTY_OUT لباقي الأصناف
+    UPDATE S
+    SET S.QTY_OUT =
+        ISNULL((SELECT SUM(QTY) FROM T_SALES_DETAILS WHERE ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY) FROM T_SALES_TEMP WHERE ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY) FROM T_SALES_TEMP_APP_QTY WHERE ITEM_CODE = S.ITEM_CODE), 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    WHERE I.TYPE_CODE NOT IN (5, 7) AND S.DATE_JOB = @DATE_JOB;
 END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-CREATE PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_APP]
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -8546,94 +9609,40 @@ BEGIN
     DECLARE @DATE_JOB DATE;
     SELECT @DATE_JOB = D_DATE FROM T_WORK_JOB WHERE T_ID = 1;
 
-    -- Updating QTY_OUT for TYPE_CODE = 5
-    UPDATE T_ITEM_STORE
-    SET QTY_OUT = ISNULL((
-                    SELECT SUM(QTY * QTY_PARENT)
-                    FROM V_SALES_DETAILS
-                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY * QTY_PARENT)
-                    FROM V_SALES_TEMP
-                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0)+
-                ISNULL((
-                    SELECT SUM(QTY * QTY_PARENT)
-                    FROM V_SALES_TEMP_APP
-                    WHERE MAIN_ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      
-                ), 0)
-    WHERE EXISTS (
-        SELECT 1
-        FROM T_ITEMS
-        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE = 5 AND DATE_JOB = @DATE_JOB
-    )
-    AND DATE_JOB BETWEEN @DATE_JOB AND @DATE_JOB;
+    -- تحديث الكمية الخارجة للأصناف TYPE_CODE = 5
+    UPDATE S
+    SET S.QTY_OUT =
+        ISNULL((SELECT SUM(QTY * QTY_PARENT) FROM V_SALES_DETAILS WHERE MAIN_ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY * QTY_PARENT) FROM V_SALES_TEMP WHERE MAIN_ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY * QTY_PARENT) FROM V_SALES_TEMP_APP WHERE MAIN_ITEM_CODE = S.ITEM_CODE), 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    WHERE I.TYPE_CODE = 5 AND S.DATE_JOB = @DATE_JOB;
 
-    -- Updating QTY_OUT for TYPE_CODE = 7
-    UPDATE T_ITEM_STORE
-    SET QTY_OUT = ISNULL((
-                    SELECT SUM(QTY_SALES)
-                    FROM V_SALES_ITEM_RECIPE
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND DATE_JOB = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY_SALES_TEMP)
-                    FROM V_SALES_ITEM_RECIPE_TEMP
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND DATE_JOB = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY_SALES_TEMP)
-                    FROM V_SALES_ITEM_RECIPE_TEMP_APP
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND DATE_JOB = @DATE_JOB
-                ), 0)
-    WHERE EXISTS (
-        SELECT 1
-        FROM T_ITEMS
-        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE = 7 AND DATE_JOB = @DATE_JOB
-    )
-    AND DATE_JOB = @DATE_JOB;
+    -- تحديث الكمية الخارجة للأصناف TYPE_CODE = 7
+    UPDATE S
+    SET S.QTY_OUT =
+        ISNULL((SELECT SUM(QTY_SALES) FROM V_SALES_ITEM_RECIPE WHERE ITEM_CODE = S.ITEM_CODE AND DATE_JOB = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY_SALES_TEMP) FROM V_SALES_ITEM_RECIPE_TEMP WHERE ITEM_CODE = S.ITEM_CODE AND DATE_JOB = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY_SALES_TEMP) FROM V_SALES_ITEM_RECIPE_TEMP_APP WHERE ITEM_CODE = S.ITEM_CODE AND DATE_JOB = @DATE_JOB), 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    WHERE I.TYPE_CODE = 7 AND S.DATE_JOB = @DATE_JOB;
 
-    -- Updating QTY_OUT for all other TYPE_CODE
-    UPDATE T_ITEM_STORE
-    SET QTY_OUT = ISNULL((
-                    SELECT SUM(QTY)
-                    FROM T_SALES_DETAILS
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0) +
-                ISNULL((
-                    SELECT SUM(QTY)
-                    FROM T_SALES_TEMP
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      AND BILL_DATE = @DATE_JOB
-                ), 0)+
-                ISNULL((
-                    SELECT SUM(QTY)
-                    FROM T_SALES_TEMP_APP_QTY
-                    WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE 
-                      
-                ), 0)
-    WHERE EXISTS (
-        SELECT 1
-        FROM T_ITEMS
-        WHERE ITEM_CODE = T_ITEM_STORE.ITEM_CODE AND TYPE_CODE NOT IN (5, 7) AND DATE_JOB = @DATE_JOB
-    )
-    AND DATE_JOB BETWEEN @DATE_JOB AND @DATE_JOB;
-
- 
+    -- تحديث الكمية الخارجة لباقي الأصناف
+    UPDATE S
+    SET S.QTY_OUT =
+        ISNULL((SELECT SUM(QTY) FROM T_SALES_DETAILS WHERE ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY) FROM T_SALES_TEMP WHERE ITEM_CODE = S.ITEM_CODE AND BILL_DATE = @DATE_JOB), 0)
+      + ISNULL((SELECT SUM(QTY) FROM T_SALES_TEMP_APP_QTY WHERE ITEM_CODE = S.ITEM_CODE), 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    WHERE I.TYPE_CODE NOT IN (5, 7) AND S.DATE_JOB = @DATE_JOB;
 END
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_ANOTHER_old]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -8765,346 +9774,304 @@ commit
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]
-@DATE_JOB	DATE	
-
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_UPDATE_ITEM_STORE_QTY_RECIPE]
+    @DATE_JOB DATE
 AS
-
-
-
-DECLARE BOX_CURSOR CURSOR FOR SELECT  T_ID FROM T_ITEM_STORE WHERE DATE_JOB BETWEEN @DATE_JOB AND @DATE_JOB   ;
-
-DECLARE
-
-@T_ID_CURSOR INT,
-@ITEM_CODE INT,
-@MAIN_ITEM_CODE INT,
-@TYPE_CODE INT,
-@OUT_QTY_DETAILS	float,
-@OUT_QTY_TEMP	float,
-@OUT_QTY_TEMP_APP	float,
-@OUT_QTY	float
-BEGIN TRAN
 BEGIN
+    SET NOCOUNT ON;
 
-OPEN BOX_CURSOR
-
-FETCH NEXT FROM BOX_CURSOR INTO @T_ID_CURSOR
-WHILE @@FETCH_STATUS = 0
-BEGIN
-SET @OUT_QTY=0
-SELECT @ITEM_CODE=ITEM_CODE FROM T_ITEM_STORE WHERE T_ID=@T_ID_CURSOR
-SELECT @TYPE_CODE=TYPE_CODE FROM T_ITEMS WHERE ITEM_CODE=@ITEM_CODE
---IF @TYPE_CODE=5
---BEGIN
-
---SELECT @OUT_QTY_DETAILS=ISNULL(SUM(QTY*QTY_PARENT),0) FROM V_SALES_DETAILS WHERE MAIN_ITEM_CODE=@ITEM_CODE AND BILL_DATE BETWEEN @DATE_JOB AND @DATE_JOB
---SELECT @OUT_QTY_TEMP=ISNULL(SUM(QTY*QTY_PARENT),0) FROM V_SALES_TEMP WHERE MAIN_ITEM_CODE=@ITEM_CODE AND BILL_DATE BETWEEN @DATE_JOB AND @DATE_JOB
---SET @OUT_QTY=@OUT_QTY_DETAILS+@OUT_QTY_TEMP
---UPDATE T_ITEM_STORE SET QTY_OUT=@OUT_QTY WHERE T_ID=@T_ID_CURSOR
-
---END
-
-
---ELSE
---BEGIN
-
-SELECT @OUT_QTY_DETAILS=ISNULL(SUM(QTY_SALES),0) FROM V_SALES_ITEM_RECIPE WHERE ITEM_CODE=@ITEM_CODE AND DATE_JOB = @DATE_JOB  
-SELECT @OUT_QTY_TEMP=ISNULL(SUM(QTY_SALES_TEMP),0) FROM V_SALES_ITEM_RECIPE_TEMP WHERE ITEM_CODE=@ITEM_CODE AND DATE_JOB = @DATE_JOB  
-SELECT @OUT_QTY_TEMP_APP=ISNULL(SUM(QTY_SALES_TEMP),0) FROM V_SALES_ITEM_RECIPE_TEMP_APP WHERE ITEM_CODE=@ITEM_CODE AND DATE_JOB = @DATE_JOB  
-
-SET @OUT_QTY=@OUT_QTY_DETAILS+@OUT_QTY_TEMP+@OUT_QTY_TEMP_APP
-UPDATE T_ITEM_STORE SET QTY_OUT=@OUT_QTY WHERE T_ID=@T_ID_CURSOR
-
---END
-
-
-FETCH NEXT FROM BOX_CURSOR INTO @T_ID_CURSOR
+    -- تحديث الكمية الخارجة لكل صنف وصفة (TYPE_CODE = 7 غالبًا)
+    UPDATE S
+    SET S.QTY_OUT = 
+        ISNULL(VD.QTY_SALES, 0)
+      + ISNULL(VT.QTY_SALES_TEMP, 0)
+      + ISNULL(VTA.QTY_SALES_TEMP_APP, 0)
+    FROM T_ITEM_STORE S
+    INNER JOIN T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN (
+        SELECT ITEM_CODE, SUM(QTY_SALES) AS QTY_SALES
+        FROM V_SALES_ITEM_RECIPE
+        WHERE DATE_JOB = @DATE_JOB
+        GROUP BY ITEM_CODE
+    ) VD ON VD.ITEM_CODE = S.ITEM_CODE
+    LEFT JOIN (
+        SELECT ITEM_CODE, SUM(QTY_SALES_TEMP) AS QTY_SALES_TEMP
+        FROM V_SALES_ITEM_RECIPE_TEMP
+        WHERE DATE_JOB = @DATE_JOB
+        GROUP BY ITEM_CODE
+    ) VT ON VT.ITEM_CODE = S.ITEM_CODE
+    LEFT JOIN (
+        SELECT ITEM_CODE, SUM(QTY_SALES_TEMP) AS QTY_SALES_TEMP_APP
+        FROM V_SALES_ITEM_RECIPE_TEMP_APP
+        WHERE DATE_JOB = @DATE_JOB
+        GROUP BY ITEM_CODE
+    ) VTA ON VTA.ITEM_CODE = S.ITEM_CODE
+    WHERE S.DATE_JOB = @DATE_JOB
+     -- AND I.TYPE_CODE = 7; -- أو احذف إذا تريد تحديث كل الوصفات بغض النظر عن TYPE_CODE
 END
-
-CLOSE BOX_CURSOR
-DEALLOCATE BOX_CURSOR
-
-
-END	--END OF PROGRAM
-
-commit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_PHONE]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-create PROCEDURE [dbo].[P_UPDATE_PHONE]
-
-@phone	NVARCHAR(MAX),
-@TOKEN	NVARCHAR(MAX),
-@SUBMIT_FLAG INT OUTPUT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_UPDATE_PHONE]
+    @phone NVARCHAR(MAX),
+    @TOKEN NVARCHAR(MAX),
+    @SUBMIT_FLAG INT OUTPUT
 AS
-	
 BEGIN
-SET @SUBMIT_FLAG=0
+    SET NOCOUNT ON;
+    SET @SUBMIT_FLAG = 0;
 
-	UPDATE caller
-	SET 
-	status=2
-	WHERE phone=@phone AND status=1 AND TOKEN=@TOKEN
+    BEGIN TRY
+        BEGIN TRAN;
 
+        UPDATE caller
+        SET status = 2
+        WHERE phone = @phone AND status = 1 AND TOKEN = @TOKEN;
 
-	IF @@ERROR <>0
-	BEGIN
-	ROLLBACK
-	RETURN
-	END
-	SET @SUBMIT_FLAG=1
-	END
+        IF @@ROWCOUNT = 0
+        BEGIN
+            -- لم يتم تحديث أي سجل
+            ROLLBACK TRAN;
+            RETURN;
+        END
 
+        COMMIT TRAN;
+        SET @SUBMIT_FLAG = 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = -1;
+        RETURN;
+    END CATCH
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_T_SALES]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_UPDATE_T_SALES]
-
-@BILL_NUMBER	decimal(18, 0)	,	
-@CALL_NO	nvarchar(MAX)	,
-@INVOICE_CODE	int	,
-@CLIENT_NAME	nvarchar(MAX)	,
-@CLIENT_REGION	nvarchar(MAX)	,
-@CLIENT_PHONE	nvarchar(MAX)	,
-@CLIENT_ADDRESS	nvarchar(MAX)	,
-@WORK_CODE	int	,	
-@USER_CODE	int	,
-@DISCOUNT_SELL	float	,
-@SERVICE_SELL	float	,
-@APP_CODE	int	,
-@NOTE	nvarchar(MAX)	,
-@CLIENT_CODE	int	,
-@IVC_CODE	int	,
-@IS_CASH	int	,
-@SUBMIT_FLAG INT OUTPUT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_UPDATE_T_SALES]
+    @BILL_NUMBER      decimal(18, 0),
+    @CALL_NO          nvarchar(MAX),
+    @INVOICE_CODE     int,
+    @CLIENT_NAME      nvarchar(MAX),
+    @CLIENT_REGION    nvarchar(MAX),
+    @CLIENT_PHONE     nvarchar(MAX),
+    @CLIENT_ADDRESS   nvarchar(MAX),
+    @WORK_CODE        int,
+    @USER_CODE        int,
+    @DISCOUNT_SELL    float,
+    @SERVICE_SELL     float,
+    @APP_CODE         int,
+    @NOTE             nvarchar(MAX),
+    @CLIENT_CODE      int,
+    @IVC_CODE         int,
+    @IS_CASH          int,
+    @SUBMIT_FLAG      INT OUTPUT
 AS
-DECLARE
-@TOT_QTY	float	,
-@TOT_COST	float	,
-@TOT_SELL	float	,
-@NET_SALES	float	,
-@APP_PERCENT	float	,
-@NET_NET_SALES	float	,
-@NET_ARBAH	float	
-
 BEGIN
-SET @SUBMIT_FLAG=0
-SELECT @TOT_QTY=ISNULL(SUM( QTY),0)  FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
-SELECT @TOT_COST =ISNULL(SUM( TOTAL_COST),0)  FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
+    SET NOCOUNT ON;
+    SET @SUBMIT_FLAG = 0;
 
-SELECT @TOT_SELL=ISNULL(SUM( TOTAL),0)  FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
-SET @NET_SALES=(@TOT_SELL-@DISCOUNT_SELL)+@SERVICE_SELL
+    DECLARE 
+        @TOT_QTY        float,
+        @TOT_COST       float,
+        @TOT_SELL       float,
+        @NET_SALES      float,
+        @APP_PERCENT    float,
+        @NET_NET_SALES  float,
+        @NET_ARBAH      float;
 
-SELECT @APP_PERCENT=ISNULL( APP_DISCOUNT,0)  FROM T_APP_TYPE WHERE APP_CODE=@APP_CODE
-SET @NET_NET_SALES=@NET_SALES  --((@NET_SALES*@APP_PERCENT)/100)
-SET @NET_ARBAH=@NET_NET_SALES-@TOT_COST
+    BEGIN TRY
+        BEGIN TRAN;
 
-UPDATE [dbo].[T_SALES]
-   SET 
+      
+        SELECT
+            @TOT_QTY    = ISNULL(SUM(QTY), 0),
+            @TOT_COST   = ISNULL(SUM(TOTAL_COST), 0),
+            @TOT_SELL   = ISNULL(SUM(TOTAL), 0)
+        FROM
+            T_SALES_TEMP
+        WHERE
+            BILL_NUMBER = @BILL_NUMBER;
 
-      [CALL_NO] = @CALL_NO
-	    ,[BILL_TIME] = GETDATE()
-      ,[INVOICE_CODE] = @INVOICE_CODE
-      ,[CLIENT_NAME] = @CLIENT_NAME
-      ,[CLIENT_REGION] =@CLIENT_REGION
-      ,[CLIENT_PHONE] = @CLIENT_PHONE
-      ,[CLIENT_ADDRESS] = @CLIENT_ADDRESS
-      ,[WORK_CODE] = @WORK_CODE
-      ,[USER_CODE] = @USER_CODE
-      ,[TOT_QTY] = @TOT_QTY
-      ,[TOT_COST] = @TOT_COST
-      ,[TOT_SELL] = @TOT_SELL
-      ,[DISCOUNT_SELL] = @DISCOUNT_SELL
-      ,[SERVICE_SELL] = @SERVICE_SELL
-      ,[NET_SALES] = @NET_SALES
-      ,[APP_CODE] = @APP_CODE
-      ,[APP_PERCENT] = @APP_PERCENT
-      ,[NET_NET_SALES] = @NET_NET_SALES
-      ,[NET_ARBAH] = @NET_ARBAH
-      ,[NOTE] = @NOTE
-	  ,[CLIENT_CODE] = @CLIENT_CODE
-      ,[IVC_CODE] =@IVC_CODE
-      ,[IS_CASH] = @IS_CASH
- WHERE BILL_NUMBER=@BILL_NUMBER
+        
+        SET @NET_SALES = (@TOT_SELL - @DISCOUNT_SELL) + @SERVICE_SELL;
 
- UPDATE T_SALES_TEMP SET WORK_CODE=@WORK_CODE WHERE BILL_NUMBER=@BILL_NUMBER
+        
+        SELECT @APP_PERCENT = ISNULL(APP_DISCOUNT, 0) 
+        FROM T_APP_TYPE WHERE APP_CODE = @APP_CODE;
 
+       
+        SET @NET_NET_SALES = @NET_SALES;
 
-	SET @SUBMIT_FLAG=1
-	
+      
+        SET @NET_ARBAH = @NET_NET_SALES - @TOT_COST;
+
+        
+        UPDATE [dbo].[T_SALES]
+        SET
+            [CALL_NO]        = @CALL_NO,
+            [BILL_TIME]      = GETDATE(),
+            [INVOICE_CODE]   = @INVOICE_CODE,
+            [CLIENT_NAME]    = @CLIENT_NAME,
+            [CLIENT_REGION]  = @CLIENT_REGION,
+            [CLIENT_PHONE]   = @CLIENT_PHONE,
+            [CLIENT_ADDRESS] = @CLIENT_ADDRESS,
+            [WORK_CODE]      = @WORK_CODE,
+            [USER_CODE]      = @USER_CODE,
+            [TOT_QTY]        = @TOT_QTY,
+            [TOT_COST]       = @TOT_COST,
+            [TOT_SELL]       = @TOT_SELL,
+            [DISCOUNT_SELL]  = @DISCOUNT_SELL,
+            [SERVICE_SELL]   = @SERVICE_SELL,
+            [NET_SALES]      = @NET_SALES,
+            [APP_CODE]       = @APP_CODE,
+            [APP_PERCENT]    = @APP_PERCENT,
+            [NET_NET_SALES]  = @NET_NET_SALES,
+            [NET_ARBAH]      = @NET_ARBAH,
+            [NOTE]           = @NOTE,
+            [CLIENT_CODE]    = @CLIENT_CODE,
+            [IVC_CODE]       = @IVC_CODE,
+            [IS_CASH]        = @IS_CASH
+        WHERE BILL_NUMBER = @BILL_NUMBER;
+
+  
+        UPDATE T_SALES_TEMP 
+        SET WORK_CODE = @WORK_CODE 
+        WHERE BILL_NUMBER = @BILL_NUMBER;
+
+        COMMIT TRAN;
+        SET @SUBMIT_FLAG = 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = -1;
+        RETURN;
+    END CATCH
 END
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES_PRINT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[P_UPDATE_T_SALES_PRINT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[P_UPDATE_T_SALES_PRINT]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[P_UPDATE_T_SALES_PRINT]
-
-@BILL_NUMBER	decimal(18, 0)	,	
-@CALL_NO	nvarchar(MAX)	,
-@INVOICE_CODE	int	,
-@WORK_CODE	int	,	
-@USER_CODE	int	,
-@DISCOUNT_SELL	float	,
-@SERVICE_SELL	float	,
-@APP_CODE	int	,
-@CLIENT_CODE	int	,
-@IVC_CODE	int	,
-@IS_CASH	int	,
-@SUBMIT_FLAG INT OUTPUT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[P_UPDATE_T_SALES_PRINT]
+    @BILL_NUMBER    decimal(18, 0),
+    @CALL_NO        nvarchar(MAX),
+    @INVOICE_CODE   int,
+    @WORK_CODE      int,
+    @USER_CODE      int,
+    @DISCOUNT_SELL  float,
+    @SERVICE_SELL   float,
+    @APP_CODE       int,
+    @CLIENT_CODE    int,
+    @IVC_CODE       int,
+    @IS_CASH        int,
+    @SUBMIT_FLAG    INT OUTPUT
 AS
-DECLARE
-@TOT_QTY	float	,
-@TOT_COST	float	,
-@TOT_SELL	float	,
-@NET_SALES	float	,
-@APP_PERCENT	float	,
-@NET_NET_SALES	float	,
-@NET_ARBAH	float	
-
 BEGIN
-SET @SUBMIT_FLAG=0
-SELECT @TOT_QTY=ISNULL(SUM( QTY),0)  FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
-SELECT @TOT_COST =ISNULL(SUM( TOTAL_COST),0)  FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
+    SET NOCOUNT ON;
+    SET @SUBMIT_FLAG = 0;
 
-SELECT @TOT_SELL=ISNULL(SUM( TOTAL),0)  FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_NUMBER
-SET @NET_SALES=(@TOT_SELL-@DISCOUNT_SELL)+@SERVICE_SELL
+    DECLARE 
+        @TOT_QTY        float,
+        @TOT_COST       float,
+        @TOT_SELL       float,
+        @NET_SALES      float,
+        @APP_PERCENT    float,
+        @NET_NET_SALES  float,
+        @NET_ARBAH      float;
 
-SELECT @APP_PERCENT=ISNULL( APP_DISCOUNT,0)  FROM T_APP_TYPE WHERE APP_CODE=@APP_CODE
-SET @NET_NET_SALES=@NET_SALES  --((@NET_SALES*@APP_PERCENT)/100)
-SET @NET_ARBAH=@NET_NET_SALES-@TOT_COST
+    BEGIN TRY
+        BEGIN TRAN;
 
-UPDATE [dbo].[T_SALES]
-   SET 
+        -- جمع كل القيم في استعلام واحد
+        SELECT
+            @TOT_QTY    = ISNULL(SUM(QTY), 0),
+            @TOT_COST   = ISNULL(SUM(TOTAL_COST), 0),
+            @TOT_SELL   = ISNULL(SUM(TOTAL), 0)
+        FROM
+            T_SALES_TEMP
+        WHERE
+            BILL_NUMBER = @BILL_NUMBER;
 
-      [CALL_NO] = @CALL_NO
-	    ,[BILL_TIME] = GETDATE()
-      ,[INVOICE_CODE] = @INVOICE_CODE
-      ,[WORK_CODE] = @WORK_CODE
-      ,[USER_CODE] = @USER_CODE
-      ,[TOT_QTY] = @TOT_QTY
-      ,[TOT_COST] = @TOT_COST
-      ,[TOT_SELL] = @TOT_SELL
-      ,[DISCOUNT_SELL] = @DISCOUNT_SELL
-      ,[SERVICE_SELL] = @SERVICE_SELL
-      ,[NET_SALES] = @NET_SALES
-      ,[APP_CODE] = @APP_CODE
-      ,[APP_PERCENT] = @APP_PERCENT
-      ,[NET_NET_SALES] = @NET_NET_SALES
-      ,[NET_ARBAH] = @NET_ARBAH
-  	  ,[CLIENT_CODE] = @CLIENT_CODE
-      ,[IVC_CODE] =@IVC_CODE
-      ,[IS_CASH] = @IS_CASH
- WHERE BILL_NUMBER=@BILL_NUMBER
+        -- حساب صافي المبيعات
+        SET @NET_SALES = (@TOT_SELL - @DISCOUNT_SELL) + @SERVICE_SELL;
 
- UPDATE T_SALES_TEMP SET WORK_CODE=@WORK_CODE WHERE BILL_NUMBER=@BILL_NUMBER
+        -- نسبة الخصم الخاصة بالتطبيق (إن وجدت)
+        SELECT @APP_PERCENT = ISNULL(APP_DISCOUNT, 0) 
+        FROM T_APP_TYPE WHERE APP_CODE = @APP_CODE;
 
+        -- بإمكانك تطبيق الخصم لو رغبت (افتح السطر أدناه حسب سياسة النظام)
+        -- SET @NET_NET_SALES = (@NET_SALES * (100.0 - @APP_PERCENT)) / 100.0;
+        SET @NET_NET_SALES = @NET_SALES;
 
-	SET @SUBMIT_FLAG=1
-	
+        SET @NET_ARBAH = @NET_NET_SALES - @TOT_COST;
+
+        -- تحديث بيانات الفاتورة
+        UPDATE [dbo].[T_SALES]
+        SET
+            [CALL_NO]        = @CALL_NO,
+            [BILL_TIME]      = GETDATE(),
+            [INVOICE_CODE]   = @INVOICE_CODE,
+            [WORK_CODE]      = @WORK_CODE,
+            [USER_CODE]      = @USER_CODE,
+            [TOT_QTY]        = @TOT_QTY,
+            [TOT_COST]       = @TOT_COST,
+            [TOT_SELL]       = @TOT_SELL,
+            [DISCOUNT_SELL]  = @DISCOUNT_SELL,
+            [SERVICE_SELL]   = @SERVICE_SELL,
+            [NET_SALES]      = @NET_SALES,
+            [APP_CODE]       = @APP_CODE,
+            [APP_PERCENT]    = @APP_PERCENT,
+            [NET_NET_SALES]  = @NET_NET_SALES,
+            [NET_ARBAH]      = @NET_ARBAH,
+            [CLIENT_CODE]    = @CLIENT_CODE,
+            [IVC_CODE]       = @IVC_CODE,
+            [IS_CASH]        = @IS_CASH
+        WHERE BILL_NUMBER = @BILL_NUMBER;
+
+        -- تحديث الطلب المؤقت
+        UPDATE T_SALES_TEMP
+        SET WORK_CODE = @WORK_CODE
+        WHERE BILL_NUMBER = @BILL_NUMBER;
+
+        COMMIT TRAN;
+        SET @SUBMIT_FLAG = 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+        SET @SUBMIT_FLAG = -1;
+        RETURN;
+    END CATCH
 END
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_CALL_CENTER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_CALL_CENTER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9164,7 +10131,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_DETAILS_INVOICE_LIST]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9230,7 +10197,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9304,7 +10271,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_SALES_INVOICE_LIST_DEBIT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9366,7 +10333,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9424,7 +10391,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DELEVERY_HUB]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9483,7 +10450,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9499,6 +10466,7 @@ EXEC dbo.sp_executesql @statement = N'
 
 
 
+
 CREATE PROCEDURE [dbo].[PA_PRINT_V_SALES_DETAILS]
 
 @BILL_NUMBER	numeric(18, 0)	
@@ -9506,9 +10474,50 @@ CREATE PROCEDURE [dbo].[PA_PRINT_V_SALES_DETAILS]
 AS
 
 BEGIN
-
-SELECT       * FROM            dbo.V_SALES_DETAILS WHERE   BILL_NUMBER=@BILL_NUMBER
-
+--SELECT * FROM [dbo].[V_SALES_DETAILS] WHERE   BILL_NUMBER=@BILL_NUMBER
+SELECT [T_ID]
+      ,[BILL_BRANCH]
+      ,[BILL_NUMBER]
+      ,[BILL_ORDER]
+      ,[BILL_DATE]
+      ,[BILL_TIME]
+      ,[ITEM_CODE]
+      ,[ITEM_NAME]
+      ,[QTY]
+      ,[COST]
+      ,[SELL]
+      ,[TOTAL]
+      ,[TOTAL_COST]
+      ,[ARBAH]
+      ,[WORK_CODE]
+      ,[CATEGORY_CODE]
+      ,[USER_CODE]
+      ,[USER_NAME]
+      ,[MAIN_ITEM_CODE]
+      ,[QTY_PARENT]
+  FROM [dbo].[V_SALES_DETAILS] WHERE   BILL_NUMBER=@BILL_NUMBER
+UNION
+SELECT [T_ID]
+      ,[BILL_BRANCH]
+      ,[BILL_NUMBER]
+      ,[BILL_ORDER]
+      ,[BILL_DATE]
+      ,[BILL_TIME]
+      ,[ITEM_CODE]
+      ,[ITEM_NAME]
+      ,[QTY]
+      ,[COST]
+      ,[SELL]
+      ,[TOTAL]
+      ,[TOTAL_COST]
+      ,[ARBAH]
+      ,[WORK_CODE]
+      ,[CATEGORY_CODE]
+      ,[USER_CODE]
+      ,[USER_NAME]
+      ,[MAIN_ITEM_CODE]
+      ,[QTY_PARENT]
+  FROM [dbo].[V_SALES_TEMP] WHERE   BILL_NUMBER=@BILL_NUMBER
 
 
 
@@ -9540,10 +10549,11 @@ END	--END OF PROGRAM
 
 
 
+
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9601,7 +10611,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_ITEMS_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9657,7 +10667,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9682,7 +10692,7 @@ AS
 
 BEGIN
 
-SELECT       * FROM            dbo.V_SALES_TEMP_PRINTER WHERE   BILL_NUMBER=@BILL_NUMBER AND PRINTER_ID=@PRINTER_ID AND QISM_CODE=@QISM_CODE
+SELECT       * FROM            dbo.V_SALES_TEMP_PRINTER WHERE   BILL_NUMBER=@BILL_NUMBER AND PRINTER_ID=@PRINTER_ID AND (QISM_CODE=@QISM_CODE OR QISM_CODE=-5)
 
 END	--END OF PROGRAM
 
@@ -9713,7 +10723,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9738,7 +10748,7 @@ AS
 
 BEGIN
 
-SELECT       * FROM            dbo.V_SALES_TEMP_PRINTER_DELETE WHERE   BILL_NUMBER=@BILL_NUMBER AND PRINTER_ID=@PRINTER_ID AND QISM_CODE=@QISM_CODE
+SELECT       * FROM            dbo.V_SALES_TEMP_PRINTER_DELETE WHERE   BILL_NUMBER=@BILL_NUMBER AND PRINTER_ID=@PRINTER_ID AND  (QISM_CODE=@QISM_CODE OR QISM_CODE=-5)
 
 
 
@@ -9772,7 +10782,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9832,7 +10842,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_ALL_CH_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9892,7 +10902,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PA_PRINT_V_SALES_TEMP_TABLE_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9952,7 +10962,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_BILL_NEW_SALES_BY_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_BILL_NEW_SALES_BY_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -9960,176 +10970,127 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_BILL_NEW_SALES_BY_TABLE]') AND type in (N'P', N'PC'))
 BEGIN
 EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*  تحسينات رئيسية
+    - رقم الفاتورة من SEQUENCE: NEXT VALUE FOR dbo.SEQ_SALES_BILL (آمن مع التوازي).
+    - رقم الطلب اليومي BILL_ORDER يحسب بقفل UPDLOCK, HOLDLOCK على يوم @DATE_JOB لمنع السباق.
+    - مقارنة التاريخ بطريقة صحيحة: CAST(BILL_DATE AS DATE) = @DATE_JOB.
+    - TRY/CATCH + XACT_ABORT لضمان ROLLBACK في حال الخطأ.
+*/
 CREATE PROCEDURE [dbo].[PF_BILL_NEW_SALES_BY_TABLE]
-@USER_CODE INT,	
-
-
-@TABLE_CODE INT,	
-@BILL_NUMBER INT OUTPUT,
-@BILL_ORDER INT OUTPUT
+    @USER_CODE   INT,
+    @TABLE_CODE  INT,
+    @BILL_NUMBER INT OUTPUT,
+    @BILL_ORDER  INT OUTPUT
 AS
-
-
-
---DECLARE BOX_CURSOR CURSOR FOR SELECT  BILL_NUMBER FROM T_SALES WHERE  USER_CODE=@USER_CODE AND WORK_CODE=0 ;
-
-DECLARE
---@BILL_LOOP INT,
-@DATE_JOB DATE,
-@IS_ON_OFF INT,
-@INVOICE_CODE INT,	
-@COMPANY_TITAL nvarchar(50)
-BEGIN TRAN
 BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
---OPEN BOX_CURSOR
+    BEGIN TRY
+        BEGIN TRAN;
 
---FETCH NEXT FROM BOX_CURSOR INTO @BILL_LOOP
---WHILE @@FETCH_STATUS = 0
---BEGIN
+        DECLARE
+            @DATE_JOB      DATE,
+            @IS_ON_OFF     INT,
+            @INVOICE_CODE  INT           = 2,
+            @COMPANY_TITAL NVARCHAR(50)  = N'''';
 
---delete FROM T_SALES WHERE BILL_NUMBER=@BILL_LOOP
+        -- تاريخ الدوام وحالة التشغيل
+        SELECT @DATE_JOB = D_DATE, @IS_ON_OFF = IS_ON_OFF
+        FROM dbo.T_WORK_JOB
+        WHERE T_ID = 1;
 
---DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_LOOP
+        -- اسم الشركة لفرع الفاتورة
+        SELECT TOP (1) @COMPANY_TITAL = COMPANY_TITAL
+        FROM dbo.T_COMPANY
+        WHERE T_ID = 1;
 
+        -- إن كان النظام متوقفاً لا ننشئ فاتورة (القيم تظل 0)
+        IF (@IS_ON_OFF = 0)
+        BEGIN
+            -- اترك @BILL_NUMBER و @BILL_ORDER كما هي (0)
+            COMMIT TRAN;
+            RETURN;
+        END
 
---FETCH NEXT FROM BOX_CURSOR INTO @BILL_LOOP
+        -- 1) رقم الفاتورة العام من الـ SEQUENCE (ذَرّي وآمن)
+        SET @BILL_NUMBER = NEXT VALUE FOR dbo.SEQ_SALES_BILL;
 
---END
+        -- 2) رقم الطلب اليومي مع قفل على سجلات نفس اليوم لمنع السباق
+        ;WITH L AS
+        (
+            SELECT MAX(BILL_ORDER) AS MaxOrder
+            FROM dbo.T_SALES WITH (UPDLOCK, HOLDLOCK)
+            WHERE CAST(BILL_DATE AS DATE) = @DATE_JOB
+        )
+        SELECT @BILL_ORDER = ISNULL(MaxOrder, 0) + 1 FROM L;
 
---CLOSE BOX_CURSOR
---DEALLOCATE BOX_CURSOR
-SET @INVOICE_CODE=2
-SELECT TOP(1) @DATE_JOB=D_DATE FROM T_WORK_JOB WHERE T_ID=1
-SELECT TOP(1) @COMPANY_TITAL=COMPANY_TITAL FROM T_COMPANY WHERE T_ID=1
-SET @BILL_NUMBER=0
-SET @BILL_ORDER=0
+        -- 3) الإدراج
+        INSERT INTO dbo.T_SALES
+        (
+            BILL_BRANCH,
+            BILL_NUMBER,
+            BILL_ORDER,
+            BILL_DATE,
+            BILL_TIME,
+            TABLE_CODE,
+            CALL_NO,
+            INVOICE_CODE,
+            CLIENT_NAME,
+            CLIENT_REGION,
+            CLIENT_PHONE,
+            CLIENT_ADDRESS,
+            DRIVER_NAME,
+            WORK_CODE,
+            USER_CODE,
+            TOT_QTY,
+            TOT_COST,
+            TOT_SELL,
+            DISCOUNT_SELL,
+            SERVICE_SELL,
+            NET_SALES,
+            APP_CODE,
+            APP_PERCENT,
+            NET_NET_SALES,
+            NET_ARBAH,
+            NOTE,
+            KITCHEN_NOTE
+        )
+        VALUES
+        (
+            @COMPANY_TITAL + CAST(@BILL_NUMBER AS VARCHAR(20)),
+            @BILL_NUMBER,
+            @BILL_ORDER,
+            @DATE_JOB,
+            GETDATE(),
+            @TABLE_CODE,
+            0,
+            @INVOICE_CODE,
+            N'''',
+            N'''',
+            N'''',
+            N'''',
+            N'''',
+            0,
+            @USER_CODE,
+            0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0,
+            N'''',
+            N''''
+        );
 
-SELECT TOP(1) @IS_ON_OFF=IS_ON_OFF FROM T_WORK_JOB WHERE T_ID=1
-IF @IS_ON_OFF=0 GOTO ASASAS
-SELECT @BILL_NUMBER=ISNULL(MAX(BILL_NUMBER),0) + 1 FROM T_SALES
-SELECT @BILL_ORDER= ISNULL(MAX(BILL_ORDER),0) + 1 FROM T_SALES WHERE BILL_DATE = convert(varchar,@DATE_JOB , 111) 
-
-
-INSERT INTO [dbo].[T_SALES]
-           ([BILL_BRANCH]
-           ,[BILL_NUMBER]
-           ,[BILL_ORDER]
-           ,[BILL_DATE]
-           ,[BILL_TIME]
-           ,[TABLE_CODE]
-           ,[CALL_NO]
-           ,[INVOICE_CODE]
-           ,[CLIENT_NAME]
-           ,[CLIENT_REGION]
-           ,[CLIENT_PHONE]
-           ,[CLIENT_ADDRESS]
-           ,[DRIVER_NAME]
-           ,[WORK_CODE]
-           ,[USER_CODE]
-           ,[TOT_QTY]
-           ,[TOT_COST]
-           ,[TOT_SELL]
-           ,[DISCOUNT_SELL]
-           ,[SERVICE_SELL]
-           ,[NET_SALES]
-           ,[APP_CODE]
-           ,[APP_PERCENT]
-           ,[NET_NET_SALES]
-           ,[NET_ARBAH]
-           ,[NOTE]
-           ,[KITCHEN_NOTE])
-     VALUES
-           (@COMPANY_TITAL + CAST(@BILL_NUMBER AS varchar)
-           ,@BILL_NUMBER
-           ,@BILL_ORDER
-           ,@DATE_JOB
-           ,GETDATE()
-           ,@TABLE_CODE
-           ,0
-           ,@INVOICE_CODE
-           ,N''''
-           ,N''''
-           ,N''''
-           ,N''''
-           ,N''''
-           ,0
-           ,@USER_CODE
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,N''''
-           ,N'''')
-
-
-
-
-
-           
-
- ASASAS:
-
-END	--END OF PROGRAM
-
-
-commit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF (XACT_STATE() <> 0) ROLLBACK TRAN;
+        -- اترك المخرجات كما هي (قد تظل 0 عند الفشل)
+        ;THROW;
+    END CATCH
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_CHANGE_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_CHANGE_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10210,7 +11171,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_SAFARY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_SAFARY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10218,152 +11179,120 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_BILL_BY_SAFARY]') AND type in (N'P', N'PC'))
 BEGIN
 EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-
 CREATE PROCEDURE [dbo].[PF_GET_BILL_BY_SAFARY]
-@INVOICE_CODE INT,
-@USER_CODE INT,	
-@BILL_NUMBER INT OUTPUT,
-@BILL_ORDER INT OUTPUT
+    @INVOICE_CODE INT,
+    @USER_CODE    INT,
+    @BILL_NUMBER  INT OUTPUT,
+    @BILL_ORDER   INT OUTPUT
 AS
-DECLARE
-@IS_ON_OFF INT,
-@DATE_JOB DATE 
-BEGIN TRAN
 BEGIN
-SET @BILL_NUMBER=0
-SET @BILL_ORDER=0
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
-SELECT  @IS_ON_OFF=IS_ON_OFF,@DATE_JOB=D_DATE FROM T_WORK_JOB WHERE T_ID=1
-PRINT @IS_ON_OFF
-IF @IS_ON_OFF=0 GOTO ASASAS
+    BEGIN TRY
+        BEGIN TRAN;
 
- 
-DECLARE
---@BILL_LOOP INT,
+        DECLARE
+            @IS_ON_OFF     INT,
+            @DATE_JOB      DATE,
+            @COMPANY_TITAL NVARCHAR(MAX) = N'''';
 
+        -- حالة الدوام وتاريخ اليوم التشغيلي
+        SELECT @IS_ON_OFF = IS_ON_OFF,
+               @DATE_JOB  = D_DATE
+        FROM dbo.T_WORK_JOB
+        WHERE T_ID = 1;
 
-@COMPANY_TITAL nvarchar(max)
+        -- إن كان النظام متوقفاً لا ننشئ فاتورة
+        IF (@IS_ON_OFF = 0)
+        BEGIN
+            -- المخرجات تظل 0 كما هي
+            COMMIT TRAN;
+            RETURN;
+        END
 
- 
+        -- عنوان الشركة لفرع الفاتورة
+        SELECT TOP (1) @COMPANY_TITAL = COMPANY_TITAL
+        FROM dbo.T_COMPANY
+        WHERE T_ID = 1;
 
+        -- 1) رقم الفاتورة العام من الـ SEQUENCE (ذَرّي وآمن)
+        SET @BILL_NUMBER = NEXT VALUE FOR dbo.SEQ_SALES_BILL;
 
-SELECT TOP(1) @DATE_JOB=D_DATE FROM T_WORK_JOB WHERE T_ID=1
-SELECT TOP(1) @COMPANY_TITAL=COMPANY_TITAL FROM T_COMPANY WHERE T_ID=1
+        -- 2) رقم الطلب اليومي مع قفل على يوم @DATE_JOB لمنع السباق
+        ;WITH L AS
+        (
+            SELECT MAX(BILL_ORDER) AS MaxOrder
+            FROM dbo.T_SALES WITH (UPDLOCK, HOLDLOCK)
+            WHERE CAST(BILL_DATE AS DATE) = @DATE_JOB
+        )
+        SELECT @BILL_ORDER = ISNULL(MaxOrder, 0) + 1 FROM L;
 
+        -- 3) الإدراج
+        INSERT INTO dbo.T_SALES
+        (
+            BILL_BRANCH,
+            BILL_NUMBER,
+            BILL_ORDER,
+            BILL_DATE,
+            BILL_TIME,
+            TABLE_CODE,
+            CALL_NO,
+            INVOICE_CODE,
+            CLIENT_NAME,
+            CLIENT_REGION,
+            CLIENT_PHONE,
+            CLIENT_ADDRESS,
+            DRIVER_NAME,
+            WORK_CODE,
+            USER_CODE,
+            TOT_QTY,
+            TOT_COST,
+            TOT_SELL,
+            DISCOUNT_SELL,
+            SERVICE_SELL,
+            NET_SALES,
+            APP_CODE,
+            APP_PERCENT,
+            NET_NET_SALES,
+            NET_ARBAH,
+            NOTE,
+            KITCHEN_NOTE
+        )
+        VALUES
+        (
+            @COMPANY_TITAL + CAST(@BILL_NUMBER AS VARCHAR(20)), -- BILL_BRANCH
+            @BILL_NUMBER,
+            @BILL_ORDER,
+            @DATE_JOB,
+            GETDATE(),
+            0,      -- TABLE_CODE للسفري = 0 كما في كودك
+            0,      -- CALL_NO
+            @INVOICE_CODE,
+            N'''',
+            N'''',
+            N'''',
+            N'''',
+            N'''',
+            0,      -- WORK_CODE
+            @USER_CODE,
+            0, 0, 0, 0, 0, 0,   -- الإجماليات الأولية
+            0, 0, 0, 0,         -- APP_CODE..NET_ARBAH
+            N'''',
+            N''''
+        );
 
-SELECT @BILL_NUMBER=ISNULL(MAX(BILL_NUMBER),0) + 1 FROM T_SALES
-SELECT @BILL_ORDER= ISNULL(MAX(BILL_ORDER),0) + 1 FROM T_SALES WHERE BILL_DATE = convert(varchar,@DATE_JOB , 111) 
-
-
-INSERT INTO [dbo].[T_SALES]
-           ([BILL_BRANCH]
-           ,[BILL_NUMBER]
-           ,[BILL_ORDER]
-           ,[BILL_DATE]
-           ,[BILL_TIME]
-           ,[TABLE_CODE]
-           ,[CALL_NO]
-           ,[INVOICE_CODE]
-           ,[CLIENT_NAME]
-           ,[CLIENT_REGION]
-           ,[CLIENT_PHONE]
-           ,[CLIENT_ADDRESS]
-           ,[DRIVER_NAME]
-           ,[WORK_CODE]
-           ,[USER_CODE]
-           ,[TOT_QTY]
-           ,[TOT_COST]
-           ,[TOT_SELL]
-           ,[DISCOUNT_SELL]
-           ,[SERVICE_SELL]
-           ,[NET_SALES]
-           ,[APP_CODE]
-           ,[APP_PERCENT]
-           ,[NET_NET_SALES]
-           ,[NET_ARBAH]
-           ,[NOTE]
-           ,[KITCHEN_NOTE])
-     VALUES
-           (@COMPANY_TITAL + CAST(@BILL_NUMBER AS varchar)
-           ,@BILL_NUMBER
-           ,@BILL_ORDER
-           ,@DATE_JOB
-           ,GETDATE()
-           ,0
-           ,0
-           ,@INVOICE_CODE
-           ,N''''
-           ,N''''
-           ,N''''
-           ,N''''
-           ,N''''
-           ,0
-           ,@USER_CODE
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,N''''
-           ,N'''')
-
-
-GOTO ASASAS
-
- 
-
-
-
- ASASAS:
-END	--END OF PROGRAM
-commit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF (XACT_STATE() <> 0) ROLLBACK TRAN;
+        ;THROW;
+    END CATCH
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_TABLE_CODE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_BILL_BY_TABLE_CODE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10371,174 +11300,130 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PF_GET_BILL_BY_TABLE_CODE]') AND type in (N'P', N'PC'))
 BEGIN
 EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
 CREATE PROCEDURE [dbo].[PF_GET_BILL_BY_TABLE_CODE]
-@TABLE_CODE INT,
-@USER_CODE INT,	
-@BILL_NUMBER INT OUTPUT,
-@BILL_ORDER INT OUTPUT
+    @TABLE_CODE  INT,
+    @USER_CODE   INT,
+    @BILL_NUMBER INT OUTPUT,
+    @BILL_ORDER  INT OUTPUT
 AS
-DECLARE
-@IS_ON_OFF INT,
-@DATE_JOB DATE,
-@CC_COUNT INT
-BEGIN TRAN
 BEGIN
-SET @BILL_NUMBER=0
-SET @BILL_ORDER=0
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
-SELECT  @IS_ON_OFF=IS_ON_OFF,@DATE_JOB=D_DATE FROM T_WORK_JOB WHERE T_ID=1
-PRINT @IS_ON_OFF
-IF @IS_ON_OFF=0 GOTO ASASAS
+    BEGIN TRY
+        BEGIN TRAN;
 
-SELECT @CC_COUNT=COUNT(BILL_NUMBER) FROM T_SALES WHERE TABLE_CODE=@TABLE_CODE AND WORK_CODE<>1 AND BILL_DATE=@DATE_JOB
-IF @CC_COUNT=0
-BEGIN
+        DECLARE
+            @IS_ON_OFF     INT,
+            @DATE_JOB      DATE,
+            @COMPANY_TITAL NVARCHAR(MAX) = N'''';
 
---DECLARE BOX_CURSOR CURSOR FOR SELECT  BILL_NUMBER FROM T_SALES WHERE  USER_CODE=@USER_CODE AND WORK_CODE=0 ;
+        -- 1) حالة الدوام وتاريخ اليوم التشغيلي
+        SELECT @IS_ON_OFF = IS_ON_OFF,
+               @DATE_JOB  = D_DATE
+        FROM dbo.T_WORK_JOB
+        WHERE T_ID = 1;
 
-DECLARE
---@BILL_LOOP INT,
+        -- إذا النظام متوقف: لا تُنشئ فاتورة (المخرجات تبقى 0)
+        IF (@IS_ON_OFF = 0)
+        BEGIN
+            SET @BILL_NUMBER = ISNULL(@BILL_NUMBER, 0);
+            SET @BILL_ORDER  = ISNULL(@BILL_ORDER , 0);
+            COMMIT TRAN;
+            RETURN;
+        END
 
+        -- 2) هل توجد فاتورة مفتوحة لهذه الطاولة اليوم؟ (قفل لمنع السباق)
+        SELECT TOP (1)
+            @BILL_NUMBER = BILL_NUMBER,
+            @BILL_ORDER  = BILL_ORDER
+        FROM dbo.T_SALES WITH (UPDLOCK, HOLDLOCK)
+        WHERE TABLE_CODE = @TABLE_CODE
+          AND WORK_CODE <> 1
+          AND CAST(BILL_DATE AS DATE) = @DATE_JOB
+        ORDER BY BILL_TIME DESC;
 
-@COMPANY_TITAL nvarchar(max)
+        -- 3) إن لم توجد → أنشئ فاتورة جديدة
+        IF (ISNULL(@BILL_NUMBER, 0) = 0)
+        BEGIN
+            SELECT TOP (1) @COMPANY_TITAL = COMPANY_TITAL
+            FROM dbo.T_COMPANY
+            WHERE T_ID = 1;
 
+            -- رقم الفاتورة من الـ SEQUENCE (ذَرّي وآمن)
+            SET @BILL_NUMBER = NEXT VALUE FOR dbo.SEQ_SALES_BILL;
 
+            -- رقم الطلب اليومي مع قفل على يوم @DATE_JOB
+            ;WITH L AS
+            (
+                SELECT MAX(BILL_ORDER) AS MaxOrder
+                FROM dbo.T_SALES WITH (UPDLOCK, HOLDLOCK)
+                WHERE CAST(BILL_DATE AS DATE) = @DATE_JOB
+            )
+            SELECT @BILL_ORDER = ISNULL(MaxOrder, 0) + 1 FROM L;
 
---OPEN BOX_CURSOR
+            INSERT INTO dbo.T_SALES
+            (
+                BILL_BRANCH,
+                BILL_NUMBER,
+                BILL_ORDER,
+                BILL_DATE,
+                BILL_TIME,
+                TABLE_CODE,
+                CALL_NO,
+                INVOICE_CODE,
+                CLIENT_NAME,
+                CLIENT_REGION,
+                CLIENT_PHONE,
+                CLIENT_ADDRESS,
+                DRIVER_NAME,
+                WORK_CODE,
+                USER_CODE,
+                TOT_QTY,
+                TOT_COST,
+                TOT_SELL,
+                DISCOUNT_SELL,
+                SERVICE_SELL,
+                NET_SALES,
+                APP_CODE,
+                APP_PERCENT,
+                NET_NET_SALES,
+                NET_ARBAH,
+                NOTE,
+                KITCHEN_NOTE
+            )
+            VALUES
+            (
+                @COMPANY_TITAL + CAST(@BILL_NUMBER AS VARCHAR(20)),
+                @BILL_NUMBER,
+                @BILL_ORDER,
+                @DATE_JOB,
+                GETDATE(),
+                @TABLE_CODE,
+                0,
+                2,          -- INVOICE_CODE كما في كودك الأصلي
+                N'''', N'''', N'''', N'''',
+                N'''',
+                0,
+                @USER_CODE,
+                0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0,
+                N'''',
+                N''''
+            );
+        END
 
---FETCH NEXT FROM BOX_CURSOR INTO @BILL_LOOP
---WHILE @@FETCH_STATUS = 0
---BEGIN
-
---delete FROM T_SALES WHERE BILL_NUMBER=@BILL_LOOP
-
---DELETE FROM T_SALES_TEMP WHERE BILL_NUMBER=@BILL_LOOP
-
-
---FETCH NEXT FROM BOX_CURSOR INTO @BILL_LOOP
-
---END
-
---CLOSE BOX_CURSOR
---DEALLOCATE BOX_CURSOR
-
-
-SELECT TOP(1) @DATE_JOB=D_DATE FROM T_WORK_JOB WHERE T_ID=1
-SELECT TOP(1) @COMPANY_TITAL=COMPANY_TITAL FROM T_COMPANY WHERE T_ID=1
-
-
-SELECT @BILL_NUMBER=ISNULL(MAX(BILL_NUMBER),0) + 1 FROM T_SALES
-SELECT @BILL_ORDER= ISNULL(MAX(BILL_ORDER),0) + 1 FROM T_SALES WHERE BILL_DATE = convert(varchar,@DATE_JOB , 111) 
-
-
-INSERT INTO [dbo].[T_SALES]
-           ([BILL_BRANCH]
-           ,[BILL_NUMBER]
-           ,[BILL_ORDER]
-           ,[BILL_DATE]
-           ,[BILL_TIME]
-           ,[TABLE_CODE]
-           ,[CALL_NO]
-           ,[INVOICE_CODE]
-           ,[CLIENT_NAME]
-           ,[CLIENT_REGION]
-           ,[CLIENT_PHONE]
-           ,[CLIENT_ADDRESS]
-           ,[DRIVER_NAME]
-           ,[WORK_CODE]
-           ,[USER_CODE]
-           ,[TOT_QTY]
-           ,[TOT_COST]
-           ,[TOT_SELL]
-           ,[DISCOUNT_SELL]
-           ,[SERVICE_SELL]
-           ,[NET_SALES]
-           ,[APP_CODE]
-           ,[APP_PERCENT]
-           ,[NET_NET_SALES]
-           ,[NET_ARBAH]
-           ,[NOTE]
-           ,[KITCHEN_NOTE])
-     VALUES
-           (@COMPANY_TITAL + CAST(@BILL_NUMBER AS varchar)
-           ,@BILL_NUMBER
-           ,@BILL_ORDER
-           ,@DATE_JOB
-           ,GETDATE()
-           ,@TABLE_CODE
-           ,0
-           ,2
-           ,N''''
-           ,N''''
-           ,N''''
-           ,N''''
-           ,N''''
-           ,0
-           ,@USER_CODE
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,0
-           ,N''''
-           ,N'''')
-
-
-GOTO ASASAS
-
+        COMMIT TRAN;
+    END TRY
+    BEGIN CATCH
+        IF (XACT_STATE() <> 0) ROLLBACK TRAN;
+        ;THROW;
+    END CATCH
 END
-
-
-SELECT TOP(1) @BILL_NUMBER=BILL_NUMBER,@BILL_ORDER=BILL_ORDER FROM T_SALES WHERE TABLE_CODE=@TABLE_CODE AND WORK_CODE<>1 AND BILL_DATE=@DATE_JOB  ORDER BY BILL_TIME DESC --AND WORK_CODE=55
- ASASAS:
-END	--END OF PROGRAM
-commit
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_ITEMS_BY_BILL_NUMBER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10598,7 +11483,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_TABLE_BY_USER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_TABLE_BY_USER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10670,7 +11555,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10874,7 +11759,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE_ADD]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_GET_USER_SALES_TABLE_ADD]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -10954,7 +11839,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_INSERT_TABLE_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_INSERT_TABLE_APP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11038,7 +11923,7 @@ END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_UPDATE_TABLE_INFO]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_UPDATE_TABLE_INFO]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11113,7 +11998,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PF_UPDATE_USER_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PF_UPDATE_USER_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11180,7 +12065,54 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_CLIENT_DEBIT]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_CLIENT_DEBIT]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[PV_GET_CLIENT_DEBIT]
+
+ 
+AS
+
+BEGIN
+SELECT  * FROM   V_CLIENT_DEBIT  ORDER BY REMAIN DESC
+	 
+
+	END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11242,7 +12174,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE_ENTERY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EMPLOYEE_ENTERY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11347,7 +12279,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_ERADAT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_ERADAT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11400,7 +12332,7 @@ FROM            dbo.V_ERADAT
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_EXPENSES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_EXPENSES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11451,65 +12383,42 @@ FROM            dbo.V_EXPENSES
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_PHONE_BEST]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_PHONE_BEST]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_PHONE_BEST]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
 
-SELECT       MAX(CLIENT_NAME) AS CLIENT_NAME, CLIENT_PHONE, SUM(TOT_COST) AS TOT_COST, SUM(NET_SALES) AS NET_SALES, CAST(DATEDIFF(DAY, MAX(BILL_TIME), GETDATE()) AS nvarchar(10)) + N'' يوم'' AS DIFF, 
-                         CAST(DATEDIFF(MINUTE, MAX(BILL_TIME), GETDATE()) AS nvarchar(10)) + N'' د'' AS DIFF_MIN, COUNT(BILL_NUMBER) AS COUNT_BILL
+    SELECT       
+        MAX(CLIENT_NAME) AS CLIENT_NAME, 
+        CLIENT_PHONE, 
+        SUM(TOT_COST) AS TOT_COST, 
+        SUM(NET_SALES) AS NET_SALES,
+        COUNT(BILL_NUMBER) AS COUNT_BILL,
+        DATEDIFF(DAY, MAX(BILL_TIME), GETDATE()) AS DIFF_DAYS,
+        DATEDIFF(MINUTE, MAX(BILL_TIME), GETDATE()) AS DIFF_MINUTES,
+        CAST(DATEDIFF(DAY, MAX(BILL_TIME), GETDATE()) AS nvarchar(10)) + N'' يوم'' AS DIFF_DAYS_TEXT,
+        CAST(DATEDIFF(MINUTE, MAX(BILL_TIME), GETDATE()) AS nvarchar(10)) + N'' د'' AS DIFF_MIN_TEXT
+    FROM dbo.V_SALES_ON
+    WHERE 
+        BILL_DATE BETWEEN @D1 AND @D2
+        AND (LEN(CLIENT_PHONE) > 5)
+    GROUP BY CLIENT_PHONE
+    HAVING SUM(NET_SALES) > 0      -- مهم: لإظهار العملاء الفعليين فقط، يمكنك حذفها لو تريد الكل
+    ORDER BY SUM(NET_SALES) DESC;
 
-FROM            dbo.V_SALES_ON
-WHERE   BILL_DATE BETWEEN @D1 AND @D2 AND      (LEN(CLIENT_PHONE) > 5) 
-GROUP BY CLIENT_PHONE
-ORDER BY NET_SALES DESC  
-
-END	--END OF PROGRAM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_PHONE_BEST_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11569,7 +12478,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11628,7 +12537,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_REGION_BEST_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11689,7 +12598,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_APPLICATION]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_APPLICATION]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11755,7 +12664,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11829,7 +12738,7 @@ SELECT [USER_CODE],USER_NAME
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH_FINAL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ARBAH_FINAL]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11889,7 +12798,7 @@ SELECT
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_BILL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_BILL]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11948,7 +12857,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CAPTAIN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CAPTAIN]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12013,7 +12922,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CASH_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CASH_DEBIT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12070,7 +12979,7 @@ ORDER BY TOTAL_SELL DESC
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_CATEGORY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12138,7 +13047,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DATE_NET]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DATE_NET]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12201,7 +13110,7 @@ ORDER BY BILL_ORDER DESC
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DAY_NAME]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12264,7 +13173,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DISCOUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DISCOUNT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12321,7 +13230,7 @@ GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12381,7 +13290,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_DRIVER_NAME_QTY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -12443,561 +13352,332 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_FINAL]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_FINAL]
-
-@D1 DATE,
-@D2 DATE,
-@IVC_CODE INT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_FINAL]
+    @D1 DATE,
+    @D2 DATE,
+    @IVC_CODE INT
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-IF @IVC_CODE=0
-BEGIN
-SELECT       dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )) as NET_NET_SALES 
-FROM            dbo.V_SALES_ON 
-WHERE BILL_DATE  BETWEEN @D1 AND @D2
-GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )) as NET_NET_SALES 
- FROM [V_EXPENSES] WHERE D_DATE   BETWEEN @D1 AND @D2 GROUP BY USER_CODE, USER_NAME
- UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )) as NET_NET_SALES 
- FROM [V_ERADAT] WHERE D_DATE   BETWEEN @D1 AND @D2 GROUP BY USER_CODE, USER_NAME
---HAVING NET_NET_SALES <>0
+    -- بيانات المبيعات حسب نوع القائمة المختار
+    WITH SALES AS (
+        SELECT USER_CODE,
+            SUM(TOT_SELL) AS TOTAL,
+            SUM(DISCOUNT_SELL) AS TOTAL_DISCOUNT,
+            SUM(SERVICE_SELL) AS TOTAL_SERVICE,
+            SUM(NET_SALES) AS TOTAL_SALES
+        FROM V_SALES_ON
+        WHERE BILL_DATE BETWEEN @D1 AND @D2
+            AND ((@IVC_CODE = -1) OR (IVC_CODE = @IVC_CODE))
+        GROUP BY USER_CODE
+    ),
+    -- بيانات المبيعات النقدية فقط
+    SALES_CASH AS (
+        SELECT USER_CODE,
+            SUM(NET_SALES) AS TOTAL_CASH_SALES
+        FROM V_SALES_ON
+        WHERE BILL_DATE BETWEEN @D1 AND @D2
+            AND IVC_CODE = 0
+        GROUP BY USER_CODE
+    ),
+    EXPENSES AS (
+        SELECT USER_CODE, SUM(AMO) AS TOTAL_EXP
+        FROM T_EXPENSES
+        WHERE D_DATE BETWEEN @D1 AND @D2
+        GROUP BY USER_CODE
+    ),
+    ERADAT AS (
+        SELECT USER_CODE, SUM(AMO) AS TOTAL_ERAD
+        FROM T_ERADAT
+        WHERE D_DATE BETWEEN @D1 AND @D2
+        GROUP BY USER_CODE
+    ),
+    CLIENT_CASH AS (
+        SELECT USER_CODE, SUM(AMO_CASH) AS TOTAL_CLIENT_CASH
+        FROM T_CLIENT_CASH
+        WHERE CONVERT(DATE, C_DATE) BETWEEN @D1 AND @D2
+            AND ACTIVE = 1
+        GROUP BY USER_CODE
+    )
+
+    SELECT 
+        U.USER_CODE,
+        U.USER_NAME,
+        ISNULL(S.TOTAL,0) AS TOTAL,
+        ISNULL(S.TOTAL_DISCOUNT,0) AS TOTAL_DISCOUNT,
+        ISNULL(S.TOTAL_SERVICE,0) AS TOTAL_SERVICE,
+        ISNULL(S.TOTAL_SALES,0) AS TOTAL_SALES,
+        ISNULL(E.TOTAL_EXP,0) AS TOTAL_EXP,
+        ISNULL(R.TOTAL_ERAD,0) AS TOTAL_ERAD,
+        ISNULL(C.TOTAL_CLIENT_CASH,0) AS TOTAL_CLIENT_CASH,
+        -- SUM_TOTAL حسب طلبك
+        ISNULL(S.TOTAL_SALES,0) - ISNULL(E.TOTAL_EXP,0) + ISNULL(R.TOTAL_ERAD,0) AS SUM_TOTAL,
+        -- NET_NET_SALES : المبيعات النقدية فقط + الايرادات - المصاريف + كل التسديدات
+        ISNULL(SC.TOTAL_CASH_SALES,0) + ISNULL(R.TOTAL_ERAD,0) - ISNULL(E.TOTAL_EXP,0) + ISNULL(C.TOTAL_CLIENT_CASH,0) AS NET_NET_SALES
+    FROM T_USERS U
+    LEFT JOIN SALES S ON U.USER_CODE = S.USER_CODE
+    LEFT JOIN SALES_CASH SC ON U.USER_CODE = SC.USER_CODE
+    LEFT JOIN EXPENSES E ON U.USER_CODE = E.USER_CODE
+    LEFT JOIN ERADAT R ON U.USER_CODE = R.USER_CODE
+    LEFT JOIN CLIENT_CASH C ON U.USER_CODE = C.USER_CODE
+   
+	  WHERE   (ISNULL(SC.TOTAL_CASH_SALES,0) +  ISNULL(S.TOTAL_DISCOUNT,0) + ISNULL(R.TOTAL_ERAD,0) - ISNULL(E.TOTAL_EXP,0) + ISNULL(C.TOTAL_CLIENT_CASH,0)) <> 0
+    ORDER BY U.USER_CODE;
 END
-ELSE IF @IVC_CODE=1
-BEGIN
-SELECT       dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_EXP,  
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )) as NET_NET_SALES 
-FROM            dbo.V_SALES_ON 
-WHERE BILL_DATE  BETWEEN @D1 AND @D2
-GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_EXP,  
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )) as NET_NET_SALES 
- FROM [V_EXPENSES] WHERE D_DATE   BETWEEN @D1 AND @D2 GROUP BY USER_CODE, USER_NAME
- UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_EXP,  
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )) as NET_NET_SALES 
- FROM [V_ERADAT] WHERE D_DATE   BETWEEN @D1 AND @D2 GROUP BY USER_CODE, USER_NAME
-
---HAVING NET_NET_SALES <>0
-
-END
-ELSE
-BEGIN
-SELECT       dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_ERAD,  
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )) as NET_NET_SALES 
-FROM            dbo.V_SALES_ON 
-WHERE BILL_DATE  BETWEEN @D1 AND @D2
-GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_ERAD,  
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )) as NET_NET_SALES 
- FROM [V_EXPENSES] WHERE D_DATE   BETWEEN @D1 AND @D2 GROUP BY USER_CODE, USER_NAME
- UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_ERAD,  
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )) as NET_NET_SALES 
- FROM [V_ERADAT] WHERE D_DATE   BETWEEN @D1 AND @D2 GROUP BY USER_CODE, USER_NAME
-
---HAVING NET_NET_SALES <>0
-END
-
-
-
-
-
-	END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL_USER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_FINAL_USER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_FINAL_USER]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_FINAL_USER]
-
-@D1 DATE,
-@D2 DATE,
-@IVC_CODE INT,
-@USER_CODE INT
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_FINAL_USER]
+    @D1 DATE,
+    @D2 DATE,
+    @IVC_CODE INT,
+    @USER_CODE INT
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-IF @IVC_CODE=0
-BEGIN
-SELECT       dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =0) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )) as NET_NET_SALES 
-FROM            dbo.V_SALES_ON 
-WHERE BILL_DATE  BETWEEN @D1 AND @D2 AND USER_CODE=@USER_CODE
-GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =0) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )) as NET_NET_SALES 
- FROM [V_EXPENSES] WHERE D_DATE   BETWEEN @D1 AND @D2 AND USER_CODE=@USER_CODE GROUP BY USER_CODE, USER_NAME
- UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =0) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )) as NET_NET_SALES 
- FROM [V_ERADAT] WHERE D_DATE   BETWEEN @D1 AND @D2 AND USER_CODE=@USER_CODE GROUP BY USER_CODE, USER_NAME
---HAVING NET_NET_SALES <>0
+    -- بيانات المبيعات حسب نوع القائمة المختار
+    WITH SALES AS (
+        SELECT USER_CODE,
+            SUM(TOT_SELL) AS TOTAL,
+            SUM(DISCOUNT_SELL) AS TOTAL_DISCOUNT,
+            SUM(SERVICE_SELL) AS TOTAL_SERVICE,
+            SUM(NET_SALES) AS TOTAL_SALES
+        FROM V_SALES_ON
+        WHERE BILL_DATE BETWEEN @D1 AND @D2
+            AND ((@IVC_CODE = -1) OR (IVC_CODE = @IVC_CODE))
+            AND USER_CODE = @USER_CODE
+        GROUP BY USER_CODE
+    ),
+    -- بيانات المبيعات النقدية فقط
+    SALES_CASH AS (
+        SELECT USER_CODE,
+            SUM(NET_SALES) AS TOTAL_CASH_SALES
+        FROM V_SALES_ON
+        WHERE BILL_DATE BETWEEN @D1 AND @D2
+            AND IVC_CODE = 0
+            AND USER_CODE = @USER_CODE
+        GROUP BY USER_CODE
+    ),
+    EXPENSES AS (
+        SELECT USER_CODE, SUM(AMO) AS TOTAL_EXP
+        FROM T_EXPENSES
+        WHERE D_DATE BETWEEN @D1 AND @D2
+            AND USER_CODE = @USER_CODE
+        GROUP BY USER_CODE
+    ),
+    ERADAT AS (
+        SELECT USER_CODE, SUM(AMO) AS TOTAL_ERAD
+        FROM T_ERADAT
+        WHERE D_DATE BETWEEN @D1 AND @D2
+            AND USER_CODE = @USER_CODE
+        GROUP BY USER_CODE
+    ),
+    CLIENT_CASH AS (
+        SELECT USER_CODE, SUM(AMO_CASH) AS TOTAL_CLIENT_CASH
+        FROM T_CLIENT_CASH
+        WHERE CONVERT(DATE, C_DATE) BETWEEN @D1 AND @D2
+            AND ACTIVE = 1
+            AND USER_CODE = @USER_CODE
+        GROUP BY USER_CODE
+    )
+
+    SELECT 
+        U.USER_CODE,
+        U.USER_NAME,
+        ISNULL(S.TOTAL,0) AS TOTAL,
+        ISNULL(S.TOTAL_DISCOUNT,0) AS TOTAL_DISCOUNT,
+        ISNULL(S.TOTAL_SERVICE,0) AS TOTAL_SERVICE,
+        ISNULL(S.TOTAL_SALES,0) AS TOTAL_SALES,
+        ISNULL(E.TOTAL_EXP,0) AS TOTAL_EXP,
+        ISNULL(R.TOTAL_ERAD,0) AS TOTAL_ERAD,
+        ISNULL(C.TOTAL_CLIENT_CASH,0) AS TOTAL_CLIENT_CASH,
+        -- SUM_TOTAL نفس الموجود سابقاً
+        ISNULL(S.TOTAL_SALES,0) - ISNULL(E.TOTAL_EXP,0) + ISNULL(R.TOTAL_ERAD,0) AS SUM_TOTAL,
+        -- NET_NET_SALES : المبيعات النقدية فقط + الايرادات - المصاريف + كل التسديدات
+        ISNULL(SC.TOTAL_CASH_SALES,0) + ISNULL(R.TOTAL_ERAD,0) - ISNULL(E.TOTAL_EXP,0) + ISNULL(C.TOTAL_CLIENT_CASH,0) AS NET_NET_SALES
+    FROM T_USERS U
+    LEFT JOIN SALES S ON U.USER_CODE = S.USER_CODE
+    LEFT JOIN SALES_CASH SC ON U.USER_CODE = SC.USER_CODE
+    LEFT JOIN EXPENSES E ON U.USER_CODE = E.USER_CODE
+    LEFT JOIN ERADAT R ON U.USER_CODE = R.USER_CODE
+    LEFT JOIN CLIENT_CASH C ON U.USER_CODE = C.USER_CODE
+    WHERE U.ACTIVE = 1
+      AND U.USER_CODE = @USER_CODE
+      AND (ISNULL(S.TOTAL_SALES,0) + ISNULL(R.TOTAL_ERAD,0) - ISNULL(E.TOTAL_EXP,0) + ISNULL(C.TOTAL_CLIENT_CASH,0)) <> 0
+    ORDER BY U.USER_CODE;
 END
-ELSE IF @IVC_CODE=1
-BEGIN
-SELECT       dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_EXP,  
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE AND IVC_CODE =1) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )) as NET_NET_SALES 
-FROM            dbo.V_SALES_ON 
-WHERE BILL_DATE  BETWEEN @D1 AND @D2 AND USER_CODE=@USER_CODE
-GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_EXP,  
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE AND IVC_CODE =1) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )) as NET_NET_SALES 
- FROM [V_EXPENSES] WHERE D_DATE   BETWEEN @D1 AND @D2 AND USER_CODE=@USER_CODE GROUP BY USER_CODE, USER_NAME
- UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_EXP,  
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE AND IVC_CODE =1) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )) as NET_NET_SALES 
- FROM [V_ERADAT] WHERE D_DATE   BETWEEN @D1 AND @D2 AND USER_CODE=@USER_CODE GROUP BY USER_CODE, USER_NAME
-
---HAVING NET_NET_SALES <>0
-
-END
-ELSE
-BEGIN
-SELECT       dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_ERAD,  
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE )) as NET_NET_SALES 
-FROM            dbo.V_SALES_ON 
-WHERE BILL_DATE  BETWEEN @D1 AND @D2 AND USER_CODE=@USER_CODE
-GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) AS TOTAL_ERAD,  
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE ) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_EXPENSES].USER_CODE )) as NET_NET_SALES 
- FROM [V_EXPENSES] WHERE D_DATE   BETWEEN @D1 AND @D2 AND USER_CODE=@USER_CODE GROUP BY USER_CODE, USER_NAME
- UNION 
-SELECT [USER_CODE],USER_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) AS TOTAL_ERAD,  
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE ) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.[V_ERADAT].USER_CODE )) as NET_NET_SALES 
- FROM [V_ERADAT] WHERE D_DATE   BETWEEN @D1 AND @D2 AND USER_CODE=@USER_CODE GROUP BY USER_CODE, USER_NAME
-
---HAVING NET_NET_SALES <>0
-END
-
-
-
-
-
-	END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_INVOICE]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_INVOICE]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
-SELECT        SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) 
-                         AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE, dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_BRANCH = dbo.T_SALES.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE
-						 WHERE 	dbo. T_SALES_DETAILS.BILL_DATE BETWEEN @D1 AND @D2
-GROUP BY  dbo.T_SALES.WORK_CODE, dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME
-HAVING       (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY TOTAL_SELL DESC
+    SET NOCOUNT ON;
 
-	
-
-
-
-
-
-
-
-	END
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT
+        SUM(D.TOTAL_COST) AS TOTAL_COST,
+        SUM(D.TOTAL) AS TOTAL_SELL,
+        SUM(D.ARBAH) AS TOTAL_ARBAH,
+        S.WORK_CODE,
+        S.INVOICE_CODE,
+        IT.INVOICE_NAME
+    FROM
+        dbo.T_SALES_DETAILS D
+        LEFT JOIN dbo.T_SALES S
+            ON   D.BILL_NUMBER = S.BILL_NUMBER    
+        LEFT JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+    WHERE
+        D.BILL_DATE BETWEEN @D1 AND @D2
+        AND S.WORK_CODE = 1
+    GROUP BY
+        S.WORK_CODE, S.INVOICE_CODE, IT.INVOICE_NAME
+    ORDER BY
+        TOTAL_SELL DESC;
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE_A4]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
-SELECT         SUM(dbo.T_SALES.TOT_SELL) AS TOT_SELL, SUM(dbo.T_SALES.DISCOUNT_SELL) AS DISCOUNT_SELL, SUM(dbo.T_SALES.SERVICE_SELL) AS SERVICE_SELL, SUM(dbo.T_SALES.NET_SALES) AS NET_SALES, 
-                         SUM(dbo.T_SALES.NET_NET_SALES) AS NET_NET_SALES, SUM(dbo.T_SALES.NET_ARBAH) AS NET_ARBAH
-FROM            dbo.T_SALES 
- WHERE 	(dbo. T_SALES.BILL_DATE BETWEEN @D1 AND @D2) AND (dbo.T_SALES.WORK_CODE = 1 OR dbo.T_SALES.WORK_CODE = 10 OR dbo.T_SALES.WORK_CODE = 20)
-		
-    
+    SET NOCOUNT ON;
 
-
-	
-
-
-
-
-
-
-
-	END
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT
+        SUM(TOT_SELL) AS TOT_SELL,
+        SUM(DISCOUNT_SELL) AS DISCOUNT_SELL,
+        SUM(SERVICE_SELL) AS SERVICE_SELL,
+        SUM(NET_SALES) AS NET_SALES,
+        SUM(NET_NET_SALES) AS NET_NET_SALES,
+        SUM(NET_ARBAH) AS NET_ARBAH
+    FROM
+        dbo.T_SALES
+    WHERE
+        BILL_DATE BETWEEN @D1 AND @D2
+        AND WORK_CODE IN (1, 10, 20);
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4_DETAILS]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
-SELECT        dbo.T_SALES.WORK_CODE, dbo.T_SALES.TOT_SELL, dbo.T_SALES.DISCOUNT_SELL, dbo.T_SALES.SERVICE_SELL, dbo.T_SALES.NET_SALES, dbo.T_SALES.NET_NET_SALES, dbo.T_SALES.NET_ARBAH, dbo.T_SALES.INVOICE_CODE, 
-                         dbo.T_INVOICE_TYPE.INVOICE_NAME, dbo.T_SALES.BILL_NUMBER, dbo.T_SALES.BILL_ORDER, dbo.T_SALES.BILL_DATE, dbo.T_SALES.BILL_TIME, dbo.T_SALES.DRIVER_NAME, dbo.T_SALES.USER_CODE, 
-                         dbo.T_USERS.USER_NAME, dbo.T_SALES.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES.NOTE, dbo.T_SALES.CAPTAIN_NAME, dbo.T_SALES.CLIENT_NAME, dbo.T_SALES.CLIENT_REGION, 
-                         dbo.T_SALES.CLIENT_PHONE, dbo.T_SALES.CLIENT_ADDRESS
-FROM            dbo.T_SALES INNER JOIN
-                         dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE LEFT OUTER JOIN
-                         dbo.T_APP_TYPE ON dbo.T_SALES.APP_CODE = dbo.T_APP_TYPE.APP_CODE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES.USER_CODE = dbo.T_USERS.USER_CODE
- WHERE 	(dbo. T_SALES.BILL_DATE BETWEEN @D1 AND @D2	)AND(dbo.T_SALES.WORK_CODE = 1 OR dbo.T_SALES.WORK_CODE = 10 OR dbo.T_SALES.WORK_CODE = 20)	
-    
+    SET NOCOUNT ON;
 
-
-	
-
-
-
-
-
-
-
-	END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT
+        S.WORK_CODE,
+        S.TOT_SELL,
+        S.DISCOUNT_SELL,
+        S.SERVICE_SELL,
+        S.NET_SALES,
+        S.NET_NET_SALES,
+        S.NET_ARBAH,
+        S.INVOICE_CODE,
+        IT.INVOICE_NAME,
+        S.BILL_NUMBER,
+        S.BILL_ORDER,
+        S.BILL_DATE,
+        S.BILL_TIME,
+        S.DRIVER_NAME,
+        S.USER_CODE,
+        U.USER_NAME,
+        S.APP_CODE,
+        AT.APP_NAME,
+        S.NOTE,
+        S.CAPTAIN_NAME,
+        S.CLIENT_NAME,
+        S.CLIENT_REGION,
+        S.CLIENT_PHONE,
+        S.CLIENT_ADDRESS
+    FROM
+        dbo.T_SALES S
+        INNER JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+        LEFT JOIN dbo.T_APP_TYPE AT ON S.APP_CODE = AT.APP_CODE
+        LEFT JOIN dbo.T_USERS U ON S.USER_CODE = U.USER_CODE
+    WHERE
+        S.BILL_DATE BETWEEN @D1 AND @D2
+        AND S.WORK_CODE IN (1, 10, 20)
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_INVOICE_A4_TYPE]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_INVOICE_A4_TYPE]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
-SELECT   
-(SELECT  SUM(dbo.T_SALES.NET_NET_SALES ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND INVOICE_CODE=1 AND WORK_CODE=1 )  AS TOT_SAFARY   
-   ,   (SELECT  SUM(dbo.T_SALES.NET_NET_SALES ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND INVOICE_CODE=2 AND WORK_CODE=1 )  AS TOT_SALA               
-  ,   (SELECT  SUM(dbo.T_SALES.NET_NET_SALES ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND INVOICE_CODE=3 AND WORK_CODE=1 )  AS TOT_DELEVERY 
- ,   (SELECT  SUM(dbo.T_SALES.NET_NET_SALES ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND INVOICE_CODE=4 AND WORK_CODE=1 )  AS TOT_APPS
-  ,   (SELECT  SUM(dbo.T_SALES.NET_NET_SALES ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND ( INVOICE_CODE between 3 and 4) AND WORK_CODE BETWEEN 10 AND 20 )    AS TOT_DRIVER
- ,  (SELECT  COUNT(dbo.T_SALES.BILL_NUMBER ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND INVOICE_CODE=1 AND WORK_CODE=1 )  AS COUNT_SAFARY   
-   ,   (SELECT  COUNT(dbo.T_SALES.BILL_NUMBER ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND INVOICE_CODE=2 AND WORK_CODE=1 )  AS COUNT_SALA               
-  ,   (SELECT  COUNT(dbo.T_SALES.BILL_NUMBER ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND INVOICE_CODE=3 AND WORK_CODE=1 )  AS COUNT_DELEVERY 
- ,   (SELECT  COUNT(dbo.T_SALES.BILL_NUMBER ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND INVOICE_CODE=4 AND WORK_CODE=1 )  AS COUNT_APPS
-  ,   (SELECT  COUNT(dbo.T_SALES.BILL_NUMBER ) FROM T_SALES WHERE BILL_DATE BETWEEN @D1 AND @D2 AND ( INVOICE_CODE between 3 and 4) AND (WORK_CODE BETWEEN 10 AND 20) )    AS COUNT_DRIVER
-				
-    
+    SET NOCOUNT ON;
 
+    SELECT
+        SUM(CASE WHEN INVOICE_CODE = 1 AND WORK_CODE = 1 THEN NET_NET_SALES ELSE 0 END) AS TOT_SAFARY,
+        SUM(CASE WHEN INVOICE_CODE = 2 AND WORK_CODE = 1 THEN NET_NET_SALES ELSE 0 END) AS TOT_SALA,
+        SUM(CASE WHEN INVOICE_CODE = 3 AND WORK_CODE = 1 THEN NET_NET_SALES ELSE 0 END) AS TOT_DELEVERY,
+        SUM(CASE WHEN INVOICE_CODE = 4 AND WORK_CODE = 1 THEN NET_NET_SALES ELSE 0 END) AS TOT_APPS,
+        SUM(CASE WHEN INVOICE_CODE BETWEEN 3 AND 4 AND WORK_CODE BETWEEN 10 AND 20 THEN NET_NET_SALES ELSE 0 END) AS TOT_DRIVER,
 
-	
-
-
-
-
-
-
-
-	END
-
-
-
-
-
-
-
-
-
-
-
-
-
+        COUNT(CASE WHEN INVOICE_CODE = 1 AND WORK_CODE = 1 THEN BILL_NUMBER END) AS COUNT_SAFARY,
+        COUNT(CASE WHEN INVOICE_CODE = 2 AND WORK_CODE = 1 THEN BILL_NUMBER END) AS COUNT_SALA,
+        COUNT(CASE WHEN INVOICE_CODE = 3 AND WORK_CODE = 1 THEN BILL_NUMBER END) AS COUNT_DELEVERY,
+        COUNT(CASE WHEN INVOICE_CODE = 4 AND WORK_CODE = 1 THEN BILL_NUMBER END) AS COUNT_APPS,
+        COUNT(CASE WHEN INVOICE_CODE BETWEEN 3 AND 4 AND WORK_CODE BETWEEN 10 AND 20 THEN BILL_NUMBER END) AS COUNT_DRIVER
+    FROM
+        dbo.T_SALES
+    WHERE
+        BILL_DATE BETWEEN @D1 AND @D2
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13005,547 +13685,392 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS]') AND type in (N'P', N'PC'))
 BEGIN
 EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
 CREATE PROCEDURE [dbo].[PV_GET_SALES_ITEMS]
-
-@D1 DATE,
-@D2 DATE
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-SELECT        dbo.T_ITEMS.ITEM_NAME, SUM(dbo.T_SALES_DETAILS.QTY) AS TOTAL_QTY, SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, 
-                         SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_BRANCH = dbo.T_SALES.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE
-						 WHERE 	dbo. T_SALES_DETAILS.BILL_DATE BETWEEN @D1 AND @D2
-GROUP BY  dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES.WORK_CODE
-HAVING       (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY TOTAL_QTY DESC
-END	--END OF PROGRAM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT 
+        ISNULL(C.CATEGORY_CODE, 0)              AS CATEGORY_CODE,
+        ISNULL(C.CATEGORY_NAME, N''بدون مجموعة'') AS CATEGORY_NAME,
+        IT.ITEM_NAME                             AS ITEM_NAME,
+        SUM(SD.QTY)                              AS TOTAL_QTY,
+        SUM(SD.TOTAL_COST)                       AS TOTAL_COST,
+        SUM(SD.TOTAL)                            AS TOTAL_SELL,
+        SUM(SD.ARBAH)                            AS TOTAL_ARBAH,
+        S.WORK_CODE                              AS WORK_CODE
+    FROM dbo.T_SALES_DETAILS SD WITH (NOLOCK)
+    INNER JOIN dbo.T_SALES S WITH (NOLOCK)
+        ON SD.BILL_NUMBER = S.BILL_NUMBER
+    INNER JOIN dbo.T_ITEMS IT WITH (NOLOCK)
+        ON SD.ITEM_CODE = IT.ITEM_CODE
+    LEFT JOIN dbo.T_ITEM_CATEGORY C WITH (NOLOCK)
+        ON IT.CATEGORY_CODE = C.CATEGORY_CODE
+    WHERE 
+        SD.BILL_DATE BETWEEN @D1 AND @D2
+        AND S.WORK_CODE = 1
+    GROUP BY 
+        ISNULL(C.CATEGORY_CODE, 0),
+        ISNULL(C.CATEGORY_NAME, N''بدون مجموعة''),
+        IT.ITEM_NAME,
+        S.WORK_CODE
+    ORDER BY 
+        TOTAL_QTY DESC;   -- نفس ترتيبك السابق
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_GEFT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_GEFT]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_ITEMS_GEFT]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_ITEMS_GEFT]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-SELECT       TOP (100) PERCENT dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_ITEMS.ITEM_NAME, SUM(dbo.T_SALES_DETAILS.QTY) AS TOTAL_QTY, SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, 
-                         SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE, dbo.T_ITEMS.SELL * SUM(dbo.T_SALES_DETAILS.QTY) AS TOTAL_GEFT
-
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_BRANCH = dbo.T_SALES.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE
-						  WHERE 	dbo. T_SALES_DETAILS.BILL_DATE BETWEEN @D1 AND @D2 AND (dbo.T_ITEMS.SELL <> 0)
-GROUP BY dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES.WORK_CODE, dbo.T_SALES_DETAILS.TOTAL, dbo.T_ITEMS.SELL,dbo.T_ITEMS.TYPE_CODE
-HAVING       (dbo.T_SALES.WORK_CODE = 1) AND (dbo.T_SALES_DETAILS.TOTAL = 0)AND (dbo.T_ITEMS.TYPE_CODE <> 20)
-ORDER BY TOTAL_GEFT DESC
-END	--END OF PROGRAM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT 
+        SD.BILL_DATE,                 
+        IT.ITEM_NAME,                  
+        SUM(SD.QTY) AS TOTAL_QTY,      
+        SUM(SD.TOTAL_COST) AS TOTAL_COST,   
+        SUM(SD.TOTAL) AS TOTAL_SELL,        
+        SUM(SD.ARBAH) AS TOTAL_ARBAH,     
+        S.WORK_CODE,                    
+        IT.SELL * SUM(SD.QTY) AS TOTAL_GEFT  
+    FROM 
+        dbo.T_SALES_DETAILS SD WITH (NOLOCK)
+        INNER JOIN dbo.T_SALES S WITH (NOLOCK) 
+            ON SD.BILL_NUMBER = S.BILL_NUMBER
+        INNER JOIN dbo.T_ITEMS IT WITH (NOLOCK) 
+            ON SD.ITEM_CODE = IT.ITEM_CODE
+    WHERE 
+        SD.BILL_DATE BETWEEN @D1 AND @D2
+        AND IT.SELL <> 0
+        AND S.WORK_CODE = 1
+        AND SD.TOTAL = 0
+        AND IT.TYPE_CODE <> 20
+    GROUP BY 
+        SD.BILL_DATE, IT.ITEM_NAME, S.WORK_CODE, IT.SELL
+    ORDER BY 
+        TOTAL_GEFT DESC
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_RECIPIENT]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_ITEMS_RECIPIENT]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-SELECT        TOP (100) PERCENT dbo.T_ITEMS.ITEM_CODE, SUM(dbo.T_SALES_DETAILS.QTY) AS QTY, SUM(dbo.T_SALES_DETAILS.TOTAL) / SUM(dbo.T_SALES_DETAILS.QTY) AS SELL, 
-                        SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL,  dbo.T_SALES.RECIPIENT_CODE
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_BRANCH = dbo.T_SALES.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE
-						 WHERE 	dbo. T_SALES_DETAILS.BILL_DATE BETWEEN @D1 AND @D2
-GROUP BY dbo.T_ITEMS.ITEM_CODE,  dbo.T_SALES.RECIPIENT_CODE,dbo.T_SALES.WORK_CODE
-HAVING        (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY dbo.T_SALES.RECIPIENT_CODE, QTY DESC
-END	--END OF PROGRAM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT
+        IT.ITEM_CODE,                                 
+        SUM(SD.QTY) AS QTY,                            
+        CASE WHEN SUM(SD.QTY) = 0 THEN 0
+             ELSE SUM(SD.TOTAL) / SUM(SD.QTY)
+        END AS SELL,                                  
+        SUM(SD.TOTAL) AS TOTAL,                      
+        S.RECIPIENT_CODE                              
+    FROM 
+        dbo.T_SALES_DETAILS SD WITH (NOLOCK)
+        INNER JOIN dbo.T_SALES S WITH (NOLOCK) 
+            ON SD.BILL_NUMBER = S.BILL_NUMBER        
+        INNER JOIN dbo.T_ITEMS IT WITH (NOLOCK)
+            ON SD.ITEM_CODE = IT.ITEM_CODE
+    WHERE
+        SD.BILL_DATE BETWEEN @D1 AND @D2
+        AND S.WORK_CODE = 1
+    GROUP BY
+        IT.ITEM_CODE, S.RECIPIENT_CODE
+    ORDER BY
+        S.RECIPIENT_CODE, QTY DESC
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_RETURN]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_RETURN]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_ITEMS_RETURN]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_ITEMS_RETURN]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-SELECT        dbo.T_ITEMS.ITEM_NAME, SUM(dbo.T_SALES_DETAILS_RETURN.QTY) AS TOTAL_QTY, SUM(dbo.T_SALES_DETAILS_RETURN.TOTAL_COST) AS TOTAL_COST, 
-                         SUM(dbo.T_SALES_DETAILS_RETURN.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS_RETURN.ARBAH) AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE
-FROM            dbo.T_SALES_DETAILS_RETURN LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS_RETURN.BILL_BRANCH = dbo.T_SALES.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS_RETURN.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE
-						 WHERE 	dbo. T_SALES_DETAILS_RETURN.BILL_DATE BETWEEN @D1 AND @D2
-GROUP BY  dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES.WORK_CODE
-HAVING       (dbo.T_SALES.WORK_CODE = 100)
-ORDER BY TOTAL_QTY DESC
-END	--END OF PROGRAM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT
+        IT.ITEM_NAME,                             
+        SUM(SDR.QTY) AS TOTAL_QTY,                 
+        SUM(SDR.TOTAL_COST) AS TOTAL_COST,          
+        SUM(SDR.TOTAL) AS TOTAL_SELL,               
+        SUM(SDR.ARBAH) AS TOTAL_ARBAH,              
+        S.WORK_CODE                                 
+    FROM
+        dbo.T_SALES_DETAILS_RETURN SDR WITH (NOLOCK)
+        INNER JOIN dbo.T_SALES S WITH (NOLOCK)
+            ON SDR.BILL_NUMBER = S.BILL_NUMBER      
+        INNER JOIN dbo.T_ITEMS IT WITH (NOLOCK)
+            ON SDR.ITEM_CODE = IT.ITEM_CODE
+    WHERE
+        SDR.BILL_DATE BETWEEN @D1 AND @D2
+        AND S.WORK_CODE = 100
+    GROUP BY
+        IT.ITEM_NAME, S.WORK_CODE
+    ORDER BY
+        TOTAL_QTY DESC
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_ITEMS_TYPE_INVOICE]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-
-
-SELECT        TOP (100) PERCENT dbo.T_ITEMS.ITEM_NAME, SUM(dbo.T_SALES_DETAILS.QTY) AS TOTAL_QTY, SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, 
-                         SUM(dbo.T_SALES_DETAILS.ARBAH) AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE, dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_BRANCH = dbo.T_SALES.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE
-						 	 WHERE 	dbo. T_SALES_DETAILS.BILL_DATE BETWEEN @D1 AND @D2
-GROUP BY dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES.WORK_CODE, dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME
-HAVING        (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY TOTAL_QTY DESC
-
-END	--END OF PROGRAM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT 
+        IT.ITEM_NAME,                        
+        SUM(SD.QTY) AS TOTAL_QTY,            
+        SUM(SD.TOTAL_COST) AS TOTAL_COST,   
+        SUM(SD.TOTAL) AS TOTAL_SELL,        
+        SUM(SD.ARBAH) AS TOTAL_ARBAH,       
+        S.WORK_CODE,                        
+        S.INVOICE_CODE,                     
+        IVT.INVOICE_NAME                     
+    FROM 
+        dbo.T_SALES_DETAILS SD WITH (NOLOCK)
+        INNER JOIN dbo.T_SALES S WITH (NOLOCK)
+            ON SD.BILL_NUMBER = S.BILL_NUMBER  
+        INNER JOIN dbo.T_ITEMS IT WITH (NOLOCK)
+            ON SD.ITEM_CODE = IT.ITEM_CODE
+        INNER JOIN dbo.T_INVOICE_TYPE IVT WITH (NOLOCK)
+            ON S.INVOICE_CODE = IVT.INVOICE_CODE
+    WHERE
+        SD.BILL_DATE BETWEEN @D1 AND @D2
+        AND S.WORK_CODE = 1
+    GROUP BY
+        IT.ITEM_NAME, S.WORK_CODE, S.INVOICE_CODE, IVT.INVOICE_NAME
+    ORDER BY
+        TOTAL_QTY DESC
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NET_DATE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NET_DATE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_NET_DATE]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_NET_DATE]
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_NET_DATE]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-SELECT      (SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 ) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2  ) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2  ) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 ) AS TOTAL_SALES,
-(SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 ) AS TOTAL_EXP, 
- (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 ) AS TOTAL_ERAD, 
-((SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2  ) - (SELECT ISNULL(SUM(AMO),0) FROM T_EXPENSES WHERE D_DATE BETWEEN @D1 AND @D2 )+ (SELECT ISNULL(SUM(AMO),0) FROM T_ERADAT WHERE D_DATE BETWEEN @D1 AND @D2 )) as NET_NET_SALES ,
-(SELECT ISNULL(SUM(QTY),0) FROM V_SALES_DETAILS WHERE BILL_DATE BETWEEN @D1 AND @D2 ) AS TOTAL_QTY,  
-(SELECT ISNULL(COUNT(BILL_NUMBER),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 ) AS COUNT_INVOICE  
+    -- الاستعلام المجمّع لفيو المبيعات دفعة واحدة
+    SELECT
+        ISNULL(SUM(TOT_SELL), 0) AS TOTAL,
+        ISNULL(SUM(DISCOUNT_SELL), 0) AS TOTAL_DISCOUNT,
+        ISNULL(SUM(SERVICE_SELL), 0) AS TOTAL_SERVICE,
+        ISNULL(SUM(NET_SALES), 0) AS TOTAL_SALES,
+        ISNULL(COUNT(BILL_NUMBER), 0) AS COUNT_INVOICE
+    INTO #SALES_ON
+    FROM V_SALES_ON
+    WHERE BILL_DATE BETWEEN @D1 AND @D2;
 
-END	--END OF PROGRAM
+    -- تجميع الكمية من التفاصيل
+    SELECT ISNULL(SUM(QTY), 0) AS TOTAL_QTY
+    INTO #SALES_QTY
+    FROM V_SALES_DETAILS
+    WHERE BILL_DATE BETWEEN @D1 AND @D2;
 
+    -- تجميع المصروفات
+    SELECT ISNULL(SUM(AMO), 0) AS TOTAL_EXP
+    INTO #EXP
+    FROM T_EXPENSES
+    WHERE D_DATE BETWEEN @D1 AND @D2;
 
+    -- تجميع الإيرادات
+    SELECT ISNULL(SUM(AMO), 0) AS TOTAL_ERAD
+    INTO #ERAD
+    FROM T_ERADAT
+    WHERE D_DATE BETWEEN @D1 AND @D2;
 
+    -- دمج النتائج النهائية في SELECT واحد فقط
+    SELECT
+        S.TOTAL,
+        S.TOTAL_DISCOUNT,
+        S.TOTAL_SERVICE,
+        S.TOTAL_SALES,
+        E.TOTAL_EXP,
+        R.TOTAL_ERAD,
+        (S.TOTAL_SALES - E.TOTAL_EXP + R.TOTAL_ERAD) AS NET_NET_SALES,
+        Q.TOTAL_QTY,
+        S.COUNT_INVOICE
+    FROM #SALES_ON S, #EXP E, #ERAD R, #SALES_QTY Q;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    -- تنظيف الجداول المؤقتة
+    DROP TABLE #SALES_ON, #EXP, #ERAD, #SALES_QTY;
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NO_CLIENT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_NO_CLIENT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_NO_CLIENT]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_NO_CLIENT]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_NO_CLIENT]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-SELECT        TOP (100) PERCENT SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE, 
-                         dbo.T_SALES.NO_CLIENT, dbo.T_SALES.BILL_NUMBER, dbo.T_TABLE.TABLE_NO, dbo.T_SALES.BILL_DATE, dbo.T_SALES.TT_CASH, dbo.T_SALES.TT_SEND, DATEDIFF(MINUTE, dbo.T_SALES.TT_SEND, 
-                         dbo.T_SALES.TT_CASH) AS DIFF_TIME, dbo.T_SALES.CAPTAIN_NAME, dbo.T_SALES.KITCHEN_NOTE
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_NUMBER = dbo.T_SALES.BILL_NUMBER LEFT OUTER JOIN
-                         dbo.T_TABLE ON dbo.T_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE
-WHERE 	dbo. T_SALES_DETAILS.BILL_DATE BETWEEN @D1 AND @D2
-GROUP BY dbo.T_SALES.WORK_CODE, dbo.T_SALES.NO_CLIENT, dbo.T_SALES.BILL_NUMBER, dbo.T_TABLE.TABLE_NO, dbo.T_SALES.BILL_DATE, dbo.T_SALES.TT_CASH, dbo.T_SALES.TT_SEND, dbo.T_SALES.CAPTAIN_NAME, 
-                         dbo.T_SALES.KITCHEN_NOTE
-HAVING        (dbo.T_SALES.WORK_CODE = 1) AND (dbo.T_SALES.NO_CLIENT <> 0)
-ORDER BY DIFF_TIME DESC
-
-
-
-
-
-
-
-END	--END OF PROGRAM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT 
+        SUM(SD.TOTAL_COST) AS TOTAL_COST,
+        SUM(SD.TOTAL) AS TOTAL_SELL,
+        SUM(SD.ARBAH) AS TOTAL_ARBAH,
+        S.WORK_CODE,
+        S.NO_CLIENT,
+        S.BILL_NUMBER,
+        T.TABLE_NO,
+        S.BILL_DATE,
+        S.TT_CASH,
+        S.TT_SEND,
+        DATEDIFF(MINUTE, S.TT_SEND, S.TT_CASH) AS DIFF_TIME,
+        S.CAPTAIN_NAME,
+        S.KITCHEN_NOTE
+    FROM 
+        dbo.T_SALES_DETAILS SD WITH (NOLOCK)
+        INNER JOIN dbo.T_SALES S WITH (NOLOCK)
+            ON SD.BILL_NUMBER = S.BILL_NUMBER
+        INNER JOIN dbo.T_TABLE T WITH (NOLOCK)
+            ON S.TABLE_CODE = T.TABLE_CODE
+    WHERE 
+        SD.BILL_DATE BETWEEN @D1 AND @D2
+        AND S.WORK_CODE = 1
+        AND S.NO_CLIENT <> 0
+    GROUP BY 
+        S.WORK_CODE,
+        S.NO_CLIENT,
+        S.BILL_NUMBER,
+        T.TABLE_NO,
+        S.BILL_DATE,
+        S.TT_CASH,
+        S.TT_SEND,
+        S.CAPTAIN_NAME,
+        S.KITCHEN_NOTE
+    ORDER BY 
+        DIFF_TIME DESC
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_PRINTER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_PRINTER]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_PRINTER]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_PRINTER]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-SELECT       TOP (100) PERCENT SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE, 
-                         dbo.T_ITEMS.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME
-FROM            dbo.T_ITEMS INNER JOIN
-                         dbo.T_PRINTER ON dbo.T_ITEMS.PRINTER_ID = dbo.T_PRINTER.T_ID RIGHT OUTER JOIN
-                         dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_NUMBER = dbo.T_SALES.BILL_NUMBER ON dbo.T_ITEMS.ITEM_CODE = dbo.T_SALES_DETAILS.ITEM_CODE
-						 WHERE 	dbo. T_SALES_DETAILS.BILL_DATE BETWEEN @D1 AND @D2
-GROUP BY dbo.T_SALES.WORK_CODE, dbo.T_ITEMS.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME
-HAVING       (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY TOTAL_ARBAH DESC
-
- 
-END	--END OF PROGRAM
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT
+        SUM(SD.TOTAL_COST) AS TOTAL_COST,            
+        SUM(SD.TOTAL) AS TOTAL_SELL,                 
+        SUM(SD.ARBAH) AS TOTAL_ARBAH,                
+        S.WORK_CODE,                                  
+        IT.PRINTER_ID,                                
+        P.PRINTER_NAME                              
+    FROM 
+        dbo.T_SALES_DETAILS SD WITH (NOLOCK)
+        INNER JOIN dbo.T_SALES S WITH (NOLOCK)
+            ON SD.BILL_NUMBER = S.BILL_NUMBER
+        INNER JOIN dbo.T_ITEMS IT WITH (NOLOCK)
+            ON SD.ITEM_CODE = IT.ITEM_CODE
+        INNER JOIN dbo.T_PRINTER P WITH (NOLOCK)
+            ON IT.PRINTER_ID = P.T_ID
+    WHERE 
+        SD.BILL_DATE BETWEEN @D1 AND @D2
+        AND S.WORK_CODE = 1
+    GROUP BY 
+        S.WORK_CODE, IT.PRINTER_ID, P.PRINTER_NAME
+    ORDER BY 
+        TOTAL_ARBAH DESC
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_RECIPIENT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_RECIPIENT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_RECIPIENT]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_RECIPIENT]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_RECIPIENT]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-
-SELECT       dbo.V_SALES_ON.RECIPIENT_CODE, dbo.V_SALES_ON.RECIPIENT_NAME
-,(SELECT ISNULL(SUM(TOT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND RECIPIENT_CODE=dbo.V_SALES_ON.RECIPIENT_CODE) AS TOTAL,
-(SELECT ISNULL(SUM(DISCOUNT_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND RECIPIENT_CODE=dbo.V_SALES_ON.RECIPIENT_CODE ) AS TOTAL_DISCOUNT,
-(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND RECIPIENT_CODE=dbo.V_SALES_ON.RECIPIENT_CODE ) AS TOTAL_SERVICE,
-(SELECT ISNULL(SUM(NET_SALES),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND RECIPIENT_CODE=dbo.V_SALES_ON.RECIPIENT_CODE ) AS TOTAL_SALES,
-(CONVERT(varchar, @D1, 103)+N'' - '' + CONVERT(varchar, @D2, 103))AS DATE_STRING
-FROM            dbo.V_SALES_ON 
-WHERE BILL_DATE  BETWEEN @D1 AND @D2
-GROUP BY dbo.V_SALES_ON.RECIPIENT_CODE, dbo.V_SALES_ON.RECIPIENT_NAME
-ORDER BY dbo.V_SALES_ON.RECIPIENT_CODE ASC
---HAVING NET_NET_SALES <>0
-
-
-
-
-
-	END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT
+        RECIPIENT_CODE,
+        RECIPIENT_NAME,
+        ISNULL(SUM(TOT_SELL), 0) AS TOTAL,
+        ISNULL(SUM(DISCOUNT_SELL), 0) AS TOTAL_DISCOUNT,
+        ISNULL(SUM(SERVICE_SELL), 0) AS TOTAL_SERVICE,
+        ISNULL(SUM(NET_SALES), 0) AS TOTAL_SALES,
+        (CONVERT(varchar, @D1, 103) + N'' - '' + CONVERT(varchar, @D2, 103)) AS DATE_STRING
+    FROM dbo.V_SALES_ON WITH (NOLOCK)
+    WHERE BILL_DATE BETWEEN @D1 AND @D2
+    GROUP BY RECIPIENT_CODE, RECIPIENT_NAME
+    ORDER BY RECIPIENT_CODE ASC
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_SERVICES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_SERVICES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13553,114 +14078,62 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_SERVICES]') AND type in (N'P', N'PC'))
 BEGIN
 EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-
-
-
-
-
 CREATE PROCEDURE [dbo].[PV_GET_SALES_SERVICES]
-
-@D1 DATE,
-@D2 DATE
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-
-
-SELECT       dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-,(SELECT ISNULL(SUM(SERVICE_SELL),0) FROM V_SALES_ON WHERE BILL_DATE BETWEEN @D1 AND @D2 AND USER_CODE=dbo.V_SALES_ON.USER_CODE ) AS TOTAL_SERVICES
-
-FROM            dbo.V_SALES_ON 
-GROUP BY dbo.V_SALES_ON.USER_CODE, dbo.V_SALES_ON.USER_NAME
-
-
-
-
-	END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT
+        USER_CODE,
+        USER_NAME,
+        ISNULL(SUM(SERVICE_SELL), 0) AS TOTAL_SERVICES
+    FROM dbo.V_SALES_ON WITH (NOLOCK)
+    WHERE BILL_DATE BETWEEN @D1 AND @D2
+    GROUP BY USER_CODE, USER_NAME
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_USER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_SALES_USER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PV_GET_SALES_USER]') AND type in (N'P', N'PC'))
 BEGIN
-EXEC dbo.sp_executesql @statement = N'
-
-
-
-
-
-CREATE PROCEDURE [dbo].[PV_GET_SALES_USER]
-
-@D1 DATE,
-@D2 DATE
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PV_GET_SALES_USER]
+    @D1 DATE,
+    @D2 DATE
 AS
-
 BEGIN
+    SET NOCOUNT ON;
 
-SELECT      SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) 
-                         AS TOTAL_ARBAH, dbo.T_USERS.USER_NAME, dbo.T_SALES.WORK_CODE
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_BRANCH = dbo.T_SALES.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES.USER_CODE = dbo.T_USERS.USER_CODE
-					WHERE 	dbo. T_SALES_DETAILS.BILL_DATE BETWEEN @D1 AND @D2
-GROUP BY  dbo.T_USERS.USER_NAME, dbo.T_SALES.WORK_CODE
-HAVING       (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY TOTAL_ARBAH  
-
-END	--END OF PROGRAM
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    SELECT
+        SUM(SD.TOTAL_COST) AS TOTAL_COST,        
+        SUM(SD.TOTAL) AS TOTAL_SELL,             
+        SUM(SD.ARBAH) AS TOTAL_ARBAH,            
+        U.USER_NAME,                              
+        S.WORK_CODE                              
+    FROM
+        dbo.T_SALES_DETAILS SD WITH (NOLOCK)
+        INNER JOIN dbo.T_SALES S WITH (NOLOCK)
+            ON SD.BILL_NUMBER = S.BILL_NUMBER
+        INNER JOIN dbo.T_USERS U WITH (NOLOCK)
+            ON S.USER_CODE = U.USER_CODE
+    WHERE
+        SD.BILL_DATE BETWEEN @D1 AND @D2
+        AND S.WORK_CODE = 1
+    GROUP BY
+        U.USER_NAME, S.WORK_CODE
+    ORDER BY
+        TOTAL_ARBAH DESC
+END
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13713,7 +14186,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  StoredProcedure [dbo].[PV_GET_USER_DETAILS_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13767,7 +14240,7 @@ END	--END OF PROGRAM
 ' 
 END
 GO
-/****** Object:  View [dbo].[V_SALES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13798,7 +14271,7 @@ ORDER BY dbo.T_SALES.BILL_NUMBER
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13806,58 +14279,120 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP]
 AS
-SELECT     dbo.T_SALES_TEMP.T_ID, dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_SALES_TEMP.BILL_DATE, dbo.T_SALES_TEMP.BILL_TIME, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, 
-                  dbo.T_SALES_TEMP.QTY, dbo.T_SALES_TEMP.COST, dbo.T_SALES_TEMP.SELL, dbo.T_SALES_TEMP.TOTAL, dbo.T_SALES_TEMP.TOTAL_COST, dbo.T_SALES_TEMP.ARBAH, dbo.T_SALES_TEMP.WORK_CODE, dbo.T_SALES_TEMP.USER_CODE, dbo.T_SALES_TEMP.ITEM_NOTE, 
-                  dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.TABLE_CODE, dbo.V_SALES.CALL_NO, dbo.T_SALES_TEMP.IS_PRINT, dbo.T_ITEMS.ITEM_NAME + N'' '' + CHAR(13) + CHAR(10) + ISNULL(dbo.T_SALES_TEMP.ITEM_NOTE, N'' '') AS NAME_NOTE, 
-                  dbo.V_SALES.NOTE, dbo.V_SALES.KITCHEN_NOTE, dbo.T_ITEMS.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, dbo.T_ITEMS.ITEM_NAME_EN, dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT, dbo.T_USERS.USER_NAME, 
-                  dbo.T_SALES_TEMP.SEQ, dbo.T_ITEMS.CATEGORY_CODE
-FROM        dbo.T_SALES_TEMP INNER JOIN
-                  dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
-                  dbo.T_USERS ON dbo.T_SALES_TEMP.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                  dbo.T_PRINTER ON dbo.T_ITEMS.PRINTER_ID = dbo.T_PRINTER.T_ID LEFT OUTER JOIN
-                  dbo.V_SALES ON dbo.T_SALES_TEMP.BILL_NUMBER = dbo.V_SALES.BILL_NUMBER
+SELECT
+    T.T_ID,
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    T.BILL_DATE,
+    T.BILL_TIME,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    T.QTY,
+    T.COST,
+    T.SELL,
+    T.TOTAL,
+    T.TOTAL_COST,
+    T.ARBAH,
+    T.WORK_CODE,
+    T.USER_CODE,
+    T.ITEM_NOTE,
+    V.INVOICE_CODE,
+    V.INVOICE_NAME,
+    V.TABLE_CODE,
+    V.CALL_NO,
+    T.IS_PRINT,
+    I.ITEM_NAME + N'' '' + CHAR(13) + CHAR(10) + ISNULL(T.ITEM_NOTE, N'' '') AS NAME_NOTE,
+    V.NOTE,
+    V.KITCHEN_NOTE,
+    I.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    I.ITEM_NAME_EN,
+    I.MAIN_ITEM_CODE,
+    I.QTY_PARENT,
+    U.USER_NAME,
+    T.SEQ,
+    I.CATEGORY_CODE
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_USERS U ON T.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.T_PRINTER P ON I.PRINTER_ID = P.T_ID
+    LEFT JOIN dbo.V_SALES V ON T.BILL_NUMBER = V.BILL_NUMBER
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE_TEMP]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP]
 AS
-SELECT     S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY AS QTY_RECIPE,
-                      (SELECT     SUM(QTY) AS Expr1
-                       FROM        dbo.V_SALES_TEMP
-                       WHERE      (ITEM_CODE = R.ITEM_CODE_MAIN) AND (BILL_DATE = S.DATE_JOB)) * R.QTY AS QTY_SALES_TEMP
-FROM        dbo.T_ITEM_STORE AS S INNER JOIN
-                  dbo.T_ITEM_RECIPE AS R ON S.ITEM_CODE = R.ITEM_CODE
-GROUP BY S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY
-
+SELECT
+    S.DATE_JOB,
+    S.ITEM_CODE,
+    R.ITEM_CODE_MAIN,
+    R.QTY AS QTY_RECIPE,
+    ISNULL(VT.QTY_SALES_TEMP, 0) * R.QTY AS QTY_SALES_TEMP
+FROM
+    dbo.T_ITEM_STORE S
+    INNER JOIN dbo.T_ITEM_RECIPE R ON S.ITEM_CODE = R.ITEM_CODE
+    OUTER APPLY (
+        SELECT SUM(QTY) AS QTY_SALES_TEMP
+        FROM dbo.V_SALES_TEMP
+        WHERE ITEM_CODE = R.ITEM_CODE_MAIN AND BILL_DATE = S.DATE_JOB
+    ) VT
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_DELEVERY]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_DELEVERY]
 AS
-SELECT       dbo.V_SALES.BILL_BRANCH, dbo.V_SALES.BILL_NUMBER, dbo.V_SALES.BILL_ORDER, dbo.V_SALES.BILL_DATE, dbo.V_SALES.BILL_TIME, dbo.V_SALES.TABLE_CODE, dbo.V_SALES.CALL_NO, 
-                         dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.CLIENT_NAME, dbo.V_SALES.CLIENT_REGION, dbo.V_SALES.CLIENT_PHONE, dbo.V_SALES.CLIENT_ADDRESS, dbo.V_SALES.DRIVER_NAME, 
-                         dbo.V_SALES.WORK_CODE, dbo.V_SALES.USER_CODE, dbo.V_SALES.USER_NAME, dbo.V_SALES.TOT_QTY, dbo.V_SALES.TOT_COST, dbo.V_SALES.TOT_SELL, dbo.V_SALES.DISCOUNT_SELL, dbo.V_SALES.SERVICE_SELL,
-                          dbo.V_SALES.NET_SALES, dbo.V_SALES.APP_CODE, dbo.V_SALES.APP_NAME, dbo.V_SALES.APP_PERCENT, dbo.V_SALES.NET_NET_SALES, dbo.V_SALES.NET_ARBAH, dbo.V_SALES.NOTE, 
-                         dbo.T_TABLE.TABLE_NO
-FROM            dbo.V_SALES LEFT OUTER JOIN
-                         dbo.T_TABLE ON dbo.V_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE
-WHERE        (dbo.V_SALES.WORK_CODE = 10)
-
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    S.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    S.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    S.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.TABLE_NO
+FROM
+    dbo.V_SALES S
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+WHERE
+    S.WORK_CODE = 10
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_REGION]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_REGION]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13872,49 +14407,90 @@ GROUP BY CLIENT_REGION
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_TABLE_CHECK_COUNT]
 AS
-SELECT     dbo.T_SALES_TEMP.T_ID, dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_SALES_TEMP.BILL_DATE, dbo.T_SALES_TEMP.BILL_TIME, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, 
-                  dbo.T_SALES_TEMP.QTY, dbo.T_SALES_TEMP.COST, dbo.T_SALES_TEMP.SELL, dbo.T_SALES_TEMP.TOTAL, dbo.T_SALES_TEMP.TOTAL_COST, dbo.T_SALES_TEMP.ARBAH, dbo.T_SALES_TEMP.WORK_CODE, dbo.T_SALES_TEMP.USER_CODE, dbo.T_SALES_TEMP.ITEM_NOTE, 
-                  dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.TABLE_CODE, dbo.V_SALES.CALL_NO, dbo.V_SALES.QISM_CODE, dbo.V_SALES.QISM_NAME, dbo.V_SALES.TABLE_NO, dbo.V_SALES.TABLE_NAME, dbo.V_SALES.TABLE_NOTE, dbo.V_SALES.NO_CLIENT, 
-                  dbo.T_SALES_TEMP.IS_PRINT, dbo.T_USERS.USER_NAME, dbo.T_ITEMS.PRINTER_ID
-FROM        dbo.T_SALES_TEMP INNER JOIN
-                  dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
-                  dbo.T_USERS ON dbo.T_SALES_TEMP.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                  dbo.V_SALES ON dbo.T_SALES_TEMP.BILL_NUMBER = dbo.V_SALES.BILL_NUMBER
-WHERE     (dbo.T_SALES_TEMP.IS_PRINT = 0)
-
+SELECT
+    T.T_ID,
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    T.BILL_DATE,
+    T.BILL_TIME,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    T.QTY,
+    T.COST,
+    T.SELL,
+    T.TOTAL,
+    T.TOTAL_COST,
+    T.ARBAH,
+    T.WORK_CODE,
+    T.USER_CODE,
+    T.ITEM_NOTE,
+    V.INVOICE_CODE,
+    V.INVOICE_NAME,
+    V.TABLE_CODE,
+    V.CALL_NO,
+    V.QISM_CODE,
+    V.QISM_NAME,
+    V.TABLE_NO,
+    V.TABLE_NAME,
+    V.TABLE_NOTE,
+    V.NO_CLIENT,
+    T.IS_PRINT,
+    U.USER_NAME,
+    I.PRINTER_ID
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_USERS U ON T.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.V_SALES V ON T.BILL_NUMBER = V.BILL_NUMBER
+WHERE
+    T.IS_PRINT = 0
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_RETURN]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS_RETURN]'))
-EXEC dbo.sp_executesql @statement = N'
-
-CREATE VIEW [dbo].[V_SALES_DETAILS_RETURN]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_DETAILS_RETURN]
 AS
-SELECT       dbo.T_SALES_DETAILS_RETURN.T_ID, dbo.T_SALES_DETAILS_RETURN.BILL_BRANCH, dbo.T_SALES_DETAILS_RETURN.BILL_NUMBER, dbo.T_SALES_DETAILS_RETURN.BILL_ORDER, dbo.T_SALES_DETAILS_RETURN.BILL_DATE, dbo.T_SALES_DETAILS_RETURN.BILL_TIME, 
-                         dbo.T_SALES_DETAILS_RETURN.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES_DETAILS_RETURN.QTY, dbo.T_SALES_DETAILS_RETURN.COST, dbo.T_SALES_DETAILS_RETURN.SELL, dbo.T_SALES_DETAILS_RETURN.TOTAL, dbo.T_SALES_DETAILS_RETURN.TOTAL_COST, 
-                         dbo.T_SALES_DETAILS_RETURN.ARBAH, dbo.T_SALES_DETAILS_RETURN.WORK_CODE, dbo.T_SALES_DETAILS_RETURN.USER_CODE, dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.TABLE_CODE, 
-                         dbo.V_SALES.CALL_NO
-FROM            dbo.T_SALES_DETAILS_RETURN INNER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS_RETURN.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
-                         dbo.V_SALES ON dbo.T_SALES_DETAILS_RETURN.BILL_NUMBER = dbo.V_SALES.BILL_NUMBER
-
-
+SELECT
+    R.T_ID,
+    R.BILL_BRANCH,
+    R.BILL_NUMBER,
+    R.BILL_ORDER,
+    R.BILL_DATE,
+    R.BILL_TIME,
+    R.ITEM_CODE,
+    I.ITEM_NAME,
+    R.QTY,
+    R.COST,
+    R.SELL,
+    R.TOTAL,
+    R.TOTAL_COST,
+    R.ARBAH,
+    R.WORK_CODE,
+    R.USER_CODE,
+    S.INVOICE_CODE,
+    S.INVOICE_NAME,
+    S.TABLE_CODE,
+    S.CALL_NO
+FROM
+    dbo.T_SALES_DETAILS_RETURN R
+    LEFT JOIN dbo.T_ITEMS I ON R.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.V_SALES S ON R.BILL_NUMBER = S.BILL_NUMBER
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ON]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ON]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13922,41 +14498,81 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ON]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_ON]
 AS
-SELECT        TOP (100) PERCENT dbo.T_SALES.BILL_BRANCH, dbo.T_SALES.BILL_NUMBER, dbo.T_SALES.BILL_ORDER, dbo.T_SALES.BILL_DATE, dbo.T_SALES.BILL_TIME, dbo.T_SALES.TABLE_CODE, dbo.T_SALES.CALL_NO, 
-                         dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME, dbo.T_SALES.CLIENT_NAME, dbo.T_SALES.CLIENT_REGION, dbo.T_SALES.CLIENT_PHONE, dbo.T_SALES.CLIENT_ADDRESS, dbo.T_SALES.DRIVER_NAME,
-                          dbo.T_SALES.WORK_CODE, dbo.T_SALES.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SALES.TOT_QTY, dbo.T_SALES.TOT_COST, dbo.T_SALES.TOT_SELL, dbo.T_SALES.DISCOUNT_SELL, dbo.T_SALES.SERVICE_SELL, 
-                         dbo.T_SALES.NET_SALES, dbo.T_SALES.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES.APP_PERCENT, dbo.T_SALES.NET_NET_SALES, dbo.T_SALES.NET_ARBAH, dbo.T_SALES.NOTE, dbo.T_TABLE.TABLE_NO, 
-                         dbo.T_SALES.KITCHEN_NOTE, dbo.T_SALES.IVC_CODE, dbo.T_IVC_TYPE.IVC_NAME, dbo.T_SALES.RECIPIENT_CODE, dbo.T_RECIPIENTS.RECIPIENT_NAME, dbo.T_SALES.IS_CASH, dbo.T_SALES.NO_CLIENT, 
-                         dbo.T_SALES.CLIENT_CODE, dbo.T_CLIENT.CLIENT_NAME AS CLIENT_NAME_DEBIT
-FROM            dbo.T_SALES INNER JOIN
-                         dbo.T_CLIENT ON dbo.T_SALES.CLIENT_CODE = dbo.T_CLIENT.CLIENT_CODE LEFT OUTER JOIN
-                         dbo.T_RECIPIENTS ON dbo.T_SALES.RECIPIENT_CODE = dbo.T_RECIPIENTS.RECIPIENT_CODE LEFT OUTER JOIN
-                         dbo.T_IVC_TYPE ON dbo.T_SALES.IVC_CODE = dbo.T_IVC_TYPE.IVC_CODE LEFT OUTER JOIN
-                         dbo.T_TABLE ON dbo.T_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE LEFT OUTER JOIN
-                         dbo.T_APP_TYPE ON dbo.T_SALES.APP_CODE = dbo.T_APP_TYPE.APP_CODE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                         dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE
-WHERE        (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY dbo.T_SALES.BILL_NUMBER
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    IT.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    U.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    AT.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.TABLE_NO,
+    S.KITCHEN_NOTE,
+    S.IVC_CODE,
+    IV.IVC_NAME,
+    S.RECIPIENT_CODE,
+    R.RECIPIENT_NAME,
+    S.IS_CASH,
+    S.NO_CLIENT,
+    S.CLIENT_CODE,
+    C.CLIENT_NAME AS CLIENT_NAME_DEBIT
+FROM
+    dbo.T_SALES S
+    INNER JOIN dbo.T_CLIENT C ON S.CLIENT_CODE = C.CLIENT_CODE
+    LEFT JOIN dbo.T_RECIPIENTS R ON S.RECIPIENT_CODE = R.RECIPIENT_CODE
+    LEFT JOIN dbo.T_IVC_TYPE IV ON S.IVC_CODE = IV.IVC_CODE
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+    LEFT JOIN dbo.T_APP_TYPE AT ON S.APP_CODE = AT.APP_CODE
+    LEFT JOIN dbo.T_USERS U ON S.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+WHERE
+    S.WORK_CODE = 1
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_BEST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_BEST]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_BEST]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_PHONE_BEST]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_PHONE_BEST]
 AS
-SELECT       CLIENT_REGION, SUM(TOT_COST) AS TOT_COST, SUM(NET_SALES) AS NET_SALES, COUNT(BILL_NUMBER) AS COUNT_BILL
-FROM            dbo.V_SALES_ON
-WHERE        (LEN(CLIENT_PHONE) > 5)
-GROUP BY CLIENT_REGION
-
+SELECT
+    CLIENT_REGION,
+    SUM(TOT_COST) AS TOT_COST,
+    SUM(NET_SALES) AS NET_SALES,
+    COUNT(BILL_NUMBER) AS COUNT_BILL
+FROM
+    dbo.V_SALES_ON
+WHERE
+    LEN(CLIENT_PHONE) > 5
+GROUP BY
+    CLIENT_REGION
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_HUB]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_HUB]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -13964,90 +14580,118 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY_HUB]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_DELEVERY_HUB]
 AS
-SELECT        dbo.V_SALES.BILL_BRANCH, dbo.V_SALES.BILL_NUMBER, dbo.V_SALES.BILL_ORDER, dbo.V_SALES.BILL_DATE, dbo.V_SALES.BILL_TIME, dbo.V_SALES.TABLE_CODE, dbo.V_SALES.CALL_NO, dbo.V_SALES.INVOICE_CODE, 
-                         dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.CLIENT_NAME, dbo.V_SALES.CLIENT_REGION, dbo.V_SALES.CLIENT_PHONE, dbo.V_SALES.CLIENT_ADDRESS, dbo.V_SALES.DRIVER_NAME, dbo.V_SALES.WORK_CODE, 
-                         dbo.V_SALES.USER_CODE, dbo.V_SALES.USER_NAME, dbo.V_SALES.TOT_QTY, dbo.V_SALES.TOT_COST, dbo.V_SALES.TOT_SELL, dbo.V_SALES.DISCOUNT_SELL, dbo.V_SALES.SERVICE_SELL, dbo.V_SALES.NET_SALES, 
-                         dbo.V_SALES.APP_CODE, dbo.V_SALES.APP_NAME, dbo.V_SALES.APP_PERCENT, dbo.V_SALES.NET_NET_SALES, dbo.V_SALES.NET_ARBAH, dbo.V_SALES.NOTE, dbo.T_TABLE.TABLE_NO
-FROM            dbo.V_SALES LEFT OUTER JOIN
-                         dbo.T_TABLE ON dbo.V_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE
-WHERE        (dbo.V_SALES.WORK_CODE = 20) OR
-                         (dbo.V_SALES.WORK_CODE = 25)
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    S.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    S.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    S.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.TABLE_NO
+FROM
+    dbo.V_SALES S
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+WHERE
+    S.WORK_CODE IN (20, 25)
 ' 
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT]'))
-EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_DRIVER_DELEVERY_COUNT]
+EXEC dbo.sp_executesql @statement = N' 
+
+CREATE VIEW [dbo].[V_DRIVER_DELEVERY_COUNT]
 AS
-SELECT     dbo.T_DRIVER.T_ID, dbo.T_DRIVER.DRIVER_NAME, N''( '' + CAST(COUNT(dbo.V_SALES_DELEVERY_HUB.BILL_NUMBER) AS nvarchar(10)) + N'' )'' AS COUNT_BILL
-FROM        dbo.T_DRIVER LEFT OUTER JOIN
-                  dbo.V_SALES_DELEVERY_HUB ON dbo.T_DRIVER.DRIVER_NAME = dbo.V_SALES_DELEVERY_HUB.DRIVER_NAME
-GROUP BY dbo.T_DRIVER.T_ID, dbo.T_DRIVER.DRIVER_NAME
+SELECT
+    D.T_ID,
+    D.DRIVER_NAME,
+    COUNT(V.BILL_NUMBER) AS COUNT_BILL_NUM,
+    N''( '' + CAST(COUNT(V.BILL_NUMBER) AS nvarchar(10)) + N'' )'' AS COUNT_BILL_TEXT,
+    CASE 
+        WHEN COUNT(V.BILL_NUMBER) = 0 THEN D.DRIVER_NAME
+        ELSE D.DRIVER_NAME + N'' ( '' + CAST(COUNT(V.BILL_NUMBER) AS nvarchar(10)) + N'' )''
+    END AS DRIVER_WITH_COUNT
+FROM
+    dbo.T_DRIVER D
+    LEFT JOIN dbo.V_SALES_DELEVERY_HUB V ON D.DRIVER_NAME = V.DRIVER_NAME
+GROUP BY
+    D.T_ID, D.DRIVER_NAME
+
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DELEVERY_TABEE3]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DELEVERY_TABEE3]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DELEVERY_TABEE3]'))
-EXEC dbo.sp_executesql @statement = N'
-
-CREATE VIEW [dbo].[V_SALES_DELEVERY_TABEE3]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_DELEVERY_TABEE3]
 AS
-SELECT       dbo.V_SALES.BILL_BRANCH, dbo.V_SALES.BILL_NUMBER, dbo.V_SALES.BILL_ORDER, dbo.V_SALES.BILL_DATE, dbo.V_SALES.BILL_TIME, dbo.V_SALES.TABLE_CODE, dbo.V_SALES.CALL_NO, 
-                         dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.CLIENT_NAME, dbo.V_SALES.CLIENT_REGION, dbo.V_SALES.CLIENT_PHONE, dbo.V_SALES.CLIENT_ADDRESS, dbo.V_SALES.DRIVER_NAME, 
-                         dbo.V_SALES.WORK_CODE, dbo.V_SALES.USER_CODE, dbo.V_SALES.USER_NAME, dbo.V_SALES.TOT_QTY, dbo.V_SALES.TOT_COST, dbo.V_SALES.TOT_SELL, dbo.V_SALES.DISCOUNT_SELL, dbo.V_SALES.SERVICE_SELL,
-                          dbo.V_SALES.NET_SALES, dbo.V_SALES.APP_CODE, dbo.V_SALES.APP_NAME, dbo.V_SALES.APP_PERCENT, dbo.V_SALES.NET_NET_SALES, dbo.V_SALES.NET_ARBAH, dbo.V_SALES.NOTE, 
-                         dbo.T_TABLE.TABLE_NO
-FROM            dbo.V_SALES LEFT OUTER JOIN
-                         dbo.T_TABLE ON dbo.V_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE
-WHERE        (dbo.V_SALES.WORK_CODE = 10)OR   (dbo.V_SALES.WORK_CODE = 20)
-
-
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    S.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    S.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    S.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.TABLE_NO
+FROM
+    dbo.V_SALES S
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+WHERE
+    S.WORK_CODE IN (10, 20)
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON_JOB]    Script Date: 2024/11/13 2:34:23 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON_JOB]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_ITEMS_ON_JOB]
-AS
-SELECT        TOP (100) PERCENT dbo.T_ITEMS.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_ITEMS.CATEGORY_CODE, dbo.T_ITEM_CATEGORY.CATEGORY_NAME, dbo.T_ITEMS.TYPE_CODE, dbo.T_ITEM_TYPE.TYPE_NAME, 
-                         dbo.T_ITEMS.COST, dbo.T_ITEMS.SELL, dbo.T_ITEMS.ACTIVE, dbo.T_ITEMS.SORT, dbo.T_ITEMS.PRINTER_ID, dbo.T_ITEMS.ITEM_BARCODE, dbo.T_ITEMS.SHOW_MENU, dbo.T_ITEMS.ITEM_NOTE, dbo.T_ITEMS.IMG_URL, 
-                         dbo.T_ITEMS.IMAGE, dbo.T_ITEMS.ITEM_NAME_EN, dbo.T_ITEMS.ITEM_NOTE_EN, dbo.T_ITEMS.TIME_USE, dbo.T_ITEMS.IS_STORE, dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT, 
-                         dbo.T_ITEMS.BACK_COLOR, dbo.T_ITEMS.FONT_COLOR, dbo.T_ITEMS.SELL_SALA, dbo.T_ITEMS.SELL_DELEVERY, dbo.T_ITEMS.SELL_APP
-FROM            dbo.T_ITEMS INNER JOIN
-                         dbo.T_ITEM_CATEGORY ON dbo.T_ITEMS.CATEGORY_CODE = dbo.T_ITEM_CATEGORY.CATEGORY_CODE INNER JOIN
-                         dbo.T_ITEM_TYPE ON dbo.T_ITEMS.TYPE_CODE = dbo.T_ITEM_TYPE.TYPE_CODE
-WHERE        (dbo.T_ITEMS.ACTIVE = 1)  
-ORDER BY dbo.T_ITEMS.SORT
-
-' 
-GO
-/****** Object:  View [dbo].[V_ITEM_STORE]    Script Date: 2024/11/13 2:34:23 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_STORE]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_ITEM_STORE]
-AS
-SELECT        dbo.T_ITEM_STORE.T_ID, dbo.T_ITEM_STORE.DATE_JOB, dbo.T_ITEM_STORE.ITEM_CODE, dbo.V_ITEMS_ON_JOB.ITEM_NAME, dbo.V_ITEMS_ON_JOB.CATEGORY_CODE, dbo.V_ITEMS_ON_JOB.CATEGORY_NAME, 
-                         dbo.V_ITEMS_ON_JOB.TYPE_CODE, dbo.V_ITEMS_ON_JOB.TYPE_NAME, dbo.T_ITEM_STORE.QTY_IN, dbo.T_ITEM_STORE.QTY_OUT, dbo.T_ITEM_STORE.QTY_REMAIN, dbo.T_ITEM_STORE.QTY_WER
-FROM            dbo.T_ITEM_STORE LEFT OUTER JOIN
-                         dbo.V_ITEMS_ON_JOB ON dbo.T_ITEM_STORE.ITEM_CODE = dbo.V_ITEMS_ON_JOB.ITEM_CODE
-
-' 
-GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14055,43 +14699,163 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_PRINTER]
 AS
-SELECT     dbo.T_SALES_TEMP.T_ID, dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_SALES_TEMP.BILL_DATE, dbo.T_SALES_TEMP.BILL_TIME, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, 
-                  dbo.T_SALES_TEMP.QTY, dbo.T_SALES_TEMP.COST, dbo.T_SALES_TEMP.SELL, dbo.T_SALES_TEMP.TOTAL, dbo.T_SALES_TEMP.TOTAL_COST, dbo.T_SALES_TEMP.ARBAH, dbo.T_SALES_TEMP.WORK_CODE, dbo.T_SALES_TEMP.USER_CODE, dbo.T_ITEM_PRINTER.PRINTER_ID, 
-                  dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, dbo.T_SALES_TEMP.ITEM_NOTE, dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.CALL_NO, dbo.T_SALES_TEMP.IS_PRINT, dbo.V_SALES.TABLE_CODE, dbo.V_SALES.TABLE_NO, 
-                  dbo.V_SALES.TABLE_NAME, dbo.V_SALES.TABLE_NOTE, dbo.V_SALES.NO_CLIENT, dbo.V_SALES.NOTE, dbo.V_SALES.KITCHEN_NOTE, dbo.T_ITEMS.ITEM_NAME_EN, dbo.V_SALES.CLIENT_NAME, dbo.V_SALES.CLIENT_REGION, dbo.V_SALES.CLIENT_PHONE, 
-                  dbo.V_SALES.CLIENT_ADDRESS, dbo.V_SALES.DRIVER_NAME, dbo.T_USERS.USER_NAME, dbo.T_ITEM_PRINTER.QISM_CODE, dbo.T_QISM.QISM_NAME
-FROM        dbo.T_SALES_TEMP INNER JOIN
-                  dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE INNER JOIN
-                  dbo.T_ITEM_PRINTER ON dbo.T_ITEMS.ITEM_CODE = dbo.T_ITEM_PRINTER.ITEM_CODE LEFT OUTER JOIN
-                  dbo.T_QISM ON dbo.T_ITEM_PRINTER.QISM_CODE = dbo.T_QISM.QISM_CODE LEFT OUTER JOIN
-                  dbo.T_PRINTER ON dbo.T_ITEM_PRINTER.PRINTER_ID = dbo.T_PRINTER.T_ID LEFT OUTER JOIN
-                  dbo.T_USERS ON dbo.T_SALES_TEMP.USER_CODE = dbo.T_USERS.USER_CODE RIGHT OUTER JOIN
-                  dbo.V_SALES ON dbo.T_SALES_TEMP.BILL_BRANCH = dbo.V_SALES.BILL_BRANCH
-WHERE     (dbo.T_SALES_TEMP.IS_PRINT = 0) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
+
+-- ➊ الطابعة الرئيسية من T_ITEM_PRINTER
+SELECT
+    T.T_ID,
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    T.BILL_DATE,
+    T.BILL_TIME,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    T.QTY,
+    T.COST,
+    T.SELL,
+    T.TOTAL,
+    T.TOTAL_COST,
+    T.ARBAH,
+    T.WORK_CODE,
+    T.USER_CODE,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    T.ITEM_NOTE,
+    V.INVOICE_CODE,
+    V.INVOICE_NAME,
+    V.CALL_NO,
+    T.IS_PRINT,
+    V.TABLE_CODE,
+    V.TABLE_NO,
+    V.TABLE_NAME,
+    V.TABLE_NOTE,
+    V.NO_CLIENT,
+    V.NOTE,
+    V.KITCHEN_NOTE,
+    I.ITEM_NAME_EN,
+    V.CLIENT_NAME,
+    V.CLIENT_REGION,
+    V.CLIENT_PHONE,
+    V.CLIENT_ADDRESS,
+    V.DRIVER_NAME,
+    U.USER_NAME,
+    IP.QISM_CODE,
+    Q.QISM_NAME
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER IP ON I.ITEM_CODE = IP.ITEM_CODE
+    LEFT JOIN dbo.T_QISM Q ON IP.QISM_CODE = Q.QISM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IP.PRINTER_ID = P.T_ID
+    LEFT JOIN dbo.T_USERS U ON T.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.V_SALES V ON T.BILL_BRANCH = V.BILL_BRANCH AND T.BILL_NUMBER = V.BILL_NUMBER
+WHERE
+    T.IS_PRINT = 0
+    AND IP.PRINTER_ID <> 0
+
+UNION ALL
+
+-- ➋ الطابعات الإضافية من T_ITEM_PRINTER_MORE
+SELECT
+    T.T_ID,
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    T.BILL_DATE,
+    T.BILL_TIME,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    T.QTY,
+    T.COST,
+    T.SELL,
+    T.TOTAL,
+    T.TOTAL_COST,
+    T.ARBAH,
+    T.WORK_CODE,
+    T.USER_CODE,
+    IPM.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    T.ITEM_NOTE,
+    V.INVOICE_CODE,
+    V.INVOICE_NAME,
+    V.CALL_NO,
+    T.IS_PRINT,
+    V.TABLE_CODE,
+    V.TABLE_NO,
+    V.TABLE_NAME,
+    V.TABLE_NOTE,
+    V.NO_CLIENT,
+    V.NOTE,
+    V.KITCHEN_NOTE,
+    I.ITEM_NAME_EN,
+    V.CLIENT_NAME,
+    V.CLIENT_REGION,
+    V.CLIENT_PHONE,
+    V.CLIENT_ADDRESS,
+    V.DRIVER_NAME,
+    U.USER_NAME,
+    -5 AS QISM_CODE,
+    N''Extra'' AS QISM_NAME
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER_MORE IPM ON I.ITEM_CODE = IPM.ITEM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IPM.PRINTER_ID = P.T_ID
+    LEFT JOIN dbo.T_USERS U ON T.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.V_SALES V ON T.BILL_BRANCH = V.BILL_BRANCH AND T.BILL_NUMBER = V.BILL_NUMBER
+WHERE
+    T.IS_PRINT = 0
+    AND IPM.PRINTER_ID <> 0
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS]'))
 EXEC dbo.sp_executesql @statement = N'
+
 CREATE VIEW [dbo].[V_SALES_DETAILS]
 AS
-SELECT        dbo.T_SALES_DETAILS.T_ID, dbo.T_SALES_DETAILS.BILL_BRANCH, dbo.T_SALES_DETAILS.BILL_NUMBER, dbo.T_SALES_DETAILS.BILL_ORDER, dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_SALES_DETAILS.BILL_TIME, 
-                         dbo.T_SALES_DETAILS.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES_DETAILS.QTY, dbo.T_SALES_DETAILS.COST, dbo.T_SALES_DETAILS.SELL, dbo.T_SALES_DETAILS.TOTAL, dbo.T_SALES_DETAILS.TOTAL_COST, 
-                         dbo.T_SALES_DETAILS.ARBAH, dbo.T_SALES_DETAILS.WORK_CODE, dbo.T_ITEMS.CATEGORY_CODE, dbo.T_ITEM_CATEGORY.CATEGORY_NAME, dbo.T_ITEMS.TYPE_CODE, dbo.T_ITEM_TYPE.TYPE_NAME, 
-                         dbo.T_SALES_DETAILS.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT
-FROM            dbo.T_ITEM_CATEGORY RIGHT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_ITEM_CATEGORY.CATEGORY_CODE = dbo.T_ITEMS.CATEGORY_CODE LEFT OUTER JOIN
-                         dbo.T_ITEM_TYPE ON dbo.T_ITEMS.TYPE_CODE = dbo.T_ITEM_TYPE.TYPE_CODE RIGHT OUTER JOIN
-                         dbo.T_SALES_DETAILS ON dbo.T_ITEMS.ITEM_CODE = dbo.T_SALES_DETAILS.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES_DETAILS.USER_CODE = dbo.T_USERS.USER_CODE
+SELECT 
+    D.T_ID,
+    D.BILL_BRANCH,
+    D.BILL_NUMBER,
+    D.BILL_ORDER,
+    D.BILL_DATE,
+    D.BILL_TIME,
+    D.ITEM_CODE,
+    I.ITEM_NAME,
+    D.QTY,
+    D.COST,
+    D.SELL,
+    D.TOTAL,
+    D.TOTAL_COST,
+    D.ARBAH,
+    S.WORK_CODE,       
+    I.CATEGORY_CODE,
+    C.CATEGORY_NAME,
+    I.TYPE_CODE,
+    T.TYPE_NAME,
+    D.USER_CODE,
+    U.USER_NAME,
+    I.MAIN_ITEM_CODE,
+    I.QTY_PARENT
+FROM 
+    dbo.T_SALES_DETAILS D
+    LEFT JOIN dbo.T_ITEMS I ON D.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_ITEM_CATEGORY C ON I.CATEGORY_CODE = C.CATEGORY_CODE
+    LEFT JOIN dbo.T_ITEM_TYPE T ON I.TYPE_CODE = T.TYPE_CODE
+    LEFT JOIN dbo.T_USERS U ON D.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.T_SALES S ON  D.BILL_NUMBER = S.BILL_NUMBER
 
+WHERE S.WORK_CODE=1
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ON_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ON_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14099,42 +14863,115 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ON_ITEMS]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_ON_ITEMS]
 AS
-SELECT     TOP (100) PERCENT dbo.T_SALES.BILL_BRANCH, dbo.T_SALES.BILL_NUMBER, dbo.T_SALES.BILL_ORDER, dbo.T_SALES.BILL_DATE, dbo.T_SALES.BILL_TIME, dbo.T_SALES.TABLE_CODE, dbo.T_SALES.CALL_NO, dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME, 
-                  dbo.T_SALES.CLIENT_NAME, dbo.T_SALES.CLIENT_REGION, dbo.T_SALES.CLIENT_PHONE, dbo.T_SALES.CLIENT_ADDRESS, dbo.T_SALES.DRIVER_NAME, dbo.T_SALES.WORK_CODE, dbo.T_SALES.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SALES.TOT_QTY, 
-                  dbo.T_SALES.TOT_COST, dbo.T_SALES.TOT_SELL, dbo.T_SALES.DISCOUNT_SELL, dbo.T_SALES.SERVICE_SELL, dbo.T_SALES.NET_SALES, dbo.T_SALES.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES.APP_PERCENT, dbo.T_SALES.NET_NET_SALES, 
-                  dbo.T_SALES.NET_ARBAH, dbo.T_SALES.NOTE, dbo.T_TABLE.TABLE_NO, dbo.T_SALES.KITCHEN_NOTE, dbo.T_SALES.IVC_CODE, dbo.T_IVC_TYPE.IVC_NAME, dbo.T_SALES.RECIPIENT_CODE, dbo.T_RECIPIENTS.RECIPIENT_NAME, dbo.T_SALES.IS_CASH, dbo.T_SALES.NO_CLIENT, 
-                  dbo.T_SALES.CLIENT_CODE, dbo.T_CLIENT.CLIENT_NAME AS CLIENT_NAME_DEBIT, dbo.V_SALES_DETAILS.ITEM_CODE, dbo.V_SALES_DETAILS.ITEM_NAME, dbo.V_SALES_DETAILS.QTY, dbo.V_SALES_DETAILS.COST, dbo.V_SALES_DETAILS.SELL, dbo.V_SALES_DETAILS.TOTAL, 
-                  dbo.V_SALES_DETAILS.CATEGORY_NAME, dbo.V_SALES_DETAILS.TYPE_NAME, dbo.V_SALES_DETAILS.CATEGORY_CODE, dbo.T_SALES.CAPTAIN_NAME
-FROM        dbo.T_SALES INNER JOIN
-                  dbo.T_CLIENT ON dbo.T_SALES.CLIENT_CODE = dbo.T_CLIENT.CLIENT_CODE LEFT OUTER JOIN
-                  dbo.V_SALES_DETAILS ON dbo.T_SALES.BILL_NUMBER = dbo.V_SALES_DETAILS.BILL_NUMBER LEFT OUTER JOIN
-                  dbo.T_RECIPIENTS ON dbo.T_SALES.RECIPIENT_CODE = dbo.T_RECIPIENTS.RECIPIENT_CODE LEFT OUTER JOIN
-                  dbo.T_IVC_TYPE ON dbo.T_SALES.IVC_CODE = dbo.T_IVC_TYPE.IVC_CODE LEFT OUTER JOIN
-                  dbo.T_TABLE ON dbo.T_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE LEFT OUTER JOIN
-                  dbo.T_APP_TYPE ON dbo.T_SALES.APP_CODE = dbo.T_APP_TYPE.APP_CODE LEFT OUTER JOIN
-                  dbo.T_USERS ON dbo.T_SALES.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                  dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE
-WHERE     (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY dbo.T_SALES.BILL_NUMBER
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    IT.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    U.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    AT.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.TABLE_NO,
+    S.KITCHEN_NOTE,
+    S.IVC_CODE,
+    IV.IVC_NAME,
+    S.RECIPIENT_CODE,
+    R.RECIPIENT_NAME,
+    S.IS_CASH,
+    S.NO_CLIENT,
+    S.CLIENT_CODE,
+    C.CLIENT_NAME AS CLIENT_NAME_DEBIT,
+    D.ITEM_CODE,
+    D.ITEM_NAME,
+    D.QTY,
+    D.COST,
+    D.SELL,
+    D.TOTAL,
+    D.CATEGORY_NAME,
+    D.TYPE_NAME,
+    D.CATEGORY_CODE,
+    S.CAPTAIN_NAME
+FROM
+    dbo.T_SALES S
+    INNER JOIN dbo.T_CLIENT C ON S.CLIENT_CODE = C.CLIENT_CODE
+    LEFT JOIN dbo.V_SALES_DETAILS D ON S.BILL_NUMBER = D.BILL_NUMBER
+    LEFT JOIN dbo.T_RECIPIENTS R ON S.RECIPIENT_CODE = R.RECIPIENT_CODE
+    LEFT JOIN dbo.T_IVC_TYPE IV ON S.IVC_CODE = IV.IVC_CODE
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+    LEFT JOIN dbo.T_APP_TYPE AT ON S.APP_CODE = AT.APP_CODE
+    LEFT JOIN dbo.T_USERS U ON S.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+WHERE
+    S.WORK_CODE = 1
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_WAITING]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_WAITING]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_WAITING]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_WAITING]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_WAITING]
 AS
-SELECT       BILL_BRANCH, BILL_NUMBER, BILL_ORDER, BILL_DATE, BILL_TIME, TABLE_CODE, CALL_NO, INVOICE_CODE, INVOICE_NAME, CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS, DRIVER_NAME, 
-                         WORK_CODE, USER_CODE, USER_NAME, TOT_QTY, TOT_COST, TOT_SELL, DISCOUNT_SELL, SERVICE_SELL, NET_SALES, APP_CODE, APP_NAME, APP_PERCENT, NET_NET_SALES, NET_ARBAH, NOTE
-FROM            dbo.V_SALES
-WHERE        (WORK_CODE = 2)
-
+SELECT
+    BILL_BRANCH,
+    BILL_NUMBER,
+    BILL_ORDER,
+    BILL_DATE,
+    BILL_TIME,
+    TABLE_CODE,
+    CALL_NO,
+    INVOICE_CODE,
+    INVOICE_NAME,
+    CLIENT_NAME,
+    CLIENT_REGION,
+    CLIENT_PHONE,
+    CLIENT_ADDRESS,
+    DRIVER_NAME,
+    WORK_CODE,
+    USER_CODE,
+    USER_NAME,
+    TOT_QTY,
+    TOT_COST,
+    TOT_SELL,
+    DISCOUNT_SELL,
+    SERVICE_SELL,
+    NET_SALES,
+    APP_CODE,
+    APP_NAME,
+    APP_PERCENT,
+    NET_NET_SALES,
+    NET_ARBAH,
+    NOTE
+FROM
+    dbo.V_SALES
+WHERE
+    WORK_CODE = 2
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_LIST_APPLICATION]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_LIST_APPLICATION]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14142,14 +14979,22 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_PHONE_LIST_APPLICATION]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_PHONE_LIST_APPLICATION]
 AS
-SELECT        CLIENT_PHONE, APP_CODE, APP_NAME
-FROM            dbo.V_SALES
-WHERE        (LEN(CLIENT_PHONE) > 5)
-GROUP BY CLIENT_PHONE, APP_CODE, APP_NAME
-HAVING        (APP_CODE = 10)
+SELECT
+    CLIENT_PHONE,
+    APP_CODE,
+    APP_NAME
+FROM
+    dbo.V_SALES
+WHERE
+    LEN(CLIENT_PHONE) > 5
+    AND APP_CODE = 10
+GROUP BY
+    CLIENT_PHONE,
+    APP_CODE,
+    APP_NAME
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TATMA]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TATMA]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14157,19 +15002,49 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TATMA]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_TATMA]
 AS
-SELECT     dbo.T_SALES_TEMP.T_ID, dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_SALES_TEMP.BILL_DATE, dbo.T_SALES_TEMP.BILL_TIME, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, 
-                  dbo.T_SALES_TEMP.QTY, dbo.T_SALES_TEMP.COST, dbo.T_SALES_TEMP.SELL, dbo.T_SALES_TEMP.TOTAL, dbo.T_SALES_TEMP.TOTAL_COST, dbo.T_SALES_TEMP.ARBAH, dbo.T_SALES_TEMP.WORK_CODE, dbo.T_SALES_TEMP.USER_CODE, dbo.T_SALES_TEMP.ITEM_NOTE, 
-                  dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.TABLE_CODE, dbo.V_SALES.CALL_NO, dbo.T_SALES_TEMP.IS_PRINT, dbo.T_ITEMS.ITEM_NAME + N'' '' + CHAR(13) + CHAR(10) + ISNULL(dbo.T_SALES_TEMP.ITEM_NOTE, N'' '') AS NAME_NOTE, 
-                  dbo.V_SALES.NOTE, dbo.V_SALES.KITCHEN_NOTE, dbo.T_ITEMS.ITEM_NAME_EN, dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT, dbo.T_USERS.USER_NAME, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME
-FROM        dbo.T_ITEM_PRINTER INNER JOIN
-                  dbo.T_ITEMS ON dbo.T_ITEM_PRINTER.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE INNER JOIN
-                  dbo.V_SALES ON dbo.T_ITEM_PRINTER.QISM_CODE = dbo.V_SALES.QISM_CODE RIGHT OUTER JOIN
-                  dbo.T_SALES_TEMP ON dbo.V_SALES.BILL_NUMBER = dbo.T_SALES_TEMP.BILL_NUMBER AND dbo.T_ITEMS.ITEM_CODE = dbo.T_SALES_TEMP.ITEM_CODE LEFT OUTER JOIN
-                  dbo.T_PRINTER ON dbo.T_ITEM_PRINTER.PRINTER_ID = dbo.T_PRINTER.T_ID LEFT OUTER JOIN
-                  dbo.T_USERS ON dbo.T_SALES_TEMP.USER_CODE = dbo.T_USERS.USER_CODE
+SELECT
+    T.T_ID,
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    T.BILL_DATE,
+    T.BILL_TIME,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    T.QTY,
+    T.COST,
+    T.SELL,
+    T.TOTAL,
+    T.TOTAL_COST,
+    T.ARBAH,
+    T.WORK_CODE,
+    T.USER_CODE,
+    T.ITEM_NOTE,
+    V.INVOICE_CODE,
+    V.INVOICE_NAME,
+    V.TABLE_CODE,
+    V.CALL_NO,
+    T.IS_PRINT,
+    I.ITEM_NAME + N'' '' + CHAR(13) + CHAR(10) + ISNULL(T.ITEM_NOTE, N'' '') AS NAME_NOTE,
+    V.NOTE,
+    V.KITCHEN_NOTE,
+    I.ITEM_NAME_EN,
+    I.MAIN_ITEM_CODE,
+    I.QTY_PARENT,
+    U.USER_NAME,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER IP ON I.ITEM_CODE = IP.ITEM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IP.PRINTER_ID = P.T_ID
+    LEFT JOIN dbo.T_USERS U ON T.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.V_SALES V ON T.BILL_BRANCH = V.BILL_BRANCH AND T.BILL_NUMBER = V.BILL_NUMBER
 ' 
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14178,15 +15053,25 @@ IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DR
 EXEC dbo.sp_executesql @statement = N'
 CREATE VIEW [dbo].[V_DRIVER_DELEVERY_COUNT_ON]
 AS
-SELECT     dbo.T_DRIVER.T_ID, dbo.T_DRIVER.DRIVER_NAME, N''( '' + CAST(COUNT(dbo.V_SALES_DELEVERY_HUB.BILL_NUMBER) AS nvarchar(10)) + N'' )'' AS COUNT_BILL, dbo.T_DRIVER.USER_APP, dbo.T_DRIVER.PASSWORD_APP, dbo.T_DRIVER.ACTIVE
-FROM        dbo.T_DRIVER LEFT OUTER JOIN
-                  dbo.V_SALES_DELEVERY_HUB ON dbo.T_DRIVER.DRIVER_NAME = dbo.V_SALES_DELEVERY_HUB.DRIVER_NAME
-GROUP BY dbo.T_DRIVER.T_ID, dbo.T_DRIVER.DRIVER_NAME, dbo.T_DRIVER.USER_APP, dbo.T_DRIVER.PASSWORD_APP, dbo.T_DRIVER.ACTIVE
-HAVING     (dbo.T_DRIVER.ACTIVE = 1)
+SELECT
+    D.T_ID,
+    D.DRIVER_NAME,
+    COUNT(V.BILL_NUMBER) AS COUNT_BILL_NUM,
+    N''( '' + CAST(COUNT(V.BILL_NUMBER) AS nvarchar(10)) + N'' )'' AS COUNT_BILL,
+    D.USER_APP,
+    D.PASSWORD_APP,
+    D.ACTIVE
+FROM
+    dbo.T_DRIVER D
+    LEFT JOIN dbo.V_SALES_DELEVERY_HUB V ON D.DRIVER_NAME = V.DRIVER_NAME
+WHERE
+    D.ACTIVE = 1
+GROUP BY
+    D.T_ID, D.DRIVER_NAME, D.USER_APP, D.PASSWORD_APP, D.ACTIVE
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_PHONE_LIST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_PHONE_LIST]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14195,15 +15080,76 @@ IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SA
 EXEC dbo.sp_executesql @statement = N'
 CREATE VIEW [dbo].[V_SALES_PHONE_LIST]
 AS
-SELECT       MAX(DISTINCT BILL_DATE) AS BILL_DATE, CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS, CAST(DATEDIFF(DAY, MAX(BILL_TIME), GETDATE()) AS nvarchar(10)) + N'' يوم'' AS DIFF, 
-                         CAST(DATEDIFF(MINUTE, MAX(BILL_TIME), GETDATE()) AS nvarchar(10)) + N'' د'' AS DIFF_MIN
-FROM            dbo.V_SALES
-WHERE        (LEN(CLIENT_PHONE) > 5)
-GROUP BY CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS
+ 
+WITH SALES AS (
+    SELECT 
+        LTRIM(RTRIM(CLIENT_PHONE)) AS CLIENT_PHONE,
+        BILL_DATE,
+        BILL_TIME,           
+        CLIENT_NAME,
+        CLIENT_REGION,
+        CLIENT_ADDRESS
+    FROM dbo.V_SALES
+    WHERE LEN(CLIENT_PHONE) > 5
+),
+IMP AS (
+    SELECT
+        LTRIM(RTRIM(CLIENT_PHONE)) AS CLIENT_PHONE,
+        CAST(NULL AS date)    AS BILL_DATE,
+        CAST(NULL AS datetime) AS BILL_TIME,
+        CLIENT_NAME,
+        CLIENT_REGION,
+        CLIENT_ADDRESS
+    FROM dbo.T_IMPORT_PHONE
+    WHERE LEN(CLIENT_PHONE) > 5
+),
+ALL_ROWS AS (
+    SELECT * FROM SALES
+    UNION ALL
+    SELECT * FROM IMP
+),
+NORM AS (
+    SELECT
+        CLIENT_PHONE,
+        BILL_DATE,
+        BILL_TIME,
+        CLIENT_NAME,
+        CLIENT_REGION,
+        NULLIF(LTRIM(RTRIM(CLIENT_ADDRESS)), N'''') AS CLIENT_ADDRESS
+    FROM ALL_ROWS
+),
+-- 2) اختيار أحدث سجل لكل (هاتف + عنوان)
+RANKED AS (
+    SELECT
+        CLIENT_PHONE,
+        CLIENT_ADDRESS,
+        CLIENT_REGION,
+        CLIENT_NAME,
+        BILL_DATE,
+        BILL_TIME,
+        ROW_NUMBER() OVER (
+            PARTITION BY CLIENT_PHONE, CLIENT_ADDRESS
+            ORDER BY ISNULL(BILL_TIME, ''19000101'') DESC, ISNULL(BILL_DATE, ''19000101'') DESC
+        ) AS rn
+    FROM NORM
+    WHERE CLIENT_ADDRESS IS NOT NULL
+)
+SELECT
+  
+    ISNULL(BILL_TIME, CAST(BILL_DATE AS datetime)) AS SORT_DT,
 
+    ISNULL(BILL_DATE, CAST(GETDATE() AS date))     AS BILL_DATE,
+    CLIENT_NAME,
+    CLIENT_REGION,
+    CLIENT_PHONE,
+    CLIENT_ADDRESS,
+    CAST(DATEDIFF(DAY, ISNULL(BILL_TIME, GETDATE()), GETDATE()) AS nvarchar(10)) + N'' يوم'' AS DIFF,
+    CAST(DATEDIFF(MINUTE, ISNULL(BILL_TIME, GETDATE()), GETDATE()) AS nvarchar(10)) + N'' د'' AS DIFF_MIN
+FROM RANKED
+WHERE rn = 1;
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14211,18 +15157,47 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_TABLE]
 AS
-SELECT     dbo.T_SALES_TEMP.T_ID, dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_SALES_TEMP.BILL_DATE, dbo.T_SALES_TEMP.BILL_TIME, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, 
-                  dbo.T_SALES_TEMP.QTY, dbo.T_SALES_TEMP.COST, dbo.T_SALES_TEMP.SELL, dbo.T_SALES_TEMP.TOTAL, dbo.T_SALES_TEMP.TOTAL_COST, dbo.T_SALES_TEMP.ARBAH, dbo.T_SALES_TEMP.WORK_CODE, dbo.T_SALES_TEMP.USER_CODE, dbo.T_SALES_TEMP.ITEM_NOTE, 
-                  dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.TABLE_CODE, dbo.V_SALES.CALL_NO, dbo.V_SALES.QISM_CODE, dbo.V_SALES.QISM_NAME, dbo.V_SALES.TABLE_NO, dbo.V_SALES.TABLE_NAME, dbo.V_SALES.TABLE_NOTE, dbo.V_SALES.NO_CLIENT, 
-                  dbo.T_SALES_TEMP.IS_PRINT, dbo.T_USERS.USER_NAME, dbo.T_ITEMS.PRINTER_ID
-FROM        dbo.T_SALES_TEMP INNER JOIN
-                  dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
-                  dbo.T_USERS ON dbo.T_SALES_TEMP.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                  dbo.V_SALES ON dbo.T_SALES_TEMP.BILL_NUMBER = dbo.V_SALES.BILL_NUMBER
-WHERE     (dbo.T_SALES_TEMP.IS_PRINT = 0)
+SELECT
+    T.T_ID,
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    T.BILL_DATE,
+    T.BILL_TIME,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    T.QTY,
+    T.COST,
+    T.SELL,
+    T.TOTAL,
+    T.TOTAL_COST,
+    T.ARBAH,
+    T.WORK_CODE,
+    T.USER_CODE,
+    T.ITEM_NOTE,
+    V.INVOICE_CODE,
+    V.INVOICE_NAME,
+    V.TABLE_CODE,
+    V.CALL_NO,
+    V.QISM_CODE,
+    V.QISM_NAME,
+    V.TABLE_NO,
+    V.TABLE_NAME,
+    V.TABLE_NOTE,
+    V.NO_CLIENT,
+    T.IS_PRINT,
+    U.USER_NAME,
+    I.PRINTER_ID
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_USERS U ON T.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.V_SALES V ON T.BILL_BRANCH = V.BILL_BRANCH AND T.BILL_NUMBER = V.BILL_NUMBER
+WHERE
+    T.IS_PRINT = 0
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TABLE_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14230,19 +15205,47 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TABLE_DELETE]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_TABLE_DELETE]
 AS
-SELECT        dbo.T_SALES_TEMP.T_ID, dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_SALES_TEMP.BILL_DATE, dbo.T_SALES_TEMP.BILL_TIME, 
-                         dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES_TEMP.QTY, dbo.T_SALES_TEMP.COST, dbo.T_SALES_TEMP.SELL, dbo.T_SALES_TEMP.TOTAL, dbo.T_SALES_TEMP.TOTAL_COST, 
-                         dbo.T_SALES_TEMP.ARBAH, dbo.T_SALES_TEMP.WORK_CODE, dbo.T_SALES_TEMP.USER_CODE, dbo.T_SALES_TEMP.ITEM_NOTE, dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.TABLE_CODE, 
-                         dbo.V_SALES.CALL_NO, dbo.V_SALES.QISM_CODE, dbo.V_SALES.QISM_NAME, dbo.V_SALES.TABLE_NO, dbo.V_SALES.TABLE_NAME, dbo.V_SALES.TABLE_NOTE, dbo.V_SALES.NO_CLIENT, dbo.T_SALES_TEMP.IS_PRINT, 
-                         dbo.T_SALES_TEMP.IS_DELETE, dbo.T_USERS.USER_NAME
-FROM            dbo.T_SALES_TEMP INNER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES_TEMP.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                         dbo.V_SALES ON dbo.T_SALES_TEMP.BILL_NUMBER = dbo.V_SALES.BILL_NUMBER
-WHERE        (dbo.T_SALES_TEMP.IS_DELETE = 1)
+SELECT
+    T.T_ID,
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    T.BILL_DATE,
+    T.BILL_TIME,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    T.QTY,
+    T.COST,
+    T.SELL,
+    T.TOTAL,
+    T.TOTAL_COST,
+    T.ARBAH,
+    T.WORK_CODE,
+    T.USER_CODE,
+    T.ITEM_NOTE,
+    V.INVOICE_CODE,
+    V.INVOICE_NAME,
+    V.TABLE_CODE,
+    V.CALL_NO,
+    V.QISM_CODE,
+    V.QISM_NAME,
+    V.TABLE_NO,
+    V.TABLE_NAME,
+    V.TABLE_NOTE,
+    V.NO_CLIENT,
+    T.IS_PRINT,
+    T.IS_DELETE,
+    U.USER_NAME
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_USERS U ON T.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.V_SALES V ON  T.BILL_NUMBER = V.BILL_NUMBER
+WHERE
+    T.IS_DELETE = 1
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14250,21 +15253,54 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_DELETE]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_PRINTER_DELETE]
 AS
-SELECT     dbo.T_SALES_TEMP.T_ID, dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_SALES_TEMP.BILL_DATE, dbo.T_SALES_TEMP.BILL_TIME, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, 
-                  dbo.T_SALES_TEMP.QTY, dbo.T_SALES_TEMP.COST, dbo.T_SALES_TEMP.SELL, dbo.T_SALES_TEMP.TOTAL, dbo.T_SALES_TEMP.TOTAL_COST, dbo.T_SALES_TEMP.ARBAH, dbo.T_SALES_TEMP.WORK_CODE, dbo.T_SALES_TEMP.USER_CODE, dbo.T_PRINTER.PRINTER_NAME, 
-                  dbo.T_PRINTER.DEVICE_NAME, dbo.T_SALES_TEMP.ITEM_NOTE, dbo.V_SALES.INVOICE_CODE, dbo.V_SALES.INVOICE_NAME, dbo.V_SALES.CALL_NO, dbo.T_SALES_TEMP.IS_PRINT, dbo.V_SALES.TABLE_CODE, dbo.V_SALES.TABLE_NO, dbo.V_SALES.TABLE_NAME, 
-                  dbo.V_SALES.TABLE_NOTE, dbo.V_SALES.NO_CLIENT, dbo.T_SALES_TEMP.IS_DELETE, dbo.T_USERS.USER_NAME, dbo.T_ITEM_PRINTER.QISM_CODE, dbo.T_QISM.QISM_NAME, dbo.T_ITEM_PRINTER.PRINTER_ID
-FROM        dbo.T_SALES_TEMP INNER JOIN
-                  dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE INNER JOIN
-                  dbo.T_ITEM_PRINTER ON dbo.T_ITEMS.ITEM_CODE = dbo.T_ITEM_PRINTER.ITEM_CODE LEFT OUTER JOIN
-                  dbo.T_PRINTER ON dbo.T_ITEM_PRINTER.PRINTER_ID = dbo.T_PRINTER.T_ID LEFT OUTER JOIN
-                  dbo.T_QISM ON dbo.T_ITEM_PRINTER.QISM_CODE = dbo.T_QISM.QISM_CODE LEFT OUTER JOIN
-                  dbo.T_USERS ON dbo.T_SALES_TEMP.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                  dbo.V_SALES ON dbo.T_SALES_TEMP.BILL_BRANCH = dbo.V_SALES.BILL_BRANCH
-WHERE     (dbo.T_SALES_TEMP.IS_DELETE = 1) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
+SELECT
+    T.T_ID,
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    T.BILL_DATE,
+    T.BILL_TIME,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    T.QTY,
+    T.COST,
+    T.SELL,
+    T.TOTAL,
+    T.TOTAL_COST,
+    T.ARBAH,
+    T.WORK_CODE,
+    T.USER_CODE,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    T.ITEM_NOTE,
+    V.INVOICE_CODE,
+    V.INVOICE_NAME,
+    V.CALL_NO,
+    T.IS_PRINT,
+    V.TABLE_CODE,
+    V.TABLE_NO,
+    V.TABLE_NAME,
+    V.TABLE_NOTE,
+    V.NO_CLIENT,
+    T.IS_DELETE,
+    U.USER_NAME,
+    IP.QISM_CODE,
+    Q.QISM_NAME,
+    IP.PRINTER_ID
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER IP ON I.ITEM_CODE = IP.ITEM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IP.PRINTER_ID = P.T_ID
+    LEFT JOIN dbo.T_QISM Q ON IP.QISM_CODE = Q.QISM_CODE
+    LEFT JOIN dbo.T_USERS U ON T.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.V_SALES V ON T.BILL_BRANCH = V.BILL_BRANCH AND T.BILL_NUMBER = V.BILL_NUMBER
+WHERE
+    T.IS_DELETE = 1
+    AND IP.PRINTER_ID <> 0
 ' 
 GO
-/****** Object:  View [dbo].[V_CLIENT_CASH]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_CLIENT_CASH]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14278,7 +15314,7 @@ WHERE        (ACTIVE = 1)
 GROUP BY CLIENT_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_CLIENT_INVOICE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_CLIENT_INVOICE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14286,17 +15322,38 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_INVOICE]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_CLIENT_INVOICE]
 AS
-SELECT        dbo.T_CLIENT.CLIENT_CODE, dbo.T_CLIENT.CLIENT_NAME, dbo.T_CLIENT.CLIENT_PHONE, dbo.T_CLIENT.CLIENT_REGION, dbo.T_CLIENT.CLIENT_ADDRESS, dbo.T_CLIENT.CLIENT_ACTIVE, dbo.T_SALES.IVC_CODE, 
-                         dbo.T_SALES.IS_CASH, SUM(dbo.T_SALES.NET_NET_SALES) AS TOTSL_DEBIT, SUM(dbo.T_SALES.DISCOUNT_SELL) AS DISCOUNT_SELL, SUM(dbo.T_SALES.SERVICE_SELL) AS SERVICE_SELL, SUM(dbo.T_SALES.TOT_SELL)
-                          AS TOT_SELL
-FROM            dbo.T_CLIENT LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_CLIENT.CLIENT_CODE = dbo.T_SALES.CLIENT_CODE
-GROUP BY dbo.T_CLIENT.CLIENT_CODE, dbo.T_CLIENT.CLIENT_NAME, dbo.T_CLIENT.CLIENT_PHONE, dbo.T_CLIENT.CLIENT_REGION, dbo.T_CLIENT.CLIENT_ADDRESS, dbo.T_SALES.IVC_CODE, dbo.T_SALES.IS_CASH, 
-                         dbo.T_CLIENT.CLIENT_ACTIVE
-HAVING        (dbo.T_CLIENT.CLIENT_CODE > 0) AND (dbo.T_CLIENT.CLIENT_ACTIVE = 1) AND (dbo.T_SALES.IS_CASH = 0)
+SELECT 
+    C.CLIENT_CODE,
+    C.CLIENT_NAME,
+    C.CLIENT_PHONE,
+    C.CLIENT_REGION,
+    C.CLIENT_ADDRESS,
+    C.CLIENT_ACTIVE,
+    S.IVC_CODE,
+    S.IS_CASH,
+    SUM(S.NET_NET_SALES) AS TOTSL_DEBIT,
+    SUM(S.DISCOUNT_SELL) AS DISCOUNT_SELL,
+    SUM(S.SERVICE_SELL) AS SERVICE_SELL,
+    SUM(S.TOT_SELL) AS TOT_SELL
+FROM 
+    dbo.T_CLIENT C
+    INNER JOIN dbo.T_SALES S
+        ON C.CLIENT_CODE = S.CLIENT_CODE
+        AND S.IS_CASH = 0
+WHERE 
+    C.CLIENT_ACTIVE = 1
+GROUP BY 
+    C.CLIENT_CODE,
+    C.CLIENT_NAME,
+    C.CLIENT_PHONE,
+    C.CLIENT_REGION,
+    C.CLIENT_ADDRESS,
+    C.CLIENT_ACTIVE,
+    S.IVC_CODE,
+    S.IS_CASH
 ' 
 GO
-/****** Object:  View [dbo].[V_CLIENT_DEBIT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_CLIENT_DEBIT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14304,15 +15361,29 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_DEBIT]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_CLIENT_DEBIT]
 AS
-SELECT        dbo.V_CLIENT_INVOICE.CLIENT_CODE, dbo.V_CLIENT_INVOICE.CLIENT_NAME, dbo.V_CLIENT_INVOICE.CLIENT_PHONE, dbo.V_CLIENT_INVOICE.CLIENT_REGION, dbo.V_CLIENT_INVOICE.CLIENT_ADDRESS, 
-                         dbo.V_CLIENT_INVOICE.CLIENT_ACTIVE, dbo.V_CLIENT_INVOICE.IVC_CODE, dbo.V_CLIENT_INVOICE.IS_CASH, dbo.V_CLIENT_INVOICE.TOTSL_DEBIT, dbo.V_CLIENT_CASH.AMO_CASH, 
-                         ISNULL(dbo.V_CLIENT_INVOICE.TOTSL_DEBIT, 0) - ISNULL(dbo.V_CLIENT_CASH.AMO_CASH, 0) AS REMAIN, dbo.V_CLIENT_INVOICE.DISCOUNT_SELL, dbo.V_CLIENT_INVOICE.SERVICE_SELL, 
-                         dbo.V_CLIENT_INVOICE.TOT_SELL
-FROM            dbo.V_CLIENT_INVOICE LEFT OUTER JOIN
-                         dbo.V_CLIENT_CASH ON dbo.V_CLIENT_INVOICE.CLIENT_CODE = dbo.V_CLIENT_CASH.CLIENT_CODE
+SELECT
+    I.CLIENT_CODE,
+    I.CLIENT_NAME,
+    I.CLIENT_PHONE,
+    I.CLIENT_REGION,
+    I.CLIENT_ADDRESS,
+    I.CLIENT_ACTIVE,
+    I.IVC_CODE,
+    I.IS_CASH,
+    ISNULL(I.TOTSL_DEBIT, 0) AS TOTSL_DEBIT,
+    ISNULL(C.AMO_CASH, 0) AS AMO_CASH,
+    ISNULL(I.TOTSL_DEBIT, 0) - ISNULL(C.AMO_CASH, 0) AS REMAIN,
+    ISNULL(I.DISCOUNT_SELL, 0) AS DISCOUNT_SELL,
+    ISNULL(I.SERVICE_SELL, 0) AS SERVICE_SELL,
+    ISNULL(I.TOT_SELL, 0) AS TOT_SELL
+FROM
+    dbo.V_CLIENT_INVOICE I
+    LEFT JOIN dbo.V_CLIENT_CASH C ON I.CLIENT_CODE = C.CLIENT_CODE
+WHERE
+    I.CLIENT_ACTIVE = 1
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DAY_NAME]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DAY_NAME]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14320,14 +15391,26 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DAY_NAME]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_DAY_NAME]
 AS
-SELECT        BILL_DATE, INVOICE_CODE, INVOICE_NAME, NET_NET_SALES, DATENAME(WEEKDAY, BILL_DATE) AS DAY_NAME, DATEPART(WEEKDAY, BILL_DATE) AS DAY_NO
-FROM            dbo.V_SALES
-WHERE        (WORK_CODE = 1)
-GROUP BY BILL_DATE, INVOICE_CODE, INVOICE_NAME, NET_NET_SALES
-HAVING        (SUM(NET_NET_SALES) <> 0)
+SELECT
+    BILL_DATE,
+    INVOICE_CODE,
+    INVOICE_NAME,
+    SUM(NET_NET_SALES) AS NET_NET_SALES,
+    DATENAME(WEEKDAY, BILL_DATE) AS DAY_NAME,
+    DATEPART(WEEKDAY, BILL_DATE) AS DAY_NO
+FROM
+    dbo.V_SALES
+WHERE
+    WORK_CODE = 1
+GROUP BY
+    BILL_DATE,
+    INVOICE_CODE,
+    INVOICE_NAME
+HAVING
+    SUM(NET_NET_SALES) <> 0
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14335,110 +15418,145 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_ITEMS_ON]
 AS
-SELECT        TOP (100) PERCENT dbo.T_ITEMS.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_ITEMS.CATEGORY_CODE, dbo.T_ITEM_CATEGORY.CATEGORY_NAME, dbo.T_ITEMS.TYPE_CODE, dbo.T_ITEM_TYPE.TYPE_NAME, 
-                         dbo.T_ITEMS.COST, dbo.T_ITEMS.SELL, dbo.T_ITEMS.ACTIVE, dbo.T_ITEMS.SORT, dbo.T_ITEMS.PRINTER_ID, dbo.T_ITEMS.ITEM_BARCODE, dbo.T_ITEMS.SHOW_MENU, dbo.T_ITEMS.ITEM_NOTE, dbo.T_ITEMS.IMG_URL, 
-                         dbo.T_ITEMS.IMAGE, dbo.T_ITEMS.ITEM_NAME_EN, dbo.T_ITEMS.ITEM_NOTE_EN, dbo.T_ITEMS.TIME_USE, dbo.T_ITEMS.IS_STORE, dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT, 
-                         dbo.T_ITEMS.BACK_COLOR, dbo.T_ITEMS.FONT_COLOR, dbo.T_ITEMS.SELL_SALA, dbo.T_ITEMS.SELL_DELEVERY, dbo.T_ITEMS.SELL_APP
-FROM            dbo.T_ITEMS INNER JOIN
-                         dbo.T_ITEM_CATEGORY ON dbo.T_ITEMS.CATEGORY_CODE = dbo.T_ITEM_CATEGORY.CATEGORY_CODE INNER JOIN
-                         dbo.T_ITEM_TYPE ON dbo.T_ITEMS.TYPE_CODE = dbo.T_ITEM_TYPE.TYPE_CODE
-WHERE        (dbo.T_ITEMS.ACTIVE = 1) AND (dbo.T_ITEMS.IS_STORE = 1)
-ORDER BY dbo.T_ITEMS.SORT
+SELECT
+    I.ITEM_CODE,
+    I.ITEM_NAME,
+    I.CATEGORY_CODE,
+    C.CATEGORY_NAME,
+    I.TYPE_CODE,
+    T.TYPE_NAME,
+    I.COST,
+    I.SELL,
+    I.ACTIVE,
+    I.SORT,
+    I.PRINTER_ID,
+    I.ITEM_BARCODE,
+    I.SHOW_MENU,
+    I.ITEM_NOTE,
+    I.IMG_URL,
+    I.IMAGE,
+    I.ITEM_NAME_EN,
+    I.ITEM_NOTE_EN,
+    I.TIME_USE,
+    I.IS_STORE,
+    I.MAIN_ITEM_CODE,
+    I.QTY_PARENT,
+    I.BACK_COLOR,
+    I.FONT_COLOR,
+    I.SELL_SALA,
+    I.SELL_DELEVERY,
+    I.SELL_APP
+FROM
+    dbo.T_ITEMS I
+    INNER JOIN dbo.T_ITEM_CATEGORY C ON I.CATEGORY_CODE = C.CATEGORY_CODE
+    INNER JOIN dbo.T_ITEM_TYPE T ON I.TYPE_CODE = T.TYPE_CODE
+WHERE
+    I.ACTIVE = 1
+    AND I.IS_STORE = 1
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEM_BARCODE]    Script Date: 2024/11/13 2:34:23 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_BARCODE]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_ITEM_BARCODE]
-AS
-SELECT       dbo.T_ITEM_BARCODE.T_ID, dbo.T_ITEM_BARCODE.ITEM_CODE, dbo.V_ITEMS_ON.ITEM_NAME, dbo.V_ITEMS_ON.CATEGORY_CODE, dbo.V_ITEMS_ON.CATEGORY_NAME, dbo.V_ITEMS_ON.TYPE_CODE, 
-                         dbo.V_ITEMS_ON.TYPE_NAME, dbo.V_ITEMS_ON.COST, dbo.V_ITEMS_ON.SELL, dbo.V_ITEMS_ON.ACTIVE, dbo.V_ITEMS_ON.SORT, dbo.V_ITEMS_ON.PRINTER_ID, dbo.T_ITEM_BARCODE.TYPE_VAL, 
-                         dbo.T_ITEM_BARCODE.ITEM_BARCODE, dbo.V_ITEMS_ON.ITEM_BARCODE AS ITEM_BARCODE_MAIN
-FROM            dbo.T_ITEM_BARCODE INNER JOIN
-                         dbo.V_ITEMS_ON ON dbo.T_ITEM_BARCODE.ITEM_CODE = dbo.V_ITEMS_ON.ITEM_CODE
-
-' 
-GO
-/****** Object:  View [dbo].[V_ITEM_SCALE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_ITEM_SCALE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_SCALE]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_ITEM_SCALE]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_ITEM_SCALE]
 AS
-SELECT        dbo.V_ITEMS_ON.ITEM_CODE, dbo.V_ITEMS_ON.ITEM_NAME, dbo.V_ITEMS_ON.SELL, dbo.V_ITEMS_ON.ITEM_BARCODE, dbo.V_ITEMS_ON.SORT, dbo.V_ITEMS_ON.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, 
-                         dbo.T_PRINTER.DEVICE_NAME, dbo.T_PRINTER.IS_SCALE
-FROM            dbo.V_ITEMS_ON LEFT OUTER JOIN
-                         dbo.T_PRINTER ON dbo.V_ITEMS_ON.PRINTER_ID = dbo.T_PRINTER.T_ID
-WHERE        (dbo.V_ITEMS_ON.TYPE_CODE = 4) AND (LEN(dbo.V_ITEMS_ON.ITEM_BARCODE) = 5)
-
+SELECT
+    I.ITEM_CODE,
+    I.ITEM_NAME,
+    I.SELL,
+    I.ITEM_BARCODE,
+    I.SORT,
+    I.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    P.IS_SCALE
+FROM
+    dbo.V_ITEMS_ON I
+    LEFT JOIN dbo.T_PRINTER P ON I.PRINTER_ID = P.T_ID
+WHERE
+    I.TYPE_CODE = 4
+    AND LEN(I.ITEM_BARCODE) = 5
 ' 
 GO
-/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]'))
-EXEC dbo.sp_executesql @statement = N'
-
-CREATE VIEW [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_DRIVER_DELEVERY_COUNT_ON_ONLY]
 AS
-SELECT     dbo.T_DRIVER.T_ID, dbo.T_DRIVER.DRIVER_NAME, N''( '' + CAST(COUNT(dbo.V_SALES_DELEVERY_HUB.BILL_NUMBER) AS nvarchar(10)) + N'' )'' AS COUNT_BILL, dbo.T_DRIVER.USER_APP, dbo.T_DRIVER.PASSWORD_APP, dbo.T_DRIVER.ACTIVE
-FROM        dbo.T_DRIVER LEFT OUTER JOIN
-                  dbo.V_SALES_DELEVERY_HUB ON dbo.T_DRIVER.DRIVER_NAME = dbo.V_SALES_DELEVERY_HUB.DRIVER_NAME
-				 
-GROUP BY dbo.T_DRIVER.T_ID, dbo.T_DRIVER.DRIVER_NAME, dbo.T_DRIVER.USER_APP, dbo.T_DRIVER.PASSWORD_APP, dbo.T_DRIVER.ACTIVE
-HAVING     (dbo.T_DRIVER.ACTIVE = 1) AND COUNT(dbo.V_SALES_DELEVERY_HUB.BILL_NUMBER)<>0
-
-
+SELECT
+    D.T_ID,
+    D.DRIVER_NAME,
+    COUNT(V.BILL_NUMBER) AS COUNT_BILL_NUM,
+    N''( '' + CAST(COUNT(V.BILL_NUMBER) AS nvarchar(10)) + N'' )'' AS COUNT_BILL_TEXT,
+    D.USER_APP,
+    D.PASSWORD_APP,
+    D.ACTIVE
+FROM
+    dbo.T_DRIVER D
+    LEFT JOIN dbo.V_SALES_DELEVERY_HUB V ON D.DRIVER_NAME = V.DRIVER_NAME
+WHERE
+    D.ACTIVE = 1
+GROUP BY
+    D.T_ID, D.DRIVER_NAME, D.USER_APP, D.PASSWORD_APP, D.ACTIVE
+HAVING
+    COUNT(V.BILL_NUMBER) > 0
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_APP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_APP]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_TEMP_APP]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_APP]
 AS
-SELECT     dbo.T_SALES_TEMP_APP_QTY.T_ID,   dbo.T_SALES_TEMP_APP_QTY.BILL_NUMBER,    dbo.T_SALES_TEMP_APP_QTY.BILL_TIME, dbo.T_SALES_TEMP_APP_QTY.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, 
-                  dbo.T_SALES_TEMP_APP_QTY.QTY,    dbo.T_SALES_TEMP_APP_QTY.USER_CODE,  dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT 
-FROM        dbo.T_SALES_TEMP_APP_QTY INNER JOIN
-                  dbo.T_ITEMS ON dbo.T_SALES_TEMP_APP_QTY.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
-                 dbo.V_SALES ON dbo.T_SALES_TEMP_APP_QTY.BILL_NUMBER = dbo.V_SALES.BILL_NUMBER
-
+SELECT
+    Q.T_ID,
+    Q.BILL_NUMBER,
+    Q.BILL_TIME,
+    Q.ITEM_CODE,
+    I.ITEM_NAME,
+    Q.QTY,
+    Q.USER_CODE,
+    I.MAIN_ITEM_CODE,
+    I.QTY_PARENT
+FROM
+    dbo.T_SALES_TEMP_APP_QTY Q
+    INNER JOIN dbo.T_ITEMS I ON Q.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.V_SALES V ON Q.BILL_NUMBER = V.BILL_NUMBER
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]'))
-EXEC dbo.sp_executesql @statement = N'
-
-CREATE VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_ITEM_RECIPE_TEMP_APP]
 AS
-SELECT     S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY AS QTY_RECIPE,
-                      (SELECT     SUM(QTY) AS Expr1
-                       FROM        dbo.V_SALES_TEMP_APP
-                       WHERE      (ITEM_CODE = R.ITEM_CODE_MAIN) ) * R.QTY AS QTY_SALES_TEMP
-FROM        dbo.T_ITEM_STORE AS S INNER JOIN
-                  dbo.T_ITEM_RECIPE AS R ON S.ITEM_CODE = R.ITEM_CODE
-GROUP BY S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY
-
-
+SELECT
+    S.DATE_JOB,
+    S.ITEM_CODE,
+    R.ITEM_CODE_MAIN,
+    R.QTY AS QTY_RECIPE,
+    ISNULL(VT.QTY_SALES_TEMP, 0) * R.QTY AS QTY_SALES_TEMP
+FROM
+    dbo.T_ITEM_STORE S
+    INNER JOIN dbo.T_ITEM_RECIPE R ON S.ITEM_CODE = R.ITEM_CODE
+    OUTER APPLY (
+        SELECT SUM(QTY) AS QTY_SALES_TEMP
+        FROM dbo.V_SALES_TEMP_APP
+        WHERE ITEM_CODE = R.ITEM_CODE_MAIN
+    ) VT
 ' 
 GO
-/****** Object:  View [dbo].[V_CATEGORY_ON]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_CATEGORY_ON]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14490,7 +15608,7 @@ GROUP BY
 
 ' 
 GO
-/****** Object:  View [dbo].[V_CLIENT_NOTIFICATION]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_CLIENT_NOTIFICATION]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14498,12 +15616,22 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_CLIENT_NOTIFICATION]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_CLIENT_NOTIFICATION]
 AS
-SELECT        CLIENT_CODE, CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS, ACTIVE, IS_BLOCK, C_DATE
-FROM            dbo.T_APP_CLIENT
-WHERE        (IS_BLOCK = 0)
+SELECT
+    CLIENT_CODE,
+    ISNULL(CLIENT_NAME, N'''') AS CLIENT_NAME,
+    ISNULL(CLIENT_REGION, N'''') AS CLIENT_REGION,
+    ISNULL(CLIENT_PHONE, N'''') AS CLIENT_PHONE,
+    ISNULL(CLIENT_ADDRESS, N'''') AS CLIENT_ADDRESS,
+    ISNULL(ACTIVE, 1) AS ACTIVE,
+    ISNULL(IS_BLOCK, 0) AS IS_BLOCK,
+    ISNULL(C_DATE, GETDATE()) AS C_DATE
+FROM
+    dbo.T_APP_CLIENT
+WHERE
+    IS_BLOCK = 0
 ' 
 GO
-/****** Object:  View [dbo].[V_EMP_ENTRY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_EMP_ENTRY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14520,59 +15648,110 @@ FROM            dbo.T_EMP_ENTER INNER JOIN
 
 ' 
 GO
-/****** Object:  View [dbo].[V_ERADAT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_ERADAT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ERADAT]'))
-EXEC dbo.sp_executesql @statement = N'
-
-CREATE VIEW [dbo].[V_ERADAT]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_ERADAT]
 AS
-SELECT       dbo.T_ERADAT.T_ID, dbo.T_ERADAT.D_DATE, dbo.T_ERADAT.D_TIME, dbo.T_ERADAT.EXP_TYPE, dbo.T_ERADAT.AMO, dbo.T_ERADAT.NOTE, dbo.T_ERADAT.USER_CODE, dbo.T_USERS.USER_NAME
-FROM            dbo.T_ERADAT LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_ERADAT.USER_CODE = dbo.T_USERS.USER_CODE
-
-
+SELECT
+    E.T_ID,
+    E.D_DATE,
+    E.D_TIME,
+    E.EXP_TYPE,
+    E.AMO,
+    E.NOTE,
+    E.USER_CODE,
+    ISNULL(U.USER_NAME, N''غير محدد'') AS USER_NAME
+FROM
+    dbo.T_ERADAT E
+    LEFT JOIN dbo.T_USERS U ON E.USER_CODE = U.USER_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_EXPENSES]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_EXPENSES]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_EXPENSES]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_EXPENSES]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_EXPENSES]
 AS
-SELECT       dbo.T_EXPENSES.T_ID, dbo.T_EXPENSES.D_DATE, dbo.T_EXPENSES.D_TIME, dbo.T_EXPENSES.EXP_TYPE, dbo.T_EXPENSES.AMO, dbo.T_EXPENSES.NOTE, dbo.T_EXPENSES.USER_CODE, dbo.T_USERS.USER_NAME
-FROM            dbo.T_EXPENSES LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_EXPENSES.USER_CODE = dbo.T_USERS.USER_CODE
-
+SELECT
+    E.T_ID,
+    E.D_DATE,
+    E.D_TIME,
+    E.EXP_TYPE,
+    E.AMO,
+    E.NOTE,
+    E.USER_CODE,
+    ISNULL(U.USER_NAME, N''غير محدد'') AS USER_NAME
+FROM
+    dbo.T_EXPENSES E
+    LEFT JOIN dbo.T_USERS U ON E.USER_CODE = U.USER_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_FREE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_FREE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_FREE]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_FREE]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_FREE]
 AS
-SELECT       TOP (100) PERCENT dbo.T_SALES_DETAILS.BILL_DATE, SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) 
-                         AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE, dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_NUMBER = dbo.T_SALES.BILL_NUMBER LEFT OUTER JOIN
-                         dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE
-GROUP BY dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_SALES.WORK_CODE, dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME
-HAVING       (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY TOTAL_ARBAH DESC
-
+SELECT
+    SD.BILL_DATE,
+    SUM(SD.TOTAL_COST) AS TOTAL_COST,
+    SUM(SD.TOTAL) AS TOTAL_SELL,
+    SUM(SD.ARBAH) AS TOTAL_ARBAH,
+    S.WORK_CODE,
+    S.INVOICE_CODE,
+    IT.INVOICE_NAME
+FROM
+    dbo.T_SALES_DETAILS SD
+    LEFT JOIN dbo.T_SALES S ON SD.BILL_NUMBER = S.BILL_NUMBER
+    LEFT JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+WHERE
+    S.WORK_CODE = 1
+GROUP BY
+    SD.BILL_DATE, S.WORK_CODE, S.INVOICE_CODE, IT.INVOICE_NAME
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEM_RECIPE_STORE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_ITEM_BARCODE]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_BARCODE]'))
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_ITEM_BARCODE]
+AS
+SELECT
+    B.T_ID,
+    B.ITEM_CODE,
+    I.ITEM_NAME,
+    I.CATEGORY_CODE,
+    C.CATEGORY_NAME,
+    I.TYPE_CODE,
+    T.TYPE_NAME,
+    I.COST,
+    I.SELL,
+    I.ACTIVE,
+    I.SORT,
+    I.PRINTER_ID,
+    B.TYPE_VAL,
+    B.ITEM_BARCODE,
+    I.ITEM_BARCODE AS ITEM_BARCODE_MAIN
+FROM
+    dbo.T_ITEM_BARCODE B
+    INNER JOIN dbo.T_ITEMS I ON B.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_CATEGORY C ON I.CATEGORY_CODE = C.CATEGORY_CODE
+    INNER JOIN dbo.T_ITEM_TYPE T ON I.TYPE_CODE = T.TYPE_CODE
+WHERE
+    I.ACTIVE = 1 AND I.IS_STORE = 1 AND I.TYPE_CODE NOT IN (7, 10)
+' 
+GO
+/****** Object:  View [dbo].[V_ITEM_RECIPE_STORE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14580,12 +15759,50 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_RECIPE_STORE]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_ITEM_RECIPE_STORE]
 AS
-SELECT     dbo.T_ITEM_RECIPE.ITEM_CODE_MAIN, dbo.T_ITEM_RECIPE.ITEM_CODE, dbo.T_ITEM_RECIPE.QTY AS QTY_RECIPE, dbo.T_ITEM_STORE.QTY_REMAIN, dbo.T_ITEM_STORE.QTY_REMAIN / dbo.T_ITEM_RECIPE.QTY AS DEVIDED_QTY
-FROM        dbo.T_ITEM_RECIPE INNER JOIN
-                  dbo.T_ITEM_STORE ON dbo.T_ITEM_RECIPE.ITEM_CODE = dbo.T_ITEM_STORE.ITEM_CODE
+SELECT
+    R.ITEM_CODE_MAIN,
+    R.ITEM_CODE,
+    R.QTY AS QTY_RECIPE,
+    S.QTY_REMAIN,
+    CASE 
+        WHEN R.QTY <> 0 THEN S.QTY_REMAIN / R.QTY
+        ELSE 0
+    END AS DEVIDED_QTY,
+    S.DATE_JOB
+FROM
+    dbo.T_ITEM_RECIPE R
+    INNER JOIN dbo.T_ITEM_STORE S ON R.ITEM_CODE = S.ITEM_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEM_STORE_JOB_DATE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_ITEM_STORE]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_STORE]'))
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_ITEM_STORE]
+AS
+SELECT
+    S.T_ID,
+    S.DATE_JOB,
+    S.ITEM_CODE,
+    I.ITEM_NAME,
+    I.CATEGORY_CODE,
+    C.CATEGORY_NAME,
+    I.TYPE_CODE,
+    T.TYPE_NAME,
+    S.QTY_IN,
+    S.QTY_OUT,
+    S.QTY_REMAIN,
+    S.QTY_WER
+FROM
+    dbo.T_ITEM_STORE S
+    LEFT JOIN dbo.T_ITEMS I ON S.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_ITEM_CATEGORY C ON I.CATEGORY_CODE = C.CATEGORY_CODE
+    LEFT JOIN dbo.T_ITEM_TYPE T ON I.TYPE_CODE = T.TYPE_CODE
+' 
+GO
+/****** Object:  View [dbo].[V_ITEM_STORE_JOB_DATE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14593,49 +15810,125 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEM_STORE_JOB_DATE]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_ITEM_STORE_JOB_DATE]
 AS
-SELECT        TOP (100) PERCENT DATE_JOB, SUM(QTY_IN) AS QTY_IN, SUM(QTY_OUT) AS QTY_OUT, SUM(QTY_REMAIN) AS QTY_REMAIN
-FROM            dbo.T_ITEM_STORE
-GROUP BY DATE_JOB
-ORDER BY DATE_JOB DESC
+SELECT
+    DATE_JOB,
+    SUM(QTY_IN) AS QTY_IN,
+    SUM(QTY_OUT) AS QTY_OUT,
+    SUM(QTY_REMAIN) AS QTY_REMAIN
+FROM
+    dbo.T_ITEM_STORE
+GROUP BY
+    DATE_JOB
 ' 
 GO
-/****** Object:  View [dbo].[V_ITEMS_ON_POS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_ITEMS_ON_JOB]    Script Date: 2025/09/06 3:36:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON_JOB]'))
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_ITEMS_ON_JOB]
+AS
+SELECT
+    I.ITEM_CODE,
+    I.ITEM_NAME,
+    I.CATEGORY_CODE,
+    C.CATEGORY_NAME,
+    I.TYPE_CODE,
+    T.TYPE_NAME,
+    I.COST,
+    I.SELL,
+    I.ACTIVE,
+    I.SORT,
+    I.PRINTER_ID,
+    I.ITEM_BARCODE,
+    I.SHOW_MENU,
+    I.ITEM_NOTE,
+    I.IMG_URL,
+    I.IMAGE,
+    I.ITEM_NAME_EN,
+    I.ITEM_NOTE_EN,
+    I.TIME_USE,
+    I.IS_STORE,
+    I.MAIN_ITEM_CODE,
+    I.QTY_PARENT,
+    I.BACK_COLOR,
+    I.FONT_COLOR,
+    I.SELL_SALA,
+    I.SELL_DELEVERY,
+    I.SELL_APP
+FROM
+    dbo.T_ITEMS I
+    INNER JOIN dbo.T_ITEM_CATEGORY C ON I.CATEGORY_CODE = C.CATEGORY_CODE
+    INNER JOIN dbo.T_ITEM_TYPE T ON I.TYPE_CODE = T.TYPE_CODE
+WHERE
+    I.ACTIVE = 1
+' 
+GO
+/****** Object:  View [dbo].[V_ITEMS_ON_POS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_ITEMS_ON_POS]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_ITEMS_ON_POS]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_ITEMS_ON_POS]
 AS
-SELECT     TOP (100) PERCENT dbo.T_ITEMS.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_ITEMS.CATEGORY_CODE, dbo.T_ITEM_CATEGORY.CATEGORY_NAME, dbo.T_ITEMS.TYPE_CODE, dbo.T_ITEM_TYPE.TYPE_NAME, dbo.T_ITEMS.COST, dbo.T_ITEMS.SELL, dbo.T_ITEMS.ACTIVE, 
-                  dbo.T_ITEMS.SORT, dbo.T_ITEMS.PRINTER_ID, dbo.T_ITEMS.ITEM_BARCODE, dbo.T_ITEMS.SHOW_MENU, dbo.T_ITEMS.ITEM_NOTE, dbo.T_ITEMS.IMG_URL, dbo.T_ITEMS.IMAGE, dbo.T_ITEMS.ITEM_NAME_EN, dbo.T_ITEMS.ITEM_NOTE_EN, dbo.T_ITEMS.TIME_USE, 
-                  dbo.T_ITEMS.IS_STORE, dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT, dbo.T_ITEMS.BACK_COLOR, dbo.T_ITEMS.FONT_COLOR, dbo.T_ITEMS.SELL_SALA, dbo.T_ITEMS.SELL_DELEVERY, dbo.T_ITEMS.SELL_APP
-FROM        dbo.T_ITEMS INNER JOIN
-                  dbo.T_ITEM_CATEGORY ON dbo.T_ITEMS.CATEGORY_CODE = dbo.T_ITEM_CATEGORY.CATEGORY_CODE INNER JOIN
-                  dbo.T_ITEM_TYPE ON dbo.T_ITEMS.TYPE_CODE = dbo.T_ITEM_TYPE.TYPE_CODE
-WHERE     (dbo.T_ITEMS.ACTIVE = 1) 
-ORDER BY dbo.T_ITEMS.SORT
-
+SELECT
+    I.ITEM_CODE,
+    I.ITEM_NAME,
+    I.CATEGORY_CODE,
+    C.CATEGORY_NAME,
+    I.TYPE_CODE,
+    T.TYPE_NAME,
+    I.COST,
+    I.SELL,
+    I.ACTIVE,
+    I.SORT,
+    I.PRINTER_ID,
+    I.ITEM_BARCODE,
+    I.SHOW_MENU,
+    I.ITEM_NOTE,
+    I.IMG_URL,
+    I.IMAGE,
+    I.ITEM_NAME_EN,
+    I.ITEM_NOTE_EN,
+    I.TIME_USE,
+    I.IS_STORE,
+    I.MAIN_ITEM_CODE,
+    I.QTY_PARENT,
+    I.BACK_COLOR,
+    I.FONT_COLOR,
+    I.SELL_SALA,
+    I.SELL_DELEVERY,
+    I.SELL_APP
+FROM
+    dbo.T_ITEMS I
+    INNER JOIN dbo.T_ITEM_CATEGORY C ON I.CATEGORY_CODE = C.CATEGORY_CODE
+    INNER JOIN dbo.T_ITEM_TYPE T ON I.TYPE_CODE = T.TYPE_CODE
+WHERE
+    I.ACTIVE = 1
 ' 
 GO
-/****** Object:  View [dbo].[V_REGION_LIST]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_REGION_LIST]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_REGION_LIST]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_REGION_LIST]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_REGION_LIST]
 AS
-SELECT        TOP (100) PERCENT CLIENT_REGION FROM            dbo.T_SALES GROUP BY CLIENT_REGION ORDER BY CLIENT_REGION
-
-
-
+SELECT
+    CLIENT_REGION
+FROM
+    dbo.T_SALES
+WHERE
+    CLIENT_REGION IS NOT NULL  
+GROUP BY
+    CLIENT_REGION
 
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_GEFT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14643,19 +15936,39 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS_GEFT]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_DETAILS_GEFT]
 AS
-SELECT        dbo.T_SALES_DETAILS.T_ID, dbo.T_SALES_DETAILS.BILL_BRANCH, dbo.T_SALES_DETAILS.BILL_NUMBER, dbo.T_SALES_DETAILS.BILL_ORDER, dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_SALES_DETAILS.BILL_TIME, 
-                         dbo.T_SALES_DETAILS.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES_DETAILS.QTY, dbo.T_SALES_DETAILS.COST, dbo.T_SALES_DETAILS.SELL, dbo.T_SALES_DETAILS.TOTAL, dbo.T_SALES_DETAILS.TOTAL_COST, 
-                         dbo.T_SALES_DETAILS.ARBAH, dbo.T_SALES_DETAILS.WORK_CODE, dbo.T_ITEMS.CATEGORY_CODE, dbo.T_ITEM_CATEGORY.CATEGORY_NAME, dbo.T_ITEMS.TYPE_CODE, dbo.T_ITEM_TYPE.TYPE_NAME, 
-                         dbo.T_SALES_DETAILS.USER_CODE, dbo.T_USERS.USER_NAME
-FROM            dbo.T_ITEM_CATEGORY RIGHT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_ITEM_CATEGORY.CATEGORY_CODE = dbo.T_ITEMS.CATEGORY_CODE LEFT OUTER JOIN
-                         dbo.T_ITEM_TYPE ON dbo.T_ITEMS.TYPE_CODE = dbo.T_ITEM_TYPE.TYPE_CODE RIGHT OUTER JOIN
-                         dbo.T_SALES_DETAILS ON dbo.T_ITEMS.ITEM_CODE = dbo.T_SALES_DETAILS.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES_DETAILS.USER_CODE = dbo.T_USERS.USER_CODE
-WHERE        (dbo.T_ITEMS.TYPE_CODE <> 20)
+SELECT
+    D.T_ID,
+    D.BILL_BRANCH,
+    D.BILL_NUMBER,
+    D.BILL_ORDER,
+    D.BILL_DATE,
+    D.BILL_TIME,
+    D.ITEM_CODE,
+    I.ITEM_NAME,
+    D.QTY,
+    D.COST,
+    D.SELL,
+    D.TOTAL,
+    D.TOTAL_COST,
+    D.ARBAH,
+    D.WORK_CODE,
+    I.CATEGORY_CODE,
+    C.CATEGORY_NAME,
+    I.TYPE_CODE,
+    T.TYPE_NAME,
+    D.USER_CODE,
+    U.USER_NAME
+FROM
+    dbo.T_SALES_DETAILS D
+    LEFT JOIN dbo.T_ITEMS I ON D.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_ITEM_CATEGORY C ON I.CATEGORY_CODE = C.CATEGORY_CODE
+    LEFT JOIN dbo.T_ITEM_TYPE T ON I.TYPE_CODE = T.TYPE_CODE
+    LEFT JOIN dbo.T_USERS U ON D.USER_CODE = U.USER_CODE
+WHERE
+    I.TYPE_CODE <> 20
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_DETAILS_TYPE_6]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_DETAILS_TYPE_6]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14663,39 +15976,91 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_DETAILS_TYPE_6]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_DETAILS_TYPE_6]
 AS
-SELECT     dbo.T_SALES_DETAILS.T_ID, dbo.T_SALES_DETAILS.BILL_BRANCH, dbo.T_SALES_DETAILS.BILL_NUMBER, dbo.T_SALES_DETAILS.BILL_ORDER, dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_SALES_DETAILS.BILL_TIME, dbo.T_SALES_DETAILS.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, 
-                  dbo.T_SALES_DETAILS.QTY, dbo.T_SALES_DETAILS.COST, dbo.T_SALES_DETAILS.SELL, dbo.T_SALES_DETAILS.TOTAL, dbo.T_SALES_DETAILS.TOTAL_COST, dbo.T_SALES_DETAILS.ARBAH, dbo.T_SALES_DETAILS.WORK_CODE, dbo.T_ITEMS.CATEGORY_CODE, 
-                  dbo.T_ITEMS.TYPE_CODE, dbo.T_ITEM_TYPE.TYPE_NAME, dbo.T_SALES_DETAILS.USER_CODE, dbo.T_ITEMS.MAIN_ITEM_CODE, dbo.T_ITEMS.QTY_PARENT
-FROM        dbo.T_ITEMS LEFT OUTER JOIN
-                  dbo.T_ITEM_TYPE ON dbo.T_ITEMS.TYPE_CODE = dbo.T_ITEM_TYPE.TYPE_CODE RIGHT OUTER JOIN
-                  dbo.T_SALES_DETAILS ON dbo.T_ITEMS.ITEM_CODE = dbo.T_SALES_DETAILS.ITEM_CODE
-WHERE     (dbo.T_ITEMS.TYPE_CODE = 6)
+SELECT
+    D.T_ID,
+    D.BILL_BRANCH,
+    D.BILL_NUMBER,
+    D.BILL_ORDER,
+    D.BILL_DATE,
+    D.BILL_TIME,
+    D.ITEM_CODE,
+    I.ITEM_NAME,
+    D.QTY,
+    D.COST,
+    D.SELL,
+    D.TOTAL,
+    D.TOTAL_COST,
+    D.ARBAH,
+    D.WORK_CODE,
+    I.CATEGORY_CODE,
+    I.TYPE_CODE,
+    T.TYPE_NAME,
+    D.USER_CODE,
+    I.MAIN_ITEM_CODE,
+    I.QTY_PARENT
+FROM
+    dbo.T_SALES_DETAILS D
+    LEFT JOIN dbo.T_ITEMS I ON D.ITEM_CODE = I.ITEM_CODE AND I.TYPE_CODE = 6
+    LEFT JOIN dbo.T_ITEM_TYPE T ON I.TYPE_CODE = T.TYPE_CODE
+WHERE
+    I.TYPE_CODE = 6
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_HISTORY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_HISTORY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_HISTORY]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_HISTORY]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_HISTORY]
 AS
-SELECT        dbo.T_SALES_HISTORY.BILL_BRANCH, dbo.T_SALES_HISTORY.BILL_NUMBER, dbo.T_SALES_HISTORY.BILL_ORDER, dbo.T_SALES_HISTORY.BILL_DATE, dbo.T_SALES_HISTORY.BILL_TIME, dbo.T_SALES_HISTORY.TABLE_CODE, dbo.T_SALES_HISTORY.CALL_NO, dbo.T_SALES_HISTORY.INVOICE_CODE, 
-                         dbo.T_INVOICE_TYPE.INVOICE_NAME, dbo.T_SALES_HISTORY.CLIENT_NAME, dbo.T_SALES_HISTORY.CLIENT_REGION, dbo.T_SALES_HISTORY.CLIENT_PHONE, dbo.T_SALES_HISTORY.CLIENT_ADDRESS, dbo.T_SALES_HISTORY.DRIVER_NAME, dbo.T_SALES_HISTORY.WORK_CODE, 
-                         dbo.T_SALES_HISTORY.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SALES_HISTORY.TOT_QTY, dbo.T_SALES_HISTORY.TOT_COST, dbo.T_SALES_HISTORY.TOT_SELL, dbo.T_SALES_HISTORY.DISCOUNT_SELL, dbo.T_SALES_HISTORY.SERVICE_SELL, dbo.T_SALES_HISTORY.NET_SALES, 
-                         dbo.T_SALES_HISTORY.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES_HISTORY.APP_PERCENT, dbo.T_SALES_HISTORY.NET_NET_SALES, dbo.T_SALES_HISTORY.NET_ARBAH, dbo.T_SALES_HISTORY.NOTE, dbo.T_TABLE.QISM_CODE, dbo.T_QISM.QISM_NAME, 
-                         dbo.T_TABLE.TABLE_NO, dbo.T_TABLE.TABLE_NAME, dbo.T_TABLE.TABLE_NOTE, dbo.T_TABLE.NO_CLIENT, dbo.T_SALES_HISTORY.KITCHEN_NOTE
-FROM            dbo.T_SALES_HISTORY LEFT OUTER JOIN
-                         dbo.T_TABLE ON dbo.T_SALES_HISTORY.TABLE_CODE = dbo.T_TABLE.TABLE_CODE LEFT OUTER JOIN
-                         dbo.T_APP_TYPE ON dbo.T_SALES_HISTORY.APP_CODE = dbo.T_APP_TYPE.APP_CODE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES_HISTORY.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                         dbo.T_INVOICE_TYPE ON dbo.T_SALES_HISTORY.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE LEFT OUTER JOIN
-                         dbo.T_QISM ON dbo.T_TABLE.QISM_CODE = dbo.T_QISM.QISM_CODE
-
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    IT.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    U.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    AT.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.QISM_CODE,
+    Q.QISM_NAME,
+    T.TABLE_NO,
+    T.TABLE_NAME,
+    T.TABLE_NOTE,
+    T.NO_CLIENT,
+    S.KITCHEN_NOTE
+FROM
+    dbo.T_SALES_HISTORY S
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+    LEFT JOIN dbo.T_APP_TYPE AT ON S.APP_CODE = AT.APP_CODE
+    LEFT JOIN dbo.T_USERS U ON S.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+    LEFT JOIN dbo.T_QISM Q ON T.QISM_CODE = Q.QISM_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_HISTORY_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_HISTORY_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14703,98 +16068,171 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_HISTORY_PHONE]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_HISTORY_PHONE]
 AS
-SELECT  CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS
-FROM T_SALES 
-UNION 
-SELECT  CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS
+SELECT CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS
+FROM T_SALES
+WHERE CLIENT_PHONE IS NOT NULL  
+UNION
+SELECT CLIENT_NAME, CLIENT_REGION, CLIENT_PHONE, CLIENT_ADDRESS
 FROM T_SALES_HISTORY
+WHERE CLIENT_PHONE IS NOT NULL  
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_INVOICE_DISCOUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_INVOICE_DISCOUNT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_INVOICE_DISCOUNT]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_INVOICE_DISCOUNT]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_INVOICE_DISCOUNT]
 AS
-SELECT        dbo.T_SALES.BILL_BRANCH, dbo.T_SALES.BILL_NUMBER, dbo.T_SALES.BILL_ORDER, dbo.T_SALES.BILL_DATE, dbo.T_SALES.BILL_TIME, dbo.T_SALES.TABLE_CODE, dbo.T_SALES.CALL_NO, dbo.T_SALES.INVOICE_CODE, 
-                         dbo.T_INVOICE_TYPE.INVOICE_NAME, dbo.T_SALES.CLIENT_NAME, dbo.T_SALES.CLIENT_REGION, dbo.T_SALES.CLIENT_PHONE, dbo.T_SALES.CLIENT_ADDRESS, dbo.T_SALES.DRIVER_NAME, dbo.T_SALES.WORK_CODE, 
-                         dbo.T_SALES.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SALES.TOT_QTY, dbo.T_SALES.TOT_COST, dbo.T_SALES.TOT_SELL, dbo.T_SALES.DISCOUNT_SELL, dbo.T_SALES.SERVICE_SELL, dbo.T_SALES.NET_SALES, 
-                         dbo.T_SALES.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES.APP_PERCENT, dbo.T_SALES.NET_NET_SALES, dbo.T_SALES.NET_ARBAH, dbo.T_SALES.NOTE, dbo.T_TABLE.QISM_CODE, dbo.T_QISM.QISM_NAME, 
-                         dbo.T_TABLE.TABLE_NO, dbo.T_TABLE.TABLE_NAME, dbo.T_TABLE.TABLE_NOTE, dbo.T_TABLE.NO_CLIENT, SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL, dbo.T_SALES.CAPTAIN_NAME, dbo.T_SALES.KITCHEN_NOTE
-FROM            dbo.T_SALES LEFT OUTER JOIN
-                         dbo.T_SALES_DETAILS ON dbo.T_SALES.BILL_BRANCH = dbo.T_SALES_DETAILS.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_TABLE ON dbo.T_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE LEFT OUTER JOIN
-                         dbo.T_APP_TYPE ON dbo.T_SALES.APP_CODE = dbo.T_APP_TYPE.APP_CODE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                         dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE LEFT OUTER JOIN
-                         dbo.T_QISM ON dbo.T_TABLE.QISM_CODE = dbo.T_QISM.QISM_CODE
-GROUP BY dbo.T_SALES.BILL_BRANCH, dbo.T_SALES.BILL_NUMBER, dbo.T_SALES.BILL_ORDER, dbo.T_SALES.BILL_DATE, dbo.T_SALES.BILL_TIME, dbo.T_SALES.TABLE_CODE, dbo.T_SALES.CALL_NO, dbo.T_SALES.INVOICE_CODE, 
-                         dbo.T_INVOICE_TYPE.INVOICE_NAME, dbo.T_SALES.CLIENT_NAME, dbo.T_SALES.CLIENT_REGION, dbo.T_SALES.CLIENT_PHONE, dbo.T_SALES.CLIENT_ADDRESS, dbo.T_SALES.DRIVER_NAME, dbo.T_SALES.WORK_CODE, 
-                         dbo.T_SALES.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SALES.TOT_QTY, dbo.T_SALES.TOT_COST, dbo.T_SALES.TOT_SELL, dbo.T_SALES.DISCOUNT_SELL, dbo.T_SALES.SERVICE_SELL, dbo.T_SALES.NET_SALES, 
-                         dbo.T_SALES.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES.APP_PERCENT, dbo.T_SALES.NET_NET_SALES, dbo.T_SALES.NET_ARBAH, dbo.T_SALES.NOTE, dbo.T_TABLE.QISM_CODE, dbo.T_QISM.QISM_NAME, 
-                         dbo.T_TABLE.TABLE_NO, dbo.T_TABLE.TABLE_NAME, dbo.T_TABLE.TABLE_NOTE, dbo.T_TABLE.NO_CLIENT, dbo.T_SALES.CAPTAIN_NAME, dbo.T_SALES.KITCHEN_NOTE, dbo.T_ITEMS.TYPE_CODE
-HAVING        (dbo.T_SALES.DISCOUNT_SELL <> 0)
-
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    IT.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    U.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    AT.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.QISM_CODE,
+    Q.QISM_NAME,
+    T.TABLE_NO,
+    T.TABLE_NAME,
+    T.TABLE_NOTE,
+    T.NO_CLIENT,
+    SUM(D.TOTAL) AS TOTAL,
+    S.CAPTAIN_NAME,
+    S.KITCHEN_NOTE
+FROM
+    dbo.T_SALES S
+    LEFT JOIN dbo.T_SALES_DETAILS D ON S.BILL_BRANCH = D.BILL_BRANCH AND S.BILL_NUMBER = D.BILL_NUMBER
+    LEFT JOIN dbo.T_ITEMS I ON D.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+    LEFT JOIN dbo.T_APP_TYPE AT ON S.APP_CODE = AT.APP_CODE
+    LEFT JOIN dbo.T_USERS U ON S.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+    LEFT JOIN dbo.T_QISM Q ON T.QISM_CODE = Q.QISM_CODE
+GROUP BY
+    S.BILL_BRANCH, S.BILL_NUMBER, S.BILL_ORDER, S.BILL_DATE, S.BILL_TIME, S.TABLE_CODE, S.CALL_NO, S.INVOICE_CODE,
+    IT.INVOICE_NAME, S.CLIENT_NAME, S.CLIENT_REGION, S.CLIENT_PHONE, S.CLIENT_ADDRESS, S.DRIVER_NAME, S.WORK_CODE,
+    S.USER_CODE, U.USER_NAME, S.TOT_QTY, S.TOT_COST, S.TOT_SELL, S.DISCOUNT_SELL, S.SERVICE_SELL, S.NET_SALES,
+    S.APP_CODE, AT.APP_NAME, S.APP_PERCENT, S.NET_NET_SALES, S.NET_ARBAH, S.NOTE, T.QISM_CODE, Q.QISM_NAME,
+    T.TABLE_NO, T.TABLE_NAME, T.TABLE_NOTE, T.NO_CLIENT, S.CAPTAIN_NAME, S.KITCHEN_NOTE
+HAVING
+    S.DISCOUNT_SELL <> 0
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_INVOICE_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_INVOICE_GEFT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_INVOICE_GEFT]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_INVOICE_GEFT]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_INVOICE_GEFT]
 AS
-SELECT        dbo.T_SALES.BILL_BRANCH, dbo.T_SALES.BILL_NUMBER, dbo.T_SALES.BILL_ORDER, dbo.T_SALES.BILL_DATE, dbo.T_SALES.BILL_TIME, dbo.T_SALES.TABLE_CODE, dbo.T_SALES.CALL_NO, dbo.T_SALES.INVOICE_CODE, 
-                         dbo.T_INVOICE_TYPE.INVOICE_NAME, dbo.T_SALES.CLIENT_NAME, dbo.T_SALES.CLIENT_REGION, dbo.T_SALES.CLIENT_PHONE, dbo.T_SALES.CLIENT_ADDRESS, dbo.T_SALES.DRIVER_NAME, dbo.T_SALES.WORK_CODE, 
-                         dbo.T_SALES.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SALES.TOT_QTY, dbo.T_SALES.TOT_COST, dbo.T_SALES.TOT_SELL, dbo.T_SALES.DISCOUNT_SELL, dbo.T_SALES.SERVICE_SELL, dbo.T_SALES.NET_SALES, 
-                         dbo.T_SALES.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES.APP_PERCENT, dbo.T_SALES.NET_NET_SALES, dbo.T_SALES.NET_ARBAH, dbo.T_SALES.NOTE, dbo.T_TABLE.QISM_CODE, dbo.T_QISM.QISM_NAME, 
-                         dbo.T_TABLE.TABLE_NO, dbo.T_TABLE.TABLE_NAME, dbo.T_TABLE.TABLE_NOTE, dbo.T_TABLE.NO_CLIENT, dbo.T_SALES_DETAILS.TOTAL, dbo.T_SALES.CAPTAIN_NAME, dbo.T_SALES.KITCHEN_NOTE
-FROM            dbo.T_SALES INNER JOIN
-                         dbo.T_SALES_DETAILS ON dbo.T_SALES.BILL_BRANCH = dbo.T_SALES_DETAILS.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_TABLE ON dbo.T_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE LEFT OUTER JOIN
-                         dbo.T_APP_TYPE ON dbo.T_SALES.APP_CODE = dbo.T_APP_TYPE.APP_CODE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                         dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE LEFT OUTER JOIN
-                         dbo.T_QISM ON dbo.T_TABLE.QISM_CODE = dbo.T_QISM.QISM_CODE
-WHERE  (dbo.T_ITEMS.SELL <> 0)
-GROUP BY dbo.T_SALES.BILL_BRANCH, dbo.T_SALES.BILL_NUMBER, dbo.T_SALES.BILL_ORDER, dbo.T_SALES.BILL_DATE, dbo.T_SALES.BILL_TIME, dbo.T_SALES.TABLE_CODE, dbo.T_SALES.CALL_NO, dbo.T_SALES.INVOICE_CODE, 
-                         dbo.T_INVOICE_TYPE.INVOICE_NAME, dbo.T_SALES.CLIENT_NAME, dbo.T_SALES.CLIENT_REGION, dbo.T_SALES.CLIENT_PHONE, dbo.T_SALES.CLIENT_ADDRESS, dbo.T_SALES.DRIVER_NAME, dbo.T_SALES.WORK_CODE, 
-                         dbo.T_SALES.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SALES.TOT_QTY, dbo.T_SALES.TOT_COST, dbo.T_SALES.TOT_SELL, dbo.T_SALES.DISCOUNT_SELL, dbo.T_SALES.SERVICE_SELL, dbo.T_SALES.NET_SALES, 
-                         dbo.T_SALES.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES.APP_PERCENT, dbo.T_SALES.NET_NET_SALES, dbo.T_SALES.NET_ARBAH, dbo.T_SALES.NOTE, dbo.T_TABLE.QISM_CODE, dbo.T_QISM.QISM_NAME, 
-                         dbo.T_TABLE.TABLE_NO, dbo.T_TABLE.TABLE_NAME, dbo.T_TABLE.TABLE_NOTE, dbo.T_TABLE.NO_CLIENT, dbo.T_SALES_DETAILS.TOTAL, dbo.T_SALES.CAPTAIN_NAME, dbo.T_SALES.KITCHEN_NOTE, 
-                         dbo.T_ITEMS.TYPE_CODE
-HAVING        (dbo.T_SALES_DETAILS.TOTAL = 0) AND (dbo.T_ITEMS.TYPE_CODE <> 20) 
-
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    IT.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    U.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    AT.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.QISM_CODE,
+    Q.QISM_NAME,
+    T.TABLE_NO,
+    T.TABLE_NAME,
+    T.TABLE_NOTE,
+    T.NO_CLIENT,
+    D.TOTAL,
+    S.CAPTAIN_NAME,
+    S.KITCHEN_NOTE
+FROM
+    dbo.T_SALES S
+    INNER JOIN dbo.T_SALES_DETAILS D
+        ON S.BILL_BRANCH = D.BILL_BRANCH AND S.BILL_NUMBER = D.BILL_NUMBER
+    LEFT JOIN dbo.T_ITEMS I ON D.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+    LEFT JOIN dbo.T_APP_TYPE AT ON S.APP_CODE = AT.APP_CODE
+    LEFT JOIN dbo.T_USERS U ON S.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+    LEFT JOIN dbo.T_QISM Q ON T.QISM_CODE = Q.QISM_CODE
+WHERE
+    I.SELL <> 0
+    AND D.TOTAL = 0
+    AND I.TYPE_CODE <> 20
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_DATE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_DATE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_DATE]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_ITEM_DATE]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_ITEM_DATE]
 AS
-SELECT       TOP (100) PERCENT dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_ITEMS.ITEM_NAME, SUM(dbo.T_SALES_DETAILS.QTY) AS TOTAL_QTY, SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, 
-                         SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_NUMBER = dbo.T_SALES.BILL_NUMBER LEFT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE
-GROUP BY dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES.WORK_CODE
-HAVING       (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY TOTAL_ARBAH DESC
-
+SELECT
+    SD.BILL_DATE,
+    I.ITEM_NAME,
+    SUM(SD.QTY) AS TOTAL_QTY,
+    SUM(SD.TOTAL_COST) AS TOTAL_COST,
+    SUM(SD.TOTAL) AS TOTAL_SELL,
+    SUM(SD.ARBAH) AS TOTAL_ARBAH,
+    S.WORK_CODE
+FROM
+    dbo.T_SALES_DETAILS SD
+    LEFT JOIN dbo.T_SALES S ON SD.BILL_NUMBER = S.BILL_NUMBER
+    LEFT JOIN dbo.T_ITEMS I ON SD.ITEM_CODE = I.ITEM_CODE
+WHERE
+    S.WORK_CODE = 1
+GROUP BY
+    SD.BILL_DATE, I.ITEM_NAME, S.WORK_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_GEFT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_GEFT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14802,17 +16240,28 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_GEFT]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_ITEM_GEFT]
 AS
-SELECT        TOP (100) PERCENT dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_ITEMS.ITEM_NAME, SUM(dbo.T_SALES_DETAILS.QTY) AS TOTAL_QTY, SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, 
-                         SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) AS TOTAL_ARBAH, dbo.T_SALES.WORK_CODE, dbo.T_ITEMS.SELL * SUM(dbo.T_SALES_DETAILS.QTY) AS TOTAL_GEFT
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_BRANCH = dbo.T_SALES.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_DETAILS.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE
-GROUP BY dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES.WORK_CODE, dbo.T_SALES_DETAILS.TOTAL, dbo.T_ITEMS.SELL, dbo.T_ITEMS.TYPE_CODE
-HAVING        (dbo.T_SALES.WORK_CODE = 1) AND (dbo.T_SALES_DETAILS.TOTAL = 0) AND (dbo.T_ITEMS.TYPE_CODE <> 20)
-ORDER BY TOTAL_ARBAH DESC
+SELECT
+    SD.BILL_DATE,
+    I.ITEM_NAME,
+    SUM(SD.QTY) AS TOTAL_QTY,
+    SUM(SD.TOTAL_COST) AS TOTAL_COST,
+    SUM(SD.TOTAL) AS TOTAL_SELL,
+    SUM(SD.ARBAH) AS TOTAL_ARBAH,
+    S.WORK_CODE,
+    I.SELL * SUM(SD.QTY) AS TOTAL_GEFT
+FROM
+    dbo.T_SALES_DETAILS SD
+    LEFT JOIN dbo.T_SALES S ON SD.BILL_BRANCH = S.BILL_BRANCH AND SD.BILL_NUMBER = S.BILL_NUMBER
+    LEFT JOIN dbo.T_ITEMS I ON SD.ITEM_CODE = I.ITEM_CODE
+WHERE
+    S.WORK_CODE = 1
+    AND SD.TOTAL = 0
+    AND I.TYPE_CODE <> 20
+GROUP BY
+    SD.BILL_DATE, I.ITEM_NAME, S.WORK_CODE, I.SELL
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ITEM_RECIPE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14820,16 +16269,23 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ITEM_RECIPE]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_ITEM_RECIPE]
 AS
-SELECT     S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY AS QTY_RECIPE,
-                      (SELECT     SUM(QTY) AS Expr1
-                       FROM        dbo.T_SALES_DETAILS
-                       WHERE     (ITEM_CODE = R.ITEM_CODE_MAIN) AND (BILL_DATE = S.DATE_JOB)) * R.QTY AS QTY_SALES
-FROM        dbo.T_ITEM_STORE AS S INNER JOIN
-                  dbo.T_ITEM_RECIPE AS R ON S.ITEM_CODE = R.ITEM_CODE
-GROUP BY S.DATE_JOB, S.ITEM_CODE, R.ITEM_CODE_MAIN, R.QTY
+SELECT
+    S.DATE_JOB,
+    S.ITEM_CODE,
+    R.ITEM_CODE_MAIN,
+    R.QTY AS QTY_RECIPE,
+    ISNULL(SD.QTY_SALES, 0) * R.QTY AS QTY_SALES
+FROM
+    dbo.T_ITEM_STORE S
+    INNER JOIN dbo.T_ITEM_RECIPE R ON S.ITEM_CODE = R.ITEM_CODE
+    OUTER APPLY (
+        SELECT SUM(QTY) AS QTY_SALES
+        FROM dbo.T_SALES_DETAILS
+        WHERE ITEM_CODE = R.ITEM_CODE_MAIN AND BILL_DATE = S.DATE_JOB
+    ) SD
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_ORDER]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_ORDER]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14837,55 +16293,151 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_ORDER]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_ORDER]
 AS
-SELECT     dbo.T_SALES.BILL_BRANCH, dbo.T_SALES.BILL_NUMBER, dbo.T_SALES.BILL_ORDER, dbo.T_SALES.BILL_DATE, dbo.T_SALES.BILL_TIME, dbo.T_SALES.TABLE_CODE, dbo.T_SALES.CALL_NO, dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME, 
-                  dbo.T_SALES.CLIENT_NAME, dbo.T_SALES.CLIENT_REGION, dbo.T_SALES.CLIENT_PHONE, dbo.T_SALES.CLIENT_ADDRESS, dbo.T_SALES.DRIVER_NAME, dbo.T_SALES.WORK_CODE, dbo.T_SALES.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SALES.TOT_QTY, 
-                  dbo.T_SALES.TOT_COST, dbo.T_SALES.TOT_SELL, dbo.T_SALES.DISCOUNT_SELL, dbo.T_SALES.SERVICE_SELL, dbo.T_SALES.NET_SALES, dbo.T_SALES.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES.APP_PERCENT, dbo.T_SALES.NET_NET_SALES, 
-                  dbo.T_SALES.NET_ARBAH, dbo.T_SALES.NOTE, dbo.T_TABLE.QISM_CODE, dbo.T_QISM.QISM_NAME, dbo.T_TABLE.TABLE_NO, dbo.T_TABLE.TABLE_NAME, dbo.T_TABLE.TABLE_NOTE, dbo.T_TABLE.NO_CLIENT, dbo.T_SALES.KITCHEN_NOTE, dbo.T_SALES.IS_TRANS, 
-                  dbo.T_SALES.COMPANY_NAME, dbo.T_SALES.TT_SEND, dbo.T_SALES.TT_RECIVE, dbo.T_SALES.TT_PRINT, dbo.T_SALES.TT_CASH, dbo.T_SALES.CAPTAIN_NAME, dbo.T_SALES.LIN_X, dbo.T_SALES.LIN_Y, dbo.T_SALES.TIME_ACCEPT, dbo.T_SALES.TIME_ARRIVED, 
-                  dbo.T_SALES.ALL_TIME, dbo.T_SALES.NAME_BRANCH, dbo.T_SALES.BILL_SERVER, dbo.T_SALES.STATUS_APP, dbo.T_SALES.KITCHEN_DISPLAY_STATE, dbo.T_SALES.KITCHEN_DISPALY_MIN, dbo.T_TABLE.IS_OPEN, dbo.T_SALES.CLIENT_CODE, 
-                  dbo.T_CLIENT.CLIENT_NAME AS CLIENT_NAME_C, dbo.T_SALES.IVC_CODE, dbo.T_IVC_TYPE.IVC_NAME, dbo.T_SALES.IS_CASH, dbo.T_SALES.NO_CLIENT AS NO_CLIENT_C, dbo.T_SALES.DISCOUNT_NOTE, dbo.T_SALES.RECIPIENT_CODE, dbo.T_RECIPIENTS.RECIPIENT_NAME, 
-                  dbo.T_RECIPIENTS.RECIPIENT_BARCODE, dbo.T_SALES.IS_DELEVERED_DRIVER, dbo.T_SALES.TO_DRIVER_TIME, dbo.T_SALES.TO_DELEVERD_TIME, dbo.T_SALES.TO_CASH_TIME, dbo.T_SALES.TO_CALL_TIME, dbo.T_SALES.PREPARE_MINUTES, dbo.T_SALES.DELEVERD_MINUTES, 
-                  dbo.T_CLIENT.CLIENT_PHONE AS CLIENT_PHONE_C, dbo.T_CLIENT.CLIENT_REGION AS CLIENT_REGION_C, dbo.T_CLIENT.CLIENT_ADDRESS AS CLIENT_ADDRESS_C
-FROM        dbo.T_SALES LEFT OUTER JOIN
-                  dbo.T_RECIPIENTS ON dbo.T_SALES.RECIPIENT_CODE = dbo.T_RECIPIENTS.RECIPIENT_CODE LEFT OUTER JOIN
-                  dbo.T_IVC_TYPE ON dbo.T_SALES.IVC_CODE = dbo.T_IVC_TYPE.IVC_CODE LEFT OUTER JOIN
-                  dbo.T_CLIENT ON dbo.T_SALES.CLIENT_CODE = dbo.T_CLIENT.CLIENT_CODE LEFT OUTER JOIN
-                  dbo.T_TABLE ON dbo.T_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE LEFT OUTER JOIN
-                  dbo.T_APP_TYPE ON dbo.T_SALES.APP_CODE = dbo.T_APP_TYPE.APP_CODE LEFT OUTER JOIN
-                  dbo.T_USERS ON dbo.T_SALES.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                  dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE LEFT OUTER JOIN
-                  dbo.T_QISM ON dbo.T_TABLE.QISM_CODE = dbo.T_QISM.QISM_CODE
-WHERE     (dbo.T_SALES.WORK_CODE = 1) OR
-                  (dbo.T_SALES.WORK_CODE = 10) OR
-                  (dbo.T_SALES.WORK_CODE = 20)
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    IT.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    U.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    AT.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.QISM_CODE,
+    Q.QISM_NAME,
+    T.TABLE_NO,
+    T.TABLE_NAME,
+    T.TABLE_NOTE,
+    T.NO_CLIENT,
+    S.KITCHEN_NOTE,
+    S.IS_TRANS,
+    S.COMPANY_NAME,
+    S.TT_SEND,
+    S.TT_RECIVE,
+    S.TT_PRINT,
+    S.TT_CASH,
+    S.CAPTAIN_NAME,
+    S.LIN_X,
+    S.LIN_Y,
+    S.TIME_ACCEPT,
+    S.TIME_ARRIVED,
+    S.ALL_TIME,
+    S.NAME_BRANCH,
+    S.BILL_SERVER,
+    S.STATUS_APP,
+    S.KITCHEN_DISPLAY_STATE,
+    S.KITCHEN_DISPALY_MIN,
+    T.IS_OPEN,
+    S.CLIENT_CODE,
+    C.CLIENT_NAME AS CLIENT_NAME_C,
+    S.IVC_CODE,
+    IV.IVC_NAME,
+    S.IS_CASH,
+    S.NO_CLIENT AS NO_CLIENT_C,
+    S.DISCOUNT_NOTE,
+    S.RECIPIENT_CODE,
+    R.RECIPIENT_NAME,
+    R.RECIPIENT_BARCODE,
+    S.IS_DELEVERED_DRIVER,
+    S.TO_DRIVER_TIME,
+    S.TO_DELEVERD_TIME,
+    S.TO_CASH_TIME,
+    S.TO_CALL_TIME,
+    S.PREPARE_MINUTES,
+    S.DELEVERD_MINUTES,
+    C.CLIENT_PHONE AS CLIENT_PHONE_C,
+    C.CLIENT_REGION AS CLIENT_REGION_C,
+    C.CLIENT_ADDRESS AS CLIENT_ADDRESS_C
+FROM
+    dbo.T_SALES S
+    LEFT JOIN dbo.T_RECIPIENTS R ON S.RECIPIENT_CODE = R.RECIPIENT_CODE
+    LEFT JOIN dbo.T_IVC_TYPE IV ON S.IVC_CODE = IV.IVC_CODE
+    LEFT JOIN dbo.T_CLIENT C ON S.CLIENT_CODE = C.CLIENT_CODE
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+    LEFT JOIN dbo.T_APP_TYPE AT ON S.APP_CODE = AT.APP_CODE
+    LEFT JOIN dbo.T_USERS U ON S.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+    LEFT JOIN dbo.T_QISM Q ON T.QISM_CODE = Q.QISM_CODE
+WHERE
+    S.WORK_CODE IN (1, 10, 20)
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_RETURN]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_RETURN]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_RETURN]'))
-EXEC dbo.sp_executesql @statement = N'
-
-CREATE VIEW [dbo].[V_SALES_RETURN]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_RETURN]
 AS
-SELECT       dbo.T_SALES.BILL_BRANCH, dbo.T_SALES.BILL_NUMBER, dbo.T_SALES.BILL_ORDER, dbo.T_SALES.BILL_DATE, dbo.T_SALES.BILL_TIME, dbo.T_SALES.TABLE_CODE, dbo.T_SALES.CALL_NO, 
-                         dbo.T_SALES.INVOICE_CODE, dbo.T_INVOICE_TYPE.INVOICE_NAME, dbo.T_SALES.CLIENT_NAME, dbo.T_SALES.CLIENT_REGION, dbo.T_SALES.CLIENT_PHONE, dbo.T_SALES.CLIENT_ADDRESS, 
-                         dbo.T_SALES.DRIVER_NAME, dbo.T_SALES.WORK_CODE, dbo.T_SALES.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SALES.TOT_QTY, dbo.T_SALES.TOT_COST, dbo.T_SALES.TOT_SELL, dbo.T_SALES.DISCOUNT_SELL, 
-                         dbo.T_SALES.SERVICE_SELL, dbo.T_SALES.NET_SALES, dbo.T_SALES.APP_CODE, dbo.T_APP_TYPE.APP_NAME, dbo.T_SALES.APP_PERCENT, dbo.T_SALES.NET_NET_SALES, dbo.T_SALES.NET_ARBAH, 
-                         dbo.T_SALES.NOTE, dbo.T_TABLE.QISM_CODE, dbo.T_QISM.QISM_NAME, dbo.T_TABLE.TABLE_NO, dbo.T_TABLE.TABLE_NAME, dbo.T_TABLE.TABLE_NOTE, dbo.T_TABLE.NO_CLIENT
-FROM            dbo.T_SALES LEFT OUTER JOIN
-                         dbo.T_TABLE ON dbo.T_SALES.TABLE_CODE = dbo.T_TABLE.TABLE_CODE LEFT OUTER JOIN
-                         dbo.T_APP_TYPE ON dbo.T_SALES.APP_CODE = dbo.T_APP_TYPE.APP_CODE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                         dbo.T_INVOICE_TYPE ON dbo.T_SALES.INVOICE_CODE = dbo.T_INVOICE_TYPE.INVOICE_CODE LEFT OUTER JOIN
-                         dbo.T_QISM ON dbo.T_TABLE.QISM_CODE = dbo.T_QISM.QISM_CODE
-WHERE  dbo.T_SALES.WORK_CODE=100
-
+SELECT
+    S.BILL_BRANCH,
+    S.BILL_NUMBER,
+    S.BILL_ORDER,
+    S.BILL_DATE,
+    S.BILL_TIME,
+    S.TABLE_CODE,
+    S.CALL_NO,
+    S.INVOICE_CODE,
+    IT.INVOICE_NAME,
+    S.CLIENT_NAME,
+    S.CLIENT_REGION,
+    S.CLIENT_PHONE,
+    S.CLIENT_ADDRESS,
+    S.DRIVER_NAME,
+    S.WORK_CODE,
+    S.USER_CODE,
+    U.USER_NAME,
+    S.TOT_QTY,
+    S.TOT_COST,
+    S.TOT_SELL,
+    S.DISCOUNT_SELL,
+    S.SERVICE_SELL,
+    S.NET_SALES,
+    S.APP_CODE,
+    AT.APP_NAME,
+    S.APP_PERCENT,
+    S.NET_NET_SALES,
+    S.NET_ARBAH,
+    S.NOTE,
+    T.QISM_CODE,
+    Q.QISM_NAME,
+    T.TABLE_NO,
+    T.TABLE_NAME,
+    T.TABLE_NOTE,
+    T.NO_CLIENT
+FROM
+    dbo.T_SALES S
+    LEFT JOIN dbo.T_TABLE T ON S.TABLE_CODE = T.TABLE_CODE
+    LEFT JOIN dbo.T_APP_TYPE AT ON S.APP_CODE = AT.APP_CODE
+    LEFT JOIN dbo.T_USERS U ON S.USER_CODE = U.USER_CODE
+    LEFT JOIN dbo.T_INVOICE_TYPE IT ON S.INVOICE_CODE = IT.INVOICE_CODE
+    LEFT JOIN dbo.T_QISM Q ON T.QISM_CODE = Q.QISM_CODE
+WHERE
+    S.WORK_CODE = 100
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PA]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PA]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14893,32 +16445,93 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PA]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_PA]
 AS
-SELECT     dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, SUM(dbo.T_SALES_TEMP.QTY) AS QTY, SUM(dbo.T_SALES_TEMP.TOTAL) / SUM(dbo.T_SALES_TEMP.QTY) AS SELL, SUM(dbo.T_SALES_TEMP.TOTAL) AS TOTAL
-FROM        dbo.T_SALES_TEMP INNER JOIN
-                  dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE
-GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME
+SELECT
+    T.BILL_NUMBER,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    SUM(T.QTY) AS QTY,
+    CASE 
+        WHEN SUM(T.QTY) <> 0 THEN SUM(T.TOTAL) / SUM(T.QTY)
+        ELSE 0
+    END AS SELL,
+    SUM(T.TOTAL) AS TOTAL
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+GROUP BY
+    T.BILL_NUMBER,
+    T.ITEM_CODE,
+    I.ITEM_NAME
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT]'))
-EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT]
+EXEC dbo.sp_executesql @statement = N'
+CREATE VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT]
 AS
-SELECT        dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, 
-                         dbo.T_ITEM_PRINTER.QISM_CODE
-FROM            dbo.T_SALES_TEMP INNER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE INNER JOIN
-                         dbo.T_ITEM_PRINTER ON dbo.T_ITEMS.ITEM_CODE = dbo.T_ITEM_PRINTER.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_PRINTER ON dbo.T_ITEM_PRINTER.PRINTER_ID = dbo.T_PRINTER.T_ID
-GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, dbo.T_SALES_TEMP.BILL_BRANCH, 
-                         dbo.T_SALES_TEMP.IS_PRINT, dbo.T_ITEM_PRINTER.QISM_CODE
-HAVING        (dbo.T_SALES_TEMP.IS_PRINT = 0) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
+
+-- الطابعة الرئيسية من جدول T_ITEM_PRINTER
+SELECT
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    IP.QISM_CODE,
+    ''Main'' AS PRINTER_TYPE
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER IP ON I.ITEM_CODE = IP.ITEM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IP.PRINTER_ID = P.T_ID
+WHERE
+    T.IS_PRINT = 0
+    AND IP.PRINTER_ID <> 0
+GROUP BY
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    IP.QISM_CODE 
+
+UNION ALL
+
+-- الطابعات الإضافية من جدول T_ITEM_PRINTER_MORE
+SELECT
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IPM.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    -5 AS QISM_CODE,  -- لأن جدول الطابعات الإضافية لا يحتوي على QISM_CODE
+    ''Extra'' AS PRINTER_TYPE
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER_MORE IPM ON I.ITEM_CODE = IPM.ITEM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IPM.PRINTER_ID = P.T_ID
+WHERE
+    T.IS_PRINT = 0
+    AND IPM.PRINTER_ID <> 0
+GROUP BY
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IPM.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME 
+     
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14926,18 +16539,34 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE]
 AS
-SELECT        dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, 
-                         dbo.T_ITEM_PRINTER.QISM_CODE
-FROM            dbo.T_SALES_TEMP INNER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE INNER JOIN
-                         dbo.T_ITEM_PRINTER ON dbo.T_ITEMS.ITEM_CODE = dbo.T_ITEM_PRINTER.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_PRINTER ON dbo.T_ITEM_PRINTER.PRINTER_ID = dbo.T_PRINTER.T_ID
-GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, dbo.T_SALES_TEMP.BILL_BRANCH, 
-                         dbo.T_SALES_TEMP.IS_PRINT, dbo.T_SALES_TEMP.IS_DELETE, dbo.T_ITEM_PRINTER.QISM_CODE
-HAVING        (dbo.T_SALES_TEMP.IS_PRINT = 1) AND (dbo.T_SALES_TEMP.IS_DELETE = 1) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
+SELECT
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    IP.QISM_CODE
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER IP ON I.ITEM_CODE = IP.ITEM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IP.PRINTER_ID = P.T_ID
+WHERE
+    T.IS_PRINT = 1
+    AND T.IS_DELETE = 1
+    AND IP.PRINTER_ID <> 0
+GROUP BY
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    IP.QISM_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14945,18 +16574,33 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_DELETE_SS]
 AS
-SELECT        dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, 
-                         dbo.T_ITEM_PRINTER.QISM_CODE
-FROM            dbo.T_SALES_TEMP INNER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE INNER JOIN
-                         dbo.T_ITEM_PRINTER ON dbo.T_ITEMS.ITEM_CODE = dbo.T_ITEM_PRINTER.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_PRINTER ON dbo.T_ITEM_PRINTER.PRINTER_ID = dbo.T_PRINTER.T_ID
-GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, dbo.T_SALES_TEMP.BILL_BRANCH, 
-                         dbo.T_SALES_TEMP.IS_PRINT, dbo.T_SALES_TEMP.IS_DELETE, dbo.T_ITEM_PRINTER.QISM_CODE
-HAVING        (dbo.T_SALES_TEMP.IS_DELETE = 1) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
+SELECT
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    IP.QISM_CODE
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER IP ON I.ITEM_CODE = IP.ITEM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IP.PRINTER_ID = P.T_ID
+WHERE
+    T.IS_DELETE = 1
+    AND IP.PRINTER_ID <> 0
+GROUP BY
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    IP.QISM_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14964,18 +16608,35 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_ITEMS]
 AS
-SELECT        dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, 
-                         dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEM_PRINTER.QISM_CODE
-FROM            dbo.T_SALES_TEMP INNER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE INNER JOIN
-                         dbo.T_ITEM_PRINTER ON dbo.T_ITEMS.ITEM_CODE = dbo.T_ITEM_PRINTER.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_PRINTER ON dbo.T_ITEM_PRINTER.PRINTER_ID = dbo.T_PRINTER.T_ID
-GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, dbo.T_SALES_TEMP.BILL_BRANCH, 
-                         dbo.T_SALES_TEMP.IS_PRINT, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEM_PRINTER.QISM_CODE
-HAVING        (dbo.T_SALES_TEMP.IS_PRINT = 0) AND (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
+SELECT
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    T.ITEM_CODE,
+    IP.QISM_CODE
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER IP ON I.ITEM_CODE = IP.ITEM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IP.PRINTER_ID = P.T_ID
+WHERE
+    T.IS_PRINT = 0
+    AND IP.PRINTER_ID <> 0
+GROUP BY
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    T.ITEM_CODE,
+    IP.QISM_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14983,18 +16644,32 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_PRINTER_COUNT_SS]
 AS
-SELECT        dbo.T_SALES_TEMP.BILL_BRANCH, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, 
-                         dbo.T_ITEM_PRINTER.QISM_CODE
-FROM            dbo.T_SALES_TEMP INNER JOIN
-                         dbo.T_ITEMS ON dbo.T_SALES_TEMP.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE INNER JOIN
-                         dbo.T_ITEM_PRINTER ON dbo.T_ITEMS.ITEM_CODE = dbo.T_ITEM_PRINTER.ITEM_CODE LEFT OUTER JOIN
-                         dbo.T_PRINTER ON dbo.T_ITEM_PRINTER.PRINTER_ID = dbo.T_PRINTER.T_ID
-GROUP BY dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, dbo.T_SALES_TEMP.BILL_BRANCH, 
-                         dbo.T_SALES_TEMP.IS_PRINT, dbo.T_ITEM_PRINTER.QISM_CODE
-HAVING        (dbo.T_ITEM_PRINTER.PRINTER_ID <> 0)
+SELECT
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    IP.QISM_CODE
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    INNER JOIN dbo.T_ITEM_PRINTER IP ON I.ITEM_CODE = IP.ITEM_CODE
+    LEFT JOIN dbo.T_PRINTER P ON IP.PRINTER_ID = P.T_ID
+WHERE
+    IP.PRINTER_ID <> 0
+GROUP BY
+    T.BILL_BRANCH,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    IP.QISM_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_TEMP_TATMA_CATEGORY]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_TEMP_TATMA_CATEGORY]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15002,37 +16677,54 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_TEMP_TATMA_CATEGORY]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_TEMP_TATMA_CATEGORY]
 AS
-SELECT     dbo.T_SALES_TEMP.T_ID, dbo.T_SALES_TEMP.BILL_NUMBER, dbo.T_SALES_TEMP.BILL_ORDER, dbo.T_SALES_TEMP.BILL_DATE, dbo.T_SALES_TEMP.ITEM_CODE, dbo.T_ITEMS.ITEM_NAME, dbo.T_SALES_TEMP.ITEM_NOTE, dbo.T_SALES_TEMP.IS_PRINT, 
-                  dbo.T_ITEMS.ITEM_NAME + N'' '' + CHAR(13) + CHAR(10) + ISNULL(dbo.T_SALES_TEMP.ITEM_NOTE, N'' '') AS NAME_NOTE, dbo.T_ITEM_PRINTER.PRINTER_ID, dbo.T_PRINTER.PRINTER_NAME, dbo.T_PRINTER.DEVICE_NAME, dbo.T_ITEM_CATEGORY.CATEGORY_NAME
-FROM        dbo.T_ITEM_PRINTER RIGHT OUTER JOIN
-                  dbo.T_ITEMS ON dbo.T_ITEM_PRINTER.ITEM_CODE = dbo.T_ITEMS.ITEM_CODE RIGHT OUTER JOIN
-                  dbo.T_SALES_TEMP ON dbo.T_ITEMS.ITEM_CODE = dbo.T_SALES_TEMP.ITEM_CODE LEFT OUTER JOIN
-                  dbo.T_PRINTER ON dbo.T_ITEM_PRINTER.PRINTER_ID = dbo.T_PRINTER.T_ID LEFT OUTER JOIN
-                  dbo.T_ITEM_CATEGORY ON dbo.T_ITEMS.CATEGORY_CODE = dbo.T_ITEM_CATEGORY.CATEGORY_CODE
-WHERE      (dbo.T_ITEM_PRINTER.QISM_CODE = 0)
+SELECT
+    T.T_ID,
+    T.BILL_NUMBER,
+    T.BILL_ORDER,
+    T.BILL_DATE,
+    T.ITEM_CODE,
+    I.ITEM_NAME,
+    T.ITEM_NOTE,
+    T.IS_PRINT,
+    I.ITEM_NAME + N'' '' + CHAR(13) + CHAR(10) + ISNULL(T.ITEM_NOTE, N'' '') AS NAME_NOTE,
+    IP.PRINTER_ID,
+    P.PRINTER_NAME,
+    P.DEVICE_NAME,
+    C.CATEGORY_NAME
+FROM
+    dbo.T_SALES_TEMP T
+    INNER JOIN dbo.T_ITEMS I ON T.ITEM_CODE = I.ITEM_CODE
+    LEFT JOIN dbo.T_ITEM_PRINTER IP ON I.ITEM_CODE = IP.ITEM_CODE AND IP.QISM_CODE = 0
+    LEFT JOIN dbo.T_PRINTER P ON IP.PRINTER_ID = P.T_ID
+    LEFT JOIN dbo.T_ITEM_CATEGORY C ON I.CATEGORY_CODE = C.CATEGORY_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_SALES_USER_DATE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SALES_USER_DATE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SALES_USER_DATE]'))
-EXEC dbo.sp_executesql @statement = N'
-CREATE VIEW [dbo].[V_SALES_USER_DATE]
+EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_SALES_USER_DATE]
 AS
-SELECT       TOP (100) PERCENT dbo.T_SALES_DETAILS.BILL_DATE, SUM(dbo.T_SALES_DETAILS.TOTAL_COST) AS TOTAL_COST, SUM(dbo.T_SALES_DETAILS.TOTAL) AS TOTAL_SELL, SUM(dbo.T_SALES_DETAILS.ARBAH) 
-                         AS TOTAL_ARBAH, dbo.T_USERS.USER_NAME, dbo.T_SALES.WORK_CODE
-FROM            dbo.T_SALES_DETAILS LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SALES_DETAILS.BILL_BRANCH = dbo.T_SALES.BILL_BRANCH LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SALES_DETAILS.USER_CODE = dbo.T_USERS.USER_CODE
-GROUP BY dbo.T_SALES_DETAILS.BILL_DATE, dbo.T_USERS.USER_NAME, dbo.T_SALES.WORK_CODE
-HAVING       (dbo.T_SALES.WORK_CODE = 1)
-ORDER BY TOTAL_ARBAH
-
+SELECT
+    SD.BILL_DATE,
+    SUM(SD.TOTAL_COST) AS TOTAL_COST,
+    SUM(SD.TOTAL) AS TOTAL_SELL,
+    SUM(SD.ARBAH) AS TOTAL_ARBAH,
+    U.USER_NAME,
+    S.WORK_CODE
+FROM
+    dbo.T_SALES_DETAILS SD
+    LEFT JOIN dbo.T_SALES S ON SD.BILL_NUMBER = S.BILL_NUMBER
+    LEFT JOIN dbo.T_USERS U ON SD.USER_CODE = U.USER_CODE
+WHERE
+    S.WORK_CODE = 1
+GROUP BY
+    SD.BILL_DATE, U.USER_NAME, S.WORK_CODE
 ' 
 GO
-/****** Object:  View [dbo].[V_SIP_PHONE]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_SIP_PHONE]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15041,17 +16733,77 @@ IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_SI
 EXEC dbo.sp_executesql @statement = N'
 CREATE VIEW [dbo].[V_SIP_PHONE]
 AS
-SELECT       dbo.T_SIP_PHONE.T_ID, dbo.T_SIP_PHONE.PHONE_NO, MAX(DISTINCT dbo.T_SALES.CLIENT_NAME) AS CLIENT_NAME, MAX(DISTINCT dbo.T_SALES.CLIENT_REGION) AS CLIENT_REGION, 
-                         MAX(DISTINCT dbo.T_SALES.CLIENT_ADDRESS) AS CLIENT_ADDRESS, dbo.T_SIP_PHONE.D_DATE, dbo.T_SIP_PHONE.D_TIME, dbo.T_SIP_PHONE.USER_CODE, dbo.T_SIP_PHONE.ACTIVE, dbo.T_USERS.USER_NAME, 
-                         COUNT(DISTINCT dbo.T_SALES.CLIENT_ADDRESS) AS COUNT_NAME
-FROM            dbo.T_SIP_PHONE LEFT OUTER JOIN
-                         dbo.T_USERS ON dbo.T_SIP_PHONE.USER_CODE = dbo.T_USERS.USER_CODE LEFT OUTER JOIN
-                         dbo.T_SALES ON dbo.T_SIP_PHONE.PHONE_NO = dbo.T_SALES.CLIENT_PHONE
-GROUP BY dbo.T_SIP_PHONE.T_ID, dbo.T_SIP_PHONE.PHONE_NO, dbo.T_SIP_PHONE.D_DATE, dbo.T_SIP_PHONE.D_TIME, dbo.T_SIP_PHONE.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_SIP_PHONE.ACTIVE
+SELECT
+    S.T_ID,
+    S.PHONE_NO,
+
+    
+    CASE 
+        WHEN SA.CLIENT_NAME IS NOT NULL AND TI.CLIENT_NAME IS NOT NULL AND SA.CLIENT_NAME <> TI.CLIENT_NAME THEN 
+            SA.CLIENT_NAME + '' / '' + TI.CLIENT_NAME
+        ELSE
+            ISNULL(SA.CLIENT_NAME, TI.CLIENT_NAME)
+    END AS CLIENT_NAME,
+
+    
+    CASE 
+        WHEN SA.CLIENT_REGION IS NOT NULL AND TI.CLIENT_REGION IS NOT NULL AND SA.CLIENT_REGION <> TI.CLIENT_REGION THEN 
+            SA.CLIENT_REGION + '' / '' + TI.CLIENT_REGION
+        ELSE
+            ISNULL(SA.CLIENT_REGION, TI.CLIENT_REGION)
+    END AS CLIENT_REGION,
+
+    
+    CASE 
+        WHEN SA.CLIENT_ADDRESS IS NOT NULL AND TI.CLIENT_ADDRESS IS NOT NULL AND SA.CLIENT_ADDRESS <> TI.CLIENT_ADDRESS THEN 
+            SA.CLIENT_ADDRESS + '' / '' + TI.CLIENT_ADDRESS
+        ELSE
+            ISNULL(SA.CLIENT_ADDRESS, TI.CLIENT_ADDRESS)
+    END AS CLIENT_ADDRESS,
+
+    S.D_DATE,
+    S.D_TIME,
+    S.USER_CODE,
+    S.ACTIVE,
+    U.USER_NAME,
+
+    ISNULL(CA.COUNT_ADDRESS, 0) AS COUNT_NAME,
+
+    COALESCE(SA.BILL_NUMBER, TI.T_ID) AS LAST_REFERENCE
+
+FROM dbo.T_SIP_PHONE S
+    LEFT JOIN dbo.T_USERS U ON S.USER_CODE = U.USER_CODE
+
+    OUTER APPLY (
+        SELECT TOP 1 *
+        FROM dbo.T_SALES
+        WHERE CLIENT_PHONE = S.PHONE_NO
+        ORDER BY BILL_NUMBER DESC
+    ) AS SA
+
+    OUTER APPLY (
+        SELECT TOP 1 *
+        FROM dbo.T_IMPORT_PHONE
+        WHERE CLIENT_PHONE = S.PHONE_NO
+        ORDER BY T_ID DESC
+    ) AS TI
+
+    OUTER APPLY (
+        SELECT COUNT(*) AS COUNT_ADDRESS
+        FROM (
+            SELECT CLIENT_ADDRESS
+            FROM T_SALES
+            WHERE CLIENT_PHONE = S.PHONE_NO AND CLIENT_ADDRESS IS NOT NULL AND LTRIM(RTRIM(CLIENT_ADDRESS)) <> ''''
+            UNION ALL
+            SELECT CLIENT_ADDRESS
+            FROM T_IMPORT_PHONE
+            WHERE CLIENT_PHONE = S.PHONE_NO AND CLIENT_ADDRESS IS NOT NULL AND LTRIM(RTRIM(CLIENT_ADDRESS)) <> ''''
+        ) AS AllAddresses
+    ) AS CA
 
 ' 
 GO
-/****** Object:  View [dbo].[V_USERS_ON]    Script Date: 2024/11/13 2:34:23 ******/
+/****** Object:  View [dbo].[V_USERS_ON]    Script Date: 2025/09/06 3:36:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15059,10 +16811,18 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.views WHERE object_id = OBJECT_ID(N'[dbo].[V_USERS_ON]'))
 EXEC dbo.sp_executesql @statement = N'CREATE VIEW [dbo].[V_USERS_ON]
 AS
-SELECT     dbo.T_USERS.USER_CODE, dbo.T_USERS.USER_NAME, dbo.T_USERS.USER_PWD, dbo.T_USERS.LEVEL_CODE, dbo.T_LEVEL.LEVEL_NAME, dbo.T_USERS.ACTIVE
-FROM        dbo.T_USERS INNER JOIN
-                  dbo.T_LEVEL ON dbo.T_USERS.LEVEL_CODE = dbo.T_LEVEL.LEVEL_CODE
-WHERE     (dbo.T_USERS.ACTIVE = 1)
+SELECT
+    U.USER_CODE,
+    U.USER_NAME,
+    U.USER_PWD,
+    U.LEVEL_CODE,
+    L.LEVEL_NAME,
+    U.ACTIVE
+FROM
+    dbo.T_USERS U
+    INNER JOIN dbo.T_LEVEL L ON U.LEVEL_CODE = L.LEVEL_CODE
+WHERE
+    U.ACTIVE = 1
 ' 
 GO
 IF NOT EXISTS (SELECT * FROM ::fn_listextendedproperty(N'MS_DiagramPane1' , N'SCHEMA',N'dbo', N'VIEW',N'V_CATEGORY_ON', NULL,NULL))
