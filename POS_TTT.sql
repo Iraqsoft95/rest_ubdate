@@ -1,5 +1,5 @@
 
-/****** Object:  Table [dbo].[AA_ITEM_APPLICATION]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[AA_ITEM_APPLICATION]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -61,7 +61,7 @@ END
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[T_A_DATA_RESTURANT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_A_DATA_RESTURANT]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -84,7 +84,7 @@ CREATE TABLE [dbo].[T_A_DATA_RESTURANT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AA_ACCOUNT_NEW_YEAR]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AA_ACCOUNT_NEW_YEAR]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -107,7 +107,7 @@ CREATE TABLE [dbo].[T_AA_ACCOUNT_NEW_YEAR](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AA_ITEM_NEW_YEAR]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AA_ITEM_NEW_YEAR]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,7 +132,7 @@ CREATE TABLE [dbo].[T_AA_ITEM_NEW_YEAR](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ACCOUNT_CHECKED]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ACCOUNT_CHECKED]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -157,7 +157,7 @@ CREATE TABLE [dbo].[T_ACCOUNT_CHECKED](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ACCOUNT_FINAL]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ACCOUNT_FINAL]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -174,7 +174,7 @@ CREATE TABLE [dbo].[T_ACCOUNT_FINAL](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ACCOUNT_TYPE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ACCOUNT_TYPE]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -194,7 +194,7 @@ CREATE TABLE [dbo].[T_ACCOUNT_TYPE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ACCOUNTS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ACCOUNTS]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -228,7 +228,7 @@ CREATE TABLE [dbo].[T_ACCOUNTS](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ADS_TRACKING]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ADS_TRACKING]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -255,7 +255,7 @@ CREATE TABLE [dbo].[T_ADS_TRACKING](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AKSAT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AKSAT]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -293,7 +293,7 @@ CREATE TABLE [dbo].[T_AKSAT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AKSAT_DETAILS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AKSAT_DETAILS]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -323,7 +323,7 @@ CREATE TABLE [dbo].[T_AKSAT_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AKSAT_ITEM_DETAILS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AKSAT_ITEM_DETAILS]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -356,7 +356,7 @@ CREATE TABLE [dbo].[T_AKSAT_ITEM_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AKSAT_ITEMS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AKSAT_ITEMS]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -401,7 +401,7 @@ CREATE TABLE [dbo].[T_AKSAT_ITEMS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AKSAT_MODEL]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AKSAT_MODEL]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -420,7 +420,7 @@ CREATE TABLE [dbo].[T_AKSAT_MODEL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AKSAT_MODEL_DETAILS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AKSAT_MODEL_DETAILS]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -445,7 +445,7 @@ CREATE TABLE [dbo].[T_AKSAT_MODEL_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AKSAT_TYPE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AKSAT_TYPE]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -462,7 +462,7 @@ CREATE TABLE [dbo].[T_AKSAT_TYPE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_AMOUNT_CARD]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_AMOUNT_CARD]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -488,7 +488,7 @@ CREATE TABLE [dbo].[T_AMOUNT_CARD](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_API_ADD_MULTI]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_API_ADD_MULTI]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -512,7 +512,7 @@ CREATE TABLE [dbo].[T_API_ADD_MULTI](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_INVOICE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_APP_INVOICE]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -547,7 +547,7 @@ CREATE TABLE [dbo].[T_APP_INVOICE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_APP_VIEW_COUNT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_APP_VIEW_COUNT]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -565,7 +565,7 @@ END
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[T_ATTACHMENT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ATTACHMENT]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -593,7 +593,7 @@ CREATE TABLE [dbo].[T_ATTACHMENT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BALANCE_FINAL]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BALANCE_FINAL]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -615,7 +615,7 @@ CREATE TABLE [dbo].[T_BALANCE_FINAL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BALANCE_PHARMA]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BALANCE_PHARMA]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -630,7 +630,7 @@ CREATE TABLE [dbo].[T_BALANCE_PHARMA](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BARCODE_PRINT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BARCODE_PRINT]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -652,7 +652,7 @@ CREATE TABLE [dbo].[T_BARCODE_PRINT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BARCODE_PRINT_QR]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BARCODE_PRINT_QR]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -678,7 +678,7 @@ CREATE TABLE [dbo].[T_BARCODE_PRINT_QR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BILL_TYPE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BILL_TYPE]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -699,7 +699,7 @@ CREATE TABLE [dbo].[T_BILL_TYPE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BOOKING]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BOOKING]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -735,7 +735,7 @@ CREATE TABLE [dbo].[T_BOOKING](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BOOKING_DATE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BOOKING_DATE]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -755,7 +755,7 @@ CREATE TABLE [dbo].[T_BOOKING_DATE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BOOKING_DETAILS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BOOKING_DETAILS]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -775,7 +775,7 @@ CREATE TABLE [dbo].[T_BOOKING_DETAILS](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BOOKING_HOLIDAY]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BOOKING_HOLIDAY]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -795,7 +795,7 @@ CREATE TABLE [dbo].[T_BOOKING_HOLIDAY](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BOOKING_QISM]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BOOKING_QISM]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -814,7 +814,7 @@ CREATE TABLE [dbo].[T_BOOKING_QISM](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BOX]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BOX]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -863,7 +863,7 @@ CREATE TABLE [dbo].[T_BOX](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BOX_REPORT_ACCOUNT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BOX_REPORT_ACCOUNT]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -913,7 +913,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BOX_REPORT_ACCOUNT_DETAILS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BOX_REPORT_ACCOUNT_DETAILS]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -948,7 +948,7 @@ CREATE TABLE [dbo].[T_BOX_REPORT_ACCOUNT_DETAILS](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BRANCH]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BRANCH]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -971,7 +971,7 @@ CREATE TABLE [dbo].[T_BRANCH](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BUY]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BUY]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1035,7 +1035,7 @@ CREATE TABLE [dbo].[T_BUY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BUY_CHOOSE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BUY_CHOOSE]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1065,7 +1065,7 @@ CREATE TABLE [dbo].[T_BUY_CHOOSE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BUY_DETAILS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BUY_DETAILS]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1111,7 +1111,7 @@ CREATE TABLE [dbo].[T_BUY_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BUY_DETAILS_TRANSFARE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BUY_DETAILS_TRANSFARE]    Script Date: 2025/09/13 4:36:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1133,7 +1133,7 @@ CREATE TABLE [dbo].[T_BUY_DETAILS_TRANSFARE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BUY_EXPENSES]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BUY_EXPENSES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1162,7 +1162,7 @@ CREATE TABLE [dbo].[T_BUY_EXPENSES](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BUY_INSERT_SPEED]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BUY_INSERT_SPEED]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1194,7 +1194,7 @@ CREATE TABLE [dbo].[T_BUY_INSERT_SPEED](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BUY_RETURN]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BUY_RETURN]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1242,7 +1242,7 @@ CREATE TABLE [dbo].[T_BUY_RETURN](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_BUY_RETURN_DETAILS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_BUY_RETURN_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1278,7 +1278,7 @@ CREATE TABLE [dbo].[T_BUY_RETURN_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CASH_STATE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CASH_STATE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1295,7 +1295,7 @@ CREATE TABLE [dbo].[T_CASH_STATE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CENTER_COST]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CENTER_COST]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1320,7 +1320,7 @@ CREATE TABLE [dbo].[T_CENTER_COST](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CENTER_COST_INVOICE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CENTER_COST_INVOICE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1344,7 +1344,7 @@ CREATE TABLE [dbo].[T_CENTER_COST_INVOICE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CENTER_COST_ITEMS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CENTER_COST_ITEMS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1369,7 +1369,7 @@ CREATE TABLE [dbo].[T_CENTER_COST_ITEMS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CLIENT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CLIENT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1425,7 +1425,7 @@ CREATE TABLE [dbo].[T_CLIENT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CLIENT_GIM_ENTRY]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CLIENT_GIM_ENTRY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1444,7 +1444,7 @@ CREATE TABLE [dbo].[T_CLIENT_GIM_ENTRY](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CLIENT_TYPE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CLIENT_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1462,7 +1462,7 @@ CREATE TABLE [dbo].[T_CLIENT_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_COLUMNS_GRID_CAPTION]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_COLUMNS_GRID_CAPTION]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1481,7 +1481,7 @@ CREATE TABLE [dbo].[T_COLUMNS_GRID_CAPTION](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_COMPANY]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_COMPANY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1501,7 +1501,7 @@ CREATE TABLE [dbo].[T_COMPANY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_COMPANY2]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_COMPANY2]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1527,7 +1527,7 @@ CREATE TABLE [dbo].[T_COMPANY2](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CONFIGRATION]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CONFIGRATION]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1546,7 +1546,7 @@ CREATE TABLE [dbo].[T_CONFIGRATION](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CONTAINER]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CONTAINER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1587,7 +1587,7 @@ CREATE TABLE [dbo].[T_CONTAINER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CONTAINER_DETAILS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CONTAINER_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1623,7 +1623,7 @@ CREATE TABLE [dbo].[T_CONTAINER_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CONTAINER_EXPENSES]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CONTAINER_EXPENSES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1652,7 +1652,7 @@ CREATE TABLE [dbo].[T_CONTAINER_EXPENSES](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_COUPON]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_COUPON]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1677,7 +1677,7 @@ CREATE TABLE [dbo].[T_COUPON](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_CURRANNCY]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_CURRANNCY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1701,7 +1701,7 @@ CREATE TABLE [dbo].[T_CURRANNCY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DATA_CLOUD]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_DATA_CLOUD]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1720,7 +1720,7 @@ CREATE TABLE [dbo].[T_DATA_CLOUD](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DATE_ACCOUNT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_DATE_ACCOUNT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1737,7 +1737,7 @@ CREATE TABLE [dbo].[T_DATE_ACCOUNT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DATE_REPORT_DEBIT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_DATE_REPORT_DEBIT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1754,7 +1754,7 @@ CREATE TABLE [dbo].[T_DATE_REPORT_DEBIT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DAYLE_ALL_REPORT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_DAYLE_ALL_REPORT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1792,7 +1792,7 @@ CREATE TABLE [dbo].[T_DAYLE_ALL_REPORT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DAYLY_REPORT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_DAYLY_REPORT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1822,7 +1822,7 @@ CREATE TABLE [dbo].[T_DAYLY_REPORT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DEAL]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_DEAL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1839,7 +1839,7 @@ CREATE TABLE [dbo].[T_DEAL](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DISCOUNT_APP]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_DISCOUNT_APP]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1857,7 +1857,7 @@ CREATE TABLE [dbo].[T_DISCOUNT_APP](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_DRIVERS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_DRIVERS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1875,7 +1875,7 @@ CREATE TABLE [dbo].[T_DRIVERS](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_EMP_ENTER]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_EMP_ENTER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1905,7 +1905,7 @@ END
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[T_EMP_ENTER_REPORT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_EMP_ENTER_REPORT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1933,7 +1933,7 @@ END
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[T_EMPLOYEE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_EMPLOYEE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1961,7 +1961,7 @@ CREATE TABLE [dbo].[T_EMPLOYEE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_EXCEL_ITEM_PHARMA]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_EXCEL_ITEM_PHARMA]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1987,7 +1987,7 @@ CREATE TABLE [dbo].[T_EXCEL_ITEM_PHARMA](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_EXPENSES]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_EXPENSES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2011,7 +2011,7 @@ CREATE TABLE [dbo].[T_EXPENSES](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_FACTORY]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_FACTORY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2055,7 +2055,7 @@ CREATE TABLE [dbo].[T_FACTORY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_FACTORY_DETAILS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_FACTORY_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2087,7 +2087,7 @@ CREATE TABLE [dbo].[T_FACTORY_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_FACTORY_ITEM_WAITING]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_FACTORY_ITEM_WAITING]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2112,7 +2112,7 @@ CREATE TABLE [dbo].[T_FACTORY_ITEM_WAITING](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_FORM_APP]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_FORM_APP]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2138,7 +2138,7 @@ CREATE TABLE [dbo].[T_FORM_APP](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_FORM_LAYOUT_FILE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_FORM_LAYOUT_FILE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2162,7 +2162,7 @@ CREATE TABLE [dbo].[T_FORM_LAYOUT_FILE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_FORM_SHORTCUT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_FORM_SHORTCUT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2184,7 +2184,7 @@ CREATE TABLE [dbo].[T_FORM_SHORTCUT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_GATE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_GATE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2203,7 +2203,7 @@ CREATE TABLE [dbo].[T_GATE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_APPLICATION]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_APPLICATION]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2249,7 +2249,7 @@ CREATE TABLE [dbo].[T_ITEM_APPLICATION](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_AVG_CURSER]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_AVG_CURSER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2266,7 +2266,7 @@ CREATE TABLE [dbo].[T_ITEM_AVG_CURSER](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_BARCODE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_BARCODE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2288,7 +2288,7 @@ CREATE TABLE [dbo].[T_ITEM_BARCODE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_CATEGORY]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_CATEGORY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2312,7 +2312,7 @@ CREATE TABLE [dbo].[T_ITEM_CATEGORY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_CATEGORY_RATING]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_CATEGORY_RATING]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2334,7 +2334,7 @@ CREATE TABLE [dbo].[T_ITEM_CATEGORY_RATING](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_CORRECT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_CORRECT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2363,7 +2363,7 @@ CREATE TABLE [dbo].[T_ITEM_CORRECT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_FREE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_FREE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2383,7 +2383,7 @@ CREATE TABLE [dbo].[T_ITEM_FREE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_IMAGE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_IMAGE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2404,7 +2404,7 @@ CREATE TABLE [dbo].[T_ITEM_IMAGE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_MATERIAL]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_MATERIAL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2423,7 +2423,7 @@ CREATE TABLE [dbo].[T_ITEM_MATERIAL](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_MATERIAL_EFFECTIVE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_MATERIAL_EFFECTIVE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2443,7 +2443,7 @@ CREATE TABLE [dbo].[T_ITEM_MATERIAL_EFFECTIVE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_MISWAK_INFO]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_MISWAK_INFO]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2468,7 +2468,7 @@ CREATE TABLE [dbo].[T_ITEM_MISWAK_INFO](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_RESTURANT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_RESTURANT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2493,7 +2493,7 @@ CREATE TABLE [dbo].[T_ITEM_RESTURANT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_SERIAL]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_SERIAL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2523,7 +2523,7 @@ CREATE TABLE [dbo].[T_ITEM_SERIAL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_SPECIFICATION_TYPE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_SPECIFICATION_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2541,7 +2541,7 @@ CREATE TABLE [dbo].[T_ITEM_SPECIFICATION_TYPE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_SPECIFICATIONS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_SPECIFICATIONS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2560,7 +2560,7 @@ CREATE TABLE [dbo].[T_ITEM_SPECIFICATIONS](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_TYPE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2577,7 +2577,7 @@ CREATE TABLE [dbo].[T_ITEM_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEM_UNIT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEM_UNIT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2609,7 +2609,7 @@ CREATE TABLE [dbo].[T_ITEM_UNIT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEMS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEMS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2699,7 +2699,7 @@ CREATE TABLE [dbo].[T_ITEMS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEMS_ARSHIF]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEMS_ARSHIF]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2717,7 +2717,7 @@ CREATE TABLE [dbo].[T_ITEMS_ARSHIF](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEMS_MANDOOB]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEMS_MANDOOB]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2737,7 +2737,7 @@ CREATE TABLE [dbo].[T_ITEMS_MANDOOB](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_ITEMS_REPORT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_ITEMS_REPORT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2763,7 +2763,7 @@ CREATE TABLE [dbo].[T_ITEMS_REPORT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_IVC_TYPE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_IVC_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2782,7 +2782,7 @@ CREATE TABLE [dbo].[T_IVC_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_JOINT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_JOINT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2815,7 +2815,7 @@ CREATE TABLE [dbo].[T_JOINT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_JOINT_COURSES]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_JOINT_COURSES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2855,7 +2855,7 @@ CREATE TABLE [dbo].[T_JOINT_COURSES](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_JOINT_COURSES_FREE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_JOINT_COURSES_FREE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2900,7 +2900,7 @@ CREATE TABLE [dbo].[T_JOINT_COURSES_FREE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_JOINT_COURSES_FREE_TAMPLET]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_JOINT_COURSES_FREE_TAMPLET]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2941,7 +2941,7 @@ CREATE TABLE [dbo].[T_JOINT_COURSES_FREE_TAMPLET](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_JOINT_GATE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_JOINT_GATE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2961,7 +2961,7 @@ CREATE TABLE [dbo].[T_JOINT_GATE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_JOINT_SUBSCRIPTION]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_JOINT_SUBSCRIPTION]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2989,7 +2989,7 @@ CREATE TABLE [dbo].[T_JOINT_SUBSCRIPTION](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_KAFEL]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_KAFEL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3017,7 +3017,7 @@ CREATE TABLE [dbo].[T_KAFEL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_KAFEL_CLIENT]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_KAFEL_CLIENT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3030,7 +3030,7 @@ CREATE TABLE [dbo].[T_KAFEL_CLIENT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_LEVEL]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_LEVEL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3057,7 +3057,7 @@ CREATE TABLE [dbo].[T_LEVEL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MAINTANACE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MAINTANACE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3082,7 +3082,7 @@ CREATE TABLE [dbo].[T_MAINTANACE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MAINTENANCE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MAINTENANCE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3136,7 +3136,7 @@ CREATE TABLE [dbo].[T_MAINTENANCE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MAINTENANCE_DEVICE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MAINTENANCE_DEVICE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3157,7 +3157,7 @@ CREATE TABLE [dbo].[T_MAINTENANCE_DEVICE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MAINTENANCE_DEVICE_ERROR]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MAINTENANCE_DEVICE_ERROR]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3179,7 +3179,7 @@ CREATE TABLE [dbo].[T_MAINTENANCE_DEVICE_ERROR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MAINTENANCE_GUARANTEE_TYPE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MAINTENANCE_GUARANTEE_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3197,7 +3197,7 @@ CREATE TABLE [dbo].[T_MAINTENANCE_GUARANTEE_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MAINTENANCE_LABEL]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MAINTENANCE_LABEL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3218,7 +3218,7 @@ CREATE TABLE [dbo].[T_MAINTENANCE_LABEL](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MAINTENANCE_TYPE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MAINTENANCE_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3236,7 +3236,7 @@ CREATE TABLE [dbo].[T_MAINTENANCE_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MANDOOB]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MANDOOB]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3262,7 +3262,7 @@ CREATE TABLE [dbo].[T_MANDOOB](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MANDOOB_VISITS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MANDOOB_VISITS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3287,7 +3287,7 @@ CREATE TABLE [dbo].[T_MANDOOB_VISITS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MAWJOOD_STATUS]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MAWJOOD_STATUS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3309,7 +3309,7 @@ CREATE TABLE [dbo].[T_MAWJOOD_STATUS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MOVE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MOVE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3327,7 +3327,7 @@ CREATE TABLE [dbo].[T_MOVE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MOVE_DOLLAR]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MOVE_DOLLAR]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3344,7 +3344,7 @@ CREATE TABLE [dbo].[T_MOVE_DOLLAR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_MOVE_SMAH]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_MOVE_SMAH]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3361,7 +3361,7 @@ CREATE TABLE [dbo].[T_MOVE_SMAH](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_NOTES]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_NOTES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3392,7 +3392,7 @@ CREATE TABLE [dbo].[T_NOTES](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_NOTFICATION_TITLE]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_NOTFICATION_TITLE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3413,7 +3413,7 @@ CREATE TABLE [dbo].[T_NOTFICATION_TITLE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_NOTIFICATION]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_NOTIFICATION]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3436,7 +3436,7 @@ CREATE TABLE [dbo].[T_NOTIFICATION](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_NSR]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_NSR]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3459,7 +3459,7 @@ CREATE TABLE [dbo].[T_NSR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_OFFER]    Script Date: 2025/08/11 9:58:30 ******/
+/****** Object:  Table [dbo].[T_OFFER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3490,7 +3490,7 @@ CREATE TABLE [dbo].[T_OFFER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_OFFERS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_OFFERS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3513,7 +3513,7 @@ CREATE TABLE [dbo].[T_OFFERS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_OFFERS_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_OFFERS_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3533,7 +3533,7 @@ CREATE TABLE [dbo].[T_OFFERS_DETAILS](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PARAMETERS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_PARAMETERS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3552,7 +3552,7 @@ CREATE TABLE [dbo].[T_PARAMETERS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PATH_BACKUP]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_PATH_BACKUP]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3571,7 +3571,7 @@ CREATE TABLE [dbo].[T_PATH_BACKUP](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PAYMENT_TRANSACTION]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_PAYMENT_TRANSACTION]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3595,7 +3595,7 @@ CREATE TABLE [dbo].[T_PAYMENT_TRANSACTION](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_POINTS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_POINTS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3622,7 +3622,7 @@ CREATE TABLE [dbo].[T_POINTS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PRINT_SYNCH]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_PRINT_SYNCH]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3643,7 +3643,7 @@ CREATE TABLE [dbo].[T_PRINT_SYNCH](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PRINTER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_PRINTER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3663,7 +3663,7 @@ CREATE TABLE [dbo].[T_PRINTER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PRINTER_STORE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_PRINTER_STORE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3681,7 +3681,7 @@ CREATE TABLE [dbo].[T_PRINTER_STORE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PURCHASE_ORDER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_PURCHASE_ORDER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3744,7 +3744,7 @@ CREATE TABLE [dbo].[T_PURCHASE_ORDER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_PURCHASE_ORDER_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_PURCHASE_ORDER_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3790,7 +3790,7 @@ CREATE TABLE [dbo].[T_PURCHASE_ORDER_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_RECEVER_ORDER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_RECEVER_ORDER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3815,7 +3815,7 @@ CREATE TABLE [dbo].[T_RECEVER_ORDER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_REGION_SHIP]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_REGION_SHIP]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3836,7 +3836,7 @@ CREATE TABLE [dbo].[T_REGION_SHIP](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_REPORT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_REPORT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3860,7 +3860,7 @@ CREATE TABLE [dbo].[T_REPORT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_REPORT_SPECIAL]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_REPORT_SPECIAL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3877,6 +3877,9 @@ CREATE TABLE [dbo].[T_REPORT_SPECIAL](
 	[SORT] [int] NULL,
 	[SUMMARY_COL] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
 	[MULTILINE_COL] [nvarchar](200) COLLATE Arabic_CI_AS NULL,
+	[TECH_COLS] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[SORT_EXPR] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
+	[HIGHLIGHT_JSON] [nvarchar](max) COLLATE Arabic_CI_AS NULL,
  CONSTRAINT [PK_T_REPORT_SPECIAL] PRIMARY KEY CLUSTERED 
 (
 	[T_ID] ASC
@@ -3884,7 +3887,7 @@ CREATE TABLE [dbo].[T_REPORT_SPECIAL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_REPORT_TELEGRAM]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_REPORT_TELEGRAM]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3906,7 +3909,7 @@ CREATE TABLE [dbo].[T_REPORT_TELEGRAM](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_REPORT_USER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_REPORT_USER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3927,7 +3930,7 @@ CREATE TABLE [dbo].[T_REPORT_USER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_RULES_KIND]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_RULES_KIND]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3950,7 +3953,7 @@ CREATE TABLE [dbo].[T_RULES_KIND](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_RULES_KIND_PAY]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_RULES_KIND_PAY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -3972,7 +3975,7 @@ CREATE TABLE [dbo].[T_RULES_KIND_PAY](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4069,7 +4072,7 @@ CREATE TABLE [dbo].[T_SALES](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4169,7 +4172,7 @@ CREATE TABLE [dbo].[T_SALES_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_DIRECT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_DIRECT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4220,7 +4223,7 @@ CREATE TABLE [dbo].[T_SALES_DIRECT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_DIRECT_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_DIRECT_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4287,7 +4290,7 @@ CREATE TABLE [dbo].[T_SALES_DIRECT_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_DISCOUNT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_DISCOUNT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4320,7 +4323,7 @@ CREATE TABLE [dbo].[T_SALES_DISCOUNT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_EXPENSES]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_EXPENSES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4353,7 +4356,7 @@ CREATE TABLE [dbo].[T_SALES_EXPENSES](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_FRUIT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_FRUIT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4395,7 +4398,7 @@ CREATE TABLE [dbo].[T_SALES_FRUIT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_FRUIT_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_FRUIT_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4423,7 +4426,7 @@ CREATE TABLE [dbo].[T_SALES_FRUIT_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_IN_OUT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_IN_OUT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4447,7 +4450,7 @@ CREATE TABLE [dbo].[T_SALES_IN_OUT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_PATROL]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_PATROL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4481,7 +4484,7 @@ CREATE TABLE [dbo].[T_SALES_PATROL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_PDF]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_PDF]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4502,7 +4505,7 @@ CREATE TABLE [dbo].[T_SALES_PDF](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_PREPARATION_TIME]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_PREPARATION_TIME]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4520,7 +4523,7 @@ CREATE TABLE [dbo].[T_SALES_PREPARATION_TIME](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_SHIPPING]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_SHIPPING]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4542,7 +4545,7 @@ CREATE TABLE [dbo].[T_SALES_SHIPPING](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_TEMP]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_TEMP]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4600,7 +4603,7 @@ CREATE TABLE [dbo].[T_SALES_TEMP](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SALES_ZONE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SALES_ZONE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4619,7 +4622,7 @@ CREATE TABLE [dbo].[T_SALES_ZONE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SANAD]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SANAD]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4664,7 +4667,7 @@ CREATE TABLE [dbo].[T_SANAD](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SANAD_CNY]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SANAD_CNY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4718,7 +4721,7 @@ CREATE TABLE [dbo].[T_SANAD_CNY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SANAD_DOLLAR]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SANAD_DOLLAR]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4757,7 +4760,7 @@ CREATE TABLE [dbo].[T_SANAD_DOLLAR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SANAD_HAWALA]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SANAD_HAWALA]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4807,7 +4810,7 @@ CREATE TABLE [dbo].[T_SANAD_HAWALA](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SANAD_HAWALA_HISTORY]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SANAD_HAWALA_HISTORY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4858,7 +4861,7 @@ CREATE TABLE [dbo].[T_SANAD_HAWALA_HISTORY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SANAD_HISTORY]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SANAD_HISTORY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4904,7 +4907,7 @@ CREATE TABLE [dbo].[T_SANAD_HISTORY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SANAD_KAYD]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SANAD_KAYD]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4936,7 +4939,7 @@ CREATE TABLE [dbo].[T_SANAD_KAYD](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SANAD_KAYD_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SANAD_KAYD_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -4963,7 +4966,7 @@ CREATE TABLE [dbo].[T_SANAD_KAYD_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SANAD_SMAH]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SANAD_SMAH]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5002,7 +5005,7 @@ CREATE TABLE [dbo].[T_SANAD_SMAH](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SECURETY]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SECURETY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5019,7 +5022,7 @@ CREATE TABLE [dbo].[T_SECURETY](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SERVER_MAIN]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SERVER_MAIN]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5040,7 +5043,7 @@ CREATE TABLE [dbo].[T_SERVER_MAIN](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SETTING]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SETTING]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5062,7 +5065,7 @@ CREATE TABLE [dbo].[T_SETTING](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SETTING_DISCOUNT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SETTING_DISCOUNT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5079,7 +5082,7 @@ CREATE TABLE [dbo].[T_SETTING_DISCOUNT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SHAREEK]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SHAREEK]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5099,7 +5102,7 @@ CREATE TABLE [dbo].[T_SHAREEK](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SMS_MASSAGE_TYPE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SMS_MASSAGE_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5117,7 +5120,7 @@ CREATE TABLE [dbo].[T_SMS_MASSAGE_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SORT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SORT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5135,7 +5138,7 @@ CREATE TABLE [dbo].[T_SORT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_STAFF]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_STAFF]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5157,7 +5160,7 @@ CREATE TABLE [dbo].[T_STAFF](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_STORE_BOX]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_STORE_BOX]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5193,7 +5196,7 @@ CREATE TABLE [dbo].[T_STORE_BOX](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_STORE_ID_MAX]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_STORE_ID_MAX]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5210,7 +5213,7 @@ CREATE TABLE [dbo].[T_STORE_ID_MAX](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_STORE_TRANSFARE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_STORE_TRANSFARE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5243,7 +5246,7 @@ CREATE TABLE [dbo].[T_STORE_TRANSFARE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_STORE_TRANSFARE_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_STORE_TRANSFARE_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5272,7 +5275,7 @@ CREATE TABLE [dbo].[T_STORE_TRANSFARE_DETAILS](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_STORE_TYPE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_STORE_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5295,7 +5298,7 @@ CREATE TABLE [dbo].[T_STORE_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_SUBSCRIPTION]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_SUBSCRIPTION]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5317,7 +5320,7 @@ CREATE TABLE [dbo].[T_SUBSCRIPTION](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TABOOR_ORDER_TYPES]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TABOOR_ORDER_TYPES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5356,7 +5359,7 @@ CREATE TABLE [dbo].[T_TABOOR_ORDER_TYPES](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TABOOR_ORDERS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TABOOR_ORDERS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5376,7 +5379,7 @@ CREATE TABLE [dbo].[T_TABOOR_ORDERS](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TABOOR_TIME_RESET]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TABOOR_TIME_RESET]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5395,7 +5398,7 @@ CREATE TABLE [dbo].[T_TABOOR_TIME_RESET](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TAG_FILTER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TAG_FILTER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5412,7 +5415,7 @@ CREATE TABLE [dbo].[T_TAG_FILTER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TAG_PROCCESS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TAG_PROCCESS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5431,7 +5434,7 @@ CREATE TABLE [dbo].[T_TAG_PROCCESS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TELE_SCH]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TELE_SCH]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5452,7 +5455,7 @@ CREATE TABLE [dbo].[T_TELE_SCH](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TELE_SYNC]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TELE_SYNC]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5472,7 +5475,7 @@ CREATE TABLE [dbo].[T_TELE_SYNC](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TEMP_SALES_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TEMP_SALES_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5524,7 +5527,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TEMP_SALES_HEADER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TEMP_SALES_HEADER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5583,7 +5586,7 @@ CREATE TABLE [dbo].[T_TEMP_SALES_HEADER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TYPE_CH]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TYPE_CH]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5601,7 +5604,7 @@ CREATE TABLE [dbo].[T_TYPE_CH](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_TYPE_PRICE_SELL]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_TYPE_PRICE_SELL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5620,7 +5623,7 @@ CREATE TABLE [dbo].[T_TYPE_PRICE_SELL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_UNIT_FORM]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_UNIT_FORM]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5642,7 +5645,7 @@ CREATE TABLE [dbo].[T_UNIT_FORM](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_UNIT_FORM_INFO]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_UNIT_FORM_INFO]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5663,7 +5666,7 @@ CREATE TABLE [dbo].[T_UNIT_FORM_INFO](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_USER_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_USER_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5690,7 +5693,7 @@ CREATE TABLE [dbo].[T_USER_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_USER_ERROR]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_USER_ERROR]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5712,7 +5715,7 @@ CREATE TABLE [dbo].[T_USER_ERROR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_USERS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_USERS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5745,7 +5748,7 @@ CREATE TABLE [dbo].[T_USERS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_USERS_MAWJOOD]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_USERS_MAWJOOD]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5763,7 +5766,7 @@ CREATE TABLE [dbo].[T_USERS_MAWJOOD](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_USERS_TAG]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_USERS_TAG]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5781,7 +5784,7 @@ CREATE TABLE [dbo].[T_USERS_TAG](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_VERSION]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_VERSION]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5799,7 +5802,7 @@ CREATE TABLE [dbo].[T_VERSION](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_VERSION_DATA]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_VERSION_DATA]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5817,7 +5820,7 @@ CREATE TABLE [dbo].[T_VERSION_DATA](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_VERSION_NEW]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_VERSION_NEW]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5835,7 +5838,7 @@ CREATE TABLE [dbo].[T_VERSION_NEW](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_VIDEO_LINK]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_VIDEO_LINK]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5854,7 +5857,7 @@ CREATE TABLE [dbo].[T_VIDEO_LINK](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_VISITOR]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_VISITOR]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5876,7 +5879,7 @@ CREATE TABLE [dbo].[T_VISITOR](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_WAJBA]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_WAJBA]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5895,7 +5898,7 @@ CREATE TABLE [dbo].[T_WAJBA](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_WAJBA_SORT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_WAJBA_SORT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5912,7 +5915,7 @@ CREATE TABLE [dbo].[T_WAJBA_SORT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_WAJBA_TYPE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_WAJBA_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5930,7 +5933,7 @@ CREATE TABLE [dbo].[T_WAJBA_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[T_WORK_JOB]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[T_WORK_JOB]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -5949,7 +5952,7 @@ CREATE TABLE [dbo].[T_WORK_JOB](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_CARS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_CARS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6030,7 +6033,7 @@ CREATE TABLE [dbo].[TA_CARS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_CARS_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_CARS_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6074,7 +6077,7 @@ CREATE TABLE [dbo].[TA_CARS_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_CARS_EXPENSES]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_CARS_EXPENSES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6103,7 +6106,7 @@ CREATE TABLE [dbo].[TA_CARS_EXPENSES](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_CARS_SPICIAL]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_CARS_SPICIAL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6184,7 +6187,7 @@ CREATE TABLE [dbo].[TA_CARS_SPICIAL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_PANDEL]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_PANDEL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6203,7 +6206,7 @@ CREATE TABLE [dbo].[TA_PANDEL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_PROJECT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_PROJECT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6245,7 +6248,7 @@ CREATE TABLE [dbo].[TA_PROJECT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_PROJECT_KADER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_PROJECT_KADER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6272,7 +6275,7 @@ CREATE TABLE [dbo].[TA_PROJECT_KADER](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_PROJECT_PANDEL]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_PROJECT_PANDEL]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6291,7 +6294,7 @@ CREATE TABLE [dbo].[TA_PROJECT_PANDEL](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_STUDENT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_STUDENT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6335,7 +6338,7 @@ CREATE TABLE [dbo].[TA_STUDENT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_STUDENT_DEGREE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_STUDENT_DEGREE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6372,7 +6375,7 @@ CREATE TABLE [dbo].[TA_STUDENT_DEGREE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_STUDENT_ENTRY]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_STUDENT_ENTRY]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6393,7 +6396,7 @@ CREATE TABLE [dbo].[TA_STUDENT_ENTRY](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_STUDENT_GATE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_STUDENT_GATE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6413,7 +6416,7 @@ CREATE TABLE [dbo].[TA_STUDENT_GATE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TA_STUDENT_GROUP]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TA_STUDENT_GROUP]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6434,7 +6437,7 @@ CREATE TABLE [dbo].[TA_STUDENT_GROUP](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_AQED_AYGAR]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_AQED_AYGAR]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6461,7 +6464,7 @@ CREATE TABLE [dbo].[TB_AQED_AYGAR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_ATTACH_TYPE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_ATTACH_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6478,7 +6481,7 @@ CREATE TABLE [dbo].[TB_ATTACH_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_ATTACHMENT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_ATTACHMENT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6507,7 +6510,7 @@ CREATE TABLE [dbo].[TB_ATTACHMENT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_BUILDING]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_BUILDING]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6525,7 +6528,7 @@ CREATE TABLE [dbo].[TB_BUILDING](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_CLIENT_INFO]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_CLIENT_INFO]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6564,7 +6567,7 @@ CREATE TABLE [dbo].[TB_CLIENT_INFO](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_FLOOR]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_FLOOR]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6582,7 +6585,7 @@ CREATE TABLE [dbo].[TB_FLOOR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_HOUSE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_HOUSE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6618,7 +6621,7 @@ CREATE TABLE [dbo].[TB_HOUSE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_HOUSE_TOKEN]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_HOUSE_TOKEN]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6637,7 +6640,7 @@ CREATE TABLE [dbo].[TB_HOUSE_TOKEN](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_HOUSE_TYPE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_HOUSE_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6654,7 +6657,7 @@ CREATE TABLE [dbo].[TB_HOUSE_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_MAINTENANCE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_MAINTENANCE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6680,7 +6683,7 @@ CREATE TABLE [dbo].[TB_MAINTENANCE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_MAINTENANCE_STATES]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_MAINTENANCE_STATES]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6697,7 +6700,7 @@ CREATE TABLE [dbo].[TB_MAINTENANCE_STATES](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_NEWS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_NEWS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6728,7 +6731,7 @@ CREATE TABLE [dbo].[TB_NEWS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_NEWS_TYPE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_NEWS_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6745,7 +6748,7 @@ CREATE TABLE [dbo].[TB_NEWS_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_PROJECT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_PROJECT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6766,7 +6769,7 @@ CREATE TABLE [dbo].[TB_PROJECT](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_PROJECT_SUPPLIER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_PROJECT_SUPPLIER]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6785,7 +6788,7 @@ CREATE TABLE [dbo].[TB_PROJECT_SUPPLIER](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_RELATION_CLIENT]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_RELATION_CLIENT]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6825,7 +6828,7 @@ CREATE TABLE [dbo].[TB_RELATION_CLIENT](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_RELATION_TYPE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_RELATION_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6842,7 +6845,7 @@ CREATE TABLE [dbo].[TB_RELATION_TYPE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_RENTER_HOUSE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_RENTER_HOUSE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6862,7 +6865,7 @@ CREATE TABLE [dbo].[TB_RENTER_HOUSE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_SERVICE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_SERVICE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6888,7 +6891,7 @@ CREATE TABLE [dbo].[TB_SERVICE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_SERVICE_DETAILS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_SERVICE_DETAILS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6918,7 +6921,7 @@ CREATE TABLE [dbo].[TB_SERVICE_DETAILS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TB_ZONE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TB_ZONE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6936,7 +6939,7 @@ CREATE TABLE [dbo].[TB_ZONE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[tblAttendances]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[tblAttendances]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6958,7 +6961,7 @@ CREATE TABLE [dbo].[tblAttendances](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[tblDeleteUsers]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[tblDeleteUsers]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6979,7 +6982,7 @@ CREATE TABLE [dbo].[tblDeleteUsers](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TH_ROOM]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TH_ROOM]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7010,7 +7013,7 @@ CREATE TABLE [dbo].[TH_ROOM](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TH_ROOM_BOOKING]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TH_ROOM_BOOKING]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7058,7 +7061,7 @@ CREATE TABLE [dbo].[TH_ROOM_BOOKING](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TH_ROOM_BOOKING_GUEST]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TH_ROOM_BOOKING_GUEST]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7081,7 +7084,7 @@ CREATE TABLE [dbo].[TH_ROOM_BOOKING_GUEST](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TH_ROOM_BOOKING_STATE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TH_ROOM_BOOKING_STATE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7101,7 +7104,7 @@ CREATE TABLE [dbo].[TH_ROOM_BOOKING_STATE](
 ) ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TH_ROOM_FLOOR]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TH_ROOM_FLOOR]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7121,7 +7124,7 @@ CREATE TABLE [dbo].[TH_ROOM_FLOOR](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TH_ROOM_IMAGE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TH_ROOM_IMAGE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7141,7 +7144,7 @@ CREATE TABLE [dbo].[TH_ROOM_IMAGE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TH_ROOM_STATUS]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TH_ROOM_STATUS]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7161,7 +7164,7 @@ CREATE TABLE [dbo].[TH_ROOM_STATUS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Table [dbo].[TH_ROOM_TYPE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Table [dbo].[TH_ROOM_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7181,14 +7184,14 @@ CREATE TABLE [dbo].[TH_ROOM_TYPE](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 END
 GO
-/****** Object:  Index [IDX_T_ACCOUNTS_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ACCOUNTS_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ACCOUNTS]') AND name = N'IDX_T_ACCOUNTS_CODE')
 CREATE UNIQUE NONCLUSTERED INDEX [IDX_T_ACCOUNTS_CODE] ON [dbo].[T_ACCOUNTS]
 (
 	[ACCOUNT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ACCOUNTS_L3_ACTIVE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ACCOUNTS_L3_ACTIVE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ACCOUNTS]') AND name = N'IDX_T_ACCOUNTS_L3_ACTIVE')
 CREATE NONCLUSTERED INDEX [IDX_T_ACCOUNTS_L3_ACTIVE] ON [dbo].[T_ACCOUNTS]
 (
@@ -7196,77 +7199,77 @@ CREATE NONCLUSTERED INDEX [IDX_T_ACCOUNTS_L3_ACTIVE] ON [dbo].[T_ACCOUNTS]
 	[ACCOUNT_ACTIVE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_ACCOUNTS_TYPE_ACCOUNT_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_ACCOUNTS_TYPE_ACCOUNT_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ACCOUNTS]') AND name = N'IX_T_ACCOUNTS_TYPE_ACCOUNT_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_ACCOUNTS_TYPE_ACCOUNT_CODE] ON [dbo].[T_ACCOUNTS]
 (
 	[TYPE_ACCOUNT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_AKSAT_ACCOUNT_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_AKSAT_ACCOUNT_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_AKSAT]') AND name = N'IDX_T_AKSAT_ACCOUNT_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_AKSAT_ACCOUNT_CODE] ON [dbo].[T_AKSAT]
 (
 	[ACCOUNT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_AKSAT_B_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_AKSAT_B_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_AKSAT]') AND name = N'IDX_T_AKSAT_B_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_AKSAT_B_CODE] ON [dbo].[T_AKSAT]
 (
 	[B_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_AKSAT_BILL_NUMBER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_AKSAT_BILL_NUMBER]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_AKSAT]') AND name = N'IDX_T_AKSAT_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IDX_T_AKSAT_BILL_NUMBER] ON [dbo].[T_AKSAT]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_AKSAT_CASH_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_AKSAT_CASH_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_AKSAT]') AND name = N'IDX_T_AKSAT_CASH_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_AKSAT_CASH_CODE] ON [dbo].[T_AKSAT]
 (
 	[CASH_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_AKSAT_CURRANCY_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_AKSAT_CURRANCY_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_AKSAT]') AND name = N'IDX_T_AKSAT_CURRANCY_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_AKSAT_CURRANCY_CODE] ON [dbo].[T_AKSAT]
 (
 	[CURRANCY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_AKSAT_KAFEL_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_AKSAT_KAFEL_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_AKSAT]') AND name = N'IDX_T_AKSAT_KAFEL_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_AKSAT_KAFEL_CODE] ON [dbo].[T_AKSAT]
 (
 	[KAFEL_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_AKSAT_T_ID]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_AKSAT_T_ID]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_AKSAT]') AND name = N'IDX_T_AKSAT_T_ID')
 CREATE UNIQUE NONCLUSTERED INDEX [IDX_T_AKSAT_T_ID] ON [dbo].[T_AKSAT]
 (
 	[T_ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_AKSAT_USER_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_AKSAT_USER_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_AKSAT]') AND name = N'IDX_T_AKSAT_USER_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_AKSAT_USER_CODE] ON [dbo].[T_AKSAT]
 (
 	[USER_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_BILL_TYPE_B_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_BILL_TYPE_B_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BILL_TYPE]') AND name = N'IDX_T_BILL_TYPE_B_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_BILL_TYPE_B_CODE] ON [dbo].[T_BILL_TYPE]
 (
 	[B_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_BOX_ACCOUNT_DATE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_BOX_ACCOUNT_DATE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BOX]') AND name = N'IDX_T_BOX_ACCOUNT_DATE')
 CREATE NONCLUSTERED INDEX [IDX_T_BOX_ACCOUNT_DATE] ON [dbo].[T_BOX]
 (
@@ -7283,7 +7286,7 @@ SET ANSI_WARNINGS ON
 SET NUMERIC_ROUNDABORT OFF
 
 GO
-/****** Object:  Index [IDX_T_BOX_ACTIVE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_BOX_ACTIVE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BOX]') AND name = N'IDX_T_BOX_ACTIVE')
 CREATE NONCLUSTERED INDEX [IDX_T_BOX_ACTIVE] ON [dbo].[T_BOX]
 (
@@ -7300,56 +7303,56 @@ INCLUDE ( 	[ACCOUNT_CODE],
 	[B_CODE],
 	[T_ID_BOX]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_BOX_B_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_BOX_B_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BOX]') AND name = N'IDX_T_BOX_B_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_BOX_B_CODE] ON [dbo].[T_BOX]
 (
 	[B_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_BOX_DATE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_BOX_DATE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BOX]') AND name = N'IDX_T_BOX_DATE')
 CREATE NONCLUSTERED INDEX [IDX_T_BOX_DATE] ON [dbo].[T_BOX]
 (
 	[BILL_DATE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BOX_ACCOUNT_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BOX_ACCOUNT_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BOX]') AND name = N'IX_T_BOX_ACCOUNT_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_BOX_ACCOUNT_CODE] ON [dbo].[T_BOX]
 (
 	[ACCOUNT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BOX_ACTIVE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BOX_ACTIVE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BOX]') AND name = N'IX_T_BOX_ACTIVE')
 CREATE NONCLUSTERED INDEX [IX_T_BOX_ACTIVE] ON [dbo].[T_BOX]
 (
 	[ACTIVE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BOX_B_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BOX_B_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BOX]') AND name = N'IX_T_BOX_B_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_BOX_B_CODE] ON [dbo].[T_BOX]
 (
 	[B_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BOX_BILL_DATE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BOX_BILL_DATE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BOX]') AND name = N'IX_T_BOX_BILL_DATE')
 CREATE NONCLUSTERED INDEX [IX_T_BOX_BILL_DATE] ON [dbo].[T_BOX]
 (
 	[BILL_DATE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BOX_BILL_NUMBER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BOX_BILL_NUMBER]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BOX]') AND name = N'IX_T_BOX_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IX_T_BOX_BILL_NUMBER] ON [dbo].[T_BOX]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BUY_ACTIVE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BUY_ACTIVE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BUY]') AND name = N'IX_T_BUY_ACTIVE')
 CREATE NONCLUSTERED INDEX [IX_T_BUY_ACTIVE] ON [dbo].[T_BUY]
 (
@@ -7357,84 +7360,84 @@ CREATE NONCLUSTERED INDEX [IX_T_BUY_ACTIVE] ON [dbo].[T_BUY]
 	[IVC_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BUY_BILL_NUMBER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BUY_BILL_NUMBER]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BUY]') AND name = N'IX_T_BUY_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IX_T_BUY_BILL_NUMBER] ON [dbo].[T_BUY]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BUY_CLIENT_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BUY_CLIENT_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BUY]') AND name = N'IX_T_BUY_CLIENT_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_BUY_CLIENT_CODE] ON [dbo].[T_BUY]
 (
 	[CLIENT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BUY_DETAILS_ACTIVE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BUY_DETAILS_ACTIVE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BUY_DETAILS]') AND name = N'IX_T_BUY_DETAILS_ACTIVE')
 CREATE NONCLUSTERED INDEX [IX_T_BUY_DETAILS_ACTIVE] ON [dbo].[T_BUY_DETAILS]
 (
 	[ACTIVE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BUY_DETAILS_BILL_NUMBER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BUY_DETAILS_BILL_NUMBER]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BUY_DETAILS]') AND name = N'IX_T_BUY_DETAILS_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IX_T_BUY_DETAILS_BILL_NUMBER] ON [dbo].[T_BUY_DETAILS]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_BUY_DETAILS_ITEM_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_BUY_DETAILS_ITEM_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_BUY_DETAILS]') AND name = N'IX_T_BUY_DETAILS_ITEM_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_BUY_DETAILS_ITEM_CODE] ON [dbo].[T_BUY_DETAILS]
 (
 	[ITEM_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_CASH_STATE_CASH_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_CASH_STATE_CASH_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_CASH_STATE]') AND name = N'IDX_T_CASH_STATE_CASH_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_CASH_STATE_CASH_CODE] ON [dbo].[T_CASH_STATE]
 (
 	[CASH_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_CLIENT_ACCOUNT_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_CLIENT_ACCOUNT_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_CLIENT]') AND name = N'IDX_T_CLIENT_ACCOUNT_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_CLIENT_ACCOUNT_CODE] ON [dbo].[T_CLIENT]
 (
 	[ACCOUNT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_CLIENT_ACTIVE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_CLIENT_ACTIVE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_CLIENT]') AND name = N'IDX_T_CLIENT_ACTIVE')
 CREATE NONCLUSTERED INDEX [IDX_T_CLIENT_ACTIVE] ON [dbo].[T_CLIENT]
 (
 	[CLIENT_ACTIVE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_CLIENT_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_CLIENT_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_CLIENT]') AND name = N'IDX_T_CLIENT_CODE')
 CREATE UNIQUE NONCLUSTERED INDEX [IDX_T_CLIENT_CODE] ON [dbo].[T_CLIENT]
 (
 	[CLIENT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_CLIENT_TYPE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_CLIENT_TYPE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_CLIENT]') AND name = N'IDX_T_CLIENT_TYPE')
 CREATE NONCLUSTERED INDEX [IDX_T_CLIENT_TYPE] ON [dbo].[T_CLIENT]
 (
 	[CLIENT_TYPE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_CLIENT_MANDOOB_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_CLIENT_MANDOOB_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_CLIENT]') AND name = N'IX_T_CLIENT_MANDOOB_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_CLIENT_MANDOOB_CODE] ON [dbo].[T_CLIENT]
 (
 	[MANDOOB_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_CURRANCY_CURRANCY_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_CURRANCY_CURRANCY_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_CURRANNCY]') AND name = N'IDX_T_CURRANCY_CURRANCY_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_CURRANCY_CURRANCY_CODE] ON [dbo].[T_CURRANNCY]
 (
@@ -7444,42 +7447,42 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_ITEM_BARCODE_BARCODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEM_BARCODE_BARCODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_BARCODE]') AND name = N'IDX_T_ITEM_BARCODE_BARCODE')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEM_BARCODE_BARCODE] ON [dbo].[T_ITEM_BARCODE]
 (
 	[ITEM_BARCODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ITEM_CATEGORY_CATEGORY_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEM_CATEGORY_CATEGORY_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_CATEGORY]') AND name = N'IDX_T_ITEM_CATEGORY_CATEGORY_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEM_CATEGORY_CATEGORY_CODE] ON [dbo].[T_ITEM_CATEGORY]
 (
 	[CATEGORY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ITEM_CATEGORY_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEM_CATEGORY_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_CATEGORY]') AND name = N'IDX_T_ITEM_CATEGORY_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEM_CATEGORY_CODE] ON [dbo].[T_ITEM_CATEGORY]
 (
 	[CATEGORY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ITEM_TYPE_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEM_TYPE_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_TYPE]') AND name = N'IDX_T_ITEM_TYPE_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEM_TYPE_CODE] ON [dbo].[T_ITEM_TYPE]
 (
 	[TYPE_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ITEM_TYPE_TYPE_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEM_TYPE_TYPE_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_TYPE]') AND name = N'IDX_T_ITEM_TYPE_TYPE_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEM_TYPE_TYPE_CODE] ON [dbo].[T_ITEM_TYPE]
 (
 	[TYPE_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ITEM_UNIT_ITEM]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEM_UNIT_ITEM]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_UNIT]') AND name = N'IDX_T_ITEM_UNIT_ITEM')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEM_UNIT_ITEM] ON [dbo].[T_ITEM_UNIT]
 (
@@ -7490,7 +7493,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_ITEM_UNIT_ITEM_UNITNAME]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEM_UNIT_ITEM_UNITNAME]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEM_UNIT]') AND name = N'IDX_T_ITEM_UNIT_ITEM_UNITNAME')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEM_UNIT_ITEM_UNITNAME] ON [dbo].[T_ITEM_UNIT]
 (
@@ -7498,21 +7501,21 @@ CREATE NONCLUSTERED INDEX [IDX_T_ITEM_UNIT_ITEM_UNITNAME] ON [dbo].[T_ITEM_UNIT]
 	[UNIT_NAME] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ITEMS_CATEGORY]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEMS_CATEGORY]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDX_T_ITEMS_CATEGORY')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEMS_CATEGORY] ON [dbo].[T_ITEMS]
 (
 	[CATEGORY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ITEMS_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEMS_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDX_T_ITEMS_CODE')
 CREATE UNIQUE NONCLUSTERED INDEX [IDX_T_ITEMS_CODE] ON [dbo].[T_ITEMS]
 (
 	[ITEM_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ITEMS_ITEM_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEMS_ITEM_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDX_T_ITEMS_ITEM_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEMS_ITEM_CODE] ON [dbo].[T_ITEMS]
 (
@@ -7521,7 +7524,7 @@ CREATE NONCLUSTERED INDEX [IDX_T_ITEMS_ITEM_CODE] ON [dbo].[T_ITEMS]
 	[CATEGORY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_ITEMS_ITEM_CODE_TYPE_CODE_CATEGORY_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_ITEMS_ITEM_CODE_TYPE_CODE_CATEGORY_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IDX_T_ITEMS_ITEM_CODE_TYPE_CODE_CATEGORY_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_ITEMS_ITEM_CODE_TYPE_CODE_CATEGORY_CODE] ON [dbo].[T_ITEMS]
 (
@@ -7530,49 +7533,49 @@ CREATE NONCLUSTERED INDEX [IDX_T_ITEMS_ITEM_CODE_TYPE_CODE_CATEGORY_CODE] ON [db
 	[CATEGORY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_ITEMS_CATEGORY_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_ITEMS_CATEGORY_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_ITEMS]') AND name = N'IX_T_ITEMS_CATEGORY_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_ITEMS_CATEGORY_CODE] ON [dbo].[T_ITEMS]
 (
 	[CATEGORY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_IVC_TYPE_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_IVC_TYPE_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_IVC_TYPE]') AND name = N'IDX_T_IVC_TYPE_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_IVC_TYPE_CODE] ON [dbo].[T_IVC_TYPE]
 (
 	[IVC_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_IVC_TYPE_IVC_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_IVC_TYPE_IVC_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_IVC_TYPE]') AND name = N'IDX_T_IVC_TYPE_IVC_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_IVC_TYPE_IVC_CODE] ON [dbo].[T_IVC_TYPE]
 (
 	[IVC_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_KAFEL_KAFEL_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_KAFEL_KAFEL_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_KAFEL]') AND name = N'IDX_T_KAFEL_KAFEL_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_KAFEL_KAFEL_CODE] ON [dbo].[T_KAFEL]
 (
 	[KAFEL_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_MANDOOB_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_MANDOOB_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_MANDOOB]') AND name = N'IDX_T_MANDOOB_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_MANDOOB_CODE] ON [dbo].[T_MANDOOB]
 (
 	[MANDOOB_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_MANDOOB_MANDOOB_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_MANDOOB_MANDOOB_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_MANDOOB]') AND name = N'IDX_T_MANDOOB_MANDOOB_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_MANDOOB_MANDOOB_CODE] ON [dbo].[T_MANDOOB]
 (
 	[MANDOOB_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_NOTES_ISDONE_REMAINDERDATE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_NOTES_ISDONE_REMAINDERDATE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_NOTES]') AND name = N'IX_T_NOTES_ISDONE_REMAINDERDATE')
 CREATE NONCLUSTERED INDEX [IX_T_NOTES_ISDONE_REMAINDERDATE] ON [dbo].[T_NOTES]
 (
@@ -7580,7 +7583,7 @@ CREATE NONCLUSTERED INDEX [IX_T_NOTES_ISDONE_REMAINDERDATE] ON [dbo].[T_NOTES]
 	[REMAINDER_DATE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_ACTIVE_IVC]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_SALES_ACTIVE_IVC]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IDX_T_SALES_ACTIVE_IVC')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_ACTIVE_IVC] ON [dbo].[T_SALES]
 (
@@ -7591,14 +7594,14 @@ CREATE NONCLUSTERED INDEX [IDX_T_SALES_ACTIVE_IVC] ON [dbo].[T_SALES]
 	[CLIENT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_BILL_NUMBER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_SALES_BILL_NUMBER]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IDX_T_SALES_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_BILL_NUMBER] ON [dbo].[T_SALES]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_FAST]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_SALES_FAST]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IDX_T_SALES_FAST')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_FAST] ON [dbo].[T_SALES]
 (
@@ -7610,7 +7613,7 @@ CREATE NONCLUSTERED INDEX [IDX_T_SALES_FAST] ON [dbo].[T_SALES]
 	[BILL_DATE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_SALES_ACTIVE_IVC]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_SALES_ACTIVE_IVC]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IX_T_SALES_ACTIVE_IVC')
 CREATE NONCLUSTERED INDEX [IX_T_SALES_ACTIVE_IVC] ON [dbo].[T_SALES]
 (
@@ -7621,35 +7624,35 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_T_SALES_BILL_BRANCH]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_SALES_BILL_BRANCH]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IX_T_SALES_BILL_BRANCH')
 CREATE NONCLUSTERED INDEX [IX_T_SALES_BILL_BRANCH] ON [dbo].[T_SALES]
 (
 	[BILL_BRANCH] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_SALES_BILL_DATE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_SALES_BILL_DATE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IX_T_SALES_BILL_DATE')
 CREATE NONCLUSTERED INDEX [IX_T_SALES_BILL_DATE] ON [dbo].[T_SALES]
 (
 	[BILL_DATE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_SALES_BILL_NUMBER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_SALES_BILL_NUMBER]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IX_T_SALES_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IX_T_SALES_BILL_NUMBER] ON [dbo].[T_SALES]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_SALES_CLIENT_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_SALES_CLIENT_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES]') AND name = N'IX_T_SALES_CLIENT_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_SALES_CLIENT_CODE] ON [dbo].[T_SALES]
 (
 	[CLIENT_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_DETAILS_BILL_NUMBER_ITEM_CODE_STORE_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_SALES_DETAILS_BILL_NUMBER_ITEM_CODE_STORE_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_T_SALES_DETAILS_BILL_NUMBER_ITEM_CODE_STORE_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_BILL_NUMBER_ITEM_CODE_STORE_CODE] ON [dbo].[T_SALES_DETAILS]
 (
@@ -7662,7 +7665,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_SALES_DETAILS_BRANCH]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_SALES_DETAILS_BRANCH]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_T_SALES_DETAILS_BRANCH')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_BRANCH] ON [dbo].[T_SALES_DETAILS]
 (
@@ -7672,7 +7675,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_SALES_DETAILS_BRANCH_ITEM]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_SALES_DETAILS_BRANCH_ITEM]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_T_SALES_DETAILS_BRANCH_ITEM')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_BRANCH_ITEM] ON [dbo].[T_SALES_DETAILS]
 (
@@ -7680,7 +7683,7 @@ CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_BRANCH_ITEM] ON [dbo].[T_SALES_DE
 	[ITEM_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_SALES_DETAILS_FAST]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_SALES_DETAILS_FAST]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IDX_T_SALES_DETAILS_FAST')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_FAST] ON [dbo].[T_SALES_DETAILS]
 (
@@ -7690,7 +7693,7 @@ CREATE NONCLUSTERED INDEX [IDX_T_SALES_DETAILS_FAST] ON [dbo].[T_SALES_DETAILS]
 	[CURRANCY_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_SALES_DETAILS_ACTIVE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_SALES_DETAILS_ACTIVE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IX_T_SALES_DETAILS_ACTIVE')
 CREATE NONCLUSTERED INDEX [IX_T_SALES_DETAILS_ACTIVE] ON [dbo].[T_SALES_DETAILS]
 (
@@ -7700,21 +7703,21 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_T_SALES_DETAILS_BILL_BRANCH]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_SALES_DETAILS_BILL_BRANCH]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IX_T_SALES_DETAILS_BILL_BRANCH')
 CREATE NONCLUSTERED INDEX [IX_T_SALES_DETAILS_BILL_BRANCH] ON [dbo].[T_SALES_DETAILS]
 (
 	[BILL_BRANCH] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_SALES_DETAILS_BILL_NUMBER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_SALES_DETAILS_BILL_NUMBER]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IX_T_SALES_DETAILS_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IX_T_SALES_DETAILS_BILL_NUMBER] ON [dbo].[T_SALES_DETAILS]
 (
 	[BILL_NUMBER] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_SALES_DETAILS_ITEM_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_SALES_DETAILS_ITEM_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_DETAILS]') AND name = N'IX_T_SALES_DETAILS_ITEM_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_SALES_DETAILS_ITEM_CODE] ON [dbo].[T_SALES_DETAILS]
 (
@@ -7724,7 +7727,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_SALES_TEMP_BILL_BRANCH_BILL_NUMBER]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_SALES_TEMP_BILL_BRANCH_BILL_NUMBER]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_TEMP]') AND name = N'IDX_T_SALES_TEMP_BILL_BRANCH_BILL_NUMBER')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_TEMP_BILL_BRANCH_BILL_NUMBER] ON [dbo].[T_SALES_TEMP]
 (
@@ -7735,7 +7738,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_SALES_TEMP_BRANCH]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_SALES_TEMP_BRANCH]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_SALES_TEMP]') AND name = N'IDX_T_SALES_TEMP_BRANCH')
 CREATE NONCLUSTERED INDEX [IDX_T_SALES_TEMP_BRANCH] ON [dbo].[T_SALES_TEMP]
 (
@@ -7745,7 +7748,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IDX_T_STORE_BOX_BRANCH_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_STORE_BOX_BRANCH_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_STORE_BOX]') AND name = N'IDX_T_STORE_BOX_BRANCH_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_STORE_BOX_BRANCH_CODE] ON [dbo].[T_STORE_BOX]
 (
@@ -7753,7 +7756,7 @@ CREATE NONCLUSTERED INDEX [IDX_T_STORE_BOX_BRANCH_CODE] ON [dbo].[T_STORE_BOX]
 	[B_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_STORE_BOX_MAIN]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_STORE_BOX_MAIN]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_STORE_BOX]') AND name = N'IDX_T_STORE_BOX_MAIN')
 CREATE NONCLUSTERED INDEX [IDX_T_STORE_BOX_MAIN] ON [dbo].[T_STORE_BOX]
 (
@@ -7763,42 +7766,42 @@ CREATE NONCLUSTERED INDEX [IDX_T_STORE_BOX_MAIN] ON [dbo].[T_STORE_BOX]
 	[ACTIVE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_STORE_BOX_ACTIVE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_STORE_BOX_ACTIVE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_STORE_BOX]') AND name = N'IX_T_STORE_BOX_ACTIVE')
 CREATE NONCLUSTERED INDEX [IX_T_STORE_BOX_ACTIVE] ON [dbo].[T_STORE_BOX]
 (
 	[ACTIVE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_STORE_BOX_ITEM_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_STORE_BOX_ITEM_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_STORE_BOX]') AND name = N'IX_T_STORE_BOX_ITEM_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_STORE_BOX_ITEM_CODE] ON [dbo].[T_STORE_BOX]
 (
 	[ITEM_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_T_STORE_BOX_STORE_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IX_T_STORE_BOX_STORE_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_STORE_BOX]') AND name = N'IX_T_STORE_BOX_STORE_CODE')
 CREATE NONCLUSTERED INDEX [IX_T_STORE_BOX_STORE_CODE] ON [dbo].[T_STORE_BOX]
 (
 	[STORE_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_STORE_TYPE_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_STORE_TYPE_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_STORE_TYPE]') AND name = N'IDX_T_STORE_TYPE_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_STORE_TYPE_CODE] ON [dbo].[T_STORE_TYPE]
 (
 	[STORE_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_STORE_TYPE_STORE_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_STORE_TYPE_STORE_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_STORE_TYPE]') AND name = N'IDX_T_STORE_TYPE_STORE_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_STORE_TYPE_STORE_CODE] ON [dbo].[T_STORE_TYPE]
 (
 	[STORE_CODE] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IDX_T_USERS_USER_CODE]    Script Date: 2025/08/11 9:58:31 ******/
+/****** Object:  Index [IDX_T_USERS_USER_CODE]    Script Date: 2025/09/13 4:36:05 ******/
 IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[T_USERS]') AND name = N'IDX_T_USERS_USER_CODE')
 CREATE NONCLUSTERED INDEX [IDX_T_USERS_USER_CODE] ON [dbo].[T_USERS]
 (
