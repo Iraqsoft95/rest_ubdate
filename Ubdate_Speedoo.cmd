@@ -65,7 +65,7 @@ if "%App_Name_choice%"=="1" (
     set App_Name=SPEEDOO POS
     goto Ubdate_App
 ) else if "%App_Name_choice%"=="2" (
-    color 06
+    color 0B
     set mega_url= https://mega.nz/file/hyMW2KwL#ziSyP6EeLCAXVpKe-IloXiuqb-WyTNO4Iwjf8xVSFy8
     set mega_output="C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.7.2 UPDATE.exe"
 
@@ -587,4 +587,5 @@ if "%App_Name_choice%"=="1" (
     @REM goto Update_CMD
 )
 exit /b
+
 
