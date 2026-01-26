@@ -1,7 +1,7 @@
 @echo off
 @REM --------------------> Run Batch As Admin <--------------------
 setlocal EnableDelayedExpansion
-title Ubdate Speedoo V2.1
+title Ubdate Speedoo V2.2
 REM check if file Run Us Admin
 openfiles >nul 2>&1
 if '%errorlevel%' == '0' goto main
@@ -52,8 +52,8 @@ if "%App_Name_choice%"=="1" (
     set mega_url= https://mega.nz/file/kyVBAJrR#BK0I6YIk9FZGXencDBxYVfoI361UdrYYxUFRwc9WNPI
     set mega_output="C:\Users\%USERNAME%\Downloads\SPEEDOO POS  1.4.0.6 UPDATE.exe"
 
-    set dropbox_url= "https://www.dropbox.com/scl/fi/ofrtpag2rwtgddpkky4yt/SPEEDOO-POS-1.4.0.6-UPDATE.exe?rlkey=2ubkh7qpnrijar1dwr88g1hdd&e=1&st=wfqf9kj1&dl=0"
-    set dropbox_output="C:\Users\%USERNAME%\Downloads\SPEEDOO-POS-1.4.0.6-UPDATE.exe"
+    set dropbox_url= "https://www.dropbox.com/scl/fi/v4iu3dx8ublt64bt3ei0c/SPEEDOO-POS-1.4.1.2-UPDATE.exe?rlkey=wwpq7xlwni1oibua7u4p3v4zr&st=hpwq7bet&dl=0"
+    set dropbox_output="C:\Users\%USERNAME%\Downloads\SPEEDOO-POS-1.4.1.2-UPDATE.exe"
 
     set "Shortcut_Part=SPEEDOO POS"
     set "MySettingName=MySettingSPEEDOO"
@@ -65,12 +65,12 @@ if "%App_Name_choice%"=="1" (
     set App_Name=SPEEDOO POS
     goto Ubdate_App
 ) else if "%App_Name_choice%"=="2" (
-    color 0B
+   color 0B
     set mega_url= https://mega.nz/file/hyMW2KwL#ziSyP6EeLCAXVpKe-IloXiuqb-WyTNO4Iwjf8xVSFy8
     set mega_output="C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.7.2 UPDATE.exe"
 
-    set dropbox_url= "https://www.dropbox.com/scl/fi/orvrbynz0fmxb3zsjbqrc/Speedoo-REST-3.0.7.2-UPDATE.exe?rlkey=cjyw3r2oghqkctimaab78u9se&e=2&st=vktmbqco&dl=0"
-    set dropbox_output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.7.2-UPDATE.exe"
+    set dropbox_url= "https://www.dropbox.com/scl/fi/93z7ebjedyyjfrze2p2o7/Speedoo-REST-3.0.7.8-UPDATE.exe?rlkey=6d09mi65a1is1x6iykra27wu8&st=fcr4h65t&dl=0"
+    set dropbox_output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.7.8-UPDATE.exe"
     
     set "Shortcut_Part=SPEEDOO REST"
     set "MySettingName=MySettingRESTAURANT"
@@ -587,5 +587,3 @@ if "%App_Name_choice%"=="1" (
     @REM goto Update_CMD
 )
 exit /b
-
-
