@@ -1,7 +1,7 @@
 @echo off
 @REM --------------------> Run Batch As Admin <--------------------
 setlocal EnableDelayedExpansion
-title Ubdate Speedoo V2.2
+title Ubdate Speedoo V2.3
 REM check if file Run Us Admin
 openfiles >nul 2>&1
 if '%errorlevel%' == '0' goto main
@@ -108,7 +108,7 @@ echo             \/\/                                                           
 echo             /\/\                 7.Open Setup file                 8. Add User                      /\/\
 echo             \/\/                                                                                    \/\/
 if "%App_Name_choice%"=="1" (
-echo             /\/\                 9.Delet User                     10.EXE 1.4.0.6 X86 bit            /\/\
+echo             /\/\                 9.Delet User                     10.EXE 1.4.1.2 X86 bit            /\/\
 echo             \/\/                                                                                    \/\/
 echo             /\/\                 0.GO Back                                                          /\/\
 echo             \/\/                                                                                    \/\/
@@ -141,7 +141,7 @@ if "%choice%"=="1" (
 ) else if "%choice%"=="9" (
     goto Delet_User
 ) else if "%choice%"=="10" (
-    goto SPEEDOO_APP_1.4.0.6_X86_bit
+    goto SPEEDOO_APP_1.4.1.2_X86_bit
 ) else if "%choice%"=="0" (
     goto END
 ) else (
@@ -435,9 +435,9 @@ if /I "!user_input!"=="!decoded_config!" (
 pause
 
 goto Ubdate_App
-@REM @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SPEEDOO_APP_1.4.0.6_X86_bit >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-:SPEEDOO_APP_1.4.0.6_X86_bit
-start "" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/SPEEDOO_APP_1.4.0.6_X86_bit.zip"
+@REM @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SPEEDOO_APP_1.4.1.2_X86_bit >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+:SPEEDOO_APP_1.4.1.2_X86_bit
+start "" "https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/SPEEDOO_APP_1.4.1.2_X86bit.zip"
 
 @REM <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< AUTH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
