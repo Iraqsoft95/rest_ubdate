@@ -1,7 +1,7 @@
 @echo off
 @REM --------------------> Run Batch As Admin <--------------------
 setlocal EnableDelayedExpansion
-title Ubdate Speedoo V2.5
+title Ubdate Speedoo V2.6
 REM check if file Run Us Admin
 openfiles >nul 2>&1
 if '%errorlevel%' == '0' goto main
@@ -52,9 +52,8 @@ if "%App_Name_choice%"=="1" (
     set mega_url= https://mega.nz/file/I7lRzZoL#ODbeMyIOrrY24nV29N23gGhaKxB8lQyL5ao2Uzy4fmc
     set mega_output="C:\Users\%USERNAME%\Downloads\SPEEDOO POS  1.4.0.6 UPDATE.exe"
 
-    set dropbox_url= "https://www.dropbox.com/scl/fi/v4iu3dx8ublt64bt3ei0c/SPEEDOO POS 1.4.1.2 UPDATE
-.exe?rlkey=wwpq7xlwni1oibua7u4p3v4zr&st=hpwq7bet&dl=0"
-    set dropbox_output="C:\Users\%USERNAME%\Downloads\SPEEDOO-POS-1.4.1.2-UPDATE.exe"
+    set dropbox_url= "https://www.dropbox.com/scl/fi/20hem47jlb17hfmtnu9g1/SPEEDOO-POS-1.4.1.3-UPDATE.exe?rlkey=anuguf1ka851mr47lbafku6s8&st=nevmcv96&dl=0"
+    set dropbox_output="C:\Users\%USERNAME%\Downloads\SPEEDOO-POS-1.4.1.3-UPDATE.exe"
 
     set "Shortcut_Part=SPEEDOO POS"
     set "MySettingName=MySettingSPEEDOO"
@@ -70,9 +69,8 @@ if "%App_Name_choice%"=="1" (
     set mega_url= https://mega.nz/file/8nFwmBCB#aO5r_mm_IfAScxqksfLL_xwu1LSPlyvrfHBxiC5wuck
     set mega_output="C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.7.2 UPDATE.exe"
 
-    set dropbox_url= "https://www.dropbox.com/scl/fi/93z7ebjedyyjfrze2p2o7/Speedoo-REST-3.0.7.8-UPDATE.exe?rlkey=6d09mi65a1is1x6iykra27wu8&st=fcr4h65t&dl=0"
-    set dropbox_output="C:\Users\%USERNAME%\Downloads\Speedoo REST 3.0.7.8 UPDATE
-.exe"
+    set dropbox_url= "https://www.dropbox.com/scl/fi/g0a31t67ib1ms2n15exo1/Speedoo-REST-3.0.8.0-UPDATE.exe?rlkey=r7h9wbm151hyaza0nqij2qy9j&st=6u2ccccc&dl=0"
+    set dropbox_output="C:\Users\%USERNAME%\Downloads\Speedoo-REST-3.0.8.0-UPDATE.exe"
     
     set "Shortcut_Part=SPEEDOO REST"
     set "MySettingName=MySettingRESTAURANT"
