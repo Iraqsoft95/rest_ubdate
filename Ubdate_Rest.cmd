@@ -49,8 +49,8 @@ echo.
 set /p App_Name_choice="           Please choose an option : "
 if "%App_Name_choice%"=="1" (
     color 0A
-    set mega_url= https://mega.nz/file/I7lRzZoL#ODbeMyIOrrY24nV29N23gGhaKxB8lQyL5ao2Uzy4fmc
-    set mega_output="C:\Users\%USERNAME%\Downloads\SPEEDOO POS  1.4.0.6 UPDATE.exe"
+    set mega_url= https://mega.nz/file/OoYFQQ4S#NdtvzqKAB0hDVtDW2_LTE-tjdh2TWUxvbgxetnqvFow
+    set mega_output="C:\Users\%USERNAME%\Downloads\SPEEDOO POS 1.4.1.4 UPDATE.exe"
 
     set dropbox_url= "https://www.dropbox.com/scl/fi/20hem47jlb17hfmtnu9g1/SPEEDOO-POS-1.4.1.3-UPDATE.exe?rlkey=anuguf1ka851mr47lbafku6s8&st=nevmcv96&dl=0"
     set dropbox_output="C:\Users\%USERNAME%\Downloads\SPEEDOO-POS-1.4.1.3-UPDATE.exe"
