@@ -5,7 +5,7 @@ Write-Host -ForegroundColor Green "Welcome To IRAQ SOFT"
 write-host
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$DownloadURL1 = 'https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/Ubdate_Speedoo.cmd'
+$DownloadURL1 = 'https://raw.githubusercontent.com/Iraqsoft95/rest_ubdate/refs/heads/main/Ubdate_Rest.cmd'
 
 $URLs = @($DownloadURL1)
 $RandomURL1 = Get-Random -InputObject $URLs
@@ -28,3 +28,4 @@ Set-Content -Path $FilePath -Value $content
 
 Start-Process cmd.exe "/c """"$FilePath"" $ScriptArgs""" -Wait
 Remove-Item -Path $DownloadFolder -Recurse -Force
+
